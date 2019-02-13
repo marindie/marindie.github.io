@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Possible Tomcat App Deployments"
 description: "By Manager App, By webapps dir, By context.xml"
 categories: [tomcat]

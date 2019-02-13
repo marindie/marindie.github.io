@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Oracle 11g r2 install on CentOS6 in Silent Mode"
 description: "In this post, I will show you how I installed Oracle 11g r2 on CentOS6.6 in Silent Mode."
 categories: [Oracle]

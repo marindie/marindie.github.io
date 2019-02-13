@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Linux Find Command Usage"
 description: "Basic Find Command Usage"
 categories: [Linux]

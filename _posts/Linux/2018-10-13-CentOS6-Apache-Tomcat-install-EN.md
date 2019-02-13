@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Install Apache and Apache Tomcat on CentOS 6.5"
 description: "This post will demonstrate how to install apache2.4.25 & tomcat 7.0.73 manually on CentOS 6.5"
 categories: [Linux]

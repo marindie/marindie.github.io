@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Linux Setfacl Getfacl Command"
 description: "Basic XXXfacl Command"
 categories: [Linux]

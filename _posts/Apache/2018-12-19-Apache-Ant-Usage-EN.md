@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Apache Ant Command Example"
 description: "Basic Apache Ant Command"
 categories: [ant]

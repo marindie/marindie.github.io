@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "GIT 명령어 사용법. SourceTree를 활용한 작업시 장점"
 description: "기본적인 GIT 명령어 사용법에 대한 간략한 설명 및 SourceTree 에서 제공하는 기능에 대한 편리한 부분을 정리한 글입니다."
 categories: [GIT]
