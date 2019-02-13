@@ -16,10 +16,10 @@ minimal_mistakes_skin    : "air" # "default", "air", "aqua", "contrast", "dark",
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "Learning Activity"
+title                    : "개발 꿈나무"
 title_separator          : "-"
-name                     : "Seung Won Chung (Patrick)"
-description              : "Programmer's references"
+name                     : "긍정긍정 (Patrick)"
+description              : "코딩 관련. Programmer's references"
 url                      : https://marindie.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -98,18 +98,18 @@ social:
 
 # Analytics
 analytics:
-  provider               : false # false (default), "google", "google-universal", "custom"
+  provider               : google # false (default), "google", "google-universal", "custom"
   google:
-    tracking_id          :
+    tracking_id          : UA-132770066-1
     anonymize_ip         : # true, false (default)
 
 
 # Site Author
 author:
-  name             : "Seung Won Chung (Patrick)"
+  name             : "긍정긍정 (Patrick)"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Smile. See the bright side"
-  location         : "Republic Of Korea"
+  location         : "대한민국. Republic Of Korea"
   email            :
   links:
     - label: "Email"
