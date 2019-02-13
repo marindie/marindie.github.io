@@ -9,9 +9,6 @@ redirect_from:
 
 > In this page, I will show you some of basic ant command that might be useful for application compile and deployment.
 
-* Kramdown table of contents
-{:toc .toc}
-
 # Assumption & Background
 
 Apache Ant should be installed and evironment path is set correctly.
