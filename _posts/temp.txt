@@ -1,0 +1,540 @@
+아파치(Apache) ANT 에 대한 기본적인 명령어와 그와 연관된 샘플 코드를 정리해 보았습니다.
+
+
+
+ANT 설치 방법은 간단하기에 검색하여 설치하시면 OS 에 관계 없이 설치가 무난할 것으로 생각 됩니다. 
+
+예제는 ANT 를 Linux 환경에서 테스트 한 것입니다.
+
+
+
+먼저 "build.xml" 이라는 xml 파일을 생성하고, 아래의 코드를 복사하여 넣습니다.
+
+기본적으로 project 속성과 target 속성은 필수로 정의 해야 합니다.
+
+
+
+<?xml version = "1.0" encoding="utf-8"?>
+
+<project name = "Hello World Project" default = "compile" basedir="/var/lib/jenkins/workspace/src">
+
+   <target name = "info">
+
+      <echo>Hello World - Welcome to Apache Ant!</echo>
+
+   </target>
+
+</project>
+
+
+
+Property 값들 추가 하기
+
+공통으로 빼서 처리 하고 싶은 것들 (Ex 폴더 경로) 을 변수처럼 사용하기 위해 property 속성을 정의 하여 사용합니다.
+
+
+
+<?xml version = "1.0" encoding="utf-8"?>
+
+<project name = "Hello World Project" default = "compile" basedir="/var/lib/jenkins/workspace/src">
+
+        <property environment="env"/>
+
+        <property name="src.dir" value="${basedir}" />
+
+        <property name="webcom.dir" value="/was/upwas/WebApp/WEBCOMMON/lib" />
+
+        <property name="common.dir" value="/was/upwas/WebApp/COMMON/lib" />
+
+        <property name="portal.dir" value="/was/upwas/WebApp/MyApplication" />
+
+        <property name="classes.dir" value="/was/upwas/WebApp/MyApplication/WEB-INF/classes" />
+
+        <property name="lib.dir" value="/was/upwas/WebApp/MyApplication/WEB-INF/lib" />
+
+        <property name="ejb.dir" value="/was/upwas/src/ejb/MyApplication" />
+
+        <property name="weblogic.module.dir" value="/was/weblogic1036/modules" />
+
+        <property name="jenkins.ejb.dir" value="/var/lib/jenkins/workspace/MyApplication/src/com/nate/webadmin/ejb" />
+
+        <property name="jenkins.web.dir" value="/var/lib/jenkins/workspace/MyApplication/WebContent" />
+
+        <property name="web.dir" value="/web/apache2.2.31/htdocs/MyApplication" />
+
+   <target name = "info">
+
+      <echo>Hello World - Welcome to Apache Ant!</echo>
+
+   </target>
+
+</project>
+
+
+
+일반적으로 ANT 를 사용하는 목적은 프로젝트 소스 Build & Deploy 를 자동화 하고자 많이 사용합니다.
+
+그래서 Java 를 Compile 하기 위해 javac 속성을 사용하여 정의 합니다.
+
+compileClass 라는 target 안에 해당 javac 를 정의 하여 나중에 ant 로 사용시 ant compileClass 라는 명령어를 날리면,
+
+build.xml (특별히 파일명 언급이 없으면 build.xml 을 기본적으로 찾습니다.) 내부에서 task 이름이 compileClass 인 녀석을 찾아서 
+
+존재하면 내부 정의 내용을 실행합니다. 컴파일에 필요한 외부 라이브러리 참조 경로도 정의가 가능합니다.
+
+
+
+<?xml version = "1.0" encoding="utf-8"?>
+
+<project name = "Hello World Project" default = "compile" basedir="/var/lib/jenkins/workspace/src">
+
+	<property environment="env"/>
+
+	<property name="src.dir" value="${basedir}" />
+
+	... 생략
+
+
+
+	<target name = "info">
+
+		<echo>Hello World - Welcome to Apache Ant!</echo>
+
+	</target>
+
+
+
+    <target name="compileClass" >
+
+        <echo message="==========================="/>
+
+        <echo message="  Compile Java Files Start "/>
+
+        <echo message="==========================="/>		
+
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" encoding="euc-kr">
+
+            <include name="**/*.java"/>
+
+			<exclude name="**/*Bean.java"/>
+
+            <classpath>
+
+                <pathelement path="${classes.dir}" />
+
+                <fileset dir="${lib.dir}">
+
+                        <include name="**/*.jar"/>
+
+                </fileset>
+
+                <fileset dir="${webcom.dir}">
+
+                        <include name="**/*.jar"/>
+
+                </fileset>
+
+                <fileset dir="${weblogic.module.dir}">
+
+                        <include name="**/*.jar"/>
+
+                </fileset>
+
+        	</classpath>
+
+        </javac>
+
+        <echo message="==========================="/>
+
+        <echo message="  Compile Java Files End   "/>
+
+        <echo message="==========================="/>				
+
+    </target>
+
+
+
+</project>
+
+
+
+웹 프로젝트의 경우 static file들 (js, css, html 등등)을 삭제 하는 경우가 있습니다. 
+
+delete 속성이 해당 업무를 처리 하도록 도와 줍니다. deleteClass 는 폴더(하위 포함) 삭제 명령어입니다만,
+
+deleteWeb은 세부적으로 어떤 파일 종류만 삭제 할지, 어떤 파일 종류만 삭제하지 않고 제외 할지 정의가 가능합니다.
+
+예제는 include 만 사용하여 원하는 파일 종류만 삭제하도록 정의 하였습니다.
+
+
+
+<?xml version = "1.0" encoding="utf-8"?>
+
+<project name = "Hello World Project" default = "compile" basedir="/var/lib/jenkins/workspace/src">
+
+	<property environment="env"/>
+
+	<property name="src.dir" value="${basedir}" />
+
+	...
+
+
+
+	<target name = "info">
+
+		<echo>Hello World - Welcome to Apache Ant!</echo>
+
+	</target>
+
+
+
+    <target name="deleteWeb" >
+
+        <echo message="============================="/>
+
+        <echo message="  Delete Static Files Start  "/>
+
+        <echo message="============================="/>
+
+        <delete>
+
+            <fileset dir="${web.dir}">
+
+                <include name="**/*.html"/>
+
+                <include name="**/css/**"/>
+
+                <include name="**/guide/**"/>
+
+                <include name="**/images/**"/>
+
+                <include name="**/js/**"/>
+
+                <include name="**/robots.txt"/>
+
+            </fileset>
+
+        </delete>
+
+        <echo message="============================="/>
+
+        <echo message="  Delete Static Files End    "/>
+
+        <echo message="============================="/>
+
+    </target>	
+
+
+
+    <target name="deleteClass" >
+
+        <echo message="==========================="/>
+
+        <echo message="  Delete Class Files       "/>
+
+        <echo message="==========================="/>
+
+        <delete dir="${classes.dir}/com" />
+
+    </target>	
+
+
+
+    <target name="compileClass" >
+
+        <echo message="==========================="/>
+
+        <echo message="  Compile Java Files Start "/>
+
+        <echo message="==========================="/>		
+
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" encoding="euc-kr">
+
+            <include name="**/*.java"/>
+
+			<exclude name="**/*Bean.java"/>
+
+            <classpath>
+
+                <pathelement path="${classes.dir}" />
+
+                <fileset dir="${lib.dir}">
+
+                        <include name="**/*.jar"/>
+
+                </fileset>
+
+                <fileset dir="${webcom.dir}">
+
+                        <include name="**/*.jar"/>
+
+                </fileset>
+
+                <fileset dir="${weblogic.module.dir}">
+
+                        <include name="**/*.jar"/>
+
+                </fileset>
+
+        	</classpath>
+
+        </javac>
+
+        <echo message="==========================="/>
+
+        <echo message="  Compile Java Files End   "/>
+
+        <echo message="==========================="/>				
+
+    </target>
+
+
+
+</project>
+
+
+다음은 복사를 하기 위한 명령어인 copy 를 추가해 보겠습니다.
+
+정의 방법은 delete 와 비슷한 개념입니다.
+
+
+
+<?xml version = "1.0" encoding="utf-8"?>
+
+<project name = "Hello World Project" default = "compile" basedir="/var/lib/jenkins/workspace/src">
+
+	<property environment="env"/>
+
+	<property name="src.dir" value="${basedir}" />
+
+	...
+
+
+
+	<target name = "info">
+
+		<echo>Hello World - Welcome to Apache Ant!</echo>
+
+	</target>
+
+
+
+    <target name="deleteWeb" >
+
+        <echo message="============================="/>
+
+        <echo message="  Delete Static Files Start  "/>
+
+        <echo message="============================="/>
+
+        <delete>
+
+            <fileset dir="${web.dir}">
+
+                <include name="**/*.html"/>
+
+                <include name="**/css/**"/>
+
+                <include name="**/guide/**"/>
+
+                <include name="**/images/**"/>
+
+                <include name="**/js/**"/>
+
+                <include name="**/robots.txt"/>
+
+            </fileset>
+
+        </delete>
+
+        <echo message="============================="/>
+
+        <echo message="  Delete Static Files End    "/>
+
+        <echo message="============================="/>
+
+    </target>	
+
+
+
+    <target name="copyWeb" >
+
+        <echo message="==========================="/>
+
+        <echo message="  Copy Static Files Start  "/>
+
+        <echo message="==========================="/>
+
+        <copy todir="${web.dir}">
+
+            <fileset dir="${jenkins.web.dir}">
+
+                <include name="**/*.html"/>
+
+                <include name="**/css/**"/>
+
+                <include name="**/guide/**"/>
+
+                <include name="**/images/**"/>
+
+                <include name="**/js/**"/>
+
+                <include name="**/robots.txt"/>
+
+                <exclude name="**/.svn/**"/>
+
+                <exclude name="**/jsp/**"/>
+
+            </fileset>
+
+        </copy>
+
+        <echo message="==========================="/>
+
+        <echo message="  Copy Static Files End    "/>
+
+        <echo message="==========================="/>
+
+    </target>    
+
+
+
+    <target name="deleteClass" >
+
+        <echo message="==========================="/>
+
+        <echo message="  Delete Class Files       "/>
+
+        <echo message="==========================="/>
+
+        <delete dir="${classes.dir}/com" />
+
+    </target>	
+
+
+
+    <target name="compileClass" >
+
+        <echo message="==========================="/>
+
+        <echo message="  Compile Java Files Start "/>
+
+        <echo message="==========================="/>		
+
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" encoding="euc-kr">
+
+            <include name="**/*.java"/>
+
+			<exclude name="**/*Bean.java"/>
+
+            <classpath>
+
+                <pathelement path="${classes.dir}" />
+
+                <fileset dir="${lib.dir}">
+
+                        <include name="**/*.jar"/>
+
+                </fileset>
+
+                <fileset dir="${webcom.dir}">
+
+                        <include name="**/*.jar"/>
+
+                </fileset>
+
+                <fileset dir="${weblogic.module.dir}">
+
+                        <include name="**/*.jar"/>
+
+                </fileset>
+
+        	</classpath>
+
+        </javac>
+
+        <echo message="==========================="/>
+
+        <echo message="  Compile Java Files End   "/>
+
+        <echo message="==========================="/>				
+
+    </target>
+
+
+
+</project>
+
+
+
+
+
+기타 사용 팁
+
+
+
+아래는 잘 사용하지는 않지만, 메모를 위해 남기는 샘플입니다.
+
+제가 Linux 에서 사용시, ant 내부에서 bash 명령어를 실행할 수는 없을가 하여 검색해서 사용한 샘플입니다.
+
+exec 속성을 사용하면 가능합니다. 하지만 option 들이 다소 이해하기 어렵게 되어 있고,
+
+명령어에 따라서 option 으로 처리가 가능한게 있고, 아닌게 있을 수 있을것 같습니다.
+
+많이 테스트 하지 않아서 사용 가능 범위 까지는 잘 모르겠네요.
+
+
+
+<?xml version = "1.0" encoding="utf-8"?>
+
+<project name = "Hello World Project" default = "compile" basedir="/var/lib/jenkins/workspace/src">
+
+	<property environment="env"/>
+
+	<property name="src.dir" value="${basedir}" />
+
+	...
+
+
+
+	<target name = "info">
+
+		<echo>Hello World - Welcome to Apache Ant!</echo>
+
+	</target>
+
+	...
+
+
+
+    <target name="compileEJB">
+
+        <exec executable="bash" dir="${ejb.dir}" inputstring="find -type f -name *.java | wc -l" outputproperty="ejb.java.count"/>
+
+        <echo message="==========================="/>
+
+        <echo message=" EBJ File Counts = ${ejb.java.count} "/>
+
+        <echo message="==========================="/>
+
+
+
+        <echo message="==========================="/>
+
+        <echo message="  TestBean Start  "/>
+
+        <echo message="==========================="/>
+
+        <ant antfile="Test_build.xml" target="all"/>
+
+        <echo message="==========================="/>
+
+        <echo message="  TestBean End  "/>
+
+        <echo message="==========================="/>
+
+	</target>	
+
+
+
+</project>
