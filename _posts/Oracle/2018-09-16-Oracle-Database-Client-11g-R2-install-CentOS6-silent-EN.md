@@ -1,8 +1,8 @@
 ---
 title: "Oracle Database Client 11g r2 install on CentOS6 in Silent Mode"
 description: "In this post, I will show you how I installed Oracle Database Client 11g r2 on CentOS6.6 in Silent Mode."
-categories: [Oracle]
-tags: [Oracle Database Client, 11g r2, Oracle silent mode install, CentOS6]
+categories: [oracle]
+tags: [oracle Database Client, 11g r2, Oracle silent mode install, CentOS6]
 redirect_from:
   - /2018/09/12/
 ---
