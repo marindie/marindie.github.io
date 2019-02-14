@@ -1,40 +1,40 @@
 ---
-title: "Sed Append Text Before After Sample"
-description: "In this page, I will show you some examples about Linux sed command which append some text (before/after) matching text"
+title: "Sed 명령어. 특정 라인 위 또는 아래에 Text 추가 하기"
+description: "Linux sed 명령어를 사용하여 특정 라인 위 또는 아래에 Text 추가하는 방법을 다뤄 보도록 하겠습니다."
 categories: [Linux]
 tags: [Sed]
 redirect_from:
   - /2018/09/09/
 ---
 
-> In this page, I will show you some examples about Linux sed command which append some text (before/after) matching text.
+> Linux sed 명령어를 사용하여 특정 라인 위 또는 아래에 Text 추가하는 방법을 다뤄 보도록 하겠습니다.
 
 * Kramdown table of contents
 {:toc .toc}
 
-# Assumption & Background
+# 배경지식
 
-1. Your OS is CentOS 6.5
+1. CentOS 6.5 에서 테스트 하였습니다.
 
-# Append Text Before Matching Text
+# 매칭 되는 라인 위에 Text 추가 하기
 
 ```bash
 
-# The following sed command will paste "Some More Text is appended" after matching text "Please Put it here"
+# "Some More Text is appended" Text 가 "Please Put it here" 있는 라인 위에 추가 됩니다.
 sed -i'' -r -e "/Please Put it here/i\Some More Text is appended/" your_file.txt 
 
 ```
 
-# Append Text After Matching Text
+# 매칭 되는 라인 아래에 Text 추가 하기
 
 ```bash
 
-# The following sed command will paste "Some More Text is appended" after matching text "Please Put it here"
+# "Some More Text is appended" Text 가 "Please Put it here" 있는 라인 아래에 추가 됩니다.
 sed -i'' -r -e "/Please Put it here/a\Some More Text is appended/" your_file.txt 
 
 ```
 
-# Those who are interested in basic sed, click this [link](https://marindie.github.io/blog/2018/09/09/Sed-Replace-Text-Sample-EN) 
+# 추가적으로 기본적인 sed 명령어에 알고 싶으시다면, 클릭 => [sed 사용법](https://marindie.github.io/linux/Sed-Replace-Text-Sample-EN/) 
 
 [^1]: This is a footnote.
 

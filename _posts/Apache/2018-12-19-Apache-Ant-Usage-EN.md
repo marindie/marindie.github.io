@@ -1,24 +1,25 @@
 ---
-title: "Apache Ant Command Example"
-description: "Basic Apache Ant Command"
+title: "아파치 (Apache) ANT 명령어 예제"
+description: "기본적인 Apache ANT 명령어 설명"
 categories: [ant]
 tags: [ant]
 redirect_from:
   - /2018/12/19/
 ---
 
-> In this page, I will show you some of basic ant command that might be useful for application compile and deployment.
+> 기본적인 Apache ANT 명령어와 관련된 샘플 예제를 다루고 있습니다.
 
 * Kramdown table of contents
 {:toc .toc}
 
-# Assumption & Background
+# 가정 및 배경지식
 
-Apache Ant should be installed and evironment path is set correctly.
+아파치 (Apache) Ant 가 설치 되어 있고 환경 변수 세팅등의 설정이 되어 있다는 가정하에 진행합니다.
 
 # Ant Build Files
 
-Let's create a file and name it as "build.xml"
+ANT 의 가장 기본적인 실행 명령은 "ant" 입니다. 이때 내부적으로 ANT 는 "build.xml" 를 대상으로 하는 파일을 찾고, project 에 default 로 되어 있는 값을 찾아서
+그 값을 target 이름으로 하는 내용을 수행하게 됩니다.
 
 
 ```xml 
@@ -32,7 +33,9 @@ Let's create a file and name it as "build.xml"
 
 ```
 
-# Define Properties within the build.xml file
+# Property 항목 정의 하기 (build.xml file 내부에 정의)
+
+property 정보를 build.properties 파일로 빼서 정의 하셔도 되고, build.xml 내부에 정의 하셔도 됩니다. 
 
 ```xml
 
@@ -57,11 +60,26 @@ Let's create a file and name it as "build.xml"
 
 ```
 
+# Property 항목 정의 하기 (build.properties file 내부에 정의후 build.xml 내에서 include)
 
-# Now add a new target (compileClass) that compiles java files.
-This target has a task called "javac" which will compile java source code into class file.
-I added "classpath" attribute within javac task to define classpath during compilation process.
-To add external jar files, I used fileset attribute to define where those jar files are located.
+```xml
+
+<?xml version = "1.0" encoding="utf-8"?>
+<project name = "Hello World Project" default = "compile" basedir="/var/lib/jenkins/workspace/src">
+        <property file="build.properties"/>
+   <target name = "info">
+      <echo>Hello World - Welcome to Apache Ant!</echo>
+   </target>
+</project>
+
+```
+
+# target 추가 하기 (compileClass)
+자바 파일을 컴파일하는 "javac" task 를 정의 하고, target 명을 compileClass 라고 명시하여 정의 해보겠습니다.
+"classpath" 속성을 사용하여 컴파일 진행시 대상으로 삼을 java 소스 위치의 최상단 폴더명을 적어 놓습니다. 
+그 안의 폴더가 존재하여도 알아서 포함하여 컴파일 합니다.
+외부 라이브러리를 (external jar files) 포함 하기 위해서, fileset 속성을 사용하여 위치 범위를 정의 하였습니다.
+해당 폴더 내에 jar 형태의 파일들을 모두 포함하겠다는 의미 입니다.
 
 ```xml
 
@@ -104,9 +122,9 @@ To add external jar files, I used fileset attribute to define where those jar fi
 
 ```
 
-# Add another target (deleteClass) which deletes class files. 
-This target has a task called "delete" which is quite straight forward.
-It will delete files within the "dir" path
+# target 추가 하기 (deleteClass) 
+이름에서 알 수 있듯, Static(CSS, JS, HTML) 파일과 같이 정적 파일이나, 기존에 컴파일된 class 파일들을 삭제하고 
+컴파일 하기 위해서 사용하였습니다.
 
 ```xml
 
@@ -156,8 +174,9 @@ It will delete files within the "dir" path
 
 ```
 
-# Add another target (deleteWeb) which deletes static files
-Very similar with deleteClass task, except I specified types of file that I want to delete within the target directory "dir".
+# target 추가 하기 (deleteWeb)
+위의 내용과 같은 목적이며 처리 되는 방식에 있어서 좀더 상세하게 정의 하여 처리되도록 하였습니다.
+원하는 파일, 원치 않는 파일을 include, exclude 를 사용하여 정의 할 수 있고, 폴더 level 로 정의도 가능합니다.
 
 ```xml
 
@@ -226,9 +245,9 @@ Very similar with deleteClass task, except I specified types of file that I want
 
 ```
 
-# Add another target (copyWeb) which copies static files
-This target has a task called "copy" which will copy files into destination folder "todir"
-You can use fileset attribute to specify types of file to copy from "dir"
+# target 추가 하기 (copyWeb)
+"copy" task 를 사용하여 원하는 대상 폴더에 복사를 하는 작업을 정의해 보았습니다. "todir"
+fileset 속성을 사용하여 원하는 종류의 파일들만 선택하여 복사도 가능합니다.
 
 ```xml
 
@@ -318,12 +337,9 @@ You can use fileset attribute to specify types of file to copy from "dir"
 
 ```
 
-# In case someon wish to use bash command within ant file, take a look at this sample (compileEJB)
-I used exec task to run bash command. To run find command, I used dir and inputstring.
-This sample maybe to simple. It would be a lot easier if you can run the bash script.
-This is just a demo to show that it is possible to run bash command within ant script.
-I also added and task to run another ant file that is located in same folder. 
-Make user you use "target" attribute to specify what target you wish to run for the given "antfile"
+# 번외 적인 Tip. 쉘 명령어 (bash command) 를 ant 에서 사용을 해보고 싶어서 가능한지 한번 시도해 보았습니다. (compileEJB)
+단순히 count 를 하는 simple 한 케이스 입니다. 이 하나의 명령어를 처리하기 위해, 결과값을 받기 위한 세팅 
+명령어 세팅 등 어느정도 코딩하는 듯한 느낌이 들게끔 되어 있습니다.
 
 ```xml
 
@@ -357,7 +373,7 @@ Make user you use "target" attribute to specify what target you wish to run for 
 
 ```
 
-# Hope it was useful to someone else. Cheers
+# ANT 사용에 도움이 되었으면 합니다. 감사합니다.
 
 [^1]: This is a footnote.
 
