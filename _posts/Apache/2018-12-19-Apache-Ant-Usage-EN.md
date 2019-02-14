@@ -9,10 +9,7 @@ redirect_from:
 
 > 기본적인 Apache ANT 명령어와 관련된 샘플 예제를 다루고 있습니다.
 
-* Kramdown table of contents
-{:toc .toc}
-
-# 가정 및 배경지식
+# 배경지식
 
 아파치 (Apache) Ant 가 설치 되어 있고 환경 변수 세팅등의 설정이 되어 있다는 가정하에 진행합니다.
 
