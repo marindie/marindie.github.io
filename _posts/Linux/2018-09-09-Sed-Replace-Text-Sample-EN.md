@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Sed Replace Text Sample"
+title: "Linux: Sed Replace Text Sample"
 description: "In this page, I will show you some examples about Linux sed command which replace matching text with your desire text."
 categories: [Linux]
 tags: [Sed]

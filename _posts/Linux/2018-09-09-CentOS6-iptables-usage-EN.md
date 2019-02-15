@@ -1,9 +1,9 @@
 ---
 toc: true
-title: "CentOS6 Iptables Usage"
+title: "Linux: CentOS6 Iptables Usage"
 description: "In this page, I will show you some basic examples about how to use iptables to control IP and Port (Allow/Deny)"
 categories: [Linux]
-tags: [iptables]
+tags: [Iptables]
 redirect_from:
   - /2018/09/09/
 ---

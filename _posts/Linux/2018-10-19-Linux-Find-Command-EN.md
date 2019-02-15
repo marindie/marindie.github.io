@@ -1,9 +1,9 @@
 ---
 toc: true
-title: "Linux Find Command Usage"
+title: "Linux: Find Command Usage"
 description: "Basic Find Command Usage"
 categories: [Linux]
-tags: [find]
+tags: [Find]
 redirect_from:
   - /2018/10/19/
 ---

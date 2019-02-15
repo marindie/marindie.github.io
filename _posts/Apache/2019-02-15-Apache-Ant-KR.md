@@ -2,8 +2,8 @@
 toc: true
 title: "Apache Ant Command Example"
 description: "Basic Apache Ant Command"
-categories: [ant]
-tags: [ant]
+categories: [Scripts]
+tags: [Ant]
 redirect_from:
   - /2018/12/19/
 ---

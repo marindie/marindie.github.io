@@ -1,9 +1,9 @@
 ---
 toc: true
-title: "CentOS6 Iptables 사용법"
+title: "Linux: CentOS6 Iptables 사용법"
 description: "기본적인 iptables 명령어에 대하여 다루어 보겠습니다. IP and Port (Allow/Deny)"
 categories: [Linux]
-tags: [iptables]
+tags: [Iptables]
 redirect_from:
   - /2019/02/15/
 ---

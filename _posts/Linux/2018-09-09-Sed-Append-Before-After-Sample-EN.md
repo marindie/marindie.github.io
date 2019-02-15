@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Sed Append Text Before After Sample"
+title: "Linux: Sed Append Text Before After Sample"
 description: "In this page, I will show you some examples about Linux sed command which append some text (before/after) matching text"
 categories: [Linux]
 tags: [Sed]

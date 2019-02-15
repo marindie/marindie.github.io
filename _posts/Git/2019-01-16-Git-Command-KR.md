@@ -1,9 +1,9 @@
 ---
 toc: true
-title: "GIT 명령어 사용법. SourceTree를 활용한 작업시 장점"
+title: "Version Control System: GIT 명령어 사용법. SourceTree를 활용한 작업시 장점"
 description: "기본적인 GIT 명령어 사용법에 대한 간략한 설명 및 SourceTree 에서 제공하는 기능에 대한 편리한 부분을 정리한 글입니다."
-categories: [GIT]
-tags: [SourceTree]
+categories: [Version Control System]
+tags: [Git, SourceTree]
 redirect_from:
   - /2019/01/16/
 ---
