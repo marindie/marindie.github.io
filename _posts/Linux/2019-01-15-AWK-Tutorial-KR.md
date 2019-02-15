@@ -1,4 +1,5 @@
 ---
+toc: true
 title: "AWK 사용법. SQL 쿼리 로그 파싱 및 COUNT 리포트 예제 샘플"
 description: "AWK 를 사용하여 로그 파일에서 SQL 문 바인딩 과 건수 체킹을 리포트 형태로 출력하는 두가지 예제에 대한 설명입니다."
 categories: [Linux]
@@ -8,9 +9,6 @@ redirect_from:
 ---
 
 > AWK 활용한 로그 파일에서 필요한 형태로 가공하는 방법에 대하여 다루어 보았습니다.
-
-* Kramdown table of contents
-{:toc .toc}
 
 # 배경지식
 

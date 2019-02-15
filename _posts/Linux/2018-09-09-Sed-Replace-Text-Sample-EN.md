@@ -1,4 +1,5 @@
 ---
+toc: true
 title: "Sed Replace Text Sample"
 description: "In this page, I will show you some examples about Linux sed command which replace matching text with your desire text."
 categories: [Linux]
@@ -8,9 +9,6 @@ redirect_from:
 ---
 
 > In this page, I will show you some examples about Linux sed command which replace matching text with your desire text.
-
-* Kramdown table of contents
-{:toc .toc}
 
 # Assumption & Background
 

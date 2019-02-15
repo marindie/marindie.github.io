@@ -1,4 +1,5 @@
 ---
+toc: true
 title: "Linux Setfacl Getfacl Command"
 description: "Basic XXXfacl Command"
 categories: [Linux]
@@ -8,9 +9,6 @@ redirect_from:
 ---
 
 > In this page, I will show you some of basic setfacl and getfacl command for someone interested in.
-
-* Kramdown table of contents
-{:toc .toc}
 
 # Setfacl
 

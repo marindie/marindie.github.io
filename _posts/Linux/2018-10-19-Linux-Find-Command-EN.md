@@ -1,4 +1,5 @@
 ---
+toc: true
 title: "Linux Find Command Usage"
 description: "Basic Find Command Usage"
 categories: [Linux]
@@ -8,9 +9,6 @@ redirect_from:
 ---
 
 > In this page, I will show you some of basic find command in case someone forgot to use it.
-
-* Kramdown table of contents
-{:toc .toc}
 
 # Find Command with Options
 

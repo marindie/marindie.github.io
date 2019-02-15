@@ -1,4 +1,5 @@
 ---
+toc: true
 title: "Spring MVC. JSP 에서 JS CSS 불러오기"
 description: "JSP 에서 정적 resource (Javascript, CSS, Image 등등) 불러오기"
 categories: [Spring]
@@ -8,9 +9,6 @@ redirect_from:
 ---
 
 > JSP 파일 내에서 Javascript, CSS 등 정적 파일을 불러오는 법을 설명합니다.
-
-* Kramdown table of contents
-{:toc .toc}
 
 # JSTL 라이브러리 Maven 에 추가
 

@@ -1,4 +1,5 @@
 ---
+toc: true
 title: "Oracle Extract Object Using DBMS_METADATA.GET_DDL"
 description: "In this page, I will share the sqlplus options and queries that I used to extract objects from existing database."
 categories: [oracle]
@@ -8,9 +9,6 @@ redirect_from:
 ---
 
 > In this post, I will show you how to generate object creation statement using Oracle Data Dictionary. (Schema Level)
-
-* Kramdown table of contents
-{:toc .toc}
 
 # Assumption & Background
 

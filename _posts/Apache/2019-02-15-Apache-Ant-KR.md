@@ -65,21 +65,21 @@ To add external jar files, I used fileset attribute to define where those jar fi
 
 <?xml version = "1.0" encoding="utf-8"?>
 <project name = "Hello World Project" default = "compile" basedir="/var/lib/jenkins/workspace/src">
-    <property environment="env"/>
-    <property name="src.dir" value="${basedir}" />
-    ...
+	<property environment="env"/>
+	<property name="src.dir" value="${basedir}" />
+	...
 
-    <target name = "info">
-        <echo>Hello World - Welcome to Apache Ant!</echo>
-    </target>
+	<target name = "info">
+		<echo>Hello World - Welcome to Apache Ant!</echo>
+	</target>
 
     <target name="compileClass" >
         <echo message="==========================="/>
         <echo message="  Compile Java Files Start "/>
-        <echo message="==========================="/>       
+        <echo message="==========================="/>		
         <javac srcdir="${src.dir}" destdir="${classes.dir}" encoding="euc-kr">
             <include name="**/*.java"/>
-            <exclude name="**/*Bean.java"/>
+			<exclude name="**/*Bean.java"/>
             <classpath>
                 <pathelement path="${classes.dir}" />
                 <fileset dir="${lib.dir}">
@@ -91,11 +91,11 @@ To add external jar files, I used fileset attribute to define where those jar fi
                 <fileset dir="${weblogic.module.dir}">
                         <include name="**/*.jar"/>
                 </fileset>
-            </classpath>
+        	</classpath>
         </javac>
         <echo message="==========================="/>
         <echo message="  Compile Java Files End   "/>
-        <echo message="==========================="/>               
+        <echo message="==========================="/>				
     </target>
 
 </project>
@@ -110,28 +110,28 @@ It will delete files within the "dir" path
 
 <?xml version = "1.0" encoding="utf-8"?>
 <project name = "Hello World Project" default = "compile" basedir="/var/lib/jenkins/workspace/src">
-    <property environment="env"/>
-    <property name="src.dir" value="${basedir}" />
-    ...
+	<property environment="env"/>
+	<property name="src.dir" value="${basedir}" />
+	...
 
-    <target name = "info">
-        <echo>Hello World - Welcome to Apache Ant!</echo>
-    </target>
+	<target name = "info">
+		<echo>Hello World - Welcome to Apache Ant!</echo>
+	</target>
 
     <target name="deleteClass" >
         <echo message="==========================="/>
         <echo message="  Delete Class Files       "/>
         <echo message="==========================="/>
         <delete dir="${classes.dir}/com" />
-    </target>   
+    </target>	
 
     <target name="compileClass" >
         <echo message="==========================="/>
         <echo message="  Compile Java Files Start "/>
-        <echo message="==========================="/>       
+        <echo message="==========================="/>		
         <javac srcdir="${src.dir}" destdir="${classes.dir}" encoding="euc-kr">
             <include name="**/*.java"/>
-            <exclude name="**/*Bean.java"/>
+			<exclude name="**/*Bean.java"/>
             <classpath>
                 <pathelement path="${classes.dir}" />
                 <fileset dir="${lib.dir}">
@@ -143,11 +143,11 @@ It will delete files within the "dir" path
                 <fileset dir="${weblogic.module.dir}">
                         <include name="**/*.jar"/>
                 </fileset>
-            </classpath>
+        	</classpath>
         </javac>
         <echo message="==========================="/>
         <echo message="  Compile Java Files End   "/>
-        <echo message="==========================="/>               
+        <echo message="==========================="/>				
     </target>
 
 </project>
@@ -161,13 +161,13 @@ Very similar with deleteClass task, except I specified types of file that I want
 
 <?xml version = "1.0" encoding="utf-8"?>
 <project name = "Hello World Project" default = "compile" basedir="/var/lib/jenkins/workspace/src">
-    <property environment="env"/>
-    <property name="src.dir" value="${basedir}" />
-    ...
+	<property environment="env"/>
+	<property name="src.dir" value="${basedir}" />
+	...
 
-    <target name = "info">
-        <echo>Hello World - Welcome to Apache Ant!</echo>
-    </target>
+	<target name = "info">
+		<echo>Hello World - Welcome to Apache Ant!</echo>
+	</target>
 
     <target name="deleteWeb" >
         <echo message="============================="/>
@@ -186,22 +186,22 @@ Very similar with deleteClass task, except I specified types of file that I want
         <echo message="============================="/>
         <echo message="  Delete Static Files End    "/>
         <echo message="============================="/>
-    </target>   
+    </target>	
 
     <target name="deleteClass" >
         <echo message="==========================="/>
         <echo message="  Delete Class Files       "/>
         <echo message="==========================="/>
         <delete dir="${classes.dir}/com" />
-    </target>   
+    </target>	
 
     <target name="compileClass" >
         <echo message="==========================="/>
         <echo message="  Compile Java Files Start "/>
-        <echo message="==========================="/>       
+        <echo message="==========================="/>		
         <javac srcdir="${src.dir}" destdir="${classes.dir}" encoding="euc-kr">
             <include name="**/*.java"/>
-            <exclude name="**/*Bean.java"/>
+			<exclude name="**/*Bean.java"/>
             <classpath>
                 <pathelement path="${classes.dir}" />
                 <fileset dir="${lib.dir}">
@@ -213,11 +213,11 @@ Very similar with deleteClass task, except I specified types of file that I want
                 <fileset dir="${weblogic.module.dir}">
                         <include name="**/*.jar"/>
                 </fileset>
-            </classpath>
+        	</classpath>
         </javac>
         <echo message="==========================="/>
         <echo message="  Compile Java Files End   "/>
-        <echo message="==========================="/>               
+        <echo message="==========================="/>				
     </target>
 
 </project>
@@ -232,13 +232,13 @@ You can use fileset attribute to specify types of file to copy from "dir"
 
 <?xml version = "1.0" encoding="utf-8"?>
 <project name = "Hello World Project" default = "compile" basedir="/var/lib/jenkins/workspace/src">
-    <property environment="env"/>
-    <property name="src.dir" value="${basedir}" />
-    ...
+	<property environment="env"/>
+	<property name="src.dir" value="${basedir}" />
+	...
 
-    <target name = "info">
-        <echo>Hello World - Welcome to Apache Ant!</echo>
-    </target>
+	<target name = "info">
+		<echo>Hello World - Welcome to Apache Ant!</echo>
+	</target>
 
     <target name="deleteWeb" >
         <echo message="============================="/>
@@ -257,7 +257,7 @@ You can use fileset attribute to specify types of file to copy from "dir"
         <echo message="============================="/>
         <echo message="  Delete Static Files End    "/>
         <echo message="============================="/>
-    </target>   
+    </target>	
 
     <target name="copyWeb" >
         <echo message="==========================="/>
@@ -285,15 +285,15 @@ You can use fileset attribute to specify types of file to copy from "dir"
         <echo message="  Delete Class Files       "/>
         <echo message="==========================="/>
         <delete dir="${classes.dir}/com" />
-    </target>   
+    </target>	
 
     <target name="compileClass" >
         <echo message="==========================="/>
         <echo message="  Compile Java Files Start "/>
-        <echo message="==========================="/>       
+        <echo message="==========================="/>		
         <javac srcdir="${src.dir}" destdir="${classes.dir}" encoding="euc-kr">
             <include name="**/*.java"/>
-            <exclude name="**/*Bean.java"/>
+			<exclude name="**/*Bean.java"/>
             <classpath>
                 <pathelement path="${classes.dir}" />
                 <fileset dir="${lib.dir}">
@@ -305,11 +305,11 @@ You can use fileset attribute to specify types of file to copy from "dir"
                 <fileset dir="${weblogic.module.dir}">
                         <include name="**/*.jar"/>
                 </fileset>
-            </classpath>
+        	</classpath>
         </javac>
         <echo message="==========================="/>
         <echo message="  Compile Java Files End   "/>
-        <echo message="==========================="/>               
+        <echo message="==========================="/>				
     </target>
 
 </project>
@@ -327,14 +327,14 @@ Make user you use "target" attribute to specify what target you wish to run for 
 
 <?xml version = "1.0" encoding="utf-8"?>
 <project name = "Hello World Project" default = "compile" basedir="/var/lib/jenkins/workspace/src">
-    <property environment="env"/>
-    <property name="src.dir" value="${basedir}" />
-    ...
+	<property environment="env"/>
+	<property name="src.dir" value="${basedir}" />
+	...
 
-    <target name = "info">
-        <echo>Hello World - Welcome to Apache Ant!</echo>
-    </target>
-    ...
+	<target name = "info">
+		<echo>Hello World - Welcome to Apache Ant!</echo>
+	</target>
+	...
 
     <target name="compileEJB">
         <exec executable="bash" dir="${ejb.dir}" inputstring="find -type f -name *.java | wc -l" outputproperty="ejb.java.count"/>
@@ -349,7 +349,7 @@ Make user you use "target" attribute to specify what target you wish to run for 
         <echo message="==========================="/>
         <echo message="  TestBean End  "/>
         <echo message="==========================="/>
-    </target>   
+	</target>	
 
 </project>
 

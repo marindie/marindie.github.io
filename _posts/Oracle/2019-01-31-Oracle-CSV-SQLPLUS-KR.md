@@ -1,4 +1,5 @@
 ---
+toc: true
 title: "Oracle SQLPLUS 에서 CSV 포맷 형태의 쿼리 조회 결과 출력"
 description: "Oracle SQLPLUS 에서 쿼리 조회 결과를 CSV 포맷 형식으로 만드는 방법을 공유합니다."
 categories: [oracle]
@@ -8,9 +9,6 @@ redirect_from:
 ---
 
 > Oracle SQLPLUS 에서 쿼리 조회 결과를 CSV 포맷 형식으로 만드는 방법을 공유합니다.
-
-* Kramdown table of contents
-{:toc .toc}
 
 # 배경지식
 

@@ -1,110 +1,102 @@
 ---
-title: "CentOS6 Iptables 사용법"
-description: "기본적인 iptables 명령어에 대하여 다루어 보겠습니다. IP and Port (Allow/Deny)"
+toc: true
+title: "CentOS6 Iptables Usage"
+description: "In this page, I will show you some basic examples about how to use iptables to control IP and Port (Allow/Deny)"
 categories: [Linux]
 tags: [iptables]
 redirect_from:
   - /2018/09/09/
 ---
 
-> 기본적인 iptables 명령어에 대하여 다루어 보겠습니다. IP and Port (Allow/Deny)
+> In this page, I will show you some basic examples about how to use iptables to control IP and Port (Allow/Deny)
 
-* Kramdown table of contents
-{:toc .toc}
+# Assumption & Background
 
-# 배경지식
-
-1. CentOS 6.x 에서 사용 가능한 내용입니다.
-2. CentOS 7.x 부터는 iptables is not configured. 하지만 수동으로 iptable 을 사용하게끔 설정은 가능합니다.
+1. Your OS is CentOS 6.5
+2. From CentOS7, iptables is not configured. So You have to manully configure it by yourself, if it is easier for you.
+3. Please read from the top if you do not understand the syntax. Sometimes it's best to implement it without thinking and see if it works for you.
 
 # Iptables Basic Command
 
 ```bash
 
-# 자주 사용하게 될 명령어들 입니다.
-# 상태 확인, 시작, 재시작
+# You May find it useful to use the following commands.
+# The meaning of command is fairly strait-forward. So I will just continue
 service iptables status
 service iptables save
 service iptables restart
 
 ```
 
-# 특정 PORT 허용
+# Allow Specific PORT Number using iptables
 
 ```bash
 
-# iptables configuration 파일 경로
+# The path for iptables configuration
 vi /etc/sysconfig/iptables
 
-# 80 포트 허용
+# Using File
 -A INPUT -p tcp –dport 80 -j ACCEPT
-
-# 파일 저장 후 아래 명령어 실행으로 반영
+# Save file and restart iptables
 service iptables restart
 
-# 파일 작업 없이 명령어 만으로 추가 하기. (Shell command)
-# 주의사항, 파일에서 작업 후, 명령어로 추가하고 나서 save 명령어를 날리면, 파일로 작업한 내용은 사라집니다.
+# Using Bash. (Shell command)
 iptables -A INPUT -p tcp –dport 443 -j ACCEPT
 service iptables save
 service iptables restart
 
+# Note. If you change the configuration file and more changes are made using iptables command,
+# then chages made in the file will be lost when you run service iptables save
+
 ```
 
-# 특정 IP 주소 허용
+# Allow Specific IP Address using iptables
 
 ```bash
 
-# 파일 편집시..
+# Using File
 -A INPUT -s 192.168.1.8 -j ACCEPT
 
-# 명령어 사용시.. (Shell command)
+# Using Bash. (Shell command)
 iptables -A INPUT -s 192.168.1.8 -j ACCEPT
 
 ```
 
-# 특정 IP 와 PORT 차단
+# Deny Specific IP Address and PORT Number using iptables
 
 ```bash
 
-# 파일 편집시..
+# Using File
 -A INPUT -s 192.168.1.8 -p tcp --dport 443 -j DROP
 
-# 명령어 사용시.. (Shell command)
+# Using Bash. (Shell command)
 iptables -A INPUT -s 192.168.1.8 -p tcp --dport 443 -j DROP
 
 ```
 
-# 특정 IP 주소 대역을 허용
+# Allow Range of IP Address using iptables
 
 ```bash
 
-# 파일 편집시.. (192.168.0.1 ~ 192.168.0.255 까지)
--A INPUT -s 192.168.0.1/24 -j ACCEPT
-
-# 명령어 사용시.. (Shell command) (192.168.0.1 ~ 192.168.0.255 까지)
+# Using File
 iptables -A INPUT -s 192.168.0.1/24 -j ACCEPT
 
 ```
 
-# 특정 PORT 대역 허용
+# Allow Range of PORT using iptables
 
 ```bash
 
-# 파일 편집시.. Port Number 80,22,53 허용
--A INPUT -p tcp --match multiport --dports 80,22,53 -j ACCEPT
-
-# 명령어 사용시.. (Shell command) Port Number 80,22,53 허용
+# Using File
+# Allow Port Number 80,22,53
 iptables -A INPUT -p tcp --match multiport --dports 80,22,53 -j ACCEPT
 
-# 파일 편집시.. Port 1024 부터 3000 까지 허용
--A INPUT -p tcp --match multiport --dports 1024:3000 -j ACCEPT
-
-# 명령어 사용시.. (Shell command) Port 1024 부터 3000 까지 허용
+# Allow Port Number from 1024 to 3000
 iptables -A INPUT -p tcp --match multiport --dports 1024:3000 -j ACCEPT
 
 ```
 
-# Iptables filter table 도움말 정보
+# Iptables filter table Description
 
 Chain - There are three different types of chains in iptables
 - INPUT : All the packets to host machine
@@ -127,18 +119,16 @@ Target - Actions where packets are meet certain Match conditions
 
 ```bash
 
-# iptables 설치 확인 명령어
+# Check if iptables are installed
 rpm -qa | grep iptables
 
-# iptables 정보 display
+# List iptables
 iptables -nL
 
-# iptables 에 있는 모든 rule 삭제
+# Remove all the rules in iptables
 iptables -F
 
 ```
-
-도움이 되었으면 좋겠네요. 감사합니다.
 
 [^1]: This is a footnote.
 

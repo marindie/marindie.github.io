@@ -1,4 +1,5 @@
 ---
+toc: true
 title: "Install Apache and Apache Tomcat on CentOS 6.5"
 description: "This post will demonstrate how to install apache2.4.25 & tomcat 7.0.73 manually on CentOS 6.5"
 categories: [Linux]
@@ -8,9 +9,6 @@ redirect_from:
 ---
 
 > This post will demonstrate how to install apache on CentOS 6.5
-
-* Kramdown table of contents
-{:toc .toc}
 
 # Assumption & Background
 

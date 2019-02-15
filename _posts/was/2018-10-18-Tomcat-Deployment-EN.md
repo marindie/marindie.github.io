@@ -1,4 +1,5 @@
 ---
+toc: true
 title: "Possible Tomcat App Deployments"
 description: "By Manager App, By webapps dir, By context.xml"
 categories: [tomcat]
@@ -8,9 +9,6 @@ redirect_from:
 ---
 
 > In this page, I will show you three different way to deploy applications
-
-* Kramdown table of contents
-{:toc .toc}
 
 # By Manager App
 
