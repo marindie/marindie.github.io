@@ -32,7 +32,9 @@ sed -i'' -r -e "/Please Put it here/a\Some More Text is appended/" your_file.txt
 
 ```
 
-# 추가적으로 기본적인 sed 명령어에 알고 싶으시다면, 클릭 => [sed 사용법](https://marindie.github.io/linux/Sed-Replace-Text-Sample-EN/) 
+# 추가적으로 기본적인 sed 명령어 관련 POST 링크
+
+클릭 => [sed 사용법](https://marindie.github.io/linux/Sed-Replace-Text-Sample-EN/) 
 
 [^1]: This is a footnote.
 
