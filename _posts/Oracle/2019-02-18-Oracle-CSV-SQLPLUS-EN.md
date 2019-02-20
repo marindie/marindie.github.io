@@ -77,6 +77,9 @@ END;
 6. The DELIMETER value is '&' in this example.
 7. In this example, the SQL query is hard coded, but this part can be dynamic using shell script(bash). See below
 
+# However, when you check out the results, you would be disappointed by the mess. There are so many new empty lines. 
+# After that, I tried to solve this issue and the following code display the result in a way I expected.
+
 # PL/SQL Block in bash
 
 1. This bash script assumes that user will pass two parameters. [ $1 $2 accordingly.. Ex) test.sh "test" "select * from test"]
