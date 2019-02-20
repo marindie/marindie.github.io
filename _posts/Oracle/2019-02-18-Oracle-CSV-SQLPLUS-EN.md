@@ -76,9 +76,10 @@ END;
 5. The first and last column print only the value, and the rest will print delemeter along with the value. So it becomes CSV format output.
 6. The DELIMETER value is '&' in this example.
 7. In this example, the SQL query is hard coded, but this part can be dynamic using shell script(bash). See below
-
-# However, when you check out the results, you would be disappointed by the mess. There are so many new empty lines. 
-# After that, I tried to solve this issue and the following code display the result in a way I expected.
+8. However, when you check out the results, you would be disappointed by the mess. There are so many new empty lines. 
+9. After that, I tried to solve this issue and the following code display the result in a way I expected.
+10. The point is I used ">" command after EOF so that the result can be saved as a file. In that way I was able to print the query 
+    result properly without line breaks.
 
 # PL/SQL Block in bash
 
