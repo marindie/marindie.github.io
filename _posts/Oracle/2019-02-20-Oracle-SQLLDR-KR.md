@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Databases: Oracle SQL LOADER (sqlldr) Control File Generator"
+title: "Databases: Oracle SQL LOADER (sqlldr) Control 파일 자동 생성 프로그램"
 description: "Oracle SQL LOADER 에서 필요한 Control File 정보를 자동으로 생성해 주는 프로그램입니다."
 categories: [Databases]
 tags: [SQL LOADER,Sqlldr]
@@ -141,6 +141,12 @@ CREATE_DT DATE "YYYY-MM-DD HH24:MI:SS"
 ...
 
 ```
+
+# TABLE_TEST1.DAT 와 같은 CSV 형태의 파일 생성 관련 정보
+
+CSV 파일 형태로 쿼리 조회 결과를 출력해주는 프로그램 정보를 원하신다면
+
+[클릭](https://marindie.github.io/databases/Oracle-CSV-SQLPLUS-KR/)
 
 도움이 되었으면 좋겠네요. 감사합니다.
 
