@@ -143,9 +143,9 @@ CREATE_DT DATE "YYYY-MM-DD HH24:MI:SS"
 
 # CSV Format file Generator
 
-For those who need to create CSV format file like the above example, [Click Here](https://marindie.github.io/databases/Oracle-CSV-SQLPLUS-KR/)
+For those who need to create CSV format file like the above example, [Click Here](https://marindie.github.io/databases/Oracle-CSV-SQLPLUS-EN/)
 
-Hope it was useful. thanks
+Hope it was useful. Thanks
 
 [^1]: This is a footnote.
 
