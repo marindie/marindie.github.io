@@ -266,6 +266,14 @@ export default combineReducers({
 그럼 이제 Component 에 매핑된 posts에 접근하기 위해서는 어떻게 해야 할가요? 
 답은 this.props.posts 로 호출하면 Action 결과값인 items 의 내용이 담겨 있음을 확인 할 수 있습니다.
 
+마지막으로, 이 액션을 호출 하려면 어떻게 해야 하는지도 알아야 겠지요?
+
+답은 import { fetchPosts } from '../actions/postActions'; 로 import 를 하고 
+  componentWillMount(){
+    this.props.fetchPosts();
+  }
+로 props 를 사용하여 호출하면 알아서 호출이 되었습니다.
+
 
 도움이 되었으면 좋겠네요. 감사합니다.
 
