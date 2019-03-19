@@ -98,6 +98,8 @@ Git Commit 의 관점에서 child 의 버전이 하위여도 parent 는 여전�
 parent 와 child 의 sync 가 필요하지 않다는 점이 좋아 보이네요. 
 parent 에서 git submodule foreach git pull origin master 나 git submodule init, git submodule update 를 나중에 해주기만 하면
 소스 동기화는 언제든 가능합니다.
+제가 실제로 사용하면서 할때는 , child submodule 먼저 commit 치고, parent 가서 git add . 하고 commit, push 하는 방식입니다.
+그냥 둘다 최신화 시키고 있습니다.
 
 
 5. git submodule 추가 방법
