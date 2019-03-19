@@ -127,6 +127,10 @@ git clone http://github/user/parent 를 하고나서 submodule 에 가서 보면
 git submodule init
 git submodule update
 
+또는
+
+git clone --recursive http://github/user/parent
+
 5-4. submodule 작업한 파일은 남겨 놓고 git 설정 정보만 삭제하는
 mv subfolder subfolder_tmp
 git submodule deinit subfolder
