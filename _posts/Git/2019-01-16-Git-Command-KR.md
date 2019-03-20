@@ -2,7 +2,7 @@
 toc: true
 title: "Version Control System: GIT 명령어 사용법. SourceTree를 활용한 작업시 장점"
 description: "기본적인 GIT 명령어 사용법에 대한 간략한 설명 및 SourceTree 에서 제공하는 기능에 대한 편리한 부분을 정리한 글입니다."
-categories: [Version Control System]
+categories: [Git]
 tags: [Git]
 redirect_from:
   - /2019/01/16/
@@ -40,7 +40,6 @@ p 옵션은 커밋의 diff 를 보여줌. -2 는 최근 2개의 결과만 보여
 
 1-5. Git Remote Repository 에 Commit 하기
 git push origin master
-```
 
 2. Git Remote Repository 다운받기.
 git clone http://github/user/test
@@ -177,6 +176,8 @@ git commit -m "Submodule First Commit"
 git push origin master
 
 Submodule repository url 가서 커밋 내용 확인.
+
+```
 
 감사합니다.
 
