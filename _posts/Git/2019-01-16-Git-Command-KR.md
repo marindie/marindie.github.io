@@ -16,6 +16,9 @@ redirect_from:
 cd git_folder 로 해당 폴더에 있다고 가정합니다.
 
 # 기본 명령어
+
+```md
+
 1. Git Local Repository 생성
 git init
 
@@ -37,7 +40,7 @@ p 옵션은 커밋의 diff 를 보여줌. -2 는 최근 2개의 결과만 보여
 
 1-5. Git Remote Repository 에 Commit 하기
 git push origin master
-
+```
 
 2. Git Remote Repository 다운받기.
 git clone http://github/user/test
