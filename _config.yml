@@ -110,7 +110,7 @@ author:
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Smile. See the bright side. \n 롤초보. 코딩 꿈나무."
   location         : "대한민국. Republic Of Korea."
-  email            :
+  email            : marindie@naver.com
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
