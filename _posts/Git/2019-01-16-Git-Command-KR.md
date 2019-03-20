@@ -10,7 +10,7 @@ redirect_from:
 
 > GIT 기본 명령어 사용법 및 SourceTree 에서 제공하는 편리한 기능에 대한 설명을 담고 있습니다.
 
-# Git Remote 저장소 관련 명령어
+# 배경
 
 이해를 위해 git local 저장소의 폴더명을 git_folder 라고 하고 진행하겠습니다.
 cd git_folder 로 해당 폴더에 있다고 가정합니다.
