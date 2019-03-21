@@ -1,71 +1,88 @@
 ---
 toc: true
 title: "Git: GIT 명령어 사용법"
-description: "기본적인 GIT 명령어 사용법에 대한 간략한 설명 및 SourceTree 에서 제공하는 기능에 대한 편리한 부분을 정리한 글입니다."
+description: "기본적인 GIT 명령어 사용법에 대한 간략한 설명을 정리한 글입니다."
 categories: [Git]
 tags: [Git]
 redirect_from:
-  - /2019/01/16/
+  - /2019/03/21/
 ---
 
-> GIT 기본 명령어 사용법 및 SourceTree 에서 제공하는 편리한 기능에 대한 설명을 담고 있습니다.
+> 기본적인 GIT 명령어 사용법에 대한 간략한 설명을 정리한 글입니다.
 
 # 배경
 
 이해를 위해 git local 저장소의 폴더명을 git_folder 라고 하고 진행하겠습니다.
 cd git_folder 로 해당 폴더에 있다고 가정합니다.
 
-# 기본 명령어
-
-```md
-
-1. Git Local Repository 생성
+# Git Local Repository 생성
+```bash
 git init
+```
 
-1-1. Git Remote Repository 추가
+# Git Remote Repository 추가
+```bash
 git remote add origin http://github/user/test
+```
 
-1-2. Git Staging 하기
+# Git Staging 하기
+```bash
 git add .
-git add \*.java   또는  git add *.java
-git add Documentation/\*.txt (Documentation  폴더안의 모든 .txt 파일 staging)
+git add \*.java   #또는  
+git add *.java
+git add Documentation/\*.txt #(Documentation  폴더안의 모든 .txt 파일 staging)
+```
 
-1-3. Git Commit 하기
+# Git Commit 하기
+```bash
 git commit -m "First Commit."
+```
 
-1-4. Git Log 확인
+# Git Log 확인
+```bash
 git log
 git log -p -2 
-p 옵션은 커밋의 diff 를 보여줌. -2 는 최근 2개의 결과만 보여달라는 의미
+#p 옵션은 커밋의 diff 를 보여줌. -2 는 최근 2개의 결과만 보여달라는 의미
+```
 
-1-5. Git Remote Repository 에 Commit 하기
+# Git Remote Repository 에 Commit 하기
+```bash
 git push origin master
+```
 
-2. Git Remote Repository 다운받기.
+# Git Remote Repository 내려받기(clone)
+```bash
 git clone http://github/user/test
+```
 
-2-1. Git Remote Repository 단축이름과 URL 확인 명령어.
+# Git Remote Repository 단축이름과 URL 확인 명령어.
+```bash
 cd git_folder
 git remote -v
+```
 
-
-3. Git 설정하기.
-아래의 내용은 설정에 대한 부분인데, 나는 아래의 내용을 config 하지 않고 사용합니다
-ssh 연결도 하지 않고 사용중입니다.
+# Git 설정하기.
+```bash
+#아래의 내용은 설정에 대한 부분인데, 나는 아래의 내용을 config 하지 않고 사용합니다
+#ssh 연결도 하지 않고 사용중입니다.
 
 git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
 
-ssl 연결 disable 하는 명령어
-이걸 사용하는 이유는, CA 인증서 관련 하여 처리가 어려운 경우가 있을 수 있어서 저는 ssl 인증 비활성화 해놓고 사용중입니다..
+#ssl 연결 disable 하는 명령어
+#이걸 사용하는 이유는, CA 인증서 관련 하여 처리가 어려운 경우가 있을 수 있어서 저는 ssl 인증 비활성화 해놓고 사용중입니다..
 git config --global http.sslVerify false
+```
 
-4. git 삭제
-저는 명령어 보다는 그냥 .git 폴더를 직접 삭제하는 편입니다. 
-현재까지 큰 문제는 없었습니다. 하지만, submodule을 사용할때는 명령어로 하라는 대로 처리하고 있습니다.
-submodule 삭제 관련해서는 아래의 5-4번 내용을 참고하시기 바랍니다.
+# git 삭제
+```md
+#저는 명령어 보다는 그냥 .git 폴더를 직접 삭제하는 편입니다. 
+#현재까지 큰 문제는 없었습니다. 하지만, submodule을 사용할때는 명령어로 하라는 대로 처리하고 있습니다.
+#submodule 삭제 관련해서는 아래의 5-4번 내용을 참고하시기 바랍니다.
+```
 
 # 기본 예제
+```md
 제가 일반적으로 remote repository 에 직접 작업한 프로젝트를 최초 등록할때의 작업 순서를 요약해 보았습니다.
 먼저 github 사이트에서 remote repository 를 만듬. 이때!!! readme.md 파일을 만들지 않고 프로젝트를 생성합니다.
 이게 가장 중요한 점인데, 이유는 readme.md 를 만들게 되면 커밋이 발생하게 되고, 이 remote repository 에 
@@ -88,9 +105,9 @@ push 할때, ssl 관련 에러가 난다면
 git config --global http.sslVerify false
 로 https 비활성화 시켜놓고 일단 진행 하는것도 방법입니다.
 ssh 연동 관련 키 생성 및 github 에 추가하는 부분은 검색하시면 잘 나와 있습니다.
-
-
+```
 # 큰 프로젝트 안에 별도로 관리를 하고자 하는 작은 프로젝트를 관리하는 경우
+```md
 소스 관리중 어떤 프로젝트가 상위 프로젝트 안에 포함되어 있는 경우에,
 Ex) maven module 형태로 각각의 maven project 를 git repository 로 관리되고, 
 최상위 폴더에서 각 repository를 참조하여 돌아가는 구조의 프로젝트 일때 submodule 을 사용하면 좋은것 같음.
@@ -102,9 +119,10 @@ parent 에서 git submodule foreach git pull origin master 나 git submodule ini
 소스 동기화는 언제든 가능합니다.
 제가 실제로 사용하면서 할때는 , child submodule 먼저 commit 치고, parent 가서 git add . 하고 commit, push 하는 방식입니다.
 그냥 둘다 최신화 시키고 있습니다.
+```
 
-
-5. git submodule 추가 방법
+# git submodule 추가 방법
+```bash
 git submodule add <repository_url> <submodule_dir_path_starting_from_parent>
 
 Ex) 폴더 구조
@@ -112,44 +130,52 @@ parent
 	/child
 		/submod1
 git submodule add http://github/user/submod1 child/submod1
+```
 
-5-1. submodule 파일 삭제 없이 git 에서만 삭제 방법
-child 폴더를 child_bak 으로 이름 변경
+# submodule 파일 삭제 없이 git 에서만 삭제 방법
+```bash
+# child 폴더를 child_bak 으로 이름 변경
 git submodule deinit child/submod1
 git rm -r --cache child/submod1 
-다시 child_bak 을 child 로 변경
-git submodule add 하면 정상적으로 다시 추가 됨.
+# 다시 child_bak 을 child 로 변경
+git submodule add # 하면 정상적으로 다시 추가 됨.
+```
 
-5-2. parent 에서 submodule 전부다 sync 하는 명령어
-parent 입장에서 submodule 들이 에러가 나는 상황이 아니면, 최신 상태가 유지 되지 않아도 관계 없다.
-하지만, 어떤 이유에서 최신화를 시켜야 한다면, 아래의 명령어가 가장 편해 보인다.
+# parent 에서 submodule 전부다 sync 하는 명령어
+```bash
+# parent 입장에서 submodule 들이 에러가 나는 상황이 아니면, 최신 상태가 유지 되지 않아도 관계 없다.
+# 하지만, 어떤 이유에서 최신화를 시켜야 한다면, 아래의 명령어가 가장 편해 보인다.
 git submodule foreach git pull origin master (submodule 들의 remote 이름이 전부 origin에 master branch 이어야 가능할 듯.)
+```
 
-5-3. 새로운 폴더에 parent 부터 다시 clone 하는 경우
+# 새로운 폴더에 parent 부터 다시 clone 하는 경우
+```bash
 git clone http://github/user/parent 를 하고나서 submodule 에 가서 보면 내용이 비어 있다.
-이때 개별적으로 내용을 받아오는 명령어는 아래와 같다.
+# 이때 개별적으로 내용을 받아오는 명령어는 아래와 같다.
 git submodule init
 git submodule update
-
-또는
-
+# 또는
 git clone --recursive http://github/user/parent
+```
 
-5-4. submodule 작업한 파일은 남겨 놓고 git 설정 정보만 삭제하는
+# submodule 작업한 파일은 남겨 놓고 git 설정 정보만 삭제
+```bash
 mv subfolder subfolder_tmp
 git submodule deinit subfolder
 git rm --cached subfolder
 mv subfolder_tmp subfolder
 git add subfolder
 
-풀어서 설명하자면, submodule 로 잡은 폴더명을 바꾸고 deinit 명령어를 날리고, git rm --cached 로 파일은 남기고 삭제 한다는
-명령어를 날리면 됩니다. 자세한 이유는 모르지만 이렇게 따라하니 다시 등록할때 문제가 없었습니다.
+# 풀어서 설명하자면, submodule 로 잡은 폴더명을 바꾸고 deinit 명령어를 날리고, git rm --cached 로 파일은 남기고 삭제 한다는
+# 명령어를 날리면 됩니다. 자세한 이유는 모르지만 이렇게 따라하니 다시 등록할때 문제가 없었습니다.
 
-가장 특이한 점이자 중요한 점은, submodule 폴더경로는 parent 폴더를 기준으로 작성해야 하며, parent 폴더에서 git submodule
-명령어를 먹여야 하는것 같습니다.
+# 가장 특이한 점이자 중요한 점은, submodule 폴더경로는 parent 폴더를 기준으로 작성해야 하며, parent 폴더에서 git submodule
+# 명령어를 먹여야 하는것 같습니다.
+
+```
 
 # Submodule 기본 예제
-
+```md
 위의 Submodule 내용을 다시 한번 설명하는 것입니다.
 저의 경우는 대부분 git 설정을 먼저하기 보다는, 작업을 먼저하고 나서 git을 연동하는 편입니다.
 git submodule add 를 할때 경험했던 어려움은,
@@ -176,7 +202,6 @@ git commit -m "Submodule First Commit"
 git push origin master
 
 Submodule repository url 가서 커밋 내용 확인.
-
 ```
 
 감사합니다.
