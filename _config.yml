@@ -108,7 +108,7 @@ analytics:
 author:
   name             : "정승원 (Patrick)"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Smile. See the bright side. \n 롤초보. 코딩 꿈나무."
+  bio              : "Contact: marindie@naver.com"
   location         : "대한민국. Republic Of Korea."
   email            : marindie@naver.com
   links:
@@ -224,7 +224,7 @@ permalink: /:categories/:title/
 paginate: 10 # amount of posts to show
 paginate_path: /page:num/
 
-# cp949 chcp 65001
+# cp949 : chcp 65001
 # paginate-v2 (not working though)
 # pagination:
 #   enabled: true
