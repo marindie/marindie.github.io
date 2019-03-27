@@ -104,6 +104,7 @@ export default connect(mapStateToProps, { fetchPosts })(Posts)
 
 # Reducer 정의 
 
+Reducer 는 Type 과 Data에 대한 매핑 정의를 통해 각 Component 들이 필요로 하는 Data 에 대한 변경을 가능하게 해주는 녀석으로 이해했습니다.
 reducers 폴더 안에 index.js 와 postReducer.js 를 만들어서 사용하였습니다. 왜 index.js 와 postReducer.js 를 만들었는지는 저도 잘 모릅니다.
 다만 따라해 보고 이를 바탕으로 코딩해 보았더니, index.js 에 Application Level 단에서 불러서 사용가능한 Reducer 이름들을 정의 하고, 
 각 Reducer 의 내용은 별도로 만들어서 관리하는게 용이해 보여서 그런 것 같습니다.
@@ -162,6 +163,11 @@ Reducer 는 여러개가 될 수 있지만, 결국 rootRecuder 가 Tree node 의
 부분인 Store 정의를 먼저 진행하겠습니다.
 
 # Store 정의 
+
+Store 는 Redux 개념에서 단일 객체 정도로 이해하면 될 것 같습니다. Redux 에서는 모든 Component 의 State 를 
+Application Level 개념으로 끌어올려서 전역으로 사용이 가능하고, 통합 관리하는 개념으로 이해했습니다.
+이 Store 안에는 여러개의 Reducer 들이 정의가 되어, 각 Reducer 들의 매핑 정의 관계를 통해서 각 Component 들이
+필요로 하는 정보들의 갱신이 가능하도록 State 역할을 대신해 주는것 같습니다. 
 
 아래는 store.js
 ```js

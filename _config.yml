@@ -219,8 +219,23 @@ sass:
 
 # Outputting
 permalink: /:categories/:title/
+
+# Old paginate
 paginate: 10 # amount of posts to show
 paginate_path: /page:num/
+
+# cp949 chcp 65001
+# paginate-v2 (not working though)
+# pagination:
+#   enabled: true
+#   per_page: 10
+#   offset: 2
+#   permalink: '/page:num/'
+#   title: ':title - page :num of :max'
+#   limit: 0
+#   sort_field: 'date'
+#   sort_reverse: true
+
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 # Plugins (previously gems:)
@@ -231,10 +246,10 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
-  - jekyll-paginate-v2
-  - jekyll-toc
-  - jekyll/tagging
-  - jekyll-tagging-related_posts
+  # - jekyll-paginate-v2
+  # - jekyll-toc
+  # - jekyll/tagging
+  # - jekyll-tagging-related_posts
 
 # mimic GitHub Pages with --safe
 whitelist:
