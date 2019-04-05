@@ -10,7 +10,7 @@ redirect_from:
 
 > Netflix Eureka, Zuul, 그리고 Swagger 을 사용하여 API Gateway, Eureka Server, Eureka Discovery(Eureka Service), API Documentation 을 구성하는 방법에 대한 간략한 요약입니다.
 
-# https://start.spring.io/ 사용하여 Project 구성 및 Eclipse 에 Import 하기
+# https://start.spring.io/ 사용하여 Project 구성 및 Eclipse 에 Import 하기 {#toc1}
 
 저는 이 구성을 위해 2개의 서버 프로젝트를 생성 하였습니다.
 
@@ -29,7 +29,7 @@ File => Import => Existing Maven Projects 클릭 후 Next
 Root Directory 에 각 샘플 소스 압축한 경로 지정후 Finish
 인터넷이 연결되어 있고 자동 빌드가 세팅되어 있으면, pom.xml 에 정의된 내용을 확인하여 필요한 jar 파일들을 Maven Dependencies 항목에 추가 하기 위해 Download 를 시도한다.
 
-# Eureka Server 설정
+# Eureka Server 설정 {#toc2}
 
 프로젝트 생성시, 자동으로 EurekaZuulServerApplication.java 라는 이름으로 파일을 생성해주는데,
 아래는 EurekaZuulServerApplication.java 파일 내용.

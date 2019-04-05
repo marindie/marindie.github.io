@@ -10,12 +10,12 @@ redirect_from:
 
 > Oracle PL/SQL 을 이용한 DB TABLE 관련 JPA 에서 사용하는 JPO MODEL Entity 객체 생성 프로그램을 공유합니다.
 
-# 전제조건
+# 전제조건 {#toc1}
 
 1. ORACLE DB 에서만 사용 가능 합니다.
 2. 기본적인 PL/SQL 개념을 필요로 합니다.
 
-# PL/SQL Block
+# PL/SQL Block {#toc2}
 
 ```sql
 
@@ -50,7 +50,7 @@ END;
 
 ```
 
-# 내용 설명
+# 내용 설명 {#toc3}
 
 1. 이 프로그램이 처리해 주는 유용한 기능은 컬럼명을 Camelcase 로 변환하여 변수 이름으로 만들어 주는 기능입니다.
 2. Class 명의 맨 앞글자는 UPPER CASE 로 해줍니다.
@@ -58,7 +58,7 @@ END;
 4. 일반적으로 저는 이 내용에서 STS 나 Eclipse IDE 에서 제공하는 getter, setter 를 생성하여 사용합니다.
 5. 처리하고자 하는 DATA_TYPE 에 따라 DECODE 함수에 추가해서 사용하시면 됩니다.
 
-# Sample Result
+# Sample Result {#toc4}
 
 ```md
 @Entity

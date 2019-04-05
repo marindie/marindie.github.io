@@ -10,11 +10,11 @@ redirect_from:
 
 > React 로 Ajax(axios or fetch 등등) 호출 시 chrome browser 에서 발생 가능한 Crossorigin 문제 해결 방법 정리 내용입니다.
 
-# Crossorigin Issue
+# Crossorigin Issue {#toc1}
 
 서로 다른 Domain 사이의 보안 이슈를 막기위해 발생하는 에러로 이해하였습니다.
 
-# 해결방법들
+# 해결방법들 {#toc2}
 
 Front 단에 설정을 하든 Back 단에 설정을 하든 둘중 하나만 하면 되는것으로 알고 있습니다.
 하지만 크롬 브라우저 사용자라면, cors 플러그인을 설치하고 활성화를 매번 시켜주어야 정상 동작이 되는 것을 확인하였습니다.

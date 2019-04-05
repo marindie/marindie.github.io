@@ -15,7 +15,7 @@
 minimal_mistakes_skin    : "air" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "ko-KR"
+locale                   : "ko"
 title                    : "긍정 코딩 꿈나무"
 title_separator          : "-"
 name                     : "정승원 (Patrick)"
@@ -26,7 +26,7 @@ repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-m
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
-# breadcrumbs            : false # true, false (default)
+breadcrumbs            : true # true, false (default)
 words_per_minute         : 50
 comments:
   provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "staticman_v2", "utterances", "custom"
@@ -209,6 +209,8 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
+  # transliterated_header_ids: true
+  # coderay_default_lang 
 
 
 # Sass/SCSS
@@ -224,7 +226,7 @@ permalink: /:categories/:title/
 paginate: 10 # amount of posts to show
 paginate_path: /page:num/
 
-# cp949 : chcp 65001
+# cp949 : chcp 65001, bundle exec jekyll serve
 # paginate-v2 (not working though)
 # pagination:
 #   enabled: true
@@ -311,3 +313,6 @@ defaults:
       comments: true
       share: true
       related: false
+      sidebar:
+        nav: "docs"
+      

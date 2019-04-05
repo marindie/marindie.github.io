@@ -10,12 +10,12 @@ redirect_from:
 
 > 기본적인 iptables 명령어에 대하여 다루어 보겠습니다. IP and Port (Allow/Deny)
 
-# 배경지식
+# 배경지식 {#toc1}
 
 1. CentOS 6.x 에서 사용 가능한 내용입니다.
 2. CentOS 7.x 부터는 iptables is not configured. 하지만 수동으로 iptable 을 사용하게끔 설정은 가능합니다.
 
-# Iptables Basic Command
+# Iptables Basic Command {#toc2}
 
 ```bash
 
@@ -27,7 +27,7 @@ service iptables restart
 
 ```
 
-# 특정 PORT 허용
+# 특정 PORT 허용 {#toc3}
 
 ```bash
 
@@ -48,7 +48,7 @@ service iptables restart
 
 ```
 
-# 특정 IP 주소 허용
+# 특정 IP 주소 허용 {#toc4}
 
 ```bash
 
@@ -60,7 +60,7 @@ iptables -A INPUT -s 192.168.1.8 -j ACCEPT
 
 ```
 
-# 특정 IP 와 PORT 차단
+# 특정 IP 와 PORT 차단 {#toc5}
 
 ```bash
 
@@ -72,7 +72,7 @@ iptables -A INPUT -s 192.168.1.8 -p tcp --dport 443 -j DROP
 
 ```
 
-# 특정 IP 주소 대역을 허용
+# 특정 IP 주소 대역을 허용 {#toc6}
 
 ```bash
 
@@ -84,7 +84,7 @@ iptables -A INPUT -s 192.168.0.1/24 -j ACCEPT
 
 ```
 
-# 특정 PORT 대역 허용
+# 특정 PORT 대역 허용 {#toc7}
 
 ```bash
 
@@ -102,7 +102,7 @@ iptables -A INPUT -p tcp --match multiport --dports 1024:3000 -j ACCEPT
 
 ```
 
-# Iptables filter table 도움말 정보
+# Iptables filter table 도움말 정보 {#toc8}
 
 Chain - There are three different types of chains in iptables
 - INPUT : All the packets to host machine
@@ -121,7 +121,7 @@ Target - Actions where packets are meet certain Match conditions
 - REJECT : Drop Packets and send response to source ip address
 - LOG : Make log into syslog
 
-# Some Other Useful Commands
+# Some Other Useful Commands {#toc9}
 
 ```bash
 

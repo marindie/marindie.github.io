@@ -10,7 +10,7 @@ redirect_from:
 
 > Oracle SQL LOADER 에서 필요한 Control File 정보를 자동으로 생성해 주는 프로그램입니다.
 
-# 배경지식
+# 배경지식 {#toc1}
 
 1. SQL LOADER 에 대한 기본 지식이 있다고 가정 합니다. 간략한 설명은 나옵니다.
 2. SQL LOADER 는 ORACLE 에서 제공하는 INSERT TOOL 이라고 보시면 됩니다.
@@ -20,7 +20,7 @@ redirect_from:
 5. DB 동기화를 보장해주는 Tool 이나 3rd Party Software 를 사용하지 않고 처리하려다 보니 그렇게 되었네요.
 6. 더 나은 방법이 있을것으로 생각이 됩니다만.. 일단은 만들어 보았습니다.
 
-# PL/SQL Block in bash
+# PL/SQL Block in bash {#toc2}
 
 ```bash
 
@@ -92,7 +92,7 @@ rm TEMP.TXT
 
 ```
 
-# 내용 설명
+# 내용 설명 {#toc3}
 
 1. 먼저 insert 폴더가 있다고 가정하고 해당 폴더로 이동 후에, TAB_LIST 에 있는 TABLE 명에 대한 META 정보를 조회 하여 각 컬럼명의 DATA TYPE 별로
    SQL LOADER 가 필요로하는 정보를 생성합니다.
@@ -108,7 +108,7 @@ rm TEMP.TXT
    정상적으로 처리가 가능한 CASE 라면 컬럼 값들이 한칸씩 밀려서 들어가 있을 것 같습니다. 테스트는 해보지 않았습니다.
 9. PL/SQL BLOCK 은 각 컬럼별로 어떤 DATA TYPE 인지에 대한 정의를 동적으로 생성해 줍니다.
 
-# TABLE_TEST1.ctl
+# TABLE_TEST1.ctl {#toc4}
 
 1. DATE 타입과 TIMESTAMP 타입만 처리를 하고 나머지는 STRING 형태로 가정하고 처리하였습니다. LOB 처리는 다루지 않았습니다.
 
@@ -131,7 +131,7 @@ CREATE_DT DATE "YYYY-MM-DD HH24:MI:SS"
 
 ```
 
-# TABLE_TEST1.DAT
+# TABLE_TEST1.DAT {#toc5}
 
 ```bash
 
@@ -142,7 +142,7 @@ CREATE_DT DATE "YYYY-MM-DD HH24:MI:SS"
 
 ```
 
-# TABLE_TEST1.DAT 와 같은 CSV 형태의 파일 생성 관련 정보
+# TABLE_TEST1.DAT 와 같은 CSV 형태의 파일 생성 관련 정보 {#toc6}
 
 CSV 파일 형태로 쿼리 조회 결과를 출력해주는 프로그램 정보를 원하신다면
 

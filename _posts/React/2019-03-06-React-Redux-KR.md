@@ -1,16 +1,16 @@
 ---
 toc: true
 title: "React: Redux 개념 정리"
-description: "Redux 개념 정리를 기록차원에서 하였습니다. 아직 많이 부족하여 내용이 부족합니다."
+description: "Redux 개념 정리를 제가 이해하기 쉬운 방향으로 정리하였습니다."
 categories: [React]
 tags: [Redux]
 redirect_from:
   - /2019/03/06/
 ---
 
-> Redux 개념 정리를 기록차원에서 하였습니다. 아직 많이 부족하여 내용이 부족합니다.
+> Redux 개념 정리를 제가 이해하기 쉬운 방향으로 정리하였습니다.
 
-#  Redux
+#  Redux {#toc1}
 
 제가 Tutorial 을 간단히 따라해 보고 한두번 해본 결과를 바탕으로 적은 내용입니다.
 개발 경험이 부족해 내용이 상당히 미흡 할 수 있습니다.
@@ -27,8 +27,8 @@ Store, Action, Dispatch, Reducer, Connect, mapStateToProps...
 
 제가 이해하기 쉬운 방향으로 정의한 순서는 다음과 같습니다.
 Action, Dispatch, Connect 정의 => Reducer 정의 => Store 정의 => mapStateToProps 함수 사용
-
-# Action 정의 
+ 
+# Action 정의 {#toc2}
 
 먼저 어떤 행위를 하고 싶은지 정의 하는것이 제일 코딩하기 쉬워보였습니다. 아래는 샘플 소스 postAction.js
 
@@ -102,7 +102,7 @@ export default connect(mapStateToProps, { fetchPosts })(Posts)
 
 그렇다면, Store 에 Reducer 를 선언하고, 해당 reducer 를 사용하는 소스가 어떻게 되어있는지 Reducer 와 Store 정의 부분을 이어서 보겠습니다.
 
-# Reducer 정의 
+# Reducer 정의 {#toc3}
 
 Reducer 는 Type 과 Data에 대한 매핑 정의를 통해 각 Component 들이 필요로 하는 Data 에 대한 변경을 가능하게 해주는 녀석으로 이해했습니다.
 reducers 폴더 안에 index.js 와 postReducer.js 를 만들어서 사용하였습니다. 왜 index.js 와 postReducer.js 를 만들었는지는 저도 잘 모릅니다.
@@ -162,7 +162,7 @@ Reducer 는 여러개가 될 수 있지만, 결국 rootRecuder 가 Tree node 의
 그렇다면, items 를 component 에서 사용하려면 어떻게 해야 할가요? 일단 조금 고민하고 게시고... 위에 먼저 언급한 store에 reducers 들을 등록하는 
 부분인 Store 정의를 먼저 진행하겠습니다.
 
-# Store 정의 
+# Store 정의 {#toc4}
 
 Store 는 Redux 개념에서 단일 객체 정도로 이해하면 될 것 같습니다. Redux 에서는 모든 Component 의 State 를 
 Application Level 개념으로 끌어올려서 전역으로 사용이 가능하고, 통합 관리하는 개념으로 이해했습니다.
@@ -202,7 +202,7 @@ reducers 폴더에 정의 하여 놓았습니다.
 
 그럼 이제, 결과값인 items 를 component 에서 사용하려면 어떻게 해야 할지를 보도록 하겠습니다.
 
-# mapStateToProps 함수 사용
+# mapStateToProps 함수 사용 {#toc5}
 
 아래는 Post.js Component
 
