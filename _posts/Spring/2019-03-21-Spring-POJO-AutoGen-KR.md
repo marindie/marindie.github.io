@@ -29,6 +29,7 @@ DECLARE
   TAB_CAMEL_UPPER VARCHAR2(3000) := '';
   TAB_CAMEL_LOWER VARCHAR2(3000) := '';
   CNT NUMBER := 0;
+  PK_DONE VARCHAR2(200) := 'N';
 BEGIN
 
 --CHECK PK
@@ -52,20 +53,29 @@ BEGIN
   
     --PK COLUMNS ARE MORE THAN 1. CREATE COMPOSITE CLASS Variable
     IF CNT > 1 THEN
-        DBMS_OUTPUT.PUT_LINE(chr(9)||'@EmbeddedId');
-        DBMS_OUTPUT.PUT_LINE(chr(9)||'private '||TAB_CAMEL_UPPER||'Pk '||TAB_CAMEL_LOWER||'Pk;');
-        DBMS_OUTPUT.PUT_LINE('');
+        IF PK_DONE = 'N' THEN
+            DBMS_OUTPUT.PUT_LINE(chr(9)||'@EmbeddedId');
+            DBMS_OUTPUT.PUT_LINE(chr(9)||'private '||TAB_CAMEL_UPPER||'Pk '||TAB_CAMEL_LOWER||'Pk;');
+            DBMS_OUTPUT.PUT_LINE('');
+            PK_DONE := 'Y';
+        END IF;
         FOR D IN (SELECT COLUMN_NAME FROM ALL_CONS_COLUMNS
             WHERE CONSTRAINT_NAME = (SELECT CONSTRAINT_NAME FROM ALL_CONSTRAINTS WHERE CONSTRAINT_TYPE = 'P'
             AND TABLE_NAME = TAB)) LOOP
-            
-            IF D.COLUMN_NAME != C.COLUMN_NAME THEN
+            IF D.COLUMN_NAME != C.OLD_COL THEN
                 DBMS_OUTPUT.PUT_LINE(chr(9)||'@Column(name = "'||C.OLD_COL||'")');
                 DBMS_OUTPUT.PUT_LINE(chr(9)||'private '||C.DATA_TYPE||' '||C.COLUMN_NAME||';');
                 DBMS_OUTPUT.PUT_LINE('');    
             END IF;
         END LOOP;
     ELSE 
+        FOR D IN (SELECT COLUMN_NAME FROM ALL_CONS_COLUMNS
+            WHERE CONSTRAINT_NAME = (SELECT CONSTRAINT_NAME FROM ALL_CONSTRAINTS WHERE CONSTRAINT_TYPE = 'P'
+            AND TABLE_NAME = TAB)) LOOP
+            IF D.COLUMN_NAME = C.OLD_COL THEN
+                DBMS_OUTPUT.PUT_LINE(chr(9)||'@Id');
+            END IF;
+        END LOOP;        
         DBMS_OUTPUT.PUT_LINE(chr(9)||'@Column(name = "'||C.OLD_COL||'")');
         DBMS_OUTPUT.PUT_LINE(chr(9)||'private '||C.DATA_TYPE||' '||C.COLUMN_NAME||';');
         DBMS_OUTPUT.PUT_LINE('');    
@@ -75,24 +85,28 @@ BEGIN
   DBMS_OUTPUT.PUT_LINE('}');
   
   --CREATE COMPOSITE CLASS
-  DBMS_OUTPUT.PUT_LINE('@Embeddable');
-  DBMS_OUTPUT.PUT_LINE('public class '||TAB_CAMEL_UPPER||'Pk {'); 
-  
-  FOR C IN (SELECT LOWER(SUBSTR(REPLACE(INITCAP(B.COLUMN_NAME),'_'),1,1))
-       ||
-       SUBSTR(REPLACE(INITCAP(B.COLUMN_NAME),'_'),2) AS COLUMN_NAME,
-       DECODE(DATA_TYPE,'VARCHAR2','String','NUMBER','Long','DATE','Date','TIMESTAMP(6)','Date',B.DATA_TYPE) AS DATA_TYPE
-    FROM ALL_CONS_COLUMNS A, ALL_TAB_COLS B
-    WHERE CONSTRAINT_NAME = (SELECT CONSTRAINT_NAME FROM ALL_CONSTRAINTS A WHERE CONSTRAINT_TYPE = 'P'
-                             AND TABLE_NAME = TAB)
-    AND A.COLUMN_NAME = B.COLUMN_NAME
-    AND A.TABLE_NAME = B.TABLE_NAME
-    ) LOOP
-    DBMS_OUTPUT.PUT_LINE(chr(9)||'private '||C.DATA_TYPE||' '||C.COLUMN_NAME||';');
-  END LOOP;
-  DBMS_OUTPUT.PUT_LINE('}');
+  IF CNT > 1 THEN
+      DBMS_OUTPUT.PUT_LINE('@Embeddable');
+      DBMS_OUTPUT.PUT_LINE('public class '||TAB_CAMEL_UPPER||'Pk {'); 
+      
+      FOR C IN (SELECT LOWER(SUBSTR(REPLACE(INITCAP(B.COLUMN_NAME),'_'),1,1))
+           ||
+           SUBSTR(REPLACE(INITCAP(B.COLUMN_NAME),'_'),2) AS COLUMN_NAME,
+           DECODE(DATA_TYPE,'VARCHAR2','String','NUMBER','Long','DATE','Date','TIMESTAMP(6)','Date',B.DATA_TYPE) AS DATA_TYPE
+        FROM ALL_CONS_COLUMNS A, ALL_TAB_COLS B
+        WHERE CONSTRAINT_NAME = (SELECT CONSTRAINT_NAME FROM ALL_CONSTRAINTS A WHERE CONSTRAINT_TYPE = 'P'
+                                 AND TABLE_NAME = TAB)
+        AND A.COLUMN_NAME = B.COLUMN_NAME
+        AND A.TABLE_NAME = B.TABLE_NAME
+        ORDER BY B.COLUMN_ID
+        ) LOOP
+        DBMS_OUTPUT.PUT_LINE(chr(9)||'private '||C.DATA_TYPE||' '||C.COLUMN_NAME||';');
+      END LOOP;
+      DBMS_OUTPUT.PUT_LINE('}');
+  END IF;
 END;
 /
+
 
 ```
 
@@ -111,8 +125,7 @@ END;
 @Table(name="TEST")
 public class Test {
 
-	@Id
-	@Column(name = "TEST_ID")
+	@Id (name = "TEST_ID")
 	private Long testId;
 
 	@Column(name = "TEST_NM")
