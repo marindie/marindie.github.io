@@ -25,7 +25,7 @@ redirect_from:
 SET SERVEROUTPUT ON 
 SET FEEDBACK OFF               
 DECLARE
-  TAB VARCHAR2(3000) := 'TB_M00_CODES030'; 
+  TAB VARCHAR2(3000) := 'TB_M00_CATEGORY_GR'; 
   TAB_CAMEL_UPPER VARCHAR2(3000) := '';
   TAB_CAMEL_LOWER VARCHAR2(3000) := '';
   CNT NUMBER := 0;
@@ -91,7 +91,7 @@ BEGIN
   --CREATE COMPOSITE CLASS
   IF CNT > 1 THEN
       DBMS_OUTPUT.PUT_LINE('@Embeddable');
-      DBMS_OUTPUT.PUT_LINE('public class '||TAB_CAMEL_UPPER||'Pk {'); 
+      DBMS_OUTPUT.PUT_LINE('public class '||TAB_CAMEL_UPPER||'Pk  implements Serializable {'); 
       
       FOR C IN (SELECT LOWER(SUBSTR(REPLACE(INITCAP(B.COLUMN_NAME),'_'),1,1))
            ||
