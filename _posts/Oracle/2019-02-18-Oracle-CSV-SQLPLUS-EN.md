@@ -10,7 +10,7 @@ redirect_from:
 
 > I will show you how to write CSV file like query outout using SQLPLUS.
 
-# Background
+### Background
 
 1. Basic PL/SQL Knowledge Requried
 2. Basic SQL Knowledge Required
@@ -18,7 +18,7 @@ redirect_from:
    But that does not mean it will generate data automatically. User have to conduct export step every time he/she needs it.
    So I tried to make dynamic csv format generator program, and this is the result.
 
-# PL/SQL Block
+### PL/SQL Block
 
 ```sql
 
@@ -65,7 +65,7 @@ END;
 
 ```
 
-# Explanation & Obstacles
+### Explanation & Obstacles
 
 1. The program should be able to handle columns types based on given user query
 2. So far, this is the simplest one that I can make using PL/SQL Block
@@ -81,7 +81,7 @@ END;
 10. The point is I used ">" command after EOF so that the result can be saved as a file. In that way I was able to print the query 
     result properly without line breaks.
 
-# PL/SQL Block in bash
+### PL/SQL Block in bash
 
 1. This bash script assumes that user will pass two parameters. [ $1 $2 accordingly.. Ex) test.sh "test" "select * from test"]
 2. First parameter is table name. Second parameter is SQL query.

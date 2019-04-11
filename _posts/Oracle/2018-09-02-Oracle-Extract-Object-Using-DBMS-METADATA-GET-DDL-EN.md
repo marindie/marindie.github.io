@@ -10,12 +10,12 @@ redirect_from:
 
 > In this post, I will show you how to generate object creation statement using Oracle Data Dictionary. (Schema Level)
 
-# Assumption & Background
+### Assumption & Background
 
 1. You know ID and Password for the schema you want to extract
 2. You have either `SQL PLUS` or `SQL DEVELOPER`
 
-# Set System Variable
+### Set System Variable
 
 ```sql
 
@@ -42,7 +42,7 @@ column res Format a20000
 
 ```
 
-# Set DBMS_METADATA
+### Set DBMS_METADATA
 
 ```sql
 -- Support Line Break. I do not understand exactly what types of line it supports 
@@ -60,7 +60,7 @@ EXEC DBMS_METADATA.SET_TRANSFORM_PARAM(DBMS_METADATA.SESSION_TRANSFORM,'SEGMENT_
 EXEC DBMS_OUTPUT.ENABLE(1000000);
 ```
 
-# Extract Object Queries
+### Extract Object Queries
 
 ```sql
 
@@ -108,7 +108,7 @@ SPOOL OFF
 
 ```
 
-# Remove `SEGMENT CREATE IMMEDIATE` or `SEGMENT CREATE DEFERRERD` in the file
+### Remove `SEGMENT CREATE IMMEDIATE` or `SEGMENT CREATE DEFERRERD` in the file
 
 ```bash
 

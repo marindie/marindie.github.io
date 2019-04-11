@@ -10,11 +10,11 @@ redirect_from:
 
 > In this page, I will show you some examples about Linux sed command which replace matching text with your desire text.
 
-# Assumption & Background
+### Assumption & Background
 
 1. Your OS is CentOS 6.5
 
-# Basic Sed Test
+### Basic Sed Test
 
 ```bash
 
@@ -23,7 +23,7 @@ sed "s/my target text/my replaced text/" your_file.txt
 
 ```
 
-# Print Only Matching Case
+### Print Only Matching Case
 
 ```bash
 
@@ -36,7 +36,7 @@ sed -n "s/my target text/my replaced text/p" your_file.txt
 
 ```
 
-# Use Regular Expression in Sed. (Sed with Regex)
+### Use Regular Expression in Sed. (Sed with Regex)
 
 ```bash
 
@@ -51,7 +51,7 @@ sed -n -r "s/(SEGMENT) CREATE IMMEDIATE/\1 DROP IMMEDIATE/p" your_file.txt
 
 ```
 
-# Replace contents of the file using Sed (Apply Changes to the files)
+### Replace contents of the file using Sed (Apply Changes to the files)
 
 ```bash
 
@@ -68,7 +68,7 @@ sed -i'' -r -e "s/SEGMENT CREATE IMMEDIATE|SEGMENT CREATE DEFERRED/I DO NOT WANT
 
 ```
 
-# Find file and Replace contents of each file using Find and Sed Command (Apply Changes to the files)
+### Find file and Replace contents of each file using Find and Sed Command (Apply Changes to the files)
 
 ```bash
 
@@ -78,7 +78,7 @@ find . -type f -name my_*.log -exec sed -i'' -e "s/foo/bar/" {} \;
 
 ```
 
-# Some Other Simple Options in sed (Ignore Case, Global)
+### Some Other Simple Options in sed (Ignore Case, Global)
 
 ```bash
 
@@ -91,7 +91,7 @@ sed -i'' -e "s/foo/bar/g" your_file.txt
 
 ```
 
-# For those who are interested in append text before/after. Click this [link](https://marindie.github.io/blog/2018/09/09/Sed-Append-Before-After-Sample-EN)
+### For those who are interested in append text before/after. Click this [link](https://marindie.github.io/blog/2018/09/09/Sed-Append-Before-After-Sample-EN)
 
 [^1]: This is a footnote.
 

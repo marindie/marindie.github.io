@@ -10,11 +10,11 @@ redirect_from:
 
 > This post will demonstrate how to install apache on CentOS 6.5
 
-# Assumption & Background
+### Assumption & Background
 
 1. Your OS is CentOS 6.5
 
-# Preparation before Apache installation
+### Preparation before Apache installation
 
 ```bash
 
@@ -76,7 +76,7 @@ mv tomcat /was
 
 ```
 
-# Install Apache
+### Install Apache
 
 ```bash
 
@@ -140,7 +140,7 @@ cd ..
 
 ```
 
-# Open firewall
+### Open firewall
 
 ```bash
 
@@ -156,7 +156,7 @@ service iptables restart
 
 ```
 
-# Apache and Tomcat Integration (mod_jk.so module)
+### Apache and Tomcat Integration (mod_jk.so module)
 
 ```bash
 
@@ -210,7 +210,7 @@ include conf/mod_jk.conf
 
 ```
 
-# Start Apache Web Server and Tomcat Server
+### Start Apache Web Server and Tomcat Server
 
 ```bash
 
@@ -222,7 +222,7 @@ netstat -lnpt
 
 ```
 
-# Visit localhost and localhost/index.jsp 
+### Visit localhost and localhost/index.jsp 
 
 
 [^1]: This is a footnote.

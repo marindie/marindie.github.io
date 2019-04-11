@@ -10,13 +10,13 @@ redirect_from:
 
 > In this page, I will show you some basic examples about how to use iptables to control IP and Port (Allow/Deny)
 
-# Assumption & Background
+### Assumption & Background
 
 1. Your OS is CentOS 6.5
 2. From CentOS7, iptables is not configured. So You have to manully configure it by yourself, if it is easier for you.
 3. Please read from the top if you do not understand the syntax. Sometimes it's best to implement it without thinking and see if it works for you.
 
-# Iptables Basic Command
+### Iptables Basic Command
 
 ```bash
 
@@ -28,7 +28,7 @@ service iptables restart
 
 ```
 
-# Allow Specific PORT Number using iptables
+### Allow Specific PORT Number using iptables
 
 ```bash
 
@@ -50,7 +50,7 @@ service iptables restart
 
 ```
 
-# Allow Specific IP Address using iptables
+### Allow Specific IP Address using iptables
 
 ```bash
 
@@ -62,7 +62,7 @@ iptables -A INPUT -s 192.168.1.8 -j ACCEPT
 
 ```
 
-# Deny Specific IP Address and PORT Number using iptables
+### Deny Specific IP Address and PORT Number using iptables
 
 ```bash
 
@@ -74,7 +74,7 @@ iptables -A INPUT -s 192.168.1.8 -p tcp --dport 443 -j DROP
 
 ```
 
-# Allow Range of IP Address using iptables
+### Allow Range of IP Address using iptables
 
 ```bash
 
@@ -83,7 +83,7 @@ iptables -A INPUT -s 192.168.0.1/24 -j ACCEPT
 
 ```
 
-# Allow Range of PORT using iptables
+### Allow Range of PORT using iptables
 
 ```bash
 
@@ -96,7 +96,7 @@ iptables -A INPUT -p tcp --match multiport --dports 1024:3000 -j ACCEPT
 
 ```
 
-# Iptables filter table Description
+### Iptables filter table Description
 
 Chain - There are three different types of chains in iptables
 - INPUT : All the packets to host machine
@@ -115,7 +115,7 @@ Target - Actions where packets are meet certain Match conditions
 - REJECT : Drop Packets and send response to source ip address
 - LOG : Make log into syslog
 
-# Some Other Useful Commands
+### Some Other Useful Commands
 
 ```bash
 

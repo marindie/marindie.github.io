@@ -10,11 +10,11 @@ redirect_from:
 
 > Linux 명령어를 사용하여 Package 폴더 하위의 파일, 폴더, 패키지명을 자동변환 해주는 프로그램입니다.
 
-# 배경지식 {#toc1}
+### 배경지식 {#toc1}
 
 1. Windows Cygwin 에서 테스트 하였습니다.
 
-# 소스 {#toc2}
+### 소스 {#toc2}
 
 ```bash
 #/bin/bash
@@ -35,7 +35,7 @@ find . -type f -name "*" ! -name "template.sh" | while read f; do sed -i "s/${SR
 
 ```
 
-# 내용설명 {#toc3}
+### 내용설명 {#toc3}
 
 ```md
 첫번째 파라미터의 값에 현재 공통으로 사용하는 패키지 이름을 넣고 (Ex: cart)
@@ -80,7 +80,7 @@ pom.xml
 
 ```
 
-# 추가적으로 기본적인 sed 명령어 관련 POST 링크 {#toc4}
+### 추가적으로 기본적인 sed 명령어 관련 POST 링크 {#toc4}
 
 클릭 => [sed 사용법](https://marindie.github.io/linux/Sed-Replace-Text-Sample-EN/) 
 

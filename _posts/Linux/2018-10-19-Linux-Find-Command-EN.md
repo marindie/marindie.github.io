@@ -10,7 +10,7 @@ redirect_from:
 
 > In this page, I will show you some of basic find command in case someone forgot to use it.
 
-# Find Command with Options
+### Find Command with Options
 
 ```bash 
 
@@ -24,7 +24,7 @@ find . -maxdepth 1 -name "*.txt"
 
 ```
 
-# Run Shell command after mathing file found
+### Run Shell command after mathing file found
 
 ```bash
 
@@ -38,7 +38,7 @@ find . -name "*.txt" -exec grep chrome {} +;
 
 ```
 
-# Find file whose size is over 20Mb
+### Find file whose size is over 20Mb
 
 ```bash
 

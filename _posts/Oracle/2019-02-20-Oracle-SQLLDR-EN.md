@@ -10,7 +10,7 @@ redirect_from:
 
 > I will share my fairly Simple Oracle SQL LOADER Control File Generator in this post
 
-# 배경지식
+### 배경지식
 
 1. Basic SQL LOADER understanding is required.
 2. SQL LOADER is a tool that ORACLE provide most commonly for INSERT DML.
@@ -20,7 +20,7 @@ redirect_from:
 5. There might be a tool for handling DB Synchronization or 3rd Party Software for it, but my case was not on DB level. Just a couple of tables only
 6. I thought there might be a better way of doing it. but.. I just made it.
 
-# PL/SQL Block in bash
+### PL/SQL Block in bash
 
 ```bash
 
@@ -92,7 +92,7 @@ rm TEMP.TXT
 
 ```
 
-# 내용 설명
+### 내용 설명
 
 1. First, I assume that insert folder is already made, move into the folder, and select META information of the target TABLE in TAB_LIST.
    Using selected information, I generated information that SQL LOADER need it for the INSERT DML
@@ -109,7 +109,7 @@ rm TEMP.TXT
 9. PL/SQL BLOCK generate column information for each column's data type. I focused only on TIMESTAMP and DATE. The rest is treated as string.
    LOB type is ignored
 
-# TABLE_TEST1.ctl
+### TABLE_TEST1.ctl
 
 ```bash
 
@@ -130,7 +130,7 @@ CREATE_DT DATE "YYYY-MM-DD HH24:MI:SS"
 
 ```
 
-# TABLE_TEST1.DAT
+### TABLE_TEST1.DAT
 
 ```bash
 
@@ -141,7 +141,7 @@ CREATE_DT DATE "YYYY-MM-DD HH24:MI:SS"
 
 ```
 
-# CSV Format file Generator
+### CSV Format file Generator
 
 For those who need to create CSV format file like the above example, [Click Here](https://marindie.github.io/databases/Oracle-CSV-SQLPLUS-EN/)
 

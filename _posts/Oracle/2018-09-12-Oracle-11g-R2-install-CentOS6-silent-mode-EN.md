@@ -10,32 +10,32 @@ redirect_from:
 
 > In this post, I will show you how I installed Oracle 11g r2 on CentOS6.6 in Silent Mode.
 
-# Assumption & Background
+### Assumption & Background
 
 1. You have VM
 2. Make sure you allocate more than 4Gb to SWAP partition during CentOS installation step
 2. You successfully installed CentOS6.6 on VM somehow (For download CentOS6.6 see below)
 
-# Download CentOS6.5 64bit
+### Download CentOS6.5 64bit
 
 - Go to the following URL and Download minimal version of CentOS6.6
 - http://vault.centos.org/6.5/isos/x86_64/
 
-# Download Oracle 11g r2 64bit Linux 
+### ##Download Oracle 11g r2 64bit Linux 
 
 - Go to the following URL and Download
 - https://www.oracle.com/technetwork/database/enterprise-edition/downloads/112010-linx8664soft-100572.html
 
-# Download glibc-2.3.4-2.43.el4_8.2.i686.rpm
+### Download glibc-2.3.4-2.43.el4_8.2.i686.rpm
 
 - Go to the following URL and Download glibc-2.3.4-2.43.el4_8.2.i686.rpm
 - http://rpm.pbone.net/index.php3?stat=3&limit=6&srodzaj=1&dl=40&search=glibc-2.3.4-2&field[]=1&field[]=2
 
-# Ready to install Oracle 
+### Ready to install Oracle 
 
 Now Copy linux.x64_11gR2_database_1of2.zip linux.x64_11gR2_database_2of2.zip into your root home directory
 
-# Pre-conditions before run install.
+### Pre-conditions before run install.
 
 When you try to install oracle on linux environment, you need to check the followings
 
@@ -47,7 +47,7 @@ When you try to install oracle on linux environment, you need to check the follo
 - So you don't have a choice but to follow
 - Add your hostname in /etc/hosts ("vi /etc/hosts " and put your hostname at the end of the first line. Then save it)
 
-# Install packages for oracle installation
+### Install packages for oracle installation
 
 - yum -y update
 - yum install -y binutils compat-libcap* gcc* glibc* ksh libgcc* libstdc* libaio* make* sysstat* unixODBC* elfutils-libelf-devel unzip wget compat-libstdc++-33-3.2.3
@@ -55,11 +55,11 @@ When you try to install oracle on linux environment, you need to check the follo
 - rpm -Uvh --nodeps pdksh-5.2.14-30.x86_64.rpm
 - rpm -Uvh glibc-2.3.4-2.43.el4_8.2.i686.rpm --nodeps --force
 
-# ADD HOSTNAME
+### ADD HOSTNAME
 
 - sed -i'' -e "\$a\YOUR_IP_ADDR my_hostname" /etc/hosts
 
-# Oracle Environment Setting For This Oracle Installation (root user)
+### Oracle Environment Setting For This Oracle Installation (root user)
 
 ```bash
 
@@ -98,7 +98,7 @@ source /home/oracle/.bash_profile
 
 ```
 
-# Kernel Parameter 
+### Kernel Parameter 
 
 ```bash
 
@@ -121,7 +121,7 @@ sed -i'' -e "\$a\kernel.sem = 250 32000 100 128\nfs.file-max = 6815744\nnet.ipv4
 sysctl -p
 
 ```
-# USER RESOURCE LIMIT Setting
+### USER RESOURCE LIMIT Setting
 
 ```bash
 
@@ -138,8 +138,8 @@ sed -i'' -e "\$a\*               hard    nofile          65536\n*               
 
 ```
 
-# Unzip Files to /ORACLE and change ownership to oracle.
-# Give Read and Execute permissions to files
+### Unzip Files to /ORACLE and change ownership to oracle.
+### Give Read and Execute permissions to files
 
 ```bash
 unzip -q linux.x64_11gR2_database_1of2.zip -d /ORACLE
@@ -148,12 +148,12 @@ chown -R oracle:oinstall /ORACLE
 chmod -R 755 /ORACLE
 ```
 
-# Switch user that will install oracle instance
+### Switch user that will install oracle instance
 ```bash
 su - oracle
 ```
 
-# Use response file to install oracle instance in silent mode
+### Use response file to install oracle instance in silent mode
 
 ```bash
 
@@ -206,7 +206,7 @@ grep "DECLINE_SECURITY_UPDATES=" /ORACLE/database/response/oracle_install.rsp
 
 ```
 
-# Check Oracle install Pre-requisites
+### Check Oracle install Pre-requisites
 
 ```bash
 # The following will check whether your environment is good enough to install oracle instance.
@@ -217,7 +217,7 @@ grep "DECLINE_SECURITY_UPDATES=" /ORACLE/database/response/oracle_install.rsp
 /ORACLE/database/runInstaller -silent -executePrereqs -responseFile /ORACLE/database/response/oracle_install.rsp
 ```
 
-# Run Installer (Silent Mode)
+### Run Installer (Silent Mode)
 
 ```bash
 # When you create oracle instance, listener, and database, you need to run as oracle user who has belongs to oper group
@@ -264,7 +264,7 @@ MYORA=
 # if you are insterested to see the status, connect to as sysdba "sqlplus / as sysdba"
 ```
 
-# Create Listener (Silent Mode)
+### Create Listener (Silent Mode)
 
 ```bash
 cp /ORACLE/database/response/netca.rsp /ORACLE/database/response/oracle_netca.rsp 
@@ -296,7 +296,7 @@ ADR_BASE_LISTENER = /ORACLE
 
 ```
 
-# Create Database (Silent Mode)
+### Create Database (Silent Mode)
 
 ```bash
 # For Creating Database, I used template, not responsefile. You can also use responsefile if you want
@@ -304,7 +304,7 @@ ADR_BASE_LISTENER = /ORACLE
 dbca -silent -createDatabase -templateName General_Purpose.dbc -gdbname ORADB -sid ORADB -sysDBAUserName sys -sysDBAPassword password -responseFile NO_VALUE -characterSet AL32UTF8 -memoryPercentage 20 -emConfiguration NONE
 ```
 
-# Connect to Database as sysdba
+### Connect to Database as sysdba
 
 ```bash
 sqlplus / as sysdba

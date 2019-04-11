@@ -10,11 +10,11 @@ redirect_from:
 
 > In this page, I will show you some examples about Linux sed command which append some text (before/after) matching text.
 
-# Assumption & Background
+### Assumption & Background
 
 1. Your OS is CentOS 6.5
 
-# Append Text Before Matching Text
+### Append Text Before Matching Text
 
 ```bash
 
@@ -23,7 +23,7 @@ sed -i'' -r -e "/Please Put it here/i\Some More Text is appended/" your_file.txt
 
 ```
 
-# Append Text After Matching Text
+### Append Text After Matching Text
 
 ```bash
 
@@ -32,7 +32,7 @@ sed -i'' -r -e "/Please Put it here/a\Some More Text is appended/" your_file.txt
 
 ```
 
-# Those who are interested in basic sed, click this [link](https://marindie.github.io/blog/2018/09/09/Sed-Replace-Text-Sample-EN) 
+### Those who are interested in basic sed, click this [link](https://marindie.github.io/blog/2018/09/09/Sed-Replace-Text-Sample-EN) 
 
 [^1]: This is a footnote.
 

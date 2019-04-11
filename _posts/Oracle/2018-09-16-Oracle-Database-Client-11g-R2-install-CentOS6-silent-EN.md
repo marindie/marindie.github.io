@@ -10,32 +10,32 @@ redirect_from:
 
 > In this post, I will show you how I installed Oracle 11g r2 on CentOS6.6 in Silent Mode.
 
-# Assumption & Background
+### Assumption & Background
 
 1. You have VM
 2. You successfully installed CentOS6.6 on VM somehow (For download CentOS6.6 see below)
 
-# Download CentOS6.5 64bit
+### Download CentOS6.5 64bit
 
 - Go to the following URL and Download minimal version of CentOS6.6
 - http://vault.centos.org/6.5/isos/x86_64/
 
-# Download Oracle Databse Client 11g r2 64bit Linux (11.2.0.1)
+### Download Oracle Databse Client 11g r2 64bit Linux (11.2.0.1)
 
 - ORACLE Databae Client 11.2.0.1 DOWNLOAD
 - http://www.oracle.com/technetwork/database/enterprise-edition/downloads/112010-linx8664soft-100572.html
 - I don't know why but it seems that 11.2.0.4 version is no longer available. So I used 11.2.0.1
 - You may find it, but I guess it would be really really difficult to get one. 
 
-# Oracle Documentation URL
+### Oracle Documentation URL
 
 - https://docs.oracle.com/cd/E11882_01/install.112/e24325/toc.htm#CIHFICFD
 
-# Ready to install Oracle 
+### Ready to install Oracle 
 
 - Now Copy linux_11gR2_client_x86_64.zip into your root home directory
 
-# Pre-conditions before run install.
+### Pre-conditions before run install.
 
 When you try to install oracle on linux environment, you need to check the followings
 
@@ -44,12 +44,12 @@ When you try to install oracle on linux environment, you need to check the follo
 - Make sure you installed required packages for the installer
 - Set Target oracle installation path. For this post, it would be /home/oracle/app/product/11.2/client
 
-# Install packages for oracle installation
+### Install packages for oracle installation
 
 - yum -y update
 - yum -y install unixODBC binutils* compat* gcc* glibc* ksh libgcc* libstdc* libaio* make* sysstat*
 
-# ADD HOSTNAME
+### ADD HOSTNAME
 
 - sed -i'' -e "\$a\YOUR_IP_ADDR my_local_machine_name" /etc/hosts or
 - vi /etc/hosts and edit like "127.0.0.1 my_local_machine_name"
@@ -93,8 +93,8 @@ cat /etc/profile
 
 ```
 
-# Unzip Files to /home/oracle and change ownership to oracle.
-# Give Read and Execute permissions to files
+### Unzip Files to /home/oracle and change ownership to oracle.
+### Give Read and Execute permissions to files
 
 ```bash
 unzip -q linux_11gR2_client_x86_64.zip -d /home/oracle
@@ -102,12 +102,12 @@ chown -R oracle:dba /home/oracle
 chmod -R 755 /home/oracle
 ```
 
-# Switch user that will install oracle instance
+### Switch user that will install oracle instance
 ```bash
 su - oracle
 ```
 
-# Use response file to install oracle instance in silent mode
+### Use response file to install oracle instance in silent mode
 
 ```bash
 
@@ -148,7 +148,7 @@ grep "^oracle.install.client.installType=" /home/oracle/client/response/client_t
 
 ```
 
-# Check Oracle install Pre-requisites
+### Check Oracle install Pre-requisites
 
 ```bash
 # The following will check whether your environment is good enough to install oracle instance.
@@ -159,7 +159,7 @@ grep "^oracle.install.client.installType=" /home/oracle/client/response/client_t
 /home/oracle/client/runInstaller -silent -executePrereqs -responseFile /home/oracle/client/response/client_test_install.rsp
 ```
 
-# Run Installer (Silent Mode)
+### Run Installer (Silent Mode)
 
 ```bash
 # When you create oracle instance, listener, and database, you need to run as oracle user who has belongs to oper group
@@ -201,7 +201,7 @@ MYORA=
 # Save the file
 ```
 
-# Connect to server database using SQLPLUS
+### Connect to server database using SQLPLUS
 
 ```bash
 # Check the connection using sqlplus

@@ -10,14 +10,14 @@ redirect_from:
 
 > React 개발에서 사용되는 3rd 파티 module 및 lib 들에 대한 간략한 기능 정리 포스트입니다.
 
-# readux-thunk {#toc1}
+### readux-thunk {#toc1}
 
 ```md
 Action Creator 는 호출이 되면 바로 동작함. 그런데, Interval 이나 Interrupt 또는 Data 일부 처리 후 Event 호출이 필요할 때 있음.
 이러한 것들을 가능하게 해주는것이 Thunk.
 ```
 
-# auto-bind {#toc2}
+### auto-bind {#toc2}
 
 ```js
 함수 호출시 해당 함수의 bind(this) 를 해주어야 하는 번거로움을 해결해줌.
@@ -30,9 +30,9 @@ export class MasterListContainer extends Component {
 
 ```
 
-# moment {#toc3}
+### moment {#toc3}
 
-# react-datepicker {#toc4}
+### react-datepicker {#toc4}
 
 ```md
 기본 적인 달력 표시용으로 사용합니다.

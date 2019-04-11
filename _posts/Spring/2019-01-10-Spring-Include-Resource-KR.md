@@ -10,7 +10,7 @@ redirect_from:
 
 > JSP 파일 내에서 Javascript, CSS 등 정적 파일을 불러오는 법을 설명합니다.
 
-# JSTL 라이브러리 Maven 에 추가 {#toc1}
+### JSTL 라이브러리 Maven 에 추가 {#toc1}
 
 일반적으로 Maven 를 사용해서 jar 파일들을 추가 하고 있다는 가정하에 진행합니다.
 pom.xml 파일에 Maven Dependency 추가
@@ -25,7 +25,7 @@ pom.xml 파일에 Maven Dependency 추가
 
 ```
 
-# Servlet 설정에 resource 설정 부분 확인 {#toc2}
+### Servlet 설정에 resource 설정 부분 확인 {#toc2}
 기본적으로 이클립스에서 Dynamic Web Project 로 프로젝트를 만들고 나면 web.xml 이라고하는 DD(Deployment Descriptor) 를 만들어줍니다.
 해당 web.xml 에 servlet 설정 파일명 위치를 일반적으로 적어 놓는데요.. 이름은 다를 수 있습니다. xxx-context.xml 이라고 보통 명시합니다.
 
@@ -57,7 +57,7 @@ Ex) servlet-context.xml 내용 일부
 이 경로는 Eclipse 프로젝스 구조상으로 보시면, src/main/webapp/resources 경로를 의미합니다. resources 폴더가 보이지 않는다면 생성하시면 됩니다.
 정의는 했지만 만들지 않았던것 뿐입니다.
 
-# JSP 에 실제로 JS, CSS 불러보기 {#toc3}
+### JSP 에 실제로 JS, CSS 불러보기 {#toc3}
 
 test.jsp
 ```jsp
@@ -80,7 +80,7 @@ common.js
 alert("common");
 ```
 
-# CSS 에서 img 파일을 읽어들이고 싶다면?? {#toc4}
+### CSS 에서 img 파일을 읽어들이고 싶다면?? {#toc4}
 
 예를 들어, 아래의 css 파일 이름이 test.css 이고, 해당 파일의 경로가 src/main/webapp/resources/css 폴더 안에 존재하고, img 파일은 src/main/webapp/resources/img 폴더 안에
 존재한다면, 아래와 같이 경로를 입력하시면, 정상적으로 이미지 파일이 로드 될 것입니다.
@@ -94,7 +94,7 @@ body {
 
 ```
 
-# 기타 관련 정보 {#toc5}
+### 기타 관련 정보 {#toc5}
 해당 test.jsp 로 화면을 뿌려주는 controller 샘플입니다.
 viewresolver 설정은 되어 있는 것으로 가정합니다. 모르지면 spring viewresolver 로 검색하시면 관련 내용이 많이 나옵니다.
 viewresolver 의 요점은 url 경로를 어떻게 해석해서 test.jsp 와 같은 파일을 호출 시키면서 data 를 전송하는가에 대한 내용으로 보입니다.

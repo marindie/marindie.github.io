@@ -10,7 +10,7 @@ redirect_from:
 
 > In this page, I will show you some of basic setfacl and getfacl command for someone interested in.
 
-# Setfacl
+### Setfacl
 
 ```bash 
 
@@ -31,7 +31,7 @@ setfacl -x u:user1 /etc/sysconfig/iptables
 
 ```
 
-# Getfacl
+### Getfacl
 
 ```bash
 
