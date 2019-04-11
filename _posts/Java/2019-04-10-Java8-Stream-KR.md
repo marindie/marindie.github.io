@@ -10,7 +10,7 @@ redirect_from:
 
 > JAVA8 부터 사용 가능한 Stream 관련 함수 사용법을 기록해 놓은 포스트 입니다. 자꾸 잊어버려서 정리해놓습니다.
 
-## List Object 의 각 Object를 새로운 Object로 mapping 후 List 로 리턴 {#toc1}
+### List Object 의 각 Object를 새로운 Object로 mapping 후 List 로 리턴 {#toc1}
 
 ```java
 
@@ -20,7 +20,7 @@ this.playerRepository.findAll()
 
 ```
 
-## List Object Filter 후 리턴 {#toc2}
+### List Object Filter 후 리턴 {#toc2}
 
 ```java
 
@@ -37,7 +37,7 @@ foundBoard.getArticles().stream().filter(article -> {
 
 ```
 
-## Map 형태의 key,value Stream 사용법 {#toc3}
+### Map 형태의 key,value Stream 사용법 {#toc3}
 
 ```java
 
@@ -45,7 +45,7 @@ boardMap.values().stream().findFirst().get()
 
 ```
 
-## JSON to List Object  {#toc4}
+### JSON to List Object  {#toc4}
 
 ```java
 
