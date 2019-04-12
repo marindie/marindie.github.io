@@ -57,6 +57,20 @@ boardMap.values().stream().findFirst().get()
     this.ItemsJson = (new Gson()).toJson(getItems());
 ```
 
+### JSON from/to Object  {#toc4}
+
+```java
+
+ObjectMapper mapper = new ObjectMapper();
+Test obj = new Test();
+
+//Object to JSON in file
+mapper.writeValue(new File("c:\\file.json"), obj);
+
+//Object to JSON in String
+String jsonInString = mapper.writeValueAsString(obj);
+
+```
 
 [^1]: This is a footnote.
 
