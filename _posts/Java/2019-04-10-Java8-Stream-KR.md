@@ -18,6 +18,11 @@ this.playerRepository.findAll()
 				.stream()
 				.collect(Collectors.mapping(p -> new Player(p.getId(),p.getName(),p.getNum(),p.getPosition()), Collectors.toList()));
 
+// 기존의 List 로 Return
+this.playerRepository.findAll()
+				.stream()
+				.collect(Collectors.toList()));				
+
 ```
 
 ### List Object Filter 후 리턴 {#toc2}
