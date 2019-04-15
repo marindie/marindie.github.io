@@ -77,6 +77,31 @@ String jsonInString = mapper.writeValueAsString(obj);
 
 ```
 
+### Sort 사용법  {#toc5}
+
+```java
+
+attrs.get().stream().sorted().collect(Collectors.toList());
+
+//관련 형태 사용법
+.sorted(Comparator.reverseOrder())
+.sorted(Comparator.comparing(Student::getAge)
+.sorted(Comparator.comparing(Student::getAge).reversed())
+
+
+
+// 사용하고자 하는 List Object Class 에 compareTo override 및 Comparable implements
+public class AttrsJpo implements Comparable<AttrsJpo>{
+	@Override
+	public int compareTo(AttrsJpo o) {
+		// TODO Auto-generated method stub
+		// 원하는 멤버 변수 비교 세팅하면 됨.
+		return id.compareTo(o.getId());
+	}
+}
+
+```
+
 [^1]: This is a footnote.
 
 [kramdown]: https://kramdown.gettalong.org/
