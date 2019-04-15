@@ -60,6 +60,11 @@ boardMap.values().stream().findFirst().get()
 
 // 반대로 List<Object> to JSON
     this.ItemsJson = (new Gson()).toJson(getItems());
+
+// Gson format 적용		
+Gson gson = new GsonBuilder().setPrettyPrinting().create();
+gson.toJson(Obj);
+
 ```
 
 ### JSON from/to Object  {#toc4}
