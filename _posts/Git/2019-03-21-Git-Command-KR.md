@@ -22,7 +22,7 @@ git init
 
 ### Git Remote Repository 추가 {#c}
 ```bash
-git remote add origin "http://github/user/test"
+git remote add origin GIT_URL
 ```
 
 ### Git Staging 하기 {#d}
@@ -52,7 +52,7 @@ git push origin master
 
 ### Git Remote Repository 내려받기(clone) {#h}
 ```bash
-git clone "http://github/user/test"
+git clone GIT_URL
 ```
 
 ### Git Remote Repository 단축이름과 URL 확인 명령어. {#i}
@@ -99,7 +99,7 @@ git push origin master
 이게 가장 중요한 점인데, 이유는 readme.md 를 만들게 되면 커밋이 발생하게 되고, 이 remote repository 에 
 바로 push 하면 readme.md 커밋한 내용이 내 로컬 PC 에 만든 local repository 에는 없기 때문에, 
 기존에 작업해 놓은 폴더를 다이렉트로 remote repository 에 연결하기 불편합니다.
-해결을 위해서는 새폴더 만들고 git clone http://github/user/test 로 clone 하고 나서,
+해결을 위해서는 새폴더 만들고 git clone GIT_URL 로 clone 하고 나서,
 내가 작업한 내용 다시 복사 해서 넣고 git add -> git commit 을 해야 정상적으로 진행 됩니다.
 뭐 하다 보면 그것도 하게 되기는 하는데... 내가 원하는 방식은,
 remote 에 만들고 기존에 작업한 최상위 폴더에 git local repository 만들고 연결해서 바로 커밋이 바로 되는게 목적입니다.
@@ -107,7 +107,7 @@ remote 에 만들고 기존에 작업한 최상위 폴더에 git local repositor
 정상적으로 project 만 만들었다고 하면(commit 없이)
 작업 폴더에 가서
 git init
-git remote add origin "http://github/user/test"
+git remote add origin GIT_URL
 git add .
 git commit -m "First Commit"
 git push origin master 
@@ -140,7 +140,7 @@ Ex) 폴더 구조
 parent
 	/child
 		/submod1
-git submodule add "http://github/user/submod1" child/submod1
+git submodule add GIT_URL child/submod1
 ```
 
 ### submodule 파일 삭제 없이 git 에서만 삭제 방법 {#o}
@@ -161,12 +161,12 @@ git submodule foreach git pull origin master (submodule 들의 remote 이름이 
 
 # 새로운 폴더에 parent 부터 다시 clone 하는 경우 {#q}
 ```bash
-git clone "http://github/user/parent" 를 하고나서 submodule 에 가서 보면 내용이 비어 있다.
+git clone GIT_URL 를 하고나서 submodule 에 가서 보면 내용이 비어 있다.
 # 이때 개별적으로 내용을 받아오는 명령어는 아래와 같다.
 git submodule init
 git submodule update
 # 또는
-git clone --recursive "http://github/user/parent"
+git clone --recursive GIT_URL
 ```
 
 ### submodule 작업한 파일은 남겨 놓고 git 설정 정보만 삭제 {#r}
@@ -200,13 +200,13 @@ parent
 		/submod1
 cd parent
 git init
-git remote add origin "http://github/user/parent"
-git submodule add "http://github/user/submod1" child/submod1
+git remote add origin PARENT_GIT_URL
+git submodule add SUBMODULE_GIT_URL child/submod1
 만약 위의 명령어 에서 valid repo 가 아니라고 나오면
 cd child/submod1
 git init
 cd ../..
-git submodule add "http://github/user/submod1" child/submod1
+git submodule add SUBMODULE_GIT_URL child/submod1
 cd child/submod1
 git add .
 git commit -m "Submodule First Commit"
