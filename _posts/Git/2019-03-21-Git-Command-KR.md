@@ -81,6 +81,17 @@ git config --global http.sslVerify false
 #submodule 삭제 관련해서는 아래의 5-4번 내용을 참고하시기 바랍니다.
 ```
 
+### git remote master 브랜치에 커밋된 내용이 있는 상태에서 local push 에러 처리 명령어 {#aa}
+```bash
+# local 에서 commit 을 한 후에, git pull 시도시에, remote 에 commit 된 내용이 존재하면, 
+# pull 을 해도 push 시에 에러가 발생함.
+# 이럴때 사용하는 명령어.
+
+git pull --rebase origin master
+git push origin master
+
+```
+
 ### 기본 예제 {#l}
 ```md
 제가 일반적으로 remote repository 에 직접 작업한 프로젝트를 최초 등록할때의 작업 순서를 요약해 보았습니다.
