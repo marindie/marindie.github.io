@@ -32,6 +32,11 @@ rrc 타이핑 하고 탭 누르면 자동으로 Component Class 를 해당 파�
 
 불필요한 반복 코딩 라인을 줄여주기에 꼭 추천하고 제가 나중에 다른 머신에 세팅할때 쓰려고 기록해 놓습니다.
 
+### 기타 {#toc4}
+
+Visual Code 관련 단축키 URL
+https://docs.microsoft.com/ko-kr/visualstudio/mac/keyboard-shortcuts?view=vsmac-2019
+
 [^1]: This is a footnote.
 
 [kramdown]: https://kramdown.gettalong.org/
