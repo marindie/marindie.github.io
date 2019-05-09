@@ -278,7 +278,7 @@ public class TestTwoPkColsPk {
   private Long testColTwo;
 }
 
-public interface TestRepository extends JpaRepository<TestJpo,TbM00UiProcessDetailsPk> {
+public interface TestRepository extends JpaRepository<TestJpo,TestTwoPkColsPk> {
 	public Optional<TestJpo> findByTestTwoPkTestColOneAndTestTwoPktestColTwo(Long testColOne,Long testColTwo);
 }
 
