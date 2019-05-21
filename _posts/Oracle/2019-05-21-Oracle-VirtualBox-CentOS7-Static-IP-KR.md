@@ -10,29 +10,38 @@ redirect_from:
 
 > Oracle VirtualBox Static Ip CentOS 7 구성 방법
 
+이렇게 세팅하고 나서 안되는 부분이 여전이 존재했습니다.
+VM Static IP 로 브라우저 접속이 안되는게 아쉬웠는데요..
+해당 부분을 어댑터1 에 포트포워딩 설정을 추가해서 localhost:2020 -> 192.168.56.142:8080 으로 포워딩했더니
+화면이 나오긴했습니다. 하지만 여전히 맘에 안드네요...
+
 ### VirtualBox 환경설정 {#toc1}
 
 1. 파일 -> 환경설정 -> 네트워크 -> 호스트 전용 네트워크 -> VirtualBox Host-Only Ethernet Adapter 더블클릭
-2. DHCP 서버 탭 아래 '서버 사용' 체크 박스 체크 상태 확인
-3. 최저 주소 한계 192.168.56.101, 최고 주소 한계 192.168.56.254 IP 영역 확인
+2. DHCP 서버 탭 아래 '서버 사용' 체크 박스 체크 해제
+3. 어댑터 탭에 IPv4 주소가 GATEWAY 192.168.56.1 이고, 255.255.255.0 는 서브넷
 
 ### CentOS 7 설치 {#toc2}
 
 기본적인 설정으로 설치 진행하면 됩니다. minimal 버전으로 하는걸 추천.
 설치된 CentOS 아이콘(추가된 Record) 클릭 후 설정 버튼 클릭하여 해당 VM 환경설정으로 진입.
-네트워크 -> 어댑터 탭 클릭 -> 다음에 연결됨에 '호스트 전용 어댑터' 선택 -> 이름에 'VirtualBox Host-Only Ethernet Adapter' 선택
-나머지는 그대로 두고 확인
+
+어댑터1 에 'NAT' 선택
+어댑터2 에 '호스트 전용 어댑터' 선택 -> 이름에 'VirtualBox Host-Only Ethernet Adapter' 선택
+무작위 모드 '모두 허용' 으로 선택
 
 ### CentOS 7 네트워크 설정 {#toc2}
 
 root 계정으로 접속
-발생 가능한 변수로는, 신규 설치가 아닌, 기존에 설치한 CentOS 6 에서 NAT 를 사용하시다가,
-Static으로 바꾸는 경우에는 기존거를 남겨두려고 어댑터 1이 아닌 어댑터 2탭을 사용하는 경우가 있을 수 있습니다.
-이렇게 하셔도 되는데 단지, eth1 을 찾는데 설정파일이 만들어 져있지 않는 경우가 발생하는 것 뿐이죠.
 
-가장 확실하게 하기 위해서 ifconfig -a 로 현재 사용이 가능한 네크워크 어댑터 이름 Ex. eth0 or eth1 등등을 확인하고
-해당파일이 없으면 만들고 (cp /etc/sysconfig/network-scripts/ifcfg-enp0s3 /etc/sysconfig/network-scripts/ifcfg-enp0s8)
-해당 파일을 작업하면 됩니다. 이 예제에서는 ifcfg-enp0s8 이라고 가정.
+/etc/sysconfig/network-scripts/ifcfg-enp0s3 은 NAT 로 인터넷 연결을 가능하게 해준다. (어댑터1)
+
+```bash
+vi /etc/sysconfig/network-scripts/ifcfg-enp0s3
+```
+ONBOOT=yes 인지 확인
+
+/etc/sysconfig/network-scripts/ifcfg-enp0s8 은 Static IP 설정으로 사용한다 (어댑터2)
 
 ```bash
 vi /etc/sysconfig/network-scripts/ifcfg-enp0s8
@@ -41,9 +50,17 @@ BOOTPROTO=dhcp => BOOTPROTO=none 변경
 아래 내용 추가 후 저장
 IPADDR=192.168.56.142
 PREFIX=24
+GATEWAY=192.168.56.1
 
 특이사항으로 MAC ADDRESS 도 불일치 할 수 있으니 VirtualBox VM 아이콘클릭하여 설정 -> 네트워크 -> 어댑터 탭에 나오는 MAC 주소가 일치하는지도 확인해
 주는것이 좋습니다.
+
+DNS 설정
+
+```bash
+vi /etc/resolv.conf
+nameserver 8.8.8.8
+```
 
 Network 재시작
 
