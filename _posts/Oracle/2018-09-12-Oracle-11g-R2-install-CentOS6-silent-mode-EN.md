@@ -21,7 +21,7 @@ redirect_from:
 - Go to the following URL and Download minimal version of CentOS6.6
 - http://vault.centos.org/6.5/isos/x86_64/
 
-### ##Download Oracle 11g r2 64bit Linux 
+### Download Oracle 11g r2 64bit Linux 
 
 - Go to the following URL and Download
 - https://www.oracle.com/technetwork/database/enterprise-edition/downloads/112010-linx8664soft-100572.html
@@ -49,15 +49,20 @@ When you try to install oracle on linux environment, you need to check the follo
 
 ### Install packages for oracle installation
 
-- yum -y update
-- yum install -y binutils compat-libcap* gcc* glibc* ksh libgcc* libstdc* libaio* make* sysstat* unixODBC* elfutils-libelf-devel unzip wget compat-libstdc++-33-3.2.3
-- wget ftp://ftp.pbone.net/mirror/www.whiteboxlinux.org/whitebox/4/en/os/x86_64/WhiteBox/RPMS/pdksh-5.2.14-30.x86_64.rpm
-- rpm -Uvh --nodeps pdksh-5.2.14-30.x86_64.rpm
-- rpm -Uvh glibc-2.3.4-2.43.el4_8.2.i686.rpm --nodeps --force
+```bash
+yum -y update
+yum install -y binutils compat-libcap* gcc* glibc* ksh libgcc* libstdc* libaio* make* sysstat* unixODBC* elfutils-libelf-devel unzip wget compat-libstdc++-33-3.2.3
+wget ftp://ftp.pbone.net/mirror/www.whiteboxlinux.org/whitebox/4/en/os/x86_64/WhiteBox/RPMS/pdksh-5.2.14-30.3.x86_64.rpm
+rpm -Uvh --nodeps pdksh-5.2.14-30.x86_64.rpm
+rpm -Uvh glibc-2.3.4-2.43.el4_8.2.i686.rpm --nodeps --force
+```
 
 ### ADD HOSTNAME
 
-- sed -i'' -e "\$a\YOUR_IP_ADDR my_hostname" /etc/hosts
+```bash
+- sed -i'' -e '\$a\YOUR_IP_ADDR my_hostname' /etc/hosts
+
+```
 
 ### Oracle Environment Setting For This Oracle Installation (root user)
 
