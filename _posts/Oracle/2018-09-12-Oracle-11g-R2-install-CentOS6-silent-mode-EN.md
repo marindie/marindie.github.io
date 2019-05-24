@@ -26,11 +26,6 @@ redirect_from:
 - Go to the following URL and Download
 - https://www.oracle.com/technetwork/database/enterprise-edition/downloads/112010-linx8664soft-100572.html
 
-### Download glibc-2.3.4-2.43.el4_8.2.i686.rpm
-
-- Go to the following URL and Download glibc-2.3.4-2.43.el4_8.2.i686.rpm
-- http://rpm.pbone.net/index.php3?stat=3&limit=6&srodzaj=1&dl=40&search=glibc-2.3.4-2&field[]=1&field[]=2
-
 ### Ready to install Oracle 
 
 Now Copy linux.x64_11gR2_database_1of2.zip linux.x64_11gR2_database_2of2.zip into your root home directory
@@ -52,9 +47,12 @@ When you try to install oracle on linux environment, you need to check the follo
 ```bash
 yum -y update
 yum install -y binutils compat-libcap* gcc* glibc* ksh libgcc* libstdc* libaio* make* sysstat* unixODBC* elfutils-libelf-devel unzip wget compat-libstdc++-33-3.2.3
-wget ftp://ftp.pbone.net/mirror/www.whiteboxlinux.org/whitebox/4/en/os/x86_64/WhiteBox/RPMS/pdksh-5.2.14-30.3.x86_64.rpm
-rpm -Uvh --nodeps pdksh-5.2.14-30.x86_64.rpm
-rpm -Uvh glibc-2.3.4-2.43.el4_8.2.i686.rpm --nodeps --force
+
+you can now donwload those files below from my git url
+git clone https://github.com/marindie/share.git
+
+rpm -Uvh --nodeps pdksh-5.2.14-30.3.x86_64.rpm
+rpm -Uvh glibc-2.12-1.212.el6_10.3.i686.rpm --nodeps --force
 ```
 
 ### ADD HOSTNAME
