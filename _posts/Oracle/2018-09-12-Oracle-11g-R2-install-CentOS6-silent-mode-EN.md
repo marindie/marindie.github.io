@@ -176,7 +176,7 @@ oracle.install.option=INSTALL_DB_SWONLY
 UNIX_GROUP_NAME=oinstall
 INVENTORY_LOCATION=/ORACLE/oraInventory
 SELECTED_LANGUAGES=en,ko
-ORACLE_HOME=/ORACLE/product/11.2/uapdb
+ORACLE_HOME=/ORACLE/product/11.2/db
 ORACLE_BASE=/ORACLE
 oracle.install.db.InstallEdition=EE
 oracle.install.db.DBA_GROUP=dba
@@ -188,7 +188,7 @@ sed -i'' -r -e "s/^oracle.install.option=.*/oracle\.install\.option=INSTALL_DB_S
 sed -i'' -r -e "s/^UNIX_GROUP_NAME=.*/UNIX_GROUP_NAME=oinstall/" /ORACLE/database/response/oracle_install.rsp
 sed -i'' -r -e "s/^INVENTORY_LOCATION=.*/INVENTORY_LOCATION=\/ORACLE\/oraInventory/" /ORACLE/database/response/oracle_install.rsp
 sed -i'' -r -e "s/^SELECTED_LANGUAGES=.*/SELECTED_LANGUAGES=en,ko/" /ORACLE/database/response/oracle_install.rsp
-sed -i'' -r -e "s/^ORACLE_HOME=.*/ORACLE_HOME=\/ORACLE\/product\/11.2\/uapdb/" /ORACLE/database/response/oracle_install.rsp
+sed -i'' -r -e "s/^ORACLE_HOME=.*/ORACLE_HOME=\/ORACLE\/product\/11.2\/db/" /ORACLE/database/response/oracle_install.rsp
 sed -i'' -r -e "s/^ORACLE_BASE=.*/ORACLE_BASE=\/ORACLE/" /ORACLE/database/response/oracle_install.rsp
 sed -i'' -r -e "s/^oracle.install.db.InstallEdition=.*/oracle\.install\.db\.InstallEdition=EE/" /ORACLE/database/response/oracle_install.rsp
 sed -i'' -r -e "s/^oracle.install.db.DBA_GROUP=.*/oracle\.install\.db\.DBA_GROUP=dba/" /ORACLE/database/response/oracle_install.rsp
