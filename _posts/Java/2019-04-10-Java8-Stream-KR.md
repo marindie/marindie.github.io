@@ -1,8 +1,8 @@
 ---
 toc: true
-title: "JAVA8: JAVA8 부터 사용 가능한 Stream 관련 함수 사용 Sample 정리"
-description: "JAVA8 부터 사용 가능한 Stream 관련 함수 사용법을 기록해 놓은 포스트 입니다."
-categories: [JAVA8]
+title: "Java: Java8 부터 사용 가능한 Stream 관련 함수 사용 Sample 정리"
+description: "Java8 부터 사용 가능한 Stream 관련 함수 사용법을 기록해 놓은 포스트 입니다."
+categories: [Java]
 tags: [Stream]
 redirect_from:
   - /2019/04/10/
