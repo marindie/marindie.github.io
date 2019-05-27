@@ -33,6 +33,8 @@ sudo yum clean all && sudo yum makecache fast
 sudo yum install -y gcc-c++ make
 sudo yum install -y nodejs
 
+node -v
+npm -v
 ```
 
 [^1]: This is a footnote.
