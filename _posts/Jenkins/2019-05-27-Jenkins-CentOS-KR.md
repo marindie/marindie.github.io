@@ -66,7 +66,7 @@ iptables-save > /etc/sysconfig/iptables
 
 ```
 
-### 최초 로그인 암호 확인 {#toc3}
+### 최초 로그인 암호 확인 {#toc4}
 ```bash
 cat /var/lib/jenkins/secrets/initialAdminPassword
 
