@@ -22,8 +22,8 @@ sudo yum install -y nodejs
 
 ### 기존에 nodejs 를 설치한 경우 {#toc2}
 
-Yum Repository 를 10 버전으로 잡아줘도 계속 설치가 6으로 되서 
-검색 /etc/yum.repos.d/nodesource-el.repo 삭제하면 됨.
+Yum Repository 를 10 버전으로 잡아줘도 계속 설치가 6으로 되서 검색  
+/etc/yum.repos.d/nodesource-el.repo 삭제하면 됨.
 
 ```bash
 rm /etc/yum.repos.d/nodesource-el.repo
