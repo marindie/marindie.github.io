@@ -1,18 +1,24 @@
 ---
 toc: true
 title: "Concourse: Concourse fly 사용법"
-description: "CentOS7에 설치된 Concourse 사용법 정리"
+description: "CentOS 7에 설치된 Concourse 사용법 정리"
 categories: [Concourse]
 tags: [Concourse]
 redirect_from:
   - /2019/04/29/
 ---
 
-> CentOS7에 설치된 Concourse 사용법 정리
+> CentOS 7에 설치된 Concourse 사용법 정리
 
 ###  Concourse fly 명령어 {#toc1}
 
 ```bash
+# Docker 실행
+service docker start
+
+# https://docs.docker.com/compose/reference/up/
+docker-compose up -d
+
 # Target Concourse
 fly --target tutorial login --concourse-url http://127.0.0.1:8080 -u admin -p admin --ca-cert ~/ca.cer
 fly --target tutorial login --concourse-url http://127.0.0.1:8080 -u admin -p admin --insecure
