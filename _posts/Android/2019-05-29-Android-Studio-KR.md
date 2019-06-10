@@ -53,6 +53,25 @@ File -> Settings -> Tools -> Server Certificates -> + 버튼 클릭 -> yourCA.ce
 Update 등등이 잘 되면 잘 되는 걸로 생각하고 있습니다.
 ```
 
+### Unable to detect adb version, adb output {#toc6}
+```md
+https://androidsdkoffline.blogspot.com/p/android-sdk-platform-tools.html 에서 OS 에 맞는 platform 다운로드
+나는 platform-tools_r26.0.0-windows.zip 로 받아서 Android Sdk 설치 경로의 platform-tools 폴더 삭제하고
+다운 받은 platform-tools 폴더의 내용으로 복사해 넣고 Studio 재부팅하니까 잘 되었다.
+```
+
+### AAPT2 Demon Start Failed {#toc7}
+```md
+Gradle 버전을 다운그레이드 해서 해당 에러를 우회 하였다.
+
+Go to File->Project-Structure->Project
+Change Android Gradle Plugin Version to 3.3.2 or the last stable version for you
+Change the Gradle Version to 4.10.1
+Click Ok and sync
+Build Apk
+
+```
+
 [^1]: This is a footnote.
 
 [kramdown]: https://kramdown.gettalong.org/

@@ -13,9 +13,24 @@ redirect_from:
 ### process kill {#toc1}
 
 ```bash
-
 for pid in $(ps -ef | grep "concourse" | grep -v "grep" | awk '{print $2}'); do kill -9 $pid; done
+```
 
+### zip {#toc2}
+```bash
+yum install unzip
+unzip test.zip -d ./mydir
+zip test.zip ./*
+zip -r test.zip ./*  
+
+스크립트로 사용시 zip의 r 옵션은 절대경로로 잡은경우에, 압축을 풀면 해당 경로로 압축해제를 시도함
+결국 해당 폴더 생성해 놓고 적절한 폴더 위치에서 unzip을 추천
+
+```
+
+### ls 파일 이름만 {#toc2}
+```bash
+find . -name '*.jar' -exec basename {} \;
 ```
 
 [^1]: This is a footnote.
