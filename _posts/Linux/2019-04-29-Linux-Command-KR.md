@@ -28,9 +28,16 @@ zip -r test.zip ./*
 
 ```
 
-### ls 파일 이름만 {#toc2}
+### ls 파일 이름만 {#toc3}
 ```bash
 find . -name '*.jar' -exec basename {} \;
+```
+
+### VIM 에서 String Replace 관련 {#toc4}
+```bash
+:%s/.*System.out.println.*//gc # c 는 변환대상마다 확인 옵션
+# 그룹핑 하려면 VI 에서는 \( \) 형태로 escape 해줘야 그 안의 내용이 그룹화 된다. 일반 regex 랑 다름.
+# .*? 첫번째 매칭을 시도해 봤는데 잘 안됨.. 어떻게 해야 하는지 모르겠음.
 ```
 
 [^1]: This is a footnote.
