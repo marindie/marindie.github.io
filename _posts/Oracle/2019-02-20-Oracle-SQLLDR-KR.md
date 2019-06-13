@@ -1,8 +1,8 @@
 ---
 toc: true
-title: "Databases: Oracle SQL LOADER (sqlldr) Control 파일 자동 생성 프로그램"
+title: "Oracle: Oracle SQL LOADER (sqlldr) Control 파일 자동 생성 프로그램"
 description: "Oracle SQL LOADER 에서 필요한 Control File 정보를 자동으로 생성해 주는 프로그램입니다."
-categories: [Databases]
+categories: [Oracle]
 tags: [SQL LOADER,Sqlldr]
 redirect_from:
   - /2019/02/20/
