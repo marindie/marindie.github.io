@@ -33,7 +33,7 @@ Now Copy linux.x64_11gR2_database_1of2.zip linux.x64_11gR2_database_2of2.zip int
 ### Pre-conditions before run install.
 
 When you try to install oracle on linux environment, you need to check the followings
-
+```md
 - Kernel Parameter should meet oracle installer's mininum requirement
 - User Resource Limit should meet oracle installer's mininum requirement
 - List of Packages should be installed (See below)
@@ -41,7 +41,7 @@ When you try to install oracle on linux environment, you need to check the follo
 - The reason is simply oracle checks those stuffs before run install. If not satisfied, it will not start
 - So you don't have a choice but to follow
 - Add your hostname in /etc/hosts ("vi /etc/hosts " and put your hostname at the end of the first line. Then save it)
-
+```
 ### Install packages for oracle installation
 
 ```bash
