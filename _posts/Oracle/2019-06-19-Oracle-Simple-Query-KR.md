@@ -1,30 +1,61 @@
 ---
 toc: true
-title: "Oracle: Oracle 에러 이슈 모음. "
-description: "Oracle Oracle 에러 이슈 모음. "
+title: "Oracle: Oracle 쿼리 모음"
+description: "Oracle Oracle 쿼리 모음"
 categories: [Oracle]
 tags: [Oracle]
 redirect_from:
   - /2019/06/19/
 ---
 
-> Oracle 에러 이슈 모음. 
+> Oracle 쿼리 모음
 
-### DBMS_METADATA.GET_DDL ORA-31603 이슈 원인 및 처리 방법 {#toc1}
+매번 검색하기 귀찮아서 검색한 녀석들 이곳에 모으기로 함.
 
-```md
-해당 에러는 보통 A Schema 유저가 B Schema Table Object 등의 정보를 DBMS_METADATA.GET_DDL
-로 사용하고자 할때 발생하는 이슈 이다. 
-Dictionary 조회 권한이 없는듯 하다.
-
-```
+### Tablespace 관련 {#toc1}
 
 ```sql
-DBA 권한이 있는 사용자가 아래의 select_catalog_role 을 부여해 주면 해결됨.
-grant select_catalog_role to scott
+CREATE TABLESPACE oraTest DATAFILE '/ORACLE/product/11.2/orcl/tb_test.dbf' SIZE 100M AUTOEXTEND ON NEXT 10M;
 
--- 권한 요청하기 귀찮아서 그냥 Orange 에 F4 누르면 나오는 Script 정보를 건건이 사용중.. -_-+
+SELECT TABLESPACE_NAME, STATUS, CONTENTS FROM DBA_TABLESPACES;
+SELECT FILE_NAME, BYTES, STATUS FROM DBA_DATA_FILES;
+SELECT TABLESPACE_NAME, BYTES, BLOCKS FROM DBA_FREE_SPACE;
 
+SELECT   SUBSTR(A.TABLESPACE_NAME,1,30) TABLESPACE,
+         ROUND(SUM(A.TOTAL1)/1024/1024,1) "TOTALMB",
+         ROUND(SUM(A.TOTAL1)/1024/1024,1)-ROUND(SUM(A.SUM1)/1024/1024,1) "USEDMB",
+         ROUND(SUM(A.SUM1)/1024/1024,1) "FREEMB",
+         ROUND((ROUND(SUM(A.TOTAL1)/1024/1024,1)-ROUND(SUM(A.SUM1)/1024/1024,1))/ROUND(SUM(A.TOTAL1)/1024/1024,1)*100,2) "USED%"
+FROM
+         (SELECT   TABLESPACE_NAME,0 TOTAL1,SUM(BYTES) SUM1,MAX(BYTES) MAXB,COUNT(BYTES) CNT
+          FROM     DBA_FREE_SPACE
+          GROUP BY TABLESPACE_NAME
+          UNION
+          SELECT   TABLESPACE_NAME,SUM(BYTES) TOTAL1,0,0,0
+          FROM     DBA_DATA_FILES
+          GROUP BY TABLESPACE_NAME) A
+GROUP BY A.TABLESPACE_NAME
+ORDER BY TABLESPACE;
+```
+
+### 테이블 리스트 카운트 및 TOTAL {#toc1}
+
+```sql
+ALTER SESSION FORCE PARALLEL DML;
+DECLARE
+    CNT NUMBER;
+    TOTAL NUMBER := 0;
+BEGIN
+    FOR C IN (SELECT * FROM ALL_TABLES WHERE OWNER = 'POSMAST' AND TABLE_NAME LIKE '%TB_M00%' AND TABLE_NAME NOT LIKE '%LOG%') LOOP
+        EXECUTE IMMEDIATE 'SELECT COUNT(*) FROM '||C.TABLE_NAME INTO CNT;
+            IF( CNT > 10000 ) THEN
+                DBMS_OUTPUT.PUT_LINE(C.TABLE_NAME||' = '||CNT);
+            END IF;
+        TOTAL := TOTAL + CNT;
+    END LOOP;
+    DBMS_OUTPUT.PUT_LINE('TOTAL = '||TOTAL);
+END;
+/
 ```
 
 [^1]: This is a footnote.

@@ -1,16 +1,16 @@
 ---
 toc: true
-title: "Oracle: Oracle DBMS_METADATA.GET_DDL ORA-31603 이슈"
-description: "Oracle Oracle DBMS_METADATA.GET_DDL ORA-31603 이슈"
+title: "Oracle: Oracle 에러 이슈 모음. "
+description: "Oracle Oracle 에러 이슈 모음. "
 categories: [Oracle]
 tags: [Oracle]
 redirect_from:
   - /2019/06/19/
 ---
 
-> Oracle DBMS_METADATA.GET_DDL ORA-31603 이슈
+> Oracle 에러 이슈 모음. 
 
-### 원인 및 처리 방법 {#toc1}
+### DBMS_METADATA.GET_DDL ORA-31603 이슈 원인 및 처리 방법 {#toc1}
 
 ```md
 해당 에러는 보통 A Schema 유저가 B Schema Table Object 등의 정보를 DBMS_METADATA.GET_DDL

@@ -72,6 +72,13 @@ Build Apk
 
 ```
 
+### Android RESTFul API Lib RETROFIT or VOLLEY {#toc7}
+```md
+REST API 구현에 좋다고 하는데, 안써봐서 모르겠음. 하지만 그냥 REST API 가 되는건 아니고 
+이런 라이브러리를 사용해야 가능한듯.
+```
+
+
 [^1]: This is a footnote.
 
 [kramdown]: https://kramdown.gettalong.org/
