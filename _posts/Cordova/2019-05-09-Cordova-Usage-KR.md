@@ -52,6 +52,9 @@ platform 폴더 안의 android 폴더로 잡고 gradle sync 하고 나서 run �
 
 ### Android Studio 프로젝트 Cordova 로 Mig {#toc5}
 ```md
+File -> Project Structure -> Project 에서 
+"Android Gradle Plugin Version" 을 3.3.0, "Gradle Version" 을 4.10.3 으로 세팅
+
 일단 hello world 가 나오는 hello 프로젝트를 하나 만들고 디바이스에서 기동 되는거 까지는 진행.
 그리고 새로운 프로젝트를 하나더 만듬
 

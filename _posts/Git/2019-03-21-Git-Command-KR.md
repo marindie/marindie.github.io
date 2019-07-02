@@ -215,6 +215,13 @@ git push origin master
 Submodule repository url 가서 커밋 내용 확인.
 ```
 
+### unable to rewind rpc post data - try increasing http.postBuffer {#toc1}
+```js
+git config --global http.postBuffer 2097152000
+git config --global https.postBuffer 2097152000
+//(2097152000byte == 2000mb)
+```
+
 감사합니다.
 
 [^1]: This is a footnote.
