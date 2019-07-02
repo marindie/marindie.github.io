@@ -38,7 +38,7 @@ GROUP BY A.TABLESPACE_NAME
 ORDER BY TABLESPACE;
 ```
 
-### 테이블 리스트 카운트 및 TOTAL {#toc1}
+### 테이블 리스트 카운트 및 TOTAL {#toc2}
 
 ```sql
 ALTER SESSION FORCE PARALLEL DML;
@@ -56,6 +56,94 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE('TOTAL = '||TOTAL);
 END;
 /
+```
+
+### Database Character Set {#toc3}
+```sql
+SELECT VALUE FROM NLS_DATABASE_PARAMETERS WHERE PARAMETER='NLS_CHARACTERSET';
+```
+
+### SPOOL 시 사용하는 Option 들 {#toc4}
+```sql
+SET ECHO OFF
+SET TERM OFF
+SET FEEDBACK OFF
+SET SERVEROUTPUT ON
+SET HEADING OFF
+SET LINESIZE 30000
+SET TRIMOUT ON
+SET TRIMSPOOL ON
+SET PAGESIZE 0
+set long 2000000000
+column res Format a20000
+ALTER SESSION SET NLS_DATE_FORMAT = 'YY-MM-DD';
+
+EXEC DBMS_METADATA.SET_TRANSFORM_PARAM(DBMS_METADATA.SESSION_TRANSFORM, 'SQLTERMINATOR', TRUE);
+EXEC DBMS_METADATA.SET_TRANSFORM_PARAM(DBMS_METADATA.SESSION_TRANSFORM, 'PRETTY', TRUE);
+EXEC DBMS_METADATA.SET_TRANSFORM_PARAM(DBMS_METADATA.SESSION_TRANSFORM, 'TABLESPACE', TRUE);
+EXEC DBMS_METADATA.SET_TRANSFORM_PARAM(DBMS_METADATA.SESSION_TRANSFORM, 'SEGMENT_ATTRIBUTES', TRUE);
+EXECUTE DBMS_METADATA.SET_TRANSFORM_PARAM(DBMS_METADATA.SESSION_TRANSFORM,'STORAGE',false);
+```
+
+### Oracle 삭제 방법 {#toc4}
+```sql
+su - oracle
+$ORACLE_HOME/deinstall/deinstall
+
+root 계정으로 /etc 폴더의 oraInst.loc / oratab 파일 삭제
+root 계정으로 /usr/local/bin 폴더의 dbhome, oraenv, coraenv 파일 모두 삭제.
+/tmp 폴더에 Ora로 시작하는 모든 디렉토리 삭제.
+$ORACLE_HOME에 있는 폴더 모두 삭제.
+환경 프로파일에 넣어준 부분 삭제. ( /etc/profile 또는 /home/oracle/.bash_profile )
+```
+
+### 사용자 추가 및 DBA 권한 부여 {#toc5}
+```sql
+CREATE USER NEW_USER IDENTIFIED BY newuser DEFAULT TABLESPACE USERS ;
+GRANT CONNECT, RESOURCE, DBA TO NEW_USER;
+```
+
+### Oracle Partitioning 활성화 {#toc6}
+```sql
+select * from v$option where parameter = 'Partitioning';
+
+PARAMETER VALUE
+-------------------------------- ------------------- 
+Partitioning TRUE
+
+-- If partitioning is not enabled in the database then do the following step: 
+-- 1. Shutdown all databases that use this ORACLE_HOME
+-- 2. Run the following 
+
+cd $ORACLE_HOME/rdbms/lib
+make -f ins_rdbms.mk part_on
+make -f ins_rdbms.mk ioracle
+```
+
+### Oracle Password Limit Off {#toc7}
+```sql
+select RESOURCE_NAME,RESOURCE_TYPE,LIMIT from dba_profiles where PROFILE='DEFAULT' and RESOURCE_NAME='PASSWORD_VERIFY_FUNCTION';
+alter profile default limit PASSWORD_VERIFY_FUNCTION NULL;
+```
+
+### Add Partition SQL {#toc8}
+```sql
+ALTER TABLE TB_TEST
+ADD PARTITION "PT_201807"  VALUES LESS THAN (TO_DATE(' 2018-08-01 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN')) 
+PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+TABLESPACE "DATA02" NOCOMPRESS;
+```
+
+### Session Number Control {#toc8}
+```sql
+
+SHOW PARAMETER SESSIONS;
+SHOW PARAMETER PROCESSES;
+SHOW PARAMETER TRANSACTIONS;
+
+ALTER SYSTEM SET PROCESSES=500 SCOPE=BOTH SID='*';
+ALTER SYSTEM SET SESSIONS=555 SCOPE=BOTH SID='*';
+ALTER SYSTEM SET TRANSACTIONS=610 SCOPE=BOTH SID='*';
 ```
 
 [^1]: This is a footnote.
