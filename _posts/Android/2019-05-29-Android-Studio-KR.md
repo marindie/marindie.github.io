@@ -72,11 +72,22 @@ Build Apk
 
 ```
 
-### Android RESTFul API Lib RETROFIT or VOLLEY {#toc7}
+### Android RESTFul API Lib RETROFIT or VOLLEY {#toc8}
 ```md
 REST API 구현에 좋다고 하는데, 안써봐서 모르겠음. 하지만 그냥 REST API 가 되는건 아니고 
 이런 라이브러리를 사용해야 가능한듯.
 ```
+
+### Android AVD 인식 안될때  {#toc9}
+```md
+https://androidmtk.com/download-universal-adb-driver 에서 monitoring tool 다운 후 확인
+Device Setting Debugging 모드 활성화, Mobile Device Driver 설치 가 되었음에도 안되는 경우가 있다.
+장치관리자에서 상태를 보라고 monitoring tool 이 알려줘서 봤더니 사용 불가 상태. 사용으로 바꿔지지가 않았다.
+%ANDROID_HOME%\platform-tools
+%GRADLE_HOME%\bin
+%ANDROID_HOME%\tools
+```
+
 
 
 [^1]: This is a footnote.

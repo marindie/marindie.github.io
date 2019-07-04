@@ -25,6 +25,53 @@ cordova create MyApp ca.griffith.steve.myapp AppName //MyApp 폴터 이름. ca.x
 cordova platform add android
 ```
 
+### Cordova build Release {#a}
+
+```md
+json 방식, gradle 방식, cli 방식이 존재한다.
+나는 json 방식을 선택.
+build.json 은 cordova 최상위 폴더에 위치 해야 한다.
+cordova create MyApp ca.griffith.steve.myapp AppName 의 경우에는 MyApp 폴더에 위치
+
+build.json 의 내용은 아래 참고.
+이것저것 바꿔가면서 테스트 해본 결과, default 로 build.json 을 읽도록 되어 있고, 
+다른이름으로 할 경우에 --buildConfig 옵션으로 변경 가능.
+storePassword, password 차이점이 명확하지 않아서 3가지 가능한 케이스
+둘다 입력, 각각 입력, 테스트 결과, 둘다 입력했을 경우에만 build 성공이 되고,
+나머지 경우에는 
+Failed to create component for 'dialog' reason: java.awt.HeadlessException
+> java.awt.HeadlessException (no error message) 에러가 발생했다. 
+당연히 이 내용으로는 password 가 문제라는 것을 찾지 못한다. ^^;;;
+```
+```json
+{
+    "android": {
+        "debug": {
+            "keystore": "keystore/debug/debug.keystore",
+            "storePassword": "debug1",
+            "alias": "debug-keystore",
+            "password": "debug1",
+            "keystoreType": ""
+        },
+        "release": {
+            "keystore": "keystore/release/release.keystore",
+            "storePassword": "release1",
+            "alias": "release-keystore",
+            "password": "release1",
+            "keystoreType": ""
+        }
+    }
+}
+```
+Cordova 실행 명령어
+```js
+cordova build --release --storePassword=release1 --buildConfig=build.json
+// 파일명이 build.json 이라면 없이 실행해도 된다.
+cordova build --release --storePassword=release1
+```
+
+
+
 ### ANDROID_HOME Environment Set {#toc3}
 ```md
 변수 이름: ANDROID_HOME 
