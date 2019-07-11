@@ -87,9 +87,16 @@ git config --global http.sslVerify false
 # pull 을 해도 push 시에 에러가 발생함.
 # 이럴때 사용하는 명령어.
 
-git pull --rebase origin master
-git push origin master
+# git pull 을 해도 checkout version update 가 되지 않아서 merge 로 사용한다.
+git merge origin/master 
 
+# 충돌 내용이 있다면 로컬 수정본을 백업해 두고 origin master 것으로 엎어치는것이 빠르다.
+git pull --rebase origin master
+# 또는 
+git fetch --all
+git reset --hard origin/master
+# 이후에 다시 푸쉬
+git push origin master
 ```
 
 ### 기본 예제 {#l}
@@ -220,6 +227,27 @@ Submodule repository url 가서 커밋 내용 확인.
 git config --global http.postBuffer 2097152000
 git config --global https.postBuffer 2097152000
 //(2097152000byte == 2000mb)
+```
+
+### add commit rollback 취소 {#toc2}
+```js
+// add 를 rollback. 취소
+git reset HEAD CONTRIBUTING.md
+// add 한 전체 파일 rollback 
+git reset
+
+// commit을 취소하고 해당 파일들은 staged 상태로 워킹 디렉터리에 보존
+git reset --soft HEAD^
+// commit을 취소하고 해당 파일들은 unstaged 상태로 워킹 디렉터리에 보존
+git reset --mixed HEAD^ // 기본 옵션
+git reset HEAD^ // 위와 동일
+git reset HEAD~2 // 마지막 2개의 commit 취소
+```
+
+### git http basic access denied {#toc3}
+```js
+// 해당 git 에 계정이 없거나, 계정 정보가 변경되어 있는데 일치 하지 않거나 등등. 어쨌든 계정 이슈이므로 기존 정보 날리고 다시 시도
+git config --system --unset credential.helper
 ```
 
 감사합니다.
