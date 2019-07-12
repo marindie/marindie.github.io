@@ -44,7 +44,7 @@ import com.zaxxer.hikari.HikariDataSource;
   "com.mig.base.first.repo"
  }
 )
-public class firstDatasourceConfig {
+public class FirstDatasourceConfig {
 	 @Primary
 	 @Bean(name = "firstDataSource")
 	 @ConfigurationProperties(prefix = "spring.datasource")
