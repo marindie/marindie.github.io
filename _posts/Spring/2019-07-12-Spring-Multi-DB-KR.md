@@ -186,6 +186,36 @@ public class WonyDatasourceConfig extends HikariConfig {
 
 ### 설정들이 잘 되어 있는지 확인 하기 위한 logging setting {#toc3}
 ```yml
+server:
+  port: 8080
+
+spring:
+  application:
+    name: test
+    
+  jpa:
+    database: default
+    properties:
+      hibernate:
+        show_sql: false
+        meta_sql: false
+    hibernate:
+      ddl-auto: none
+    show-sql: false      
+    
+  datasource:
+    url: jdbc:oracle:thin:@IP_ADDR:PORT:XXX
+    username: XXX
+    password: XXX
+    driver-class-name: oracle.jdbc.OracleDriver
+    
+wony:
+  datasource:
+    jdbc-url: jdbc:oracle:thin:@IP_ADDR:PORT:XXX
+    username: XXX
+    password: XXX
+    driver-class-name: oracle.jdbc.OracleDriver    
+
 logging:
   file: logs/application-debug.log
   pattern:
