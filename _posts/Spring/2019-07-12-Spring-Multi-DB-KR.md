@@ -184,6 +184,28 @@ public class WonyDatasourceConfig extends HikariConfig {
 }
 ```
 
+### 설정들이 잘 되어 있는지 확인 하기 위한 logging setting {#toc3}
+```yml
+logging:
+  file: logs/application-debug.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org.springframework.web: ERROR
+    com.posco.mes3: DEBUG
+    org.hibernate.engine: ERROR
+    org.hibernate.validator: ERROR
+    org.hibernate.persister: ERROR
+    org.hibernate.boot: ERROR
+    org.hibernate.cfg: ERROR
+    org.hibernate.SQL: ERROR
+    org.hibernate.loader: ERROR
+    org.hibernate.event: ERROR
+    org.hibernate: DEBUG
+    com.zaxxer.hikari: DEBUG
+```
+
 [^1]: This is a footnote.
 
 [kramdown]: https://kramdown.gettalong.org/
