@@ -11,7 +11,22 @@ redirect_from:
 > Spring Multiple Datasource Sample 예제
 
 ### 설정 관련 설명 {#toc1}
-Primary 와 그 이외의 Datasource 방식으로 설정이 되어야 한다고 보면 된다.
+```md
+간단히 설명하지만, 매우매우 중요하니 잘 기억하기 바란다.
+처음 Datasoure 에는 Bean 생성 객체들위에 @Primary 가 있어야만 한다. 나머지 것들에는 반드시 없어야 한다.
+복붙하고나서 돌리면 에러가 Bean 생성 에러가 나와서 @Primary 가 없어야 동작한다는 것을 파악하기 어렵다.
+
+패키지 구조도 매우 중요하다.
+Ex) Entity 와 Repository 가 com.test.domain com.test.repo 라고 한다면 
+지금 만드는 Config Java 파일의 package 구조는 com.test.config 이어야만 한다.
+com.level1.level2.config 에 Config 파일 만들고
+com.level1.level2.level3.domain
+com.level1.level2.level3.repo 를 만들어 놓고 서버 돌리면
+hikariCP, hibernate 설정이 먹지 않고 ConfigurationProperties 의 prefix 의 정보를 읽어서 Datasource 를 만든다.
+정상적으로 서버가 떠서 잘 되는 구나 생각하겠지만, hikariCP 의 로깅을 DEBUG 로 해서 Connection Pool 설정
+정보 로그를 보면 내가 설정한 정보는 먹지 않고 전부 default 로 세팅 되어 있음을 알 수 있다.
+
+```
 
 ### Primary Datasource Java Sample {#toc2}
 
