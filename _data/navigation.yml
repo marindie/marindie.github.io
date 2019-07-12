@@ -14,7 +14,7 @@ main:
   #   url: /sitemap/
 
 docs:
-  - title: "Oracle"
-    url: /categories/#oracle
-  - title: "Tags"
-    url: /tags/
+  - title: "Category"
+    children:
+      - title: "Oracle"
+      url: /categories/#oracle
