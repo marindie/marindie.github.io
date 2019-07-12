@@ -79,7 +79,7 @@ public class firstDatasourceConfig {
 }
 ```
 
-### Primary Datasource Java Sample {#toc3}
+### Secondary Datasource or more Java Sample {#toc3}
 
 Secondary 또는 그 이상의 Datasource 에는 @Primary 가 없다.
 붙이면 Bean 생성 관련 에러가 발생했던것으로 기억한다.
