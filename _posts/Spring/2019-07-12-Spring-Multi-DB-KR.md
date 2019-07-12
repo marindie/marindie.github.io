@@ -199,7 +199,7 @@ public class WonyDatasourceConfig extends HikariConfig {
 }
 ```
 
-### 설정들이 잘 되어 있는지 확인 하기 위한 logging setting {#toc3}
+### 설정들이 잘 되어 있는지 확인 하기 위한 logging setting {#toc4}
 ```yml
 server:
   port: 8080
