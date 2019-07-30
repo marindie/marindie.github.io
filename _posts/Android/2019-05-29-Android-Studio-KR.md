@@ -83,6 +83,17 @@ REST API 구현에 좋다고 하는데, 안써봐서 모르겠음. 하지만 그
 https://androidmtk.com/download-universal-adb-driver 에서 monitoring tool 다운 후 확인
 Device Setting Debugging 모드 활성화, Mobile Device Driver 설치 가 되었음에도 안되는 경우가 있다.
 장치관리자에서 상태를 보라고 monitoring tool 이 알려줘서 봤더니 사용 불가 상태. 사용으로 바꿔지지가 않았다.
+
+해결은 잘 되지 않았지만, 장치 사용 안함으로 하고 다시 사용으로 하면 잡히는 경우가 있다.
+이유는 내가 찾지 못한 어떤 프로세스가 핸드폰 단말 AVD Interface 를 먼저 선점하고 있는데 내가 사용 안함으로 
+끊어버리면 Android Studio 가 먼저 찾아서 리스트에 나오는듯 하다.
+
+결론적으로 해당 프로세스가 뭔지를 파악해서 해결이 가능한지를 확인해 봐야 하지만.. 이런경우는 드물다.
+
+대부분 Mobile Device Driver 와 AVD Interface Driver 그리고 Gradle Version Downgrade 정도면
+최소한의 구동 가능한 Android Studio 개발은 되는듯 하다는게 나의 생각이다.
+
+아래는 잡아줘야 한다는 권고사항의 CLASS_PATH 리스트
 %ANDROID_HOME%\platform-tools
 %GRADLE_HOME%\bin
 %ANDROID_HOME%\tools
