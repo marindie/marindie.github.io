@@ -99,6 +99,8 @@ XXXEJB.jar 파일인 EJB 및 관련 class를 묶은 jar 파일과
 XXXWEB.war 파일인 Web Application 관련 파일들을 묶은 war 파일이 들어간다.
 
 .ear 파일 안에 META-INF 폴더안에 application.xml 을 작성하는데 아래는 샘플
+```
+```xml
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <!DOCTYPE application PUBLIC "-//Sun Microsystems, Inc.//DTD J2EE Application 1.3//EN" "http://java.sun.com/dtd/application_1_3.dtd">
 <application>
@@ -122,6 +124,8 @@ XXXWEB.war 파일인 Web Application 관련 파일들을 묶은 war 파일이 �
       </web>
    </module>
 </application>
+```
+```md
 폴더 구조
 TESTAPP.ear 
     - TESTEJB.jar
@@ -170,6 +174,7 @@ Client 에서 EJB JNDI 를 사용하기 위해서는 library 가 필요한데, J
 
 EJB Session Bean 을 ejb-jar.xml 파일에 정의 해두고,
 TESTEJB.jar 의 META-INF 폴더에 넣는다.
+```xml
 <?xml version = '1.0' encoding = 'EUC-KR'?>
 <!DOCTYPE ejb-jar PUBLIC "-//Sun Microsystems, Inc.//DTD Enterprise JavaBeans 2.0//EN" "http://java.sun.com/dtd/ejb-jar_2_0.dtd">
 <ejb-jar>
@@ -186,9 +191,12 @@ TESTEJB.jar 의 META-INF 폴더에 넣는다.
     </session>
   </enterprise-beans>
 </ejb-jar>
-
+```
+```md
 같은 META-INF 폴더 안에 jboss-ejb-client.xml 파일을 만들고
 아래의 내용을 기술한다.
+```
+```xml
 <jboss-ejb-client xmlns="urn:jboss:ejb-client:1.0">
    <client-context>
      <ejb-receivers>
@@ -196,10 +204,13 @@ TESTEJB.jar 의 META-INF 폴더에 넣는다.
      </ejb-receivers>
    </client-context>
  </jboss-ejb-client>
-
+```
+```md
  TESTWEB.war 안에 META-INF 폴더 안에 web.xml 을 만들고 설정을 한다.
  Servlet 3.0 이상부터는 보통 Annotation 기반의 sample 소스가 많은듯 하다. 이거는 옜날 동작방식에서
  못벗어 나는 상황에서 수정이 발생할 때, 이해를 하기 위해 적어 놓았다.
+ ```
+ ```xml
  <?xml version = '1.0' encoding = 'EUC-KR'?>
 <!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
 <web-app>
@@ -232,7 +243,8 @@ TESTEJB.jar 의 META-INF 폴더에 넣는다.
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
 </web-app>
-
+```
+```md
 해당 자원들의 설정 정보가 정상적으로 들어가 있는 상태에서
 TESTAPP.ear 를 JBoss6.4 의 standalone/deployments 안에 복사해 두고
 bin/standalone.bat 를 실행하면 서버 기동이 되는데, 정상적으로 떳다면,
