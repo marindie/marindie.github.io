@@ -88,6 +88,31 @@ System.out.println(test.testLog("asdfas","asdfasd","asdf"));
 ```
 ### JBoss EJB JNDI(RMI) 사용법 {#toc2}
 ```md
+내가 테스트 하면서 가장 애를 먹고 시간을 낭비한 부분이 바로 standalone.bat -b 111.222.33.444 로 서버를 기동안시킨 부분이였다.
+-b 옵션은 binding 옵션인데, ip 를 지정해서 서버를 기동 시키는데에 사용되어 보인다. 
+
+자 이슈가 무엇이였길래 이렇게 시작부터 언급하느냐.... 이유는 이렇다.
+jboss 는 remote://127.0.0.1:4447 이 기본으로 기동이 된다. 그래서 테스트시,
+remote://127.0.0.1:4447 로 테스트를 시도하는게 정상적인 방법이다. 근데 일반적으로
+127.0.0.1 의 static 주소인 기타 172.333.222.111 등등의 IP 로도 당연히 될것으로 착각하게 된다.
+내 로컬 IP 가 1.2.3.4 였다면 remote://127.0.0.1:4447 도 되고 , remote://1.2.3.4:4447 도 될것으로 당연히 생각하게 된다.
+하지만!!!! 테스트하면 127.0.0.1 만 된다.. 
+
+더 힘든 부분은, 실제로 remote 서버를 만들어서 테스트를 진행 할때, 서버로그에서 어떤 IP 로 remote 를 설정해서 올라오는지 확인 안하게 된다면,
+희안한 에러로 인해 세월을 보내게 될 수 있다. 그 에러는 바로 아래의 에러들.
+
+javax.naming.AuthenticationException: Failed to connect to any server. Servers tried: [remote://1.2.3.4:4447 (Authentication failed: the server presented no authentication mechanisms)] [Root exception is javax.security.sasl.SaslException: Authentication failed: the server presented no authentication mechanisms]
+
+javax.naming.CommunicationException: Failed to connect to any server. Servers tried: [remote://1.2.3.4:4447 (java.net.ConnectException: Connection refused: no further information)]
+
+Jboss RMI (EJB JNDI 가 여기에서 사용한 방식)를 테스트 할 때, 가장 중요한 부분 3가지를 언급한다.
+1. 서버 기동시에 뜨는 remote IP/PORT 를 확인한다.
+2. application user 를 등록하여 해당 계정으로 사용한다.
+3. standalone.bat or .sh 로 기동시 -b 옵션으로 로컬 서버의 IP 를 박아서 뜨운다.
+
+기본적으로 standalone.bat 를 실행 시키면, remote 서버가 내부적으로 기동되는 것 같다. 특별한 설정은 만지지 않았다.
+Jboss 6.4 사용
+
 RMI 를 기록하는데 왜 갑자기 EJB JNDI 가 나오나 싶을것 같다. 
 EJB 내부에 RMI 기능이 내장되어 있는것으로 알고 있다. 
 
