@@ -113,7 +113,9 @@ rm TEMP.TXT
 1. DATE 타입과 TIMESTAMP 타입만 처리를 하고 나머지는 STRING 형태로 가정하고 처리하였습니다. 
 2. LOB 와 같이 4000 이상의 길이를 처리 하기 위해서는 단순히 해당 컬럼에 max 값을 정의 하면 됩니다.
    Ex) COLUMN_NAME char(10000) 
-   개행 처리를 위해서는 INFILE 에 "var" 를 추가해 주거나 LOBFILE 을 사용하면 된다고 합니다.
+   개행 처리를 위해서는 INFILE 에 "str '$\r\n'" 를 추가해 주거나 LOBFILE 을 사용하면 된다고 합니다.
+   의미는 각 record string 의 맨 끝에 '$' 표시에 이어서 line break 가 매칭 되었을때, 
+   ctl 에서의 record 하나로 인식해 달라는 뜻입니다.
 
 ```bash
 
