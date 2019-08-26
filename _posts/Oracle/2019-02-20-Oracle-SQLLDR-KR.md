@@ -110,7 +110,10 @@ rm TEMP.TXT
 
 ### TABLE_TEST1.ctl {#toc4}
 
-1. DATE 타입과 TIMESTAMP 타입만 처리를 하고 나머지는 STRING 형태로 가정하고 처리하였습니다. LOB 처리는 다루지 않았습니다.
+1. DATE 타입과 TIMESTAMP 타입만 처리를 하고 나머지는 STRING 형태로 가정하고 처리하였습니다. 
+2. LOB 와 같이 4000 이상의 길이를 처리 하기 위해서는 단순히 해당 컬럼에 max 값을 정의 하면 됩니다.
+   Ex) COLUMN_NAME char(10000) 
+   개행 처리를 위해서는 INFILE 에 "var" 를 추가해 주거나 LOBFILE 을 사용하면 된다고 합니다.
 
 ```bash
 
@@ -142,7 +145,19 @@ CREATE_DT DATE "YYYY-MM-DD HH24:MI:SS"
 
 ```
 
-### TABLE_TEST1.DAT 와 같은 CSV 형태의 파일 생성 관련 정보 {#toc6}
+### READSIZE BINDSIZE ROWS 설정 {#toc6}
+```md
+실제로 사용을 하다 보면 한꺼번에 넣는 ROWS 개수를 조절하고 싶어집니다.
+
+그때 알게 되는 옵션이 READSIZE BINDSIZE 인데, Oracle 은 BINDSIZE만 정의하는것을 추천한다고 합니다.
+이유는 READSIZE 값이 BINDSIZE 값 보다 작으면 자동으로 BINDSIZE 값으로 증가시켜서 사용하기 때문이라고 하네요.
+20971520 가 최대 값입니다. (20MB)
+Ex)
+sqlldr test/test22@TEST control="./insert/TEST.ctl" log="./log/TEST.log" ROWS=1000 BINDSIZE =20971520 READSIZE =20971520 
+```
+
+
+### TABLE_TEST1.DAT 와 같은 CSV 형태의 파일 생성 관련 정보 {#toc7}
 
 CSV 파일 형태로 쿼리 조회 결과를 출력해주는 프로그램 정보를 원하신다면
 

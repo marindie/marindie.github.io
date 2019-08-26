@@ -10,7 +10,7 @@ redirect_from:
 
 > I will share my fairly Simple Oracle SQL LOADER Control File Generator in this post
 
-### 배경지식
+### Background
 
 1. Basic SQL LOADER understanding is required.
 2. SQL LOADER is a tool that ORACLE provide most commonly for INSERT DML.
@@ -92,7 +92,7 @@ rm TEMP.TXT
 
 ```
 
-### 내용 설명
+### Explanation
 
 1. First, I assume that insert folder is already made, move into the folder, and select META information of the target TABLE in TAB_LIST.
    Using selected information, I generated information that SQL LOADER need it for the INSERT DML
@@ -132,6 +132,12 @@ CREATE_DT DATE "YYYY-MM-DD HH24:MI:SS"
 
 ### TABLE_TEST1.DAT
 
+1. I assumed that apart from DATE TIMESTAMP data type, all are STRING data type.
+2. For LOB case, which exceeds over 4000 characters, simply put max char value in ctl file.
+   Ex) COLUMN_NAME char(10000) 
+   for handling next line within string data, put "var" in INFILE option or use LOBFILE
+
+
 ```bash
 
 1&2003-07-14 15:52:43.000000&2019-02-11 13:11:57.536000
@@ -140,6 +146,19 @@ CREATE_DT DATE "YYYY-MM-DD HH24:MI:SS"
 ...
 
 ```
+
+### READSIZE BINDSIZE ROWS
+```md
+When you actually use sqlldr, you may want to control number of rows to insert at each operation.
+ROWS are the one you need to change number of rows per each load operation.
+
+Then, you will face some physical size issue. READSIZE BINDSIZE are for those physical size change.
+Oracle guide you to use BINDSIZE since when READSIZE is smaller than BINDSIZE, then READSIZE will become BINDSIZE.
+Max is 20971520 (20MB)
+Ex)
+sqlldr test/test22@TEST control="./insert/TEST.ctl" log="./log/TEST.log" ROWS=1000 BINDSIZE =20971520 READSIZE =20971520 
+```
+
 
 ### CSV Format file Generator
 

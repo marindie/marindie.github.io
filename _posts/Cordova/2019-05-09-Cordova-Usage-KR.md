@@ -153,9 +153,10 @@ android{
 }
 
 CordovaLib 의 AndroidManifest.xml 파일이 있는데 기본적으로 아래의 설정이 들어가는듯 하다.
+<uses-sdk android:minSdkVersion="19" />
+
 문제는 Android Studio 플젝에서 Gradle Sync 시에 이 녀석으로 인해 에러를 발생시키고
 build.gradle 파일의 설정을 사용하도록 안내가 나와서 그냥 지워봤더니 성공하고 디바이스 run 활성화 되었다.
-    <uses-sdk android:minSdkVersion="19" />
 
 build.gradle
     minSdkVersion 19
