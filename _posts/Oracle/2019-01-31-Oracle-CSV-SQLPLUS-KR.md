@@ -90,18 +90,21 @@ END;
 ```bash
 
 #/bin/bash
-SOURCE_DB="DPBAS_NEW"
-S_USER="POSMGMAST"
-S_PWD="dpbas1"
+
+# Generate Data for SQL Loader
+SOURCE_DB="TEST"
+S_USER="TEST"
+S_PWD="test"
 
 query=$2
 
 for table in $1
 do
-OUTPUT=$(sqlplus -S $S_USER/$S_PWD@$SOURCE_DB << EOF > "./${table}.csv"
-SET SERVEROUTPUT ON
+OUTPUT=$(sqlplus -S $S_USER/$S_PWD@$SOURCE_DB << EOF > "./select/${table}.DAT"
+SET SERVEROUTPUT ON SIZE UNLIMITED
 SET FEEDBACK OFF
 SET LINESIZE 20000
+SET PAGESIZE 0
 ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD HH24:MI:SS';
 ALTER SESSION SET NLS_TIMESTAMP_FORMAT = 'YYYY-MM-DD HH24:MI:SS.FF';
 DECLARE
@@ -123,21 +126,20 @@ BEGIN
         DBMS_SQL.DEFINE_COLUMN(CUR, I, V_VARCHAR, 32767);
     END LOOP;        
     RES := DBMS_SQL.EXECUTE(CUR);
+	WHILE DBMS_SQL.FETCH_ROWS(CUR)>0  
     LOOP
-        IF DBMS_SQL.FETCH_ROWS(CUR)>0 THEN 
-            FOR I IN 1 .. CNT LOOP
-                DBMS_SQL.COLUMN_VALUE(CUR, I, V_VARCHAR);                    
-                IF (I > 1) THEN
-                    DBMS_OUTPUT.PUT('&'||V_VARCHAR);
-                ELSIF (I = CNT OR I = 1) THEN
-                    DBMS_OUTPUT.PUT(V_VARCHAR);
-                END IF;
-            END LOOP;  
-                    DBMS_OUTPUT.NEW_LINE;
-        ELSE
-            EXIT;
-        END IF;
+		FOR I IN 1 .. CNT LOOP
+			DBMS_SQL.COLUMN_VALUE(CUR, I, V_VARCHAR);                    
+			IF (I > 1) THEN
+				DBMS_OUTPUT.PUT('&!'||V_VARCHAR);
+			ELSIF (I = CNT OR I = 1) THEN
+				DBMS_OUTPUT.PUT(V_VARCHAR);
+			END IF;
+		END LOOP;  
+		DBMS_OUTPUT.PUT('$');
+		DBMS_OUTPUT.NEW_LINE;
     END LOOP;
+	DBMS_SQL.CLOSE_CURSOR (CUR); 
 END;
 /
 EOF
