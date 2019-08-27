@@ -51,12 +51,13 @@ BEGIN
             FOR I IN 1 .. CNT LOOP
                 DBMS_SQL.COLUMN_VALUE(CUR, I, V_VARCHAR);                    
                 IF (I > 1) THEN
-                    DBMS_OUTPUT.PUT('&'||V_VARCHAR);
+                    DBMS_OUTPUT.PUT('&!'||V_VARCHAR);
                 ELSIF (I = CNT OR I = 1) THEN
                     DBMS_OUTPUT.PUT(V_VARCHAR);
                 END IF;
             END LOOP;  
-                    DBMS_OUTPUT.NEW_LINE;
+            DBMS_OUTPUT.PUT('$');
+            DBMS_OUTPUT.NEW_LINE;
         ELSE
             EXIT;
         END IF;

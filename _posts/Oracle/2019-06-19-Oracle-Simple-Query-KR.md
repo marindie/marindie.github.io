@@ -215,6 +215,19 @@ ALTER SESSION SET NLS_TIMESTAMP_FORMAT = 'YYYY-MM-DD HH24:MI:SS.FF';
 ALTER SESSION SET NLS_TIMESTAMP_TZ_FORMAT = 'YYYY-MM-DD HH:MI:SS.FF TZH:TZM'
 ```
 
+### Hex Code 표시 방법 {#toc12}
+```sql
+select utl_raw.cast_to_raw('|'||chr(10)) from dual;              -- 유닉스에서 줄의종결표시는 chr(10), 특수문자표시는 | 라고 가정했을때
+utl_raw.cast_to_row('|'||chr(10))
+----------------------------------
+7C0A                                                             -- STR = 7C0A
+
+select utl_raw.cast_to_raw('|'||chr(13)||chr(10)) from dual;     -- 윈도우에서 줄의종결표시는 chr(10), 특수문자표시는 | 라고 가정했을때
+UTL_RAW.CAST_TO_RAW('|'||CHR(13)||CHR(10))
+-----------------------------------------------------------
+7C0D0A                                                           -- STR = 7C0D0A
+```
+
 [^1]: This is a footnote.
 
 [kramdown]: https://kramdown.gettalong.org/
