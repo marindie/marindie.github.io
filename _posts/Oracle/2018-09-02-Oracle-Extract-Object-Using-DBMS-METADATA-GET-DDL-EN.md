@@ -51,6 +51,7 @@ EXEC DBMS_METADATA.SET_TRANSFORM_PARAM(DBMS_METADATA.SESSION_TRANSFORM, 'PRETTY'
 EXEC DBMS_METADATA.SET_TRANSFORM_PARAM(DBMS_METADATA.SESSION_TRANSFORM, 'SQLTERMINATOR', TRUE); 
 -- Display Storage Info, Most of cases, I do not change those Info, so I don't want to see them.
 EXEC DBMS_METADATA.SET_TRANSFORM_PARAM(DBMS_METADATA.SESSION_TRANSFORM,'STORAGE', FALSE); 
+-- EXEC DBMS_METADATA.SET_TRANSFORM_PARAM(DBMS_METADATA.SESSION_TRANSFORM,'TABLESPACE', FALSE); 
 -- When you want to extract partitioned table or index, then you should set true to have those information.
 -- But.. You may face 'SEGMENT CREATE IMMEDIATE' or 'SEGMENT CREATE DEFERRERD' issue.
 -- What I'm saying is that when those statement included, the create statement may not work. So you may remove and re-run to see if it work I guess.
