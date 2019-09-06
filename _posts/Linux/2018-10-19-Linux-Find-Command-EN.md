@@ -46,6 +46,11 @@ find /usr -size +20000 -print -exec ls -alt {} +;
 
 ```
 
+### Find file where modified date is over 3 days in current folder level. Print Timestamp Format
+```bash
+find . -maxdepth 1 -type f -ctime +3 -printf "%p %TY-%Tm-%Td %TH:%TM:%TS %Tz\n" -delete
+```
+
 [^1]: This is a footnote.
 
 [kramdown]: https://kramdown.gettalong.org/
