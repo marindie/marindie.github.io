@@ -82,6 +82,7 @@ END;
     result properly without line breaks.
 11. FORMAT WRAPPED preserve whitespace of query result. Ex) ' &!aa&1'
 12. This example assume that Each end of line is terminated by $ and each Field data is seperated by &!
+13. Beaware that PGA size should be enough to load data before write into a file.
 
 ### PL/SQL Block in bash
 
