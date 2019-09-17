@@ -21,11 +21,12 @@ redirect_from:
 ### PL/SQL Block
 
 ```sql
-
+SET SERVEROUTPUT ON SIZE UNLIMITED FORMAT WRAPPED
+SET FEEDBACK OFF
+SET LINESIZE 20000
+SET PAGESIZE 0
 ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD HH24:MI:SS';
 ALTER SESSION SET NLS_TIMESTAMP_FORMAT = 'YYYY-MM-DD HH24:MI:SS.FF';
-SET SERVEROUTPUT ON
-SET FEEDBACK OFF
 DECLARE
     CUR NUMBER;
     RES NUMBER;
@@ -39,28 +40,26 @@ DECLARE
 BEGIN
     DBMS_OUTPUT.ENABLE (BUFFER_SIZE => NULL);
     CUR := DBMS_SQL.OPEN_CURSOR;
-    DBMS_SQL.PARSE(CUR, 'SELECT * FROM TEST_TABLE WHERE ROWNUM < 10', DBMS_SQL.NATIVE);
+    DBMS_SQL.PARSE(CUR, 'SELECT * FROM TEST', DBMS_SQL.NATIVE);
     DBMS_SQL.DESCRIBE_COLUMNS (CUR, CNT, DESC_TAB);
     FOR I IN 1 .. CNT LOOP
         DBMS_SQL.DEFINE_COLUMN(CUR, I, V_VARCHAR, 32767);
     END LOOP;        
     RES := DBMS_SQL.EXECUTE(CUR);
+	WHILE DBMS_SQL.FETCH_ROWS(CUR)>0  
     LOOP
-        IF DBMS_SQL.FETCH_ROWS(CUR)>0 THEN 
-            FOR I IN 1 .. CNT LOOP
-                DBMS_SQL.COLUMN_VALUE(CUR, I, V_VARCHAR);                    
-                IF (I > 1) THEN
-                    DBMS_OUTPUT.PUT('&!'||V_VARCHAR);
-                ELSIF (I = CNT OR I = 1) THEN
-                    DBMS_OUTPUT.PUT(V_VARCHAR);
-                END IF;
-            END LOOP;  
-            DBMS_OUTPUT.PUT('$');
-            DBMS_OUTPUT.NEW_LINE;
-        ELSE
-            EXIT;
-        END IF;
+		FOR I IN 1 .. CNT LOOP
+			DBMS_SQL.COLUMN_VALUE(CUR, I, V_VARCHAR);                    
+			IF (I > 1) THEN
+				DBMS_OUTPUT.PUT('&!'||V_VARCHAR);
+			ELSIF (I = CNT OR I = 1) THEN
+				DBMS_OUTPUT.PUT(V_VARCHAR);
+			END IF;
+		END LOOP;  
+		DBMS_OUTPUT.PUT('$');
+		DBMS_OUTPUT.NEW_LINE;
     END LOOP;
+	DBMS_SQL.CLOSE_CURSOR (CUR); 
 END;
 /
 
@@ -81,6 +80,8 @@ END;
 9. After that, I tried to solve this issue and the following code display the result in a way I expected.
 10. The point is I used ">" command after EOF so that the result can be saved as a file. In that way I was able to print the query 
     result properly without line breaks.
+11. FORMAT WRAPPED preserve whitespace of query result. Ex) ' &!aa&1'
+12. This example assume that Each end of line is terminated by $ and each Field data is seperated by &!
 
 ### PL/SQL Block in bash
 

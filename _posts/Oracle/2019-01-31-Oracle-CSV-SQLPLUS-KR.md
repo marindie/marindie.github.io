@@ -22,11 +22,12 @@ redirect_from:
 # PL/SQL Block {#toc2}
 
 ```sql
-
+SET SERVEROUTPUT ON SIZE UNLIMITED FORMAT WRAPPED
+SET FEEDBACK OFF
+SET LINESIZE 20000
+SET PAGESIZE 0
 ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD HH24:MI:SS';
 ALTER SESSION SET NLS_TIMESTAMP_FORMAT = 'YYYY-MM-DD HH24:MI:SS.FF';
-SET SERVEROUTPUT ON
-SET FEEDBACK OFF
 DECLARE
     CUR NUMBER;
     RES NUMBER;
@@ -40,28 +41,26 @@ DECLARE
 BEGIN
     DBMS_OUTPUT.ENABLE (BUFFER_SIZE => NULL);
     CUR := DBMS_SQL.OPEN_CURSOR;
-    DBMS_SQL.PARSE(CUR, 'SELECT * FROM TEST_TABLE WHERE ROWNUM < 10', DBMS_SQL.NATIVE);
+    DBMS_SQL.PARSE(CUR, 'SELECT * FROM TEST', DBMS_SQL.NATIVE);
     DBMS_SQL.DESCRIBE_COLUMNS (CUR, CNT, DESC_TAB);
     FOR I IN 1 .. CNT LOOP
         DBMS_SQL.DEFINE_COLUMN(CUR, I, V_VARCHAR, 32767);
     END LOOP;        
     RES := DBMS_SQL.EXECUTE(CUR);
+	WHILE DBMS_SQL.FETCH_ROWS(CUR)>0  
     LOOP
-        IF DBMS_SQL.FETCH_ROWS(CUR)>0 THEN 
-            FOR I IN 1 .. CNT LOOP
-                DBMS_SQL.COLUMN_VALUE(CUR, I, V_VARCHAR);                    
-                IF (I > 1) THEN
-                    DBMS_OUTPUT.PUT('&!'||V_VARCHAR);
-                ELSIF (I = CNT OR I = 1) THEN
-                    DBMS_OUTPUT.PUT(V_VARCHAR);
-                END IF;
-            END LOOP;  
-            DBMS_OUTPUT.PUT('$');
-            DBMS_OUTPUT.NEW_LINE;
-        ELSE
-            EXIT;
-        END IF;
+		FOR I IN 1 .. CNT LOOP
+			DBMS_SQL.COLUMN_VALUE(CUR, I, V_VARCHAR);                    
+			IF (I > 1) THEN
+				DBMS_OUTPUT.PUT('&!'||V_VARCHAR);
+			ELSIF (I = CNT OR I = 1) THEN
+				DBMS_OUTPUT.PUT(V_VARCHAR);
+			END IF;
+		END LOOP;  
+		DBMS_OUTPUT.PUT('$');
+		DBMS_OUTPUT.NEW_LINE;
     END LOOP;
+	DBMS_SQL.CLOSE_CURSOR (CUR); 
 END;
 /
 
@@ -81,6 +80,8 @@ END;
 8. 하지만, 출력 결과를 보게 되면, 너무 많은 빈 라인들이 만들어 져서 나오게 됩니다. 적어도 제가 테스트 한 결과는 그렇습니다.
 9. 그렇다면.. 방법이 없는걸가요? 여러가지를 시도해 본 결과, 아래의 방법으로 처리하게 되면 정상적으로 원하는 결과를 얻는것을 확인하였습니다.
 10. 방식은 EOF 옆의 ">" 를 사용하여 파일형태로 결과물을 생성하니 라인이 깨지지 않고 정상적으로 저장이 되었습니다.
+11. FORMAT WRAPPED 는 맨 앞의 공백이 사라지지 않게 도와줍니다. Ex) ' &!aa&!'
+12. 라인의 끝을 $ 로 설정하고, 각 컬럼의 구분자를 &! 로 설정하여 출력하는 예제입니다.
 
 ### PL/SQL Block in bash {#toc4}
 
