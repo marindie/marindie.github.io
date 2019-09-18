@@ -228,6 +228,25 @@ UTL_RAW.CAST_TO_RAW('|'||CHR(13)||CHR(10))
 7C0D0A                                                           -- STR = 7C0D0A
 ```
 
+### PGA_AGGREGATE_LIMIT 설정 {#toc13}
+```sql
+alter system set pga_aggregate_limit = 0 -- 제한을 두지 않음
+```
+
+### Oracle Paging Query {#toc14}
+```sql
+SELECT * FROM 
+(SELECT /*+ INDEX_DESC(Z TEST_PK) */ ROWNUM AS RNUM, A.* 
+ FROM 
+ (
+    SELECT * FROM TEST
+ ) A 
+ WHERE ROWNUM <= 200
+) 
+WHERE RNUM >= 100;
+```
+
+
 [^1]: This is a footnote.
 
 [kramdown]: https://kramdown.gettalong.org/
