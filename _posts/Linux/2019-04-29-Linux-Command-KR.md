@@ -40,6 +40,17 @@ find . -name '*.jar' -exec basename {} \;
 # .*? 첫번째 매칭을 시도해 봤는데 잘 안됨.. 어떻게 해야 하는지 모르겠음.
 ```
 
+### Disk Size {#toc5}
+```bash
+df -h
+```
+
+### grep after grep {#toc6}
+```bash
+grep -l word ./* | xargs grep word2
+grep -lZ word ./* | xargs -r0 grep word2
+```
+
 [^1]: This is a footnote.
 
 [kramdown]: https://kramdown.gettalong.org/
