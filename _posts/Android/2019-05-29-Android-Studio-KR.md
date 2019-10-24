@@ -99,6 +99,29 @@ Device Setting Debugging 모드 활성화, Mobile Device Driver 설치 가 되�
 %ANDROID_HOME%\tools
 ```
 
+### Eclipse 프로젝트 Import 후 처리  {#toc10}
+```md
+File -> Close Project
+Import Project (Gradle, Eclipse ADT, etc.) 선택
+경로 선택 후 OK 로 진행 하면 Import 는 됨.
+Sync Project with Gradle Files 가 진행되면서 에러가 나기 시작하는데
+
+이때 내가 만졌던 내용들을 기록한다.
+
+File -> Project Structure 클릭 후 Project 에서 "Android Gradle Plugin Version" 을 3.3.0, "Gradle Version" 을 4.10.3 으로 세팅
+
+build.gradle 파일의 repositories 정보에 google 을 추가
+
+AndroidManifest.xml 의 최 하단에 있는 minSdkVersion 부분 삭제
+
+build.gradle (Module: app) compile -> implementation 변경
+
+AndroidManifest.xml 파일에 action 부분을 intent-filter 로 감싸줘야 하는데 누락되어 있어서 추가
+
+Android Studio 우측 하단의 Encoding List 에서 UTF-8 선택
+Convert 버튼 클릭하여 UTF-8 변환
+```
+
 
 
 [^1]: This is a footnote.

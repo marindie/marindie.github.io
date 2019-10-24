@@ -204,6 +204,20 @@ dependencies {
 }
 ```
 
+### Cordova App 재사용법 {#toc7}
+```md
+제목의 의미를 풀어 쓰면, 이미 다른 폴더나 형상관리에 올라가 있는
+Cordova Android 를 바로 사용하고자 할때, 해줘야 하는 부분이다.
+완전 깡통이라고 생각하고 요약해서 정리하겠다.
+1. Android Home 환경설정
+2. JAVA OPTION 환경옵션 추가
+3. npm 으로 cordova install 및 cordova project 생성
+4. 생성된 폴더 안에서 cordova platform add android 
+5. app 폴더를 이미 존재하는 app 폴더로 엎어침
+6. cordova build
+7. release 를 하기 위해서 keystore 폴더 및 build.json 파일이 있을 수 있다. 해당 폴더 및 파일이 있는 경우 내려 받은 프로젝트의 구조와 동일 시켜주면 됨.
+```
+
 [^1]: This is a footnote.
 
 [kramdown]: https://kramdown.gettalong.org/
