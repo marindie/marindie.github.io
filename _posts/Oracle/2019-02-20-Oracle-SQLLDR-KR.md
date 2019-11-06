@@ -158,6 +158,33 @@ Ex)
 sqlldr test/test22@TEST control="./insert/TEST.ctl" log="./log/TEST.log" ROWS=1000 BINDSIZE =20971520 READSIZE =20971520 
 ```
 
+### sqlldr 사용시 SQL*Loader-704: Internal error: ulconnect: OCIServerAttach 에러 처리 {#toc6}
+```sql
+-- 아래 쿼리로 조회해 보면, 두개 이상의 Characterset 이 보이게 된다.  Ex)KO16KSC5601, AL16UTF16
+-- 내가 DB 를 설치하고 구성할때, 일부 Characterset 을 변경하지 않고 만들어서 그런거 같은데, 어디를 놓친건지 모르는 상황
+SELECT DISTINCT (NLS_CHARSET_NAME (CHARSETID)) CHARACTERSET,
+       DECODE (TYPE#,
+	           1, DECODE(CHARSETFORM, 1, 'VARCHAR2', 2, 'NVARCHAR2', 'UNKOWN'),
+			   9, DECODE(CHARSETFORM, 1, 'VARCHAR2', 2, 'NCHAR VARYING', 'UNKOWN'),
+			   96, DECODE(CHARSETFORM, 1, 'CHAR', 2, 'NCHAR', 'UNKOWN'),
+			   112, DECODE(CHARSETFORM, 1, 'CLOB', 2, 'NCLOB', 'UNKOWN'))
+	   TYPES_USED_IN
+FROM SYS.COL$
+WHERE CHARSETFORM IN (1,2) AND TYPE# IN (1,9,96,112);
+
+-- 일단 조취 방법은 아래와 같다
+-- sqlplus / as sysdba
+SHUTDOWN IMMEDIATE ;
+STARTUP MOUNT ;
+ALTER SYSTEM ENABLE RESTRICTED SESSION ;
+ALTER SYSTEM SET JOB_QUEUE_PROCESSES=0 ;
+ALTER SYSTEM SET AQ_TM_PROCESSES=0 ;
+ALTER DATABASE OPEN ;
+ALTER DATABASE CHARACTER SET KO16KSC5601 ; --변경하고자 하는 케릭터셋
+SHUTDOWN IMMEDIATE;
+
+```
+
 
 ### TABLE_TEST1.DAT 와 같은 CSV 형태의 파일 생성 관련 정보 {#toc7}
 

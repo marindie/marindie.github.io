@@ -46,7 +46,7 @@ column res Format a20000
 
 ```sql
 -- Support Line Break. I do not understand exactly what types of line it supports 
-EXEC DBMS_METADATA.SET_TRANSFORM_PARAM(DBMS_METADATA.SESSION_TRANSFORM, 'PRETTY', TRUE); though...
+EXEC DBMS_METADATA.SET_TRANSFORM_PARAM(DBMS_METADATA.SESSION_TRANSFORM, 'PRETTY', TRUE);
 -- Put ';' character at the end of each command.
 EXEC DBMS_METADATA.SET_TRANSFORM_PARAM(DBMS_METADATA.SESSION_TRANSFORM, 'SQLTERMINATOR', TRUE); 
 -- Display Storage Info, Most of cases, I do not change those Info, so I don't want to see them.
@@ -124,7 +124,7 @@ sed -i'' -r -e "s/SEGMENT CREATE IMMEDIATE|SEGMENT CREATE DEFERRERD//" *.SQL
 # To Check Matching Text run this
 gsed -n -r -e "s/SEGMENT CREATE IMMEDIATE|SEGMENT CREATE DEFERRERD//gp" *.SQL 
 # Then Run to remove the syntax
-gsed -i'' -r -e "s/SEGMENT CREATE IMMEDIATE|SEGMENT CREATE DEFERRED//g" *.SQL
+gsed -i'' -r -e "s/SEGMENT CREATE IMMEDIATE|SEGMENT CREATE DEFERRERD//g" *.SQL
 
 ```
 

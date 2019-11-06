@@ -46,7 +46,7 @@ When you try to install oracle on linux environment, you need to check the follo
 
 ```bash
 yum -y update
-yum install -y binutils compat-libcap* gcc* glibc* ksh libgcc* libstdc* libaio* make* sysstat* unixODBC* elfutils-libelf-devel unzip wget compat-libstdc++-33-3.2.3
+yum install -y net-tools binutils compat-libcap* gcc* glibc* ksh libgcc* libstdc* libaio* make* sysstat* unixODBC* elfutils-libelf-devel unzip wget compat-libstdc++-33-3.2.3
 
 you can now donwload those files below from my git url
 git clone https://github.com/marindie/share.git
