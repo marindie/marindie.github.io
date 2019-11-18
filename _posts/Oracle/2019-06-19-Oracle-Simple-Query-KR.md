@@ -326,6 +326,12 @@ drop tablespace undotbs2 including contents and datafiles;
 
 ### Oracle INACTIVE Session 삭제 DBMS_SCHEDULER Job 등록 {#toc17}
 ```sql
+-- 일단 이슈는 같은 row lock 현상으로 인해서 이렇게 처리하게 되었음.
+-- 락 발생시, 세션을 일단 검색, EVENT 값을 보니 TX lock 발생
+-- 관련 쿼리를 찾아서 SCHEDULER 에 SESSION KILL 하는 JOB 을 등록해서
+-- 5초 단위로 돌리기로 맘 먹음.
+
+SELECT SID,SERIAL#,USERNAME,STATUS,EVENT FROM V$SESSION WHERE USERNAME = 'POSMAST';
 sqlplus / as sysdba
 -- GRANT ALTER SYSTEM TO TESTUSER; 필요하면 사용
 GRANT SELECT ON V_$TRANSACTION TO TESTUSER;
