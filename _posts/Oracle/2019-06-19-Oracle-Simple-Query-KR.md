@@ -270,6 +270,137 @@ STARTUP;
 
 ```
 
+### Oracle DB LINK 생성 삭제 {#toc16}
+```sql
+-- DROP 하기 전에 조회했던 쿼리 결과들 닫아야 함. Ex) Jdeveloper 는 query result 같은거
+CREATE DATABASE LINK TESDB CONNECT TO SCOTT TIGER BY TESDB USING 'TES';
+DROP DATABASE LINK TESDB;
+
+아래의 방법으로도 삭제 가능
+-- sqlplus / as sysdba
+-- SHUTDOWN IMMEDIATE
+-- STARTUP RESTRICT
+-- DROP DATABASE LINK ...;
+-- ALTER SYSTEM DISABLE RESTRICTED SESSION
+```
+
+### Oracle Tablespace Datafile 사용량 조회 및 사이즈 재조정, Undotable space 삭제 방법 {#toc16}
+```sql
+SELECT  SUBSTR(DF.TABLESPACE_NAME,1,20) "Tablespace Name",
+        SUBSTR(DF.FILE_NAME,1,80) "File Name",
+        ROUND(DF.BYTES/1024/1024,0) "Size (M)",
+        DECODE(E.USED_BYTES,NULL,0,ROUND(E.USED_BYTES/1024/1024,0)) "Used (M)",
+        DECODE(F.FREE_BYTES,NULL,0,ROUND(F.FREE_BYTES/1024/1024,0)) "Free (M)",
+        DECODE(E.USED_BYTES,NULL,0,ROUND((E.USED_BYTES/DF.BYTES)*100,0)) "% Used"
+FROM    DBA_DATA_FILES DF,
+       (SELECT FILE_ID,
+               SUM(BYTES) USED_BYTES
+        FROM DBA_EXTENTS
+        GROUP BY FILE_ID) E,
+       (SELECT SUM(BYTES) FREE_BYTES,
+               FILE_ID
+        FROM DBA_FREE_SPACE
+        GROUP BY FILE_ID) F
+WHERE    E.FILE_ID (+) = DF.FILE_ID
+AND      DF.FILE_ID  = F.FILE_ID (+)
+ORDER BY DF.TABLESPACE_NAME,
+         DF.FILE_NAME;
+
+alter database datafile '/ORACLE/oradata/TEST/ts_dat.dbf' resize 20M;
+alter database datafile '/ORACLE/oradata/TEST/ts_idx.dbf' resize 20M;
+
+         
+--임시 undo tablespace 생성
+create  undo tablespace undotbs2 datafile '/ORACLE/oradata/TEST/undotbs02.dbf' size 10m;
+--임시로 만든 undotbs2 를 시스템 undo tablespace로 지정
+alter system set undo_tablespace=undotbs2;
+--기존에 비정상 적으로 확장된 undotbs1을 drop
+drop tablespace undotbs1 including contents and datafiles;
+--새로 사용할 undo tablespace 를 생성
+create  undo tablespace undotbs1  datafile '/ORACLE/oradata/TEST/undotbs01.dbf' size 500m;
+--새로 만든 undotbs1를 시스템 undo tablespace로 지정
+alter system set undo_tablespace=undotbs1;
+--임시로 만든 undotbs2를 drop
+drop tablespace undotbs2 including contents and datafiles;
+```
+
+### Oracle INACTIVE Session 삭제 DBMS_SCHEDULER Job 등록 {#toc17}
+```sql
+sqlplus / as sysdba
+-- GRANT ALTER SYSTEM TO TESTUSER; 필요하면 사용
+GRANT SELECT ON V_$TRANSACTION TO TESTUSER;
+GRANT SELECT ON V_$SESSION TO TESTUSER;
+
+
+ALTER SYSTEM SET JOB_QUEUE_PROCESSES=100;
+-- 실행할 로직을 담은 PROCEDURE
+CREATE OR REPLACE PROCEDURE POSMAST.KILL_INACTIVE_SESSIONS AS
+BEGIN
+  FOR CUR_REC IN (SELECT 'ALTER SYSTEM KILL SESSION ''' || SID || ',' || SERIAL# || '''' AS DDL
+                       , S.PROCESS, S.MACHINE, S.TERMINAL, S.PROGRAM, S.MODULE
+                       , TO_CHAR(S.LOGON_TIME,'DD/MON/YY HH24:MI:SS') LOGON_TIME
+                    FROM V$TRANSACTION T, V$SESSION S
+                    WHERE S.SADDR = T.SES_ADDR
+                    ORDER BY START_TIME
+                 )
+  LOOP
+    BEGIN
+      EXECUTE IMMEDIATE CUR_REC.DDL;
+    EXCEPTION
+      WHEN OTHERS THEN
+        -- YOU PROBABLY NEED TO LOG THIS ERROR PROPERLY HERE.
+        -- I WILL JUST RE-RAISE IT.
+        RAISE;
+    END;
+  END LOOP;
+END;
+/
+
+-- DBMS_SCHEDULER 로  JOB 등록 5초 단위 실행
+BEGIN
+  DBMS_SCHEDULER.CREATE_JOB (
+    JOB_NAME        => 'KILL_INACTIVESESSION_JOB',
+    COMMENTS        => 'KILL OLD REPORTS IF THEY HAVE BEEN RUNNING FOR LONGER THAN 1 MINUTE.',
+    JOB_TYPE        => 'PLSQL_BLOCK',
+    JOB_ACTION      => 'BEGIN TESTUSER.KILL_INACTIVE_SESSIONS; END;',
+    START_DATE      => SYSTIMESTAMP,
+    REPEAT_INTERVAL => 'FREQ=SECONDLY;INTERVAL=5;',
+    ENABLED         => TRUE);
+END;
+/
+
+-- 등록 후에 체크 해보니 돌지를 않는다. 아래 내용 확인 및 조취 실행
+SHOW PARAMETER JOB_QUEUE_PROCESSES; -- 0으로 되어 있음. 100 으로 늘려줬더니 돌기 시작
+ALTER SYSTEM SET JOB_QUEUE_PROCESSES=100;
+
+/*
+  repeat_interval => 'freq=hourly ; interval=1'           <- 1시간 간격으로 수행하도록 설정
+  repeat_interval => 'freq=minutely ; interval=30'        <- 30분 간격으로 수행하도록 설정
+  repeat_interval => 'freq=secondly ; interval=5'         <- 5초 간격으로 수행하도록 설정     
+  repeat_interval => 'freq=weekly ; interval=2'           <- 2주 간격으로 수행
+  repeat_interval => 'freq=hourly ; interval=1'           <- 매달 수행하도록 설정
+  repeat_interval => 'freq=hourly ; interval=1'           <- 매년 수행하도록 설정
+  */
+
+BEGIN DBMS_SCHEDULER.ENABLE('KILL_INACTIVESESSION_JOB'); END;
+/
+-- 수동 실행
+BEGIN DBMS_SCHEDULER.RUN_JOB('KILL_INACTIVESESSION_JOB'); END;
+/
+BEGIN DBMS_SCHEDULER.DROP_JOB('KILL_INACTIVESESSION_JOB'); END;
+/  
+
+-- JOB 관련 확인 쿼리
+ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD HH24:MI:SS';
+SELECT S.JOB_NAME, S.JOB_TYPE, O.OBJECT_ID, S.ENABLED, O.CREATED, CAST(S.NEXT_RUN_DATE AS DATE) NEXT_RUN_DATE, S.STATE, S.JOB_CLASS, SCHEDULE_TYPE
+FROM  DBA_OBJECTS O
+      , DBA_SCHEDULER_JOBS S
+WHERE O.OBJECT_TYPE = 'JOB' ORDER BY CREATED DESC;
+SELECT * FROM USER_SCHEDULER_JOBS;
+SELECT * FROM USER_SCHEDULER_JOB_LOG ORDER BY LOG_DATE DESC;
+
+```
+
 
 [^1]: This is a footnote.
 
