@@ -10,11 +10,25 @@ redirect_from:
 
 > Weblogic 12c 설치 (CentOS6) 가이드 GUI 모드
 
-### 배경 및 전제 조건 {toc0}
-```md
-일단, Weblogic 12c 는 Java 1.8 에서 동작하니, 
-Java 1.8 설치.
-방법은 여러가지가 있으니 검색해서 설치.
+### 배경 및 전제 조건 {#toc0}
+```bash
+# 일단, Weblogic 12c 는 Java 1.8 에서 동작하니, 
+# Java 1.8 설치.
+# 방법은 여러가지가 있으니 검색해서 설치.
+
+# CentOS6 Gnome 설치
+yum update -y
+yum groupinstall -y "X Window System" "Desktop"
+yum install -y gnome-core xfce4 xorg-x11-fonts
+yum install nano
+nano /etc/inittab
+id:3:initdefault:
+# Change the 3 to 5. The line should be the same as the line below:
+id:5:initdefault:
+
+# CentOS7 Gnome 설치
+yum update -y
+yum groupinstall -y "GNOME Desktop" "Graphical Administration Tools"
 ```
 
 ### 계정, 환경설정, 설치 시작 {#toc1}

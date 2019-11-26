@@ -299,6 +299,13 @@ ADR_BASE_LISTENER = /ORACLE
 
 ```
 
+### Modify sqlnet.ora 
+```sql
+--add the following option in sqlnet.ora
+--It will solve Spring Boot "Got minus one from a read call" Error
+tcp.validnode_checking = no
+```
+
 ### Create Database (Silent Mode)
 
 ```bash
