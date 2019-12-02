@@ -29,6 +29,7 @@ id:5:initdefault:
 # CentOS7 Gnome 설치
 yum update -y
 yum groupinstall -y "GNOME Desktop" "Graphical Administration Tools"
+ln -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target
 ```
 
 ### 계정, 환경설정, 설치 시작 {#toc1}
