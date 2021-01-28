@@ -2,7 +2,7 @@
 toc: true
 title: "WAS Server: Possible Tomcat App Deployments"
 description: "By Manager App, By webapps dir, By context.xml"
-categories: [WAS Server]
+categories: [was-server]
 tags: [Tomcat]
 redirect_from:
   - /2018/10/18/
