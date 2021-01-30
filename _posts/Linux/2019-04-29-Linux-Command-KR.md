@@ -51,6 +51,50 @@ grep -l word ./* | xargs grep word2
 grep -lZ word ./* | xargs -r0 grep word2
 ```
 
+### Find Command with Options {#toc7}
+```bash 
+# Some of Useful Options that I use often
+# -t type, -name filename (Regex Possible)
+# -maxdepth 1 (current path only)
+# Ex)
+find / -type f -name "*.java"
+find /home -type d -name "*test"
+find . -maxdepth 1 -name "*.txt"
+```
+
+### Run Shell command after mathing file found {#toc8}
+```bash
+# To execute linux command for each files that were found, type "{} \;" in the end
+# Ex)
+find . -name "*.txt" -exec grep chrome {} \;
+# To execute linux command for all files that were found, type "{} +;" in the end
+# Ex)
+find . -name "*.txt" -exec grep chrome {} +;
+```
+
+### Find file whose size is over 20Mb {#toc9}
+```bash
+find /usr -size +20000 -print -exec ls -alt {} +; 
+```
+
+### Find file where modified date is over 3 days in current folder level. Print Timestamp Format  {#toc10}
+```bash
+find . -maxdepth 1 -type f -ctime +3 -printf "%p %TY-%Tm-%Td %TH:%TM:%TS %Tz\n"
+find . -maxdepth 1 -type f -ctime +3 -printf "%p %TY-%Tm-%Td %TH:%TM:%TS %Tz\n" -delete
+```
+
+### Change access modified timestamp 변경  {#toc11}
+```bash
+touch -a -m -t 202101280130.09 catalina.out
+```
+
+### Check if a directory exists  {#toc12}
+```bash
+if [ -d "$DIR" ]; then  
+  mkdir ${DIR}
+fi
+```
+
 [^1]: This is a footnote.
 
 [kramdown]: https://kramdown.gettalong.org/
