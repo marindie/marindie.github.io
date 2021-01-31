@@ -10,7 +10,7 @@ redirect_from:
 
 > logrotate 사용법, 옵션들 의미 및 장단점 소개
 
-### logrorate 동작 방식 {toc#1}
+### logrorate 동작 방식 {#toc1}
 ```bash
 # 기본적으로 logrotate 를 설치하면 cron.daily 에 자동으로 등록됨
 cat /etc/cron.daily/logrotate
@@ -36,65 +36,62 @@ cat /var/lib/logrotate/status
 * Each  configuration  file  can  set  global  options (local definitions override global ones, and later definitions override earlier ones)
 ```
 
-### logrorate 장점 {toc#2}
+### logrorate 장점 {#toc2}
 
-```md
+```mdf
 * 로그를 rotate 해서 적절한 사이즈 내에서 로그들이 순환하도록 하기에는 적합
 ```
 
-### logrorate 단점 {toc#3}
+### logrorate 단점 {#toc3}
 ```md
 * 여러파일을 하나의 파일로 압축을 해주지 못함
 * 일별로 로그를 압축하는것 까지도 사용하기에는 무방하지만, 일별, 월별, 연별로 
   파일들을 관리하기에는 부적합
 ```
 
-### logrotate 옵션 {toc#4}
+### logrotate 옵션 {#toc4}
 ```bash
 # https://man7.org/linux/man-pages/man5/logrotate.conf.5.html 사이트 참고를 추천
 
-daily
 # 일별 rotate, 실제로 동작하는 조건은 해당 시간이 00시00분 일때 도는것 같음. 
 # -f 옵션을 사용하면 무조건 실행해서 rotate 를 하지만 daily, weekly, monthly, yearly 같은 경우는 각 시간이 실제로 월초, 연초, 다음날 여부를 확인해서 동작한다  
-rotate 36500 
+daily
 # 이 값은 daily(weekly,monthly,yearly) * rotate 옵션 숫자까지 rotate 한다는 뜻 
 # 1 * 36500 는 100년치 숫자까지 계속 숫자가 증가하는 형태로 rotate 한다. 
 # Ex filename.1 ~ filename.36500 까지 하고 나서 filename.1 다시 재사용
-missingok
-# 해당 파일이 존재 하지 않아도 에러 발생시키지 않음
-notifempty
-# 만약에, 파일의 사이즈가 0이면, rotate 대상으로 삼지 않음
-compress
-# 압축함. default 는 gzip 인것으로 알고 있음
-compressext .zip
-# 압축시 붙일 확장자 이름
-dateext
-# -%Y%M%d 를 기본으로 함 Ex. filename-20210101
-create 0600 root root
-# rotate 파일을 만들면서 파일 권한 그룹 사용자 지정
+rotate 36500 
+missingok # 해당 파일이 존재 하지 않아도 에러 발생시키지 않음
+notifempty # 만약에, 파일의 사이즈가 0이면, rotate 대상으로 삼지 않음
+compress # 압축함. default 는 gzip 인것으로 알고 있음
+compressext .zip # 압축시 붙일 확장자 이름
+dateext # -%Y%M%d 를 기본으로 함 Ex. filename-20210101
+create 0600 root root # rotate 파일을 만들면서 파일 권한 그룹 사용자 지정
 ```
 
-### logrotate 예제 {toc#4}
+### logrotate 예제 {#toc5}
 ```bash
 vi /etc/logrotate.d/tomcat
 
 # 아래는 해당 파일의 내용
-/contents/logs/ment/tomcat/catalina.out{
+/contents/logs/baby/tomcat/catalina.out{
 daily
 rotate 36500
 missingok
 notifempty
 dateext
-dateyesterday 
-# daily 가 다음날 00시00분에 도는데, 이때, 미래의 날짜로 파일이 생성되기에 이전 날짜로 파일 생성하도록 요청
-copytruncate 
-# catalina.out-20200101.zip 파일 생성하고, cat /dev/null > catalina.out 명령어 먹이는 것과 똑같이 동작. 이점은 그냥 롤링하면 더이상 catalina.out 에 로그가 안쌓임. 재기동해야 쌓이는데, copytruncate 하면, 이어서 계속 로그 쌓임
+dateyesterday # daily 가 다음날 00시00분에 도는데, 이때, 미래의 날짜로 파일이 생성되기에 이전 날짜로 파일 생성하도록 요청
+copytruncate  # catalina.out-20200101.zip 파일 생성하고, cat /dev/null > catalina.out 명령어 먹이는 것과 똑같이 동작. 이점은 그냥 롤링하면 더이상 catalina.out 에 로그가 안쌓임. 재기동해야 쌓이는데, copytruncate 하면, 이어서 계속 로그 쌓임
 compress
 compresscmd /usr/bin/zip
 compressext .zip
-olddir /contents/logs/ment/tomcat/daily
-# rotate 한 파일을 보관할 폴더 지정
+olddir /contents/logs/baby/tomcat/daily # rotate 한 파일을 보관할 폴더 지정
 }
+
+# 저장 후, 명령어 실행
+/usr/sbin/logrotate -f /etc/logrotate.conf
+
+# 해당 폴더의 결과 확인 
+cd /contents/logs/baby/tomcat/daily
 ```
 
 [^1]: This is a footnote.
