@@ -25,7 +25,7 @@ cordova create MyApp ca.griffith.steve.myapp AppName //MyApp 폴터 이름. ca.x
 cordova platform add android
 ```
 
-### Cordova build Release {#a}
+### Cordova build Release {#toc3}
 
 ```md
 json 방식, gradle 방식, cli 방식이 존재한다.
@@ -43,6 +43,7 @@ Failed to create component for 'dialog' reason: java.awt.HeadlessException
 > java.awt.HeadlessException (no error message) 에러가 발생했다. 
 당연히 이 내용으로는 password 가 문제라는 것을 찾지 못한다. ^^;;;
 ```
+
 ```json
 {
     "android": {
@@ -63,28 +64,31 @@ Failed to create component for 'dialog' reason: java.awt.HeadlessException
     }
 }
 ```
-Cordova 실행 명령어
+
+### Cordova 실행 명령어 {#toc4}
+
 ```js
 cordova build --release --storePassword=release1 --buildConfig=build.json
 // 파일명이 build.json 이라면 없이 실행해도 된다.
 cordova build --release --storePassword=release1
 ```
 
+### ANDROID_HOME Environment Set {#toc5}
 
-
-### ANDROID_HOME Environment Set {#toc3}
 ```md
 변수 이름: ANDROID_HOME 
 변수 값: C:\Users\username\AppData\Local\Android\Sdk
 ```
 
-### JAVA_OPTION Environment Set {#toc4}
+### JAVA_OPTION Environment Set {#toc6}
+
 ```md
 변수 이름: _JAVA_OPTIONS 
 변수 값: -Djava.net.preferIPv4Stack=true
 ```
 
-### ANDROID STUDIO AVD 생성 {#toc5}
+### ANDROID STUDIO AVD 생성 {#toc7}
+
 ```md 
 ANDROID STUDIO 실행 - 새로운 프로젝트 생성 - Gradle Sync 완료 대기 - Tool 에 AVD Manager 나오는지 확인
 나오면 클릭해서 AVD 하나 생성. 
@@ -97,7 +101,8 @@ platform 폴더 안의 android 폴더로 잡고 gradle sync 하고 나서 run �
 그게 그거임. 똑같음. cli 냐 ide 냐 차이
 ```
 
-### Android Studio 프로젝트 Cordova 로 Mig {#toc5}
+### Android Studio 프로젝트 Cordova 로 Mig {#toc8}
+
 ```md
 File -> Project Structure -> Project 에서 
 "Android Gradle Plugin Version" 을 3.3.0, "Gradle Version" 을 4.10.3 으로 세팅
@@ -171,7 +176,8 @@ AndroidManifest.xml 의 package 명을 application id 로 변경
 AndroidManifest.xml 의 android:versionName="1.0.0" 으로 인해 이슈가 발생해서 수정해서 성공
 ```
 
-### More than one file was found with OS independent path 'META-INF/LICENSE' {#toc6}
+### More than one file was found with OS independent path 'META-INF/LICENSE' {#toc9}
+
 ```md
 build.gradle 에 packagingOptions 내용을 android 안에 추가해줬다
 android{
@@ -188,7 +194,8 @@ android{
 }
 ```
 
-### Android or Cordova package not found (does not exist 등등) {#toc6}
+### Android or Cordova package not found (does not exist 등등) {#toc10}
+
 ```md
 Cordova 에서 하면 뭔가 다른 설정을 잡아줘야 하는듯 했으나..
 Android 의 app 아래의 build.gradle dependencies 설정이 
@@ -204,7 +211,8 @@ dependencies {
 }
 ```
 
-### Cordova App 재사용법 {#toc7}
+### Cordova App 재사용법 {#toc11}
+
 ```md
 제목의 의미를 풀어 쓰면, 이미 다른 폴더나 형상관리에 올라가 있는
 Cordova Android 를 바로 사용하고자 할때, 해줘야 하는 부분이다.
