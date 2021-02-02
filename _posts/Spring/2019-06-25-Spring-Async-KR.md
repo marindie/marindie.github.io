@@ -1,6 +1,6 @@
 ---
 toc: true
-title: " Spring CompletableFuture 초간단 예제"
+title: "Spring CompletableFuture 초간단 예제"
 description: "Spring CompletableFuture 초간단 예제"
 categories: [Spring]
 tags: [Spring]
@@ -57,6 +57,7 @@ http://fahdshariff.blogspot.com/2016/06/java-8-completablefuture-vs-parallel.htm
 ```
 
 ### CompletableFuture + thenApply {#toc2}
+
 이전에(혹은 어떤 특정 Task의) 완료된 결과 값을 바탕으로 다음 Task 를 이어서 진행한다.
 주의점은 return type 이 thenApply 의 결과의 Data Type 이어야 한다는 점.
 ```java
@@ -67,7 +68,8 @@ CompletableFuture<String> future = completableFuture
   .thenApply(s -> s + " World");
 ```
 
-### CompletableFuture + thenCompose {#toc2}
+### CompletableFuture + thenCompose {#toc3}
+
 thenApply 가 이해가 간다면, 그와 동일함, 단지 파라미터로 이어서 진행 하고자 하는
 CompletableFuture 을 파라미터로 받음
 ```java
