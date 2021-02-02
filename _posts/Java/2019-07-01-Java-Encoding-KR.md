@@ -1,6 +1,6 @@
 ---
 toc: true
-title: " JAVA Encoding Decoding"
+title: "JAVA Encoding Decoding"
 description: "JAVA JAVA Encoding Decoding"
 categories: [Java]
 tags: [Encoding]
@@ -11,8 +11,8 @@ redirect_from:
 > JAVA Encoding Decoding
 
 ### Encoding {#toc1}
-```java
 
+```java
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.util.stream.Collectors;
