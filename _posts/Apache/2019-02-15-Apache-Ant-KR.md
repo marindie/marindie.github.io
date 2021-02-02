@@ -5,7 +5,7 @@ description: "Basic Apache Ant Command"
 categories: [Script]
 tags: [Ant]
 redirect_from:
-  - /2018/12/19/
+  - /2019/02/15/
 ---
 
 > In this page, I will show you some of basic ant command that might be useful for application compile and deployment.
@@ -57,6 +57,7 @@ Let's create a file and name it as "build.xml"
 
 
 # Now add a new target (compileClass) that compiles java files.
+
 This target has a task called "javac" which will compile java source code into class file.
 I added "classpath" attribute within javac task to define classpath during compilation process.
 To add external jar files, I used fileset attribute to define where those jar files are located.
@@ -103,6 +104,7 @@ To add external jar files, I used fileset attribute to define where those jar fi
 ```
 
 # Add another target (deleteClass) which deletes class files. 
+
 This target has a task called "delete" which is quite straight forward.
 It will delete files within the "dir" path
 
@@ -155,6 +157,7 @@ It will delete files within the "dir" path
 ```
 
 # Add another target (deleteWeb) which deletes static files
+
 Very similar with deleteClass task, except I specified types of file that I want to delete within the target directory "dir".
 
 ```xml
@@ -225,6 +228,7 @@ Very similar with deleteClass task, except I specified types of file that I want
 ```
 
 # Add another target (copyWeb) which copies static files
+
 This target has a task called "copy" which will copy files into destination folder "todir"
 You can use fileset attribute to specify types of file to copy from "dir"
 
@@ -317,6 +321,7 @@ You can use fileset attribute to specify types of file to copy from "dir"
 ```
 
 # In case someon wish to use bash command within ant file, take a look at this sample (compileEJB)
+
 I used exec task to run bash command. To run find command, I used dir and inputstring.
 This sample maybe to simple. It would be a lot easier if you can run the bash script.
 This is just a demo to show that it is possible to run bash command within ant script.
@@ -355,7 +360,7 @@ Make user you use "target" attribute to specify what target you wish to run for 
 
 ```
 
-# Hope it was useful to someone else. Cheers
+Hope it was useful to someone else. Cheers
 
 [^1]: This is a footnote.
 
