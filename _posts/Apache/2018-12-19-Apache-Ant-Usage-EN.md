@@ -10,30 +10,27 @@ redirect_from:
 
 > In this page, I will show you some of basic ant command that might be useful for application compile and deployment.
 
-# Assumption & Background
+### Assumption & Background
 
 Apache Ant should be installed and evironment path is set correctly.
 
-# Ant Build Files
+### Ant Build Files
 
 Let's create a file and name it as "build.xml"
 
 
 ```xml 
-
 <?xml version = "1.0" encoding="utf-8"?>
 <project name = "Hello World Project" default = "compile" basedir="/var/lib/jenkins/workspace/src">
    <target name = "info">
       <echo>Hello World - Welcome to Apache Ant!</echo>
    </target>
 </project>
-
 ```
 
-# Define Properties within the build.xml file
+### Define Properties within the build.xml file
 
 ```xml
-
 <?xml version = "1.0" encoding="utf-8"?>
 <project name = "Hello World Project" default = "compile" basedir="/var/lib/jenkins/workspace/src">
         <property environment="env"/>
@@ -52,18 +49,16 @@ Let's create a file and name it as "build.xml"
       <echo>Hello World - Welcome to Apache Ant!</echo>
    </target>
 </project>
-
 ```
 
 
-# Now add a new target (compileClass) that compiles java files.
+### Now add a new target (compileClass) that compiles java files.
 
 This target has a task called "javac" which will compile java source code into class file.
 I added "classpath" attribute within javac task to define classpath during compilation process.
 To add external jar files, I used fileset attribute to define where those jar files are located.
 
 ```xml
-
 <?xml version = "1.0" encoding="utf-8"?>
 <project name = "Hello World Project" default = "compile" basedir="/var/lib/jenkins/workspace/src">
     <property environment="env"/>
@@ -100,16 +95,14 @@ To add external jar files, I used fileset attribute to define where those jar fi
     </target>
 
 </project>
-
 ```
 
-# Add another target (deleteClass) which deletes class files. 
+### Add another target (deleteClass) which deletes class files. 
 
 This target has a task called "delete" which is quite straight forward.
 It will delete files within the "dir" path
 
 ```xml
-
 <?xml version = "1.0" encoding="utf-8"?>
 <project name = "Hello World Project" default = "compile" basedir="/var/lib/jenkins/workspace/src">
     <property environment="env"/>
@@ -153,15 +146,13 @@ It will delete files within the "dir" path
     </target>
 
 </project>
-
 ```
 
-# Add another target (deleteWeb) which deletes static files
+### Add another target (deleteWeb) which deletes static files
 
 Very similar with deleteClass task, except I specified types of file that I want to delete within the target directory "dir".
 
 ```xml
-
 <?xml version = "1.0" encoding="utf-8"?>
 <project name = "Hello World Project" default = "compile" basedir="/var/lib/jenkins/workspace/src">
     <property environment="env"/>
@@ -224,16 +215,14 @@ Very similar with deleteClass task, except I specified types of file that I want
     </target>
 
 </project>
-
 ```
 
-# Add another target (copyWeb) which copies static files
+### Add another target (copyWeb) which copies static files
 
 This target has a task called "copy" which will copy files into destination folder "todir"
 You can use fileset attribute to specify types of file to copy from "dir"
 
 ```xml
-
 <?xml version = "1.0" encoding="utf-8"?>
 <project name = "Hello World Project" default = "compile" basedir="/var/lib/jenkins/workspace/src">
     <property environment="env"/>
@@ -317,10 +306,9 @@ You can use fileset attribute to specify types of file to copy from "dir"
     </target>
 
 </project>
-
 ```
 
-# In case someon wish to use bash command within ant file, take a look at this sample (compileEJB)
+### In case someon wish to use bash command within ant file, take a look at this sample (compileEJB)
 
 I used exec task to run bash command. To run find command, I used dir and inputstring.
 This sample maybe to simple. It would be a lot easier if you can run the bash script.
@@ -329,7 +317,6 @@ I also added and task to run another ant file that is located in same folder.
 Make user you use "target" attribute to specify what target you wish to run for the given "antfile"
 
 ```xml
-
 <?xml version = "1.0" encoding="utf-8"?>
 <project name = "Hello World Project" default = "compile" basedir="/var/lib/jenkins/workspace/src">
     <property environment="env"/>
@@ -357,7 +344,6 @@ Make user you use "target" attribute to specify what target you wish to run for 
     </target>   
 
 </project>
-
 ```
 
 Hope it was useful to someone else. Cheers
