@@ -34,7 +34,6 @@ public class EncodingTest {
 	    .collect(Collectors.joining(" "));
 	}
 	
-
 	public static void main(String[] args) throws UnsupportedEncodingException {
 		EncodingTest run = new EncodingTest();
 		byte[] a = run.convertToBinary("한글테스트","UTF-8");
@@ -63,14 +62,11 @@ public class EncodingTest {
 		
 		System.out.println("========= EUC-KR 로 변환한 Byte 내용을 Decoding 하여 확인 ==========="); 
 		System.out.println("UTF-8 로 디코딩 값 = "+new String(c,"UTF-8"));
-		System.out.println("UTF-8 로 디코딩 값 = "+new String(c,"EUC-KR"));		
-		
+		System.out.println("UTF-8 로 디코딩 값 = "+new String(c,"EUC-KR"));	
 	}
 }
 
 ```
-
-
 
 [^1]: This is a footnote.
 
