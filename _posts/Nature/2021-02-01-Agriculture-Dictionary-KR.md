@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Nature: 농업 관련 영어 단어 모음"
+title: "농업 관련 영어 단어 모음"
 description: "농업 관련 영어 단어 모음" 
 categories: [Nature]
 tags: [Agriculture]
