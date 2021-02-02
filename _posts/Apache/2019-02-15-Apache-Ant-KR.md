@@ -1,7 +1,7 @@
 ---
 toc: true
-title: "Apache Ant Command Example"
-description: "Basic Apache Ant Command"
+title: "Apache Ant 명령어 Example"
+description: "Basic Apache Ant 명령어"
 categories: [Script]
 tags: [Ant]
 redirect_from:
