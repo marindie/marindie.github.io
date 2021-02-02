@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Maven: Maven 설치 Install On CentOS"
+title: " Maven 설치 Install On CentOS"
 description: "Maven 설치 Install On CentOS"
 categories: [Maven]
 tags: [Maven]

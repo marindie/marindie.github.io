@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Oracle: Oracle Disable Passoword Expiry Policy"
+title: " Oracle Disable Passoword Expiry Policy"
 description: "Oracle Oracle Disable Passoword Expiry Policy"
 categories: [Oracle]
 tags: [Oracle]

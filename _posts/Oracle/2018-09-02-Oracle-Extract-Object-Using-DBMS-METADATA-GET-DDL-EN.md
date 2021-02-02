@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Oracle: Oracle Extract Object Using DBMS_METADATA.GET_DDL"
+title: " Oracle Extract Object Using DBMS_METADATA.GET_DDL"
 description: "In this page, I will share the sqlplus options and queries that I used to extract objects from existing database."
 categories: [Oracle]
 tags: [Oracle Data Dictionary, DBMS_METADATA]

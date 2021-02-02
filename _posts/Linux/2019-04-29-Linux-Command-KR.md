@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Linux: Linux 명령어 모음(CentOS 위주)"
+title: " Linux 명령어 모음(CentOS 위주)"
 description: "Linux 명령어 모음"
 categories: [Linux]
 tags: [Linux]

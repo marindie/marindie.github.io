@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Oracle: SQL Query Output to CSV Format in Oracle SQLPLUS (Any Tables)"
+title: " SQL Query Output to CSV Format in Oracle SQLPLUS (Any Tables)"
 description: "I will show you how to write CSV file like query outout using SQLPLUS"
 categories: [Oracle]
 tags: [SQLPLUS,CSV]

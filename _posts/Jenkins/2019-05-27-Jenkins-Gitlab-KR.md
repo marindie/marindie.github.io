@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Jenkins: Jenkins Gitlab 연동. Gitlab Token, WebHook"
+title: " Jenkins Gitlab 연동. Gitlab Token, WebHook"
 description: "Jenkins Gitlab 연동. Gitlab Token, WebHook"
 categories: [Jenkins]
 tags: [Jenkins]

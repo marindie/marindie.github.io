@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Oracle: Oracle loadjava 사용법"
+title: " Oracle loadjava 사용법"
 description: "Oracle loadjava 사용법"
 categories: [Oracle]
 tags: [Oracle]

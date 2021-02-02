@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Git: GIT 명령어 사용법"
+title: " GIT 명령어 사용법"
 description: "기본적인 GIT 명령어 사용법에 대한 간략한 설명을 정리한 글입니다."
 categories: [Git]
 tags: [Git]

@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Oracle: Oracle DBMS_SCHEDULER Shell Script 실행"
+title: " Oracle DBMS_SCHEDULER Shell Script 실행"
 description: "Oracle DBMS_SCHEDULER Shell Script 실행"
 categories: [Oracle]
 tags: [Oracle]

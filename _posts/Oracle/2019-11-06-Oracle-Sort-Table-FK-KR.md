@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Oracle: Oracle Create Table 시에 FK Constraint 감안한 Table 생성 순서 List 추출 프로그램 "
+title: " Oracle Create Table 시에 FK Constraint 감안한 Table 생성 순서 List 추출 프로그램 "
 description: "Oracle Oracle Create Table 시에 FK Constraint 감안한 Table 생성 순서 List 추출 프로그램 "
 categories: [Oracle]
 tags: [Oracle]

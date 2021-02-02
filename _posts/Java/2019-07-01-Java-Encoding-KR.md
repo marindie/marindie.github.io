@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Java: JAVA Encoding Decoding"
+title: " JAVA Encoding Decoding"
 description: "JAVA JAVA Encoding Decoding"
 categories: [Java]
 tags: [Encoding]

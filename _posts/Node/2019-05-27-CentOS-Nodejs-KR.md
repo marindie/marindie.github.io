@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Nodejs: CentOS Nodejs install v10 설치"
+title: " CentOS Nodejs install v10 설치"
 description: "CentOS Nodejs install v10 설치" 
 categories: [Nodejs]
 tags: [Npm]

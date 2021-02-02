@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Linux: CentOS7 Kernel Update 정리"
+title: " CentOS7 Kernel Update 정리"
 description: "CentOS7 Kernel Update 정리"
 categories: [Linux]
 tags: [Kernel]

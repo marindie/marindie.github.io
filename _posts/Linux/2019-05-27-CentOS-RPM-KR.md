@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Linux: Rpm Header V4 RSA/SHA1 Signature, key ID ... NOKEY"
+title: " Rpm Header V4 RSA/SHA1 Signature, key ID ... NOKEY"
 description: "Rpm Header V4 RSA/SHA1 Signature, key ID ... NOKEY"
 categories: [Linux]
 tags: [Rpm]

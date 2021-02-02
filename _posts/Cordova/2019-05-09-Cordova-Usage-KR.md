@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Cordova: Cordova 기초 사용법 정리"
+title: " Cordova 기초 사용법 정리"
 description: "Cordova 기초 사용법 정리" 
 categories: [Cordova]
 tags: [Cordova]

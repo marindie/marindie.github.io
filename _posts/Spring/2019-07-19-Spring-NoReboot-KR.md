@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Spring: Spring Boot Build 없이 Run"
+title: " Spring Boot Build 없이 Run"
 description: "Spring Spring Boot Build 없이 Run"
 categories: [Spring]
 tags: [Spring]

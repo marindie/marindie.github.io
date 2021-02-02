@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Spring: Eureka, Zuul, 그리고 Swagger 을 사용하여 API Gateway, Eureka Server, Eureka Discovery(Eureka Service), API Documentation 구성하기"
+title: " Eureka, Zuul, 그리고 Swagger 을 사용하여 API Gateway, Eureka Server, Eureka Discovery(Eureka Service), API Documentation 구성하기"
 description: "Netflix Eureka, Zuul, 그리고 Swagger 을 사용하여 API Gateway, Eureka Server, Eureka Discovery(Eureka Service), API Documentation 을 구성하는 방법에 대한 간략한 요약입니다."
 categories: [Spring]
 tags: [Eureka, Zuul, Swagger]

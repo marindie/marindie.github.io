@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Spring: Oracle PL/SQL 을 이용한 DB TABLE 관련 JPA Entity, Repository 객체 생성 프로그램"
+title: " Oracle PL/SQL 을 이용한 DB TABLE 관련 JPA Entity, Repository 객체 생성 프로그램"
 description: "Oracle PL/SQL 을 이용한 DB TABLE 관련 JPA 에서 사용하는 JPO MODEL Entity, Repository 객체 생성 프로그램 입니다."
 categories: [Spring]
 tags: [JPA,PL/SQL]

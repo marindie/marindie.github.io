@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Maven: Apache Maven 이슈 기록"
+title: " Apache Maven 이슈 기록"
 description: "Maven 세팅 관련 경험한 Issue 들을 기록해 놓은 공간입니다."
 categories: [Maven]
 tags: [Maven]

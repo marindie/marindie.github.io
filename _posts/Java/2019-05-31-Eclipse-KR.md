@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Eclipse: Eclipse 관련 모음"
+title: " Eclipse 관련 모음"
 description: "Eclipse 관련 모음"
 categories: [Eclipse]
 tags: [Eclipse]

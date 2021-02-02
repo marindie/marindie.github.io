@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Oracle: Oracle 11g r2 install on CentOS6 in Silent Mode"
+title: " Oracle 11g r2 install on CentOS6 in Silent Mode"
 description: "In this post, I will show you how I installed Oracle 11g r2 on CentOS6.6 in Silent Mode."
 categories: [Oracle]
 tags: [Oracle Databse, 11g r2, Oracle silent mode install, CentOS6]

@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Oracle: Oracle SQL LOADER (sqlldr) Control File Generator"
+title: " Oracle SQL LOADER (sqlldr) Control File Generator"
 description: "I will share my fairly Simple Oracle SQL LOADER Control File Generator in this post"
 categories: [Oracle]
 tags: [SQL LOADER,Sqlldr]

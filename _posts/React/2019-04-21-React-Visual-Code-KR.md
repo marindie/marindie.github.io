@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "React: Visual Code"
+title: " Visual Code"
 description: "Visual Code 로 React 개발 환경 세팅시 설치하면 좋은 것들"
 categories: [React]
 tags: [Extensions]

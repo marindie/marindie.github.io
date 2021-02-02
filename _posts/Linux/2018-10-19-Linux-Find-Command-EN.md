@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Linux: Find Command Usage"
+title: " Find Command Usage"
 description: "Basic Find Command Usage"
 categories: [Linux]
 tags: [Find]

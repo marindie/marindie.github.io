@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Oracle: Oracle 쿼리 모음"
+title: " Oracle 쿼리 모음"
 description: "Oracle Oracle 쿼리 모음"
 categories: [Oracle]
 tags: [Oracle]

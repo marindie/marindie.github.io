@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Oracle: Oracle 에러 이슈 모음. "
+title: " Oracle 에러 이슈 모음. "
 description: "Oracle Oracle 에러 이슈 모음. "
 categories: [Oracle]
 tags: [Oracle]

@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Java: Java RMI, EJB JNDI 사용법 정리"
+title: " Java RMI, EJB JNDI 사용법 정리"
 description: "Java RMI, EJB JNDI 사용법 정리"
 categories: [Java]
 tags: [Java]

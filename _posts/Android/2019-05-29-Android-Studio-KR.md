@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Android: Android Studio 사용 관련 이슈 기록. 설정, 에러 등등"
+title: " Android Studio 사용 관련 이슈 기록. 설정, 에러 등등"
 description: "Android Studio 사용 관련 이슈 기록. 설정, 에러 등등" 
 categories: [Android]
 tags: [Android]

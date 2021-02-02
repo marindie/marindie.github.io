@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "React: Redux 개념 정리"
+title: " Redux 개념 정리"
 description: "Redux 개념 정리를 제가 이해하기 쉬운 방향으로 정리하였습니다."
 categories: [React]
 tags: [Redux]

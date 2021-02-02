@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Linux: Java Package Name 자동 변환 프로그램 (Windows 에서 Cygwin 으로 사용가능)"
+title: " Java Package Name 자동 변환 프로그램 (Windows 에서 Cygwin 으로 사용가능)"
 description: "Linux 명령어를 사용하여 Package 폴더 하위의 파일, 폴더, 패키지명을 자동변환 해주는 프로그램입니다."
 categories: [Linux]
 tags: [find]

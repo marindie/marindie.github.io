@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Oracle: Oracle 두 동일한 테이블간의 Merge 문 자동 생성"
+title: " Oracle 두 동일한 테이블간의 Merge 문 자동 생성"
 description: "Oracle 두 동일한 테이블간의 Merge 문 자동 생성"
 categories: [Oracle]
 tags: [Oracle]

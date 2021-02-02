@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "VirtualBox: Oracle VirtualBox Static Ip CentOS 6"
+title: " Oracle VirtualBox Static Ip CentOS 6"
 description: "Oracle VirtualBox Static Ip CentOS 6 구성 방법"
 categories: [VirtualBox]
 tags: [VirtualBox]

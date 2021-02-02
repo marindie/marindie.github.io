@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Spring: Oracle 18c JDBC 연동시 Hibernate dialect 에러 발생"
+title: " Oracle 18c JDBC 연동시 Hibernate dialect 에러 발생"
 description: "Oracle 18c JDBC 연동시 Hibernate dialect 에러 발생"
 categories: [Spring]
 tags: [Spring]

@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Docker: CentOS7 설치 관련 설정 세팅 기록"
+title: " CentOS7 설치 관련 설정 세팅 기록"
 description: "CentOS7에 Docker-CE 설치시 추가로 만진 부분들 정리"
 categories: [Docker]
 tags: [Docker]

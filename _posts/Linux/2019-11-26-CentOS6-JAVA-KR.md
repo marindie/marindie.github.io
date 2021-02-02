@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Linux: CentOS 6 JAVA 설치"
+title: " CentOS 6 JAVA 설치"
 description: "정규식 CentOS 6 JAVA 설치"
 categories: [Linux]
 tags: [JAVA]

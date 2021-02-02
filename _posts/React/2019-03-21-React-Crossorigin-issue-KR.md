@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "React: 서버 API 호출시 발생하는 Crossorigin 해결 방법 정리"
+title: " 서버 API 호출시 발생하는 Crossorigin 해결 방법 정리"
 description: "React 로 Ajax(axios or fetch 등등) 호출 시 chrome browser 에서 발생 가능한 Crossorigin 문제 해결 방법 정리 내용입니다."
 categories: [React]
 tags: [Crossorigin]

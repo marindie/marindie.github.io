@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Mac: Mac 명령어 모음"
+title: " Mac 명령어 모음"
 description: "Mac 명령어 모음"
 categories: [Mac]
 tags: [Mac]

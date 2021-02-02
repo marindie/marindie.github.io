@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Oracle: Oracle SQLPLUS 에서 CSV 포맷 형태의 쿼리 조회 결과 출력"
+title: " Oracle SQLPLUS 에서 CSV 포맷 형태의 쿼리 조회 결과 출력"
 description: "Oracle SQLPLUS 에서 쿼리 조회 결과를 CSV 포맷 형식으로 만드는 방법을 공유합니다."
 categories: [Oracle]
 tags: [SQLPLUS,CSV]

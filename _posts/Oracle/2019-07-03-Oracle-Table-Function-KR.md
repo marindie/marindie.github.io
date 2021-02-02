@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Oracle: Oracle Table Function 사용법 "
+title: " Oracle Table Function 사용법 "
 description: "Oracle Oracle Table Function 사용법 "
 categories: [Oracle]
 tags: [Oracle]

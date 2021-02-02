@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "React: Context API 샘플"
+title: " Context API 샘플"
 description: "Context API 샘플 소스"
 categories: [React]
 tags: [React]

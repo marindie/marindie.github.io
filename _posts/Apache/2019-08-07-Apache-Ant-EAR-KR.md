@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Ant: Apache Ant Make Ear, Jar, War, config Manifest Example"
+title: " Apache Ant Make Ear, Jar, War, config Manifest Example"
 description: "Ant : Apache Ant Make Ear, Jar, War, config Manifest Example"
 categories: [Ant]
 tags: [Ant]

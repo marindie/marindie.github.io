@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Spring: Spring CompletableFuture 초간단 예제"
+title: " Spring CompletableFuture 초간단 예제"
 description: "Spring CompletableFuture 초간단 예제"
 categories: [Spring]
 tags: [Spring]

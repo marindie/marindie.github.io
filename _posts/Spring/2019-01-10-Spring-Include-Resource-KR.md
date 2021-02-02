@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Spring: MVC. JSP 에서 JS CSS 불러오기"
+title: " MVC. JSP 에서 JS CSS 불러오기"
 description: "JSP 에서 정적 resource (Javascript, CSS, Image 등등) 불러오기"
 categories: [Spring]
 tags: [MVC]

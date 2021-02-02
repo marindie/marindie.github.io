@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Jenkins: Jenkins CentOS 7 설치"
+title: " Jenkins CentOS 7 설치"
 description: "Jenkins CentOS 7 설치"
 categories: [Jenkins]
 tags: [Jenkins]

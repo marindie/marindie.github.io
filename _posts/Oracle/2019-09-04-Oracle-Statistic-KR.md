@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Oracle: Oracle Statistic 관련 "
+title: " Oracle Statistic 관련 "
 description: "Oracle Oracle Statistic 관련 "
 categories: [Oracle]
 tags: [Oracle]

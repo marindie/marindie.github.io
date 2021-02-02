@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Linux: logrotate 사용법"
+title: " logrotate 사용법"
 description: "logrotate 사용법, 옵션들 의미 및 장단점 소개"
 categories: [Linux]
 tags: [logrotate]

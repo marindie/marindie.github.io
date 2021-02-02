@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Java: Portable JDK 만들기"
+title: " Portable JDK 만들기"
 description: "JAVA Portable JDK 만들기"
 categories: [Java]
 tags: [Java]

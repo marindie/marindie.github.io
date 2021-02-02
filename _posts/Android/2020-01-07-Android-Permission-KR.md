@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Android: Android Permission 체크 및 요청 샘플"
+title: " Android Permission 체크 및 요청 샘플"
 description: "Android Permission 체크 및 요청 샘플" 
 categories: [Android]
 tags: [Android]

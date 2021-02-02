@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Linux: Setfacl Getfacl Command"
+title: " Setfacl Getfacl Command"
 description: "Basic XXXfacl Command"
 categories: [Linux]
 tags: [Setfacl, Getfacl]

@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Oracle: Dynamic Bulk Collect Forall Delete Auto generator (Table 단위 Bulk Collect Forall Delete 자동생성기) "
+title: " Dynamic Bulk Collect Forall Delete Auto generator (Table 단위 Bulk Collect Forall Delete 자동생성기) "
 description: "Dynamic Bulk Collect Forall Delete Auto generator (Table 단위 Bulk Collect Forall Delete 자동생성기)"
 categories: [Oracle]
 tags: [Oracle]
