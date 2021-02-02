@@ -42,6 +42,7 @@ classes: wide
               {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" %}
             </nav>
           </aside>
+          <!-- S: 구글광고 contents 상단 -->
           <div>
               <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
               <ins class="adsbygoogle"
@@ -54,8 +55,10 @@ classes: wide
                   (adsbygoogle = window.adsbygoogle || []).push({});
               </script>
           </div>
+          <!-- E: 구글광고 contents 상단 -->
         {% endif %}
         {{ content }}
+        <!-- S: 구글광고 contents 하단 -->
         <div>
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <ins class="adsbygoogle"
@@ -68,6 +71,7 @@ classes: wide
                  (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
         </div>
+        <!-- E: 구글광고 contents 하단 -->
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
 
