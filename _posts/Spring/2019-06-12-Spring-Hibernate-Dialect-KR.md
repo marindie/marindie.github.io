@@ -1,6 +1,6 @@
 ---
 toc: true
-title: " Oracle 18c JDBC 연동시 Hibernate dialect 에러 발생"
+title: "Oracle 18c JDBC 연동시 Hibernate dialect 에러 발생"
 description: "Oracle 18c JDBC 연동시 Hibernate dialect 에러 발생"
 categories: [Spring]
 tags: [Spring]
@@ -47,7 +47,6 @@ Spring Boot 기동시에 JAVA OPTION 으로 TIMEZONE 을 세팅해줘야 연결�
 12c 에 붙는 케이스 였던것 같음.
 java -Duser.timezone=GMT -jar app-0.0.1-SNAPSHOT.jar
 ```
-
 
 [^1]: This is a footnote.
 
