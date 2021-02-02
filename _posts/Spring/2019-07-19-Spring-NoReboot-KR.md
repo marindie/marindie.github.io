@@ -12,7 +12,7 @@ redirect_from:
 
 ### Spring Boot Build 없이 Run {#toc1}
 
-```java
+```md
 1. boot 서비스 pom.xml 파일에 아래 추가
 
 <dependency>
