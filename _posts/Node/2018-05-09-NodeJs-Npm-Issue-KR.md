@@ -5,7 +5,7 @@ description: "npm 또는 nodejs 를 사용하면서 발생했던 에러 관련 �
 categories: [Nodejs]
 tags: [Npm]
 redirect_from:
-  - /2019/05/09/
+  - /2018/05/09/
 ---
 
 > npm 또는 nodejs 를 사용하면서 발생했던 에러 관련 모음으로 사용할 포스팅 입니다.
@@ -14,9 +14,7 @@ redirect_from:
 
 ```md
 회사에서 Cordova 시작하려는데 인증서 때문에 시작부터 에러 발생
-
 SELF_SIGNED 인증서를 등록하는 방법을 찾으려다가 일단 패스하고
-
 npm set strict-ssl false
 ```
 
@@ -30,7 +28,6 @@ React 를 기동 후 크롬을 열었을대 cors 플러그인이 활성화 되�
 참고 하시면 좋을것 같습니다.
 
 ```md
-
 1. package.json 에 아래 내용 추가
 proxy: http://localhost:8080
 
@@ -39,7 +36,6 @@ proxy: http://localhost:8080
 3. 2번까지만 하고 사용해도 무방하나, Back End 단에도 설정이 가능하다.
 @RestController 어노테이션이 있는 java 파일에 아래 내용 추가
 @Crossorigin(origin="*")
-
 ```
 
 도움이 되었으면 좋겠네요. 감사합니다.
