@@ -11,6 +11,7 @@ redirect_from:
 > Jenkins CentOS 7 설치
 
 ### Jenkins 레파지토리 추가 후 설치 {#toc1}
+
 ```bash
 
 sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
@@ -20,6 +21,7 @@ sudo yum install jenkins
 ```
 
 ### Jenkin 포트 변경 {#toc2}
+
 ```bash
 
 sudo vi /etc/sysconfig/jenkins
@@ -35,6 +37,7 @@ systemctl enable jenkins
 ```
 
 ### 방화벽 설정 {#toc3}
+
 ```bash
 
 # CentOS 6
@@ -67,6 +70,7 @@ iptables-save > /etc/sysconfig/iptables
 ```
 
 ### 최초 로그인 암호 확인 {#toc4}
+
 ```bash
 cat /var/lib/jenkins/secrets/initialAdminPassword
 
