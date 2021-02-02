@@ -1,6 +1,6 @@
 ---
 toc: true
-title: " Maven 설치 Install On CentOS"
+title: "Maven 설치 Install On CentOS"
 description: "Maven 설치 Install On CentOS"
 categories: [Maven]
 tags: [Maven]
@@ -11,6 +11,7 @@ redirect_from:
 > Maven 설치 Install On CentOS
 
 ### Maven Download {#toc1}
+
 ```bash
 mkdir /toos
 cd /tool
