@@ -10,11 +10,12 @@ redirect_from:
 
 > Apache Ant Make Ear, Jar, War, config Manifest Example
 
-# Assumption & Background
+### Assumption & Background
 
 Apache Ant should be installed and evironment path is set correctly.
 
 ### Apache Ant 사용 관련 {#toc1}
+
 ```md
 보통 WAS 에 Application 자원을 배포하기 위해, 설정된 경로에 파일들을 복사해서 운영하는경우도 있고,
 war, ear, jar 등등을 만들어서 사용하는 경우도 있습니다. 
@@ -33,6 +34,7 @@ https://stackoverflow.com/questions/15247751/eclipse-with-java-ee-ejb-ant-and-je
 ```
 
 ### Ear, War, Jar, Java Signing 샘플 소스 {#toc2}
+
 ```md
 사실 해보니, Ear, War, Jar 만드는게 엄청난게 있는 건 아닌것 같습니다.
 jar 로 묶는건데 설정을 xml 에 정의 해서 그걸 바탕으로 묶는것과 Static 자원(html,css,js,img 등등) 의 폴더 위치 정도를 마춰주는정도
@@ -54,6 +56,7 @@ javac 할때 JDK 홈 경로 변경 가능한 부분 소스가 있습니다. 인�
 윈도우 bat 파일을 실행하는 부분의 소스가 있습니다.
 파일 및 폴더를 복사할때 필터링 하는 부분의 소스가 있습니다. 
 ```
+
 ```xml 
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project basedir="." default="build" name="TEST_APP">
@@ -269,7 +272,7 @@ javac 할때 JDK 홈 경로 변경 가능한 부분 소스가 있습니다. 인�
 
 ```
 
-# Hope it was useful to someone else. Cheers
+Hope it was useful to someone else. Cheers
 
 [^1]: This is a footnote.
 
