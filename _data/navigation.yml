@@ -40,10 +40,10 @@ docs:
         url: /categories/#jenkins
       - title: "Nodejs"
         url: /categories/#nodejs
-      - title: "Was Server"
-        url: /categories/#was-server
-      - title: "Script Language"
-        url: /categories/#script-language
+      - title: "Server"
+        url: /categories/#server
+      - title: "Script"
+        url: /categories/#script
       - title: "Concourse"
         url: /categories/#concourse
       - title: "Docker"

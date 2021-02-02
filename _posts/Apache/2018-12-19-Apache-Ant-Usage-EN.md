@@ -1,8 +1,8 @@
 ---
 toc: true
-title: "Script Language: Apache Ant Command Example"
+title: "Apache Ant Command Example"
 description: "Basic Apache Ant Command"
-categories: [Script Language]
+categories: [Script]
 tags: [Ant]
 redirect_from:
   - /2018/12/19/
