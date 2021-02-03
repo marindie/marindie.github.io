@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Script: Apache Ant Command Example"
+title: "Apache Ant Command Example"
 description: "Basic Apache Ant Command"
 categories: [Script]
 tags: [Ant]
@@ -27,7 +27,7 @@ Let's create a file and name it as "build.xml"
 </project>
 ```
 
-### Define Properties within the build.xml file {#toc3}
+### Define Properties within the build file {#toc3}
 
 ```xml
 <?xml version = "1.0" encoding="utf-8"?>
@@ -51,7 +51,7 @@ Let's create a file and name it as "build.xml"
 ```
 
 
-### Now add a new target (compileClass) that compiles java files. {#toc4}
+### Now add a new target compileClass that compiles java files {#toc4}
 
 This target has a task called "javac" which will compile java source code into class file.
 I added "classpath" attribute within javac task to define classpath during compilation process.
@@ -96,7 +96,7 @@ To add external jar files, I used fileset attribute to define where those jar fi
 </project>
 ```
 
-### Add another target (deleteClass) which deletes class files.  {#toc5}
+### Add another target deleteClass which deletes class files {#toc5}
 
 This target has a task called "delete" which is quite straight forward.
 It will delete files within the "dir" path
@@ -147,7 +147,7 @@ It will delete files within the "dir" path
 </project>
 ```
 
-### Add another target (deleteWeb) which deletes static files {#toc6}
+### Add another target deleteWeb which deletes static files {#toc6}
 
 Very similar with deleteClass task, except I specified types of file that I want to delete within the target directory "dir".
 
@@ -216,7 +216,7 @@ Very similar with deleteClass task, except I specified types of file that I want
 </project>
 ```
 
-### Add another target (copyWeb) which copies static files {#toc7}
+### Add another target copyWeb which copies static files {#toc7}
 
 This target has a task called "copy" which will copy files into destination folder "todir"
 You can use fileset attribute to specify types of file to copy from "dir"
@@ -307,7 +307,7 @@ You can use fileset attribute to specify types of file to copy from "dir"
 </project>
 ```
 
-### In case someon wish to use bash command within ant file, take a look at this sample (compileEJB) {#toc8}
+### In case someon wish to use bash command within ant file take a look at this sample compileEJB {#toc8}
 
 I used exec task to run bash command. To run find command, I used dir and inputstring.
 This sample maybe to simple. It would be a lot easier if you can run the bash script.
