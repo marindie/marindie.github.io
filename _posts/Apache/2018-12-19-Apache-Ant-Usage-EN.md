@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Apache Ant Command Example"
+title: "Script: Apache Ant Command Example"
 description: "Basic Apache Ant Command"
 categories: [Script]
 tags: [Ant]
