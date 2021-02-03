@@ -345,7 +345,6 @@ You can use fileset attribute to specify types of file to copy from "dir"
 </project>
 ```
 
-
 [^1]: This is a footnote.
 
 [kramdown]: https://kramdown.gettalong.org/

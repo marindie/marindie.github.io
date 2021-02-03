@@ -12,11 +12,11 @@ redirect_from:
 
 ### Assumption and Background {#toc1}
 
-Apache Ant should be installed and evironment path is set correctly.
+- Apache Ant should be installed and evironment path is set correctly.
 
 ### Ant Build Files {#toc2}
 
-Let's create a file and name it as "build.xml"
+- Let's create a file and name it as "build.xml"
 
 ```xml 
 <?xml version = "1.0" encoding="utf-8"?>
@@ -53,9 +53,9 @@ Let's create a file and name it as "build.xml"
 
 ### Now add a new target compileClass that compiles java files {#toc4}
 
-This target has a task called "javac" which will compile java source code into class file.
-I added "classpath" attribute within javac task to define classpath during compilation process.
-To add external jar files, I used fileset attribute to define where those jar files are located.
+- This target has a task called "javac" which will compile java source code into class file.
+- I added "classpath" attribute within javac task to define classpath during compilation process.
+- To add external jar files, I used fileset attribute to define where those jar files are located.
 
 ```xml
 <?xml version = "1.0" encoding="utf-8"?>
@@ -98,8 +98,8 @@ To add external jar files, I used fileset attribute to define where those jar fi
 
 ### Add another target deleteClass which deletes class files {#toc5}
 
-This target has a task called "delete" which is quite straight forward.
-It will delete files within the "dir" path
+- This target has a task called "delete" which is quite straight forward.
+- It will delete files within the "dir" path
 
 ```xml
 <?xml version = "1.0" encoding="utf-8"?>
@@ -149,7 +149,7 @@ It will delete files within the "dir" path
 
 ### Add another target deleteWeb which deletes static files {#toc6}
 
-Very similar with deleteClass task, except I specified types of file that I want to delete within the target directory "dir".
+- Very similar with deleteClass task, except I specified types of file that I want to delete within the target directory "dir".
 
 ```xml
 <?xml version = "1.0" encoding="utf-8"?>
@@ -218,8 +218,8 @@ Very similar with deleteClass task, except I specified types of file that I want
 
 ### Add another target copyWeb which copies static files {#toc7}
 
-This target has a task called "copy" which will copy files into destination folder "todir"
-You can use fileset attribute to specify types of file to copy from "dir"
+- This target has a task called "copy" which will copy files into destination folder "todir"
+- You can use fileset attribute to specify types of file to copy from "dir"
 
 ```xml
 <?xml version = "1.0" encoding="utf-8"?>
@@ -309,11 +309,11 @@ You can use fileset attribute to specify types of file to copy from "dir"
 
 ### In case someon wish to use bash command within ant file take a look at this sample compileEJB {#toc8}
 
-I used exec task to run bash command. To run find command, I used dir and inputstring.
-This sample maybe to simple. It would be a lot easier if you can run the bash script.
-This is just a demo to show that it is possible to run bash command within ant script.
-I also added and task to run another ant file that is located in same folder. 
-Make user you use "target" attribute to specify what target you wish to run for the given "antfile"
+- I used exec task to run bash command. To run find command, I used dir and inputstring.
+- This sample maybe to simple. It would be a lot easier if you can run the bash script.
+- This is just a demo to show that it is possible to run bash command within ant script.
+- I also added and task to run another ant file that is located in same folder. 
+- Make user you use "target" attribute to specify what target you wish to run for the given "antfile"
 
 ```xml
 <?xml version = "1.0" encoding="utf-8"?>
@@ -344,8 +344,6 @@ Make user you use "target" attribute to specify what target you wish to run for 
 
 </project>
 ```
-
-Hope it was useful to someone else. Cheers
 
 [^1]: This is a footnote.
 
