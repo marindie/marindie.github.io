@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Server: Weblogic 12c 설치 (CentOS6) 가이드 GUI 모드"
+title: "Weblogic 12c 설치 (CentOS6) 가이드 GUI 모드"
 description: "Weblogic 12c 설치 (CentOS6) 가이드 GUI 모드"
 categories: [Server]
 tags: [Weblogic]
@@ -10,7 +10,8 @@ redirect_from:
 
 > Weblogic 12c 설치 (CentOS6) 가이드 GUI 모드
 
-### 배경 및 전제 조건 {#toc0}
+### 배경 및 전제 조건 {#toc1}
+
 ```md
 # 일단, Weblogic 12c 는 Java 1.8 에서 동작하니, 
 # Java 1.8 설치.
@@ -61,6 +62,7 @@ java -jar fmw~.jar
 ```
 
 ### can't connect to x11 window server using ':0.0' as the value of display variable {#toc2}
+
 ```md
 java -jar fmr~.jar 를 실행해서 설치하려고 하니, 위의 에러가 발생했는데,
 해당 에러는 나의 경우에는 oracle 이라는 계정으로 설치를 해서 발생하는 것으로 보인다.
@@ -77,6 +79,7 @@ xhost +inet:192.168.3.1 처럼 IP 정보를 세팅 해주고 하는것도 방법
 ```
 
 ### Weblogic VM 에서 기동시 시간이 너무 오래 걸림 {#toc3}
+
 ```md
 설치 완료 후 서버를 기동시키자, 너무 오랜 시간 STARTING 상태에서 머물러 있어서
 결국 검색.

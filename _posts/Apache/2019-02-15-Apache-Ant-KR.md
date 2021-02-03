@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Script: Apache Ant 명령어 Example"
+title: "Apache Ant 명령어 Example"
 description: "Basic Apache Ant 명령어"
 categories: [Script]
 tags: [Ant]
