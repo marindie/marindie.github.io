@@ -1,6 +1,6 @@
 ---
 toc: true
-title: " Weblogic 12c 설치 (CentOS6) 가이드 GUI 모드"
+title: "Server: Weblogic 12c 설치 (CentOS6) 가이드 GUI 모드"
 description: "Weblogic 12c 설치 (CentOS6) 가이드 GUI 모드"
 categories: [Server]
 tags: [Weblogic]
