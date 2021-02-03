@@ -10,25 +10,25 @@ redirect_from:
 
 > In this page, I will show you three different way to deploy applications
 
-### By Manager App
+### By Manager App {#toc1}
 
-```yaml
+```md
 visit tomcat base url
 localhost:8080
 Click "Manager App"
 You can deploy by specifying directory path or war file
 ```
 
-### By webapps dir
+### By webapps dir {#toc2}
 
-```yaml
+```md
 You can copy app files into webapps
 If you look inside of conf/server.xml webapps attributes, you can see that tomcat automatically deploy application within webapps dir
 ```
 
-### By context.xml
+### By context.xml {#toc3}
 
-```yaml
+```md
 Inside of conf/Catalina/localhost folder, create context.xml file and configue your app deployment.
 ```
 
