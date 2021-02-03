@@ -47,6 +47,7 @@ redirect_from:
 
 - 수동광고는 말그대로 페이지 전체의 영역에서 원하는 위치에 직접 광고를 다는 것입니다.
 - AdSense 에서 만든 소스 코드는 주로 아래와 같습니다.
+- 이런 광고 개제를 고민하기 위해서는 기본적으로 사이트 승인이 나야만 합니다. 시작은 블로그 글 부터 작성하는게 시작입니다.
 
 ```js
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
