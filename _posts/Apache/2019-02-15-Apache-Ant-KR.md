@@ -18,7 +18,7 @@ redirect_from:
 
 - Let's create a file and name it as "build.xml"
 
-```xml 
+```md 
 <?xml version = "1.0" encoding="utf-8"?>
 <project name = "Hello World Project" default = "compile" basedir="/var/lib/jenkins/workspace/src">
    <target name = "info">
@@ -29,7 +29,7 @@ redirect_from:
 
 ### Define Properties within the build.xml file
 
-```xml
+```md
 <?xml version = "1.0" encoding="utf-8"?>
 <project name = "Hello World Project" default = "compile" basedir="/var/lib/jenkins/workspace/src">
         <property environment="env"/>
@@ -57,7 +57,7 @@ redirect_from:
 - I added "classpath" attribute within javac task to define classpath during compilation process.
 - To add external jar files, I used fileset attribute to define where those jar files are located.
 
-```xml
+```md
 <?xml version = "1.0" encoding="utf-8"?>
 <project name = "Hello World Project" default = "compile" basedir="/var/lib/jenkins/workspace/src">
 	<property environment="env"/>
@@ -101,7 +101,7 @@ redirect_from:
 - This target has a task called "delete" which is quite straight forward.
 - It will delete files within the "dir" path
 
-```xml
+```md
 <?xml version = "1.0" encoding="utf-8"?>
 <project name = "Hello World Project" default = "compile" basedir="/var/lib/jenkins/workspace/src">
 	<property environment="env"/>
@@ -151,7 +151,7 @@ redirect_from:
 
 - Very similar with deleteClass task, except I specified types of file that I want to delete within the target directory "dir".
 
-```xml
+```md
 <?xml version = "1.0" encoding="utf-8"?>
 <project name = "Hello World Project" default = "compile" basedir="/var/lib/jenkins/workspace/src">
 	<property environment="env"/>
@@ -221,7 +221,7 @@ redirect_from:
 - This target has a task called "copy" which will copy files into destination folder "todir"
 You can use fileset attribute to specify types of file to copy from "dir"
 
-```xml
+```md
 <?xml version = "1.0" encoding="utf-8"?>
 <project name = "Hello World Project" default = "compile" basedir="/var/lib/jenkins/workspace/src">
 	<property environment="env"/>
@@ -315,7 +315,7 @@ You can use fileset attribute to specify types of file to copy from "dir"
 - I also added and task to run another ant file that is located in same folder. 
 - Make user you use "target" attribute to specify what target you wish to run for the given "antfile"
 
-```xml
+```md
 <?xml version = "1.0" encoding="utf-8"?>
 <project name = "Hello World Project" default = "compile" basedir="/var/lib/jenkins/workspace/src">
 	<property environment="env"/>
