@@ -43,4 +43,12 @@
     {% include scripts.html %}
 
   </body>
+  <script>
+    $(window).on('load', function() {
+        $("#loading").hide();
+    });
+  </script>
+  <div id="loading">
+    <img src="https://tistory4.daumcdn.net/tistory/1792392/skin/images/loading.svg" alt="loading">
+  </div>
 </html>
