@@ -27,7 +27,7 @@ redirect_from:
 </project>
 ```
 
-### Define Properties within the build.xml file {#toc3}
+### Define Properties within the build file {#toc3}
 
 ```xml
 <?xml version = "1.0" encoding="utf-8"?>
