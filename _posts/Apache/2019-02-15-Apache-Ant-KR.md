@@ -10,7 +10,7 @@ redirect_from:
 
 > In this page, I will show you some of basic ant command that might be useful for application compile and deployment.
 
-### Assumption & Background {#toc1}
+### Assumption and Background {#toc1}
 
 - Apache Ant should be installed and evironment path is set correctly.
 
