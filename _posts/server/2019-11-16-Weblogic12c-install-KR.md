@@ -11,7 +11,7 @@ redirect_from:
 > Weblogic 12c 설치 (CentOS6) 가이드 GUI 모드
 
 ### 배경 및 전제 조건 {#toc0}
-```bash
+```md
 # 일단, Weblogic 12c 는 Java 1.8 에서 동작하니, 
 # Java 1.8 설치.
 # 방법은 여러가지가 있으니 검색해서 설치.
@@ -33,7 +33,7 @@ ln -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target
 ```
 
 ### 계정, 환경설정, 설치 시작 {#toc1}
-```bash
+```md
 # 계정
 groupadd -g 1001 oinstall
 useradd -u 1001 -g -install oracle

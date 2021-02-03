@@ -18,7 +18,7 @@ redirect_from:
 
 ### Iptables Basic Command
 
-```bash
+```md
 
 # You May find it useful to use the following commands.
 # The meaning of command is fairly strait-forward. So I will just continue
@@ -30,7 +30,7 @@ service iptables restart
 
 ### Allow Specific PORT Number using iptables
 
-```bash
+```md
 
 # The path for iptables configuration
 vi /etc/sysconfig/iptables
@@ -52,7 +52,7 @@ service iptables restart
 
 ### Allow Specific IP Address using iptables
 
-```bash
+```md
 
 # Using File
 -A INPUT -s 192.168.1.8 -j ACCEPT
@@ -64,7 +64,7 @@ iptables -A INPUT -s 192.168.1.8 -j ACCEPT
 
 ### Deny Specific IP Address and PORT Number using iptables
 
-```bash
+```md
 
 # Using File
 -A INPUT -s 192.168.1.8 -p tcp --dport 443 -j DROP
@@ -76,7 +76,7 @@ iptables -A INPUT -s 192.168.1.8 -p tcp --dport 443 -j DROP
 
 ### Allow Range of IP Address using iptables
 
-```bash
+```md
 
 # Using File
 iptables -A INPUT -s 192.168.0.1/24 -j ACCEPT
@@ -85,7 +85,7 @@ iptables -A INPUT -s 192.168.0.1/24 -j ACCEPT
 
 ### Allow Range of PORT using iptables
 
-```bash
+```md
 
 # Using File
 # Allow Port Number 80,22,53
@@ -117,7 +117,7 @@ Target - Actions where packets are meet certain Match conditions
 
 ### Some Other Useful Commands
 
-```bash
+```md
 
 # Check if iptables are installed
 rpm -qa | grep iptables

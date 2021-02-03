@@ -68,7 +68,7 @@ execute dbms_java.grant_permission( 'USERNAME', 'SYS:java.lang.RuntimePermission
 ```
 
 ### loadjava 실행문 예시 {#toc3}
-```bash
+```md
 loadjava -u scott/tiger@ORCL -verbose -resolve OracleJDBCExample.java
 loadjava -u scott/tiger@ORCL -verbose -resolve OracleJDBCExample.class
 loadjava -u scott/tiger@ORCL -verbose -resolve jarfile.zip

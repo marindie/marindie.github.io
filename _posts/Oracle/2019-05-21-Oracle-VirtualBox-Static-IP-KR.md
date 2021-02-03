@@ -37,7 +37,7 @@ root 계정으로 접속
 
 /etc/sysconfig/network-scripts/ifcfg-eth1 은 Static IP 설정으로 사용한다 (어댑터2)
 
-```bash
+```md
 vi /etc/sysconfig/network-scripts/ifcfg-eth1
 ```
 BOOTPROTO=dhcp => BOOTPROTO=none 변경
@@ -51,7 +51,7 @@ GATEWAY=192.168.56.1
 
 Network 재시작
 
-```bash
+```md
 service network restart
 ifconfig -a # IP 부여 여부 확인
 ```
@@ -62,7 +62,7 @@ ping 192.168.56.141
 Putty 등등의 IDE 로 접속 하기 전에 방화벽 및 openssl 설치 확인하셔야 합니다.
 
 방화벽 파일을 수정하는 방법
-```bash
+```md
 service iptables status # 방화벽 정보 확인
 
 vi /etc/sysconfig/iptables
@@ -72,7 +72,7 @@ service iptables restart
 ```
 
 명령어로 하는 방법
-```bash
+```md
 service iptables status # 방화벽 정보 확인
 
 iptables -I INPUT 1 -p tcp --dport 22 -j ACCEPT 

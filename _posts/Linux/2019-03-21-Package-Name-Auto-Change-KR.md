@@ -16,7 +16,7 @@ redirect_from:
 
 ### 소스 {#toc2}
 
-```bash
+```md
 #/bin/bash
 SRC=$1
 TG=$2

@@ -22,7 +22,7 @@ redirect_from:
 
 ### PL/SQL Block in bash {#toc2}
 
-```bash
+```md
 
 #/bin/bash
 
@@ -117,7 +117,7 @@ rm TEMP.TXT
    의미는 각 record string 의 맨 끝에 '$' 표시에 이어서 line break 가 매칭 되었을때, 
    ctl 에서의 record 하나로 인식해 달라는 뜻입니다.
 
-```bash
+```md
 
 LOAD DATA
 INFILE '/home/oracle/select/TABLE_TEST1.DAT'
@@ -138,7 +138,7 @@ CREATE_DT DATE "YYYY-MM-DD HH24:MI:SS"
 
 ### TABLE_TEST1.DAT {#toc5}
 
-```bash
+```md
 
 1&2003-07-14 15:52:43.000000&2019-02-11 13:11:57.536000
 2&2003-07-14 15:52:43.000000&2019-02-11 13:11:57.536000

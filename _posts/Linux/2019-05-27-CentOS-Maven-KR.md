@@ -12,7 +12,7 @@ redirect_from:
 
 ### Maven Download {#toc1}
 
-```bash
+```md
 mkdir /toos
 cd /tool
 

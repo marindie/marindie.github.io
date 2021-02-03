@@ -17,7 +17,7 @@ redirect_from:
 
 ### Iptables Basic Command {#toc2}
 
-```bash
+```md
 
 # 자주 사용하게 될 명령어들 입니다.
 # 상태 확인, 시작, 재시작
@@ -29,7 +29,7 @@ service iptables restart
 
 ### 특정 PORT 허용 {#toc3}
 
-```bash
+```md
 
 # iptables configuration 파일 경로
 vi /etc/sysconfig/iptables
@@ -50,7 +50,7 @@ service iptables restart
 
 ### 특정 IP 주소 허용 {#toc4}
 
-```bash
+```md
 
 # 파일 편집시..
 -A INPUT -s 192.168.1.8 -j ACCEPT
@@ -62,7 +62,7 @@ iptables -A INPUT -s 192.168.1.8 -j ACCEPT
 
 ### 특정 IP 와 PORT 차단 {#toc5}
 
-```bash
+```md
 
 # 파일 편집시..
 -A INPUT -s 192.168.1.8 -p tcp --dport 443 -j DROP
@@ -74,7 +74,7 @@ iptables -A INPUT -s 192.168.1.8 -p tcp --dport 443 -j DROP
 
 ### 특정 IP 주소 대역을 허용 {#toc6}
 
-```bash
+```md
 
 # 파일 편집시.. (192.168.0.1 ~ 192.168.0.255 까지)
 -A INPUT -s 192.168.0.1/24 -j ACCEPT
@@ -86,7 +86,7 @@ iptables -A INPUT -s 192.168.0.1/24 -j ACCEPT
 
 ### 특정 PORT 대역 허용 {#toc7}
 
-```bash
+```md
 
 # 파일 편집시.. Port Number 80,22,53 허용
 -A INPUT -p tcp --match multiport --dports 80,22,53 -j ACCEPT
@@ -123,7 +123,7 @@ Target - Actions where packets are meet certain Match conditions
 
 ### Some Other Useful Commands {#toc9}
 
-```bash
+```md
 
 # iptables 설치 확인 명령어
 rpm -qa | grep iptables

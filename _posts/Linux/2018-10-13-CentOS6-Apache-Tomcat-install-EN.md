@@ -16,7 +16,7 @@ redirect_from:
 
 ### Preparation before Apache installation
 
-```bash
+```md
 
 # remove default apache
 yum remove httpd
@@ -78,7 +78,7 @@ mv tomcat /was
 
 ### Install Apache
 
-```bash
+```md
 
 # install JAVA
 tar -zxvf jdk-8u191-linux-x64.tar.gz
@@ -142,7 +142,7 @@ cd ..
 
 ### Open firewall
 
-```bash
+```md
 
 vi /etc/sysconfig/iptables
 
@@ -158,7 +158,7 @@ service iptables restart
 
 ### Apache and Tomcat Integration (mod_jk.so module)
 
-```bash
+```md
 
 cd tomcat-connectors-1.2.44-src/native
 ./configure --with-apxs=/web/apache2.4.25/bin/apxs
@@ -212,7 +212,7 @@ include conf/mod_jk.conf
 
 ### Start Apache Web Server and Tomcat Server
 
-```bash
+```md
 
 /web/apache2.4.25/bin/apachectl start
 /was/tomcat/bin/startup.sh

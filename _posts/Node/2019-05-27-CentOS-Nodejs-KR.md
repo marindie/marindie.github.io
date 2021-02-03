@@ -12,7 +12,7 @@ redirect_from:
 
 ### Yum Repository 세팅 {#toc1}
 
-```bash
+```md
 curl -sL https://rpm.nodesource.com/setup_10.x | bash -
 sudo yum clean all && sudo yum makecache fast
 sudo yum install -y gcc-c++ make
@@ -25,7 +25,7 @@ sudo yum install -y nodejs
 Yum Repository 를 10 버전으로 잡아줘도 계속 설치가 6으로 되서 검색  
 /etc/yum.repos.d/nodesource-el.repo 삭제하면 됨.
 
-```bash
+```md
 rm /etc/yum.repos.d/nodesource-el.repo
 
 curl -sL https://rpm.nodesource.com/setup_10.x | bash -

@@ -37,7 +37,7 @@ log4j 에서 SQL 문중에 PreparedStatement 와 같은 경우, Binding 하려�
 해당 값들에 대한 정보를 뿌려주는게 일반적인것 같습니다. 저는 해당 쿼리에서 에러가 나거나 할때, 로그에서 복사한 쿼리를 그대로 복사해서 테스트 해보고 싶어서 
 AWK 를 사용해서 완성된 쿼리문을 만들어 사용하고자 AWK 를 배우게 되었습니다. 아래는 그 결과물입니다.
 
-```bash
+```md
 
 BEGIN{
     IGNORECASE=1
@@ -93,7 +93,7 @@ BEGIN{
    그 건들을 처리시간 단위로 분류하여 개수를 뽑아보고 싶어서 아래의 AWK 를 작성하게 되었습니다.
    아래는 해당 예제 샘플입니다.
 
-```bash
+```md
 
 BEGIN{
 print "START"; 
@@ -158,7 +158,7 @@ END{
 
 아래는 printf 에 대한 더 심플한 예제입니다.
 
-```bash
+```md
 
 awk '{ printf "%-10s %s\n", $1, $2 }' cust-info.txt
 Amelia     555-5553

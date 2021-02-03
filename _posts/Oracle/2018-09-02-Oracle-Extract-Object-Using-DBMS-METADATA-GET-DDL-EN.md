@@ -111,7 +111,7 @@ SPOOL OFF
 
 ### Remove `SEGMENT CREATE IMMEDIATE` or `SEGMENT CREATE DEFERRERD` in the file
 
-```bash
+```md
 
 # Now I will share SED command that will remove SEGMENT CREATE stuff syntax in your results files
 # In Linux, type this, to check there are some matching lines

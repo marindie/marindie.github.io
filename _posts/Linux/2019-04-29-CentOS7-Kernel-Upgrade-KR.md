@@ -12,7 +12,7 @@ redirect_from:
 
 ###  실행 명령어 {#toc1}
 
-```bash
+```md
 # Default
 yum -y update
 yum -y install yum-plugin-fastestmirror

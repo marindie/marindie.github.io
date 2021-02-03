@@ -16,17 +16,17 @@ redirect_from:
 cd git_folder 로 해당 폴더에 있다고 가정합니다.
 
 ### Git Local Repository 생성 {#b}
-```bash
+```md
 git init
 ```
 
 ### Git Remote Repository 추가 {#c}
-```bash
+```md
 git remote add origin GIT_URL
 ```
 
 ### Git Staging 하기 {#d}
-```bash
+```md
 git add .
 git add \*.java   #또는  
 git add *.java
@@ -34,35 +34,35 @@ git add Documentation/\*.txt #(Documentation  폴더안의 모든 .txt 파일 st
 ```
 
 ### Git Commit 하기 {#e}
-```bash
+```md
 git commit -m "First Commit."
 ```
 
 ### Git Log 확인 {#f}
-```bash
+```md
 git log
 git log -p -2 
 #p 옵션은 커밋의 diff 를 보여줌. -2 는 최근 2개의 결과만 보여달라는 의미
 ```
 
 ### Git Remote Repository 에 Commit 하기 {#g}
-```bash
+```md
 git push origin master
 ```
 
 ### Git Remote Repository 내려받기(clone) {#h}
-```bash
+```md
 git clone GIT_URL
 ```
 
 ### Git Remote Repository 단축이름과 URL 확인 명령어. {#i}
-```bash
+```md
 cd git_folder
 git remote -v
 ```
 
 ### Git 설정하기. {#j}
-```bash
+```md
 #아래의 내용은 설정에 대한 부분인데, 나는 아래의 내용을 config 하지 않고 사용합니다
 #ssh 연결도 하지 않고 사용중입니다.
 
@@ -82,7 +82,7 @@ git config --global http.sslVerify false
 ```
 
 ### git remote master 브랜치에 커밋된 내용이 있는 상태에서 local push 에러 처리 명령어 {#aa}
-```bash
+```md
 # local 에서 commit 을 한 후에, git pull 시도시에, remote 에 commit 된 내용이 존재하면, 
 # pull 을 해도 push 시에 에러가 발생함.
 # 이럴때 사용하는 명령어.
@@ -140,7 +140,7 @@ parent 에서 git submodule foreach git pull origin master 나 git submodule ini
 ```
 
 ### git submodule 추가 방법 {#n}
-```bash
+```md
 git submodule add <repository_url> <submodule_dir_path_starting_from_parent>
 
 Ex) 폴더 구조
@@ -151,7 +151,7 @@ git submodule add GIT_URL child/submod1
 ```
 
 ### submodule 파일 삭제 없이 git 에서만 삭제 방법 {#o}
-```bash
+```md
 # child 폴더를 child_bak 으로 이름 변경
 git submodule deinit child/submod1
 git rm -r --cache child/submod1 
@@ -160,14 +160,14 @@ git submodule add # 하면 정상적으로 다시 추가 됨.
 ```
 
 ### parent 에서 submodule 전부다 sync 하는 명령어 {#p}
-```bash
+```md
 # parent 입장에서 submodule 들이 에러가 나는 상황이 아니면, 최신 상태가 유지 되지 않아도 관계 없다.
 # 하지만, 어떤 이유에서 최신화를 시켜야 한다면, 아래의 명령어가 가장 편해 보인다.
 git submodule foreach git pull origin master (submodule 들의 remote 이름이 전부 origin에 master branch 이어야 가능할 듯.)
 ```
 
 # 새로운 폴더에 parent 부터 다시 clone 하는 경우 {#q}
-```bash
+```md
 git clone GIT_URL 를 하고나서 submodule 에 가서 보면 내용이 비어 있다.
 # 이때 개별적으로 내용을 받아오는 명령어는 아래와 같다.
 git submodule init
@@ -177,7 +177,7 @@ git clone --recursive GIT_URL
 ```
 
 ### submodule 작업한 파일은 남겨 놓고 git 설정 정보만 삭제 {#r}
-```bash
+```md
 mv subfolder subfolder_tmp
 git submodule deinit subfolder
 git rm --cached subfolder

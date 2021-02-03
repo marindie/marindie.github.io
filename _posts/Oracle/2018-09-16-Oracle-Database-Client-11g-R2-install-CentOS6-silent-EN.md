@@ -56,7 +56,7 @@ When you try to install oracle on linux environment, you need to check the follo
 
 # Oracle Environment Setting For This Oracle Installation (root user)
 
-```bash
+```md
 
 # Goup Add
 groupadd oinstall
@@ -96,20 +96,20 @@ cat /etc/profile
 ### Unzip Files to /home/oracle and change ownership to oracle.
 ### Give Read and Execute permissions to files
 
-```bash
+```md
 unzip -q linux_11gR2_client_x86_64.zip -d /home/oracle
 chown -R oracle:dba /home/oracle
 chmod -R 755 /home/oracle
 ```
 
 ### Switch user that will install oracle instance
-```bash
+```md
 su - oracle
 ```
 
 ### Use response file to install oracle instance in silent mode
 
-```bash
+```md
 
 # When we install oracle in linux, we use command runInstaller.
 # Since I prefer to use CLI than GUI, I will use silent mode.
@@ -150,7 +150,7 @@ grep "^oracle.install.client.installType=" /home/oracle/client/response/client_t
 
 ### Check Oracle install Pre-requisites
 
-```bash
+```md
 # The following will check whether your environment is good enough to install oracle instance.
 # You must check log that oracle generate to see if there is critical errors that oracle can not continue install.
 # Be aware that you do not have to satisfy all the Pre-requisites.
@@ -161,7 +161,7 @@ grep "^oracle.install.client.installType=" /home/oracle/client/response/client_t
 
 ### Run Installer (Silent Mode)
 
-```bash
+```md
 # When you create oracle instance, listener, and database, you need to run as oracle user who has belongs to oper group
 # Make sure your oracle user have oper group
 # If there is no critical errors. It will display some warnings and give you log path.
@@ -203,7 +203,7 @@ MYORA=
 
 ### Connect to server database using SQLPLUS
 
-```bash
+```md
 # Check the connection using sqlplus
 # Note, sqlplus will look for the names in tnsnames.ora file. So you need to write MYORA, not ORADB.
 # That way sqlplus can parse all the information need for connecting to server.
