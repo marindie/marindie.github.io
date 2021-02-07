@@ -41,10 +41,6 @@ call plug#end()
 ```
 
 ### vim colorscheme 변경
-<<<<<<< HEAD
-=======
-```md
->>>>>>> 492eb7f59670461a07916575e33f96f916a0c48c
 
 ```bash
 mkdir -p ~/.vim/colors
