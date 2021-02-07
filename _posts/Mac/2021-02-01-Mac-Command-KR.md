@@ -41,13 +41,25 @@ call plug#end()
 ```
 
 ### vim colorscheme 변경
-```bash
 
+```bash
 mkdir -p ~/.vim/colors
 #해당 폴더에 XXX.vim colorscheme 파일 복사
 #vimrc 안에 아래의 내용추가
 colorscheme darkblue
 syntax on
+```
+
+### ssh keygen and copy public key to remote server
+
+```bash
+# public/private key pair 생성
+ssh-keygen -t rsa
+# Enter key phase  보안이 신경 쓰인다면 암호를 추가 적으로 입력
+# Enter key phase again
+
+# Remote Server에 public 키 복사
+cat ~/.ssh/id_rsa.pub | ssh -p portnum username@ipOrDomain "cat >> ~/.ssh/authorized_keys"
 ```
 
 [^1]: This is a footnote.
