@@ -36,14 +36,14 @@ root 계정으로 접속
 
 /etc/sysconfig/network-scripts/ifcfg-enp0s3 은 NAT 로 인터넷 연결을 가능하게 해준다. (어댑터1)
 
-```bash
+```md
 vi /etc/sysconfig/network-scripts/ifcfg-enp0s3
 ```
 ONBOOT=yes 인지 확인
 
 /etc/sysconfig/network-scripts/ifcfg-enp0s8 은 Static IP 설정으로 사용한다 (어댑터2)
 
-```bash
+```md
 vi /etc/sysconfig/network-scripts/ifcfg-enp0s8
 ```
 BOOTPROTO=dhcp => BOOTPROTO=none 변경
@@ -57,14 +57,14 @@ GATEWAY=192.168.56.1
 
 DNS 설정
 
-```bash
+```md
 vi /etc/resolv.conf
 nameserver 8.8.8.8
 ```
 
 Network 재시작
 
-```bash
+```md
 systemctl restart network
 ifconfig -a # IP 부여 여부 확인
 ```
@@ -75,7 +75,7 @@ ping 192.168.56.142
 Putty 등등의 IDE 로 접속 하기 전에 방화벽 및 openssl 설치 확인하셔야 합니다.
 
 방화벽 설정
-```bash
+```md
 firewall-cmd --list-all # 로 리스트 확인
 firewall-cmd --permanent --zone=public --add-port=22/tcp # 로 22 포트 OPEN
 firewall-cmd --reload # 로 재시작 
@@ -83,7 +83,7 @@ firewall-cmd --list-all # 로 리스트 확인
 ```
 
 방화벽 사용안하고 싶으면 아래처럼
-```bash
+```md
 systemctl stop firewalld.service && systemctl disable firewalld.service
 ```
 

@@ -11,7 +11,7 @@ redirect_from:
 > logrotate 사용법, 옵션들 의미 및 장단점 소개
 
 ### logrorate 동작 방식 {#toc1}
-```bash
+```md
 # 기본적으로 logrotate 를 설치하면 cron.daily 에 자동으로 등록됨
 cat /etc/cron.daily/logrotate
 # 실제로 cron.daily 에서 사용되는 명령어
@@ -50,7 +50,7 @@ cat /var/lib/logrotate/status
 ```
 
 ### logrotate 옵션 {#toc4}
-```bash
+```md
 # https://man7.org/linux/man-pages/man5/logrotate.conf.5.html 사이트 참고를 추천
 
 # 일별 rotate, 실제로 동작하는 조건은 해당 시간이 00시00분 일때 도는것 같음. 
@@ -69,7 +69,7 @@ create 0600 root root # rotate 파일을 만들면서 파일 권한 그룹 사�
 ```
 
 ### logrotate 예제 {#toc5}
-```bash
+```md
 vi /etc/logrotate.d/tomcat
 
 # 아래는 해당 파일의 내용

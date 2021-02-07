@@ -24,7 +24,7 @@ vim 분할 상태에서 왼쪽 창으로 커서 이동 : control + w and l
 ```
 
 ### vim plugin 사용법
-```bash
+```md
 #Install vim-plug : 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -41,6 +41,10 @@ call plug#end()
 ```
 
 ### vim colorscheme 변경
+<<<<<<< HEAD
+=======
+```md
+>>>>>>> 492eb7f59670461a07916575e33f96f916a0c48c
 
 ```bash
 mkdir -p ~/.vim/colors

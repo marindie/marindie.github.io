@@ -51,7 +51,7 @@ PC 재부팅 후에 테스트 하기를 권장한다.
 ```
 
 ### 그 외에 SSL 관련 발생한 경험들 {#toc3}
-```bash
+```md
 
 git 의 경우에는 ssl disable 옵션으로 처리했다.
 git config --global http.sslVerify false

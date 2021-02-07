@@ -44,7 +44,7 @@ When you try to install oracle on linux environment, you need to check the follo
 ```
 ### Install packages for oracle installation
 
-```bash
+```md
 yum -y update
 yum install -y net-tools binutils compat-libcap* gcc* glibc* ksh libgcc* libstdc* libaio* make* sysstat* unixODBC* elfutils-libelf-devel unzip wget compat-libstdc++-33-3.2.3
 
@@ -57,14 +57,14 @@ rpm -Uvh glibc-2.12-1.212.el6_10.3.i686.rpm --nodeps --force
 
 ### ADD HOSTNAME
 
-```bash
+```md
 - sed -i'' -e '\$a\YOUR_IP_ADDR my_hostname' /etc/hosts
 
 ```
 
 ### Oracle Environment Setting For This Oracle Installation (root user)
 
-```bash
+```md
 
 # Goup Add
 groupadd oinstall
@@ -103,7 +103,7 @@ source /home/oracle/.bash_profile
 
 ### Kernel Parameter 
 
-```bash
+```md
 
 # Plain Text
 # There are more Kelnel Parameters that oracle check before install. However, the list below is enough to pass the oracle installer's mininum requirement
@@ -126,7 +126,7 @@ sysctl -p
 ```
 ### USER RESOURCE LIMIT Setting
 
-```bash
+```md
 
 # Plain Text
 vi /etc/security/limits.conf
@@ -144,7 +144,7 @@ sed -i'' -e "\$a\*               hard    nofile          65536\n*               
 ### Unzip Files to /ORACLE and change ownership to oracle.
 ### Give Read and Execute permissions to files
 
-```bash
+```md
 unzip -q linux.x64_11gR2_database_1of2.zip -d /ORACLE
 unzip -q linux.x64_11gR2_database_2of2.zip -d /ORACLE
 chown -R oracle:oinstall /ORACLE
@@ -152,13 +152,13 @@ chmod -R 755 /ORACLE
 ```
 
 ### Switch user that will install oracle instance
-```bash
+```md
 su - oracle
 ```
 
 ### Use response file to install oracle instance in silent mode
 
-```bash
+```md
 
 # When we install oracle in linux, we use command runInstaller.
 # Since I prefer to use CLI than GUI, I will use silent mode.
@@ -211,7 +211,7 @@ grep "DECLINE_SECURITY_UPDATES=" /ORACLE/database/response/oracle_install.rsp
 
 ### Check Oracle install Pre-requisites
 
-```bash
+```md
 # The following will check whether your environment is good enough to install oracle instance.
 # You must check log that oracle generate to see if there is critical errors that oracle can not continue install.
 # Be aware that you do not have to satisfy all the Pre-requisites.
@@ -222,7 +222,7 @@ grep "DECLINE_SECURITY_UPDATES=" /ORACLE/database/response/oracle_install.rsp
 
 ### Run Installer (Silent Mode)
 
-```bash
+```md
 # When you create oracle instance, listener, and database, you need to run as oracle user who has belongs to oper group
 # Make sure your oracle user have oper group
 # If there is no critical errors. It will display some warnings and give you log path.
@@ -269,7 +269,7 @@ MYORA=
 
 ### Create Listener (Silent Mode)
 
-```bash
+```md
 cp /ORACLE/database/response/netca.rsp /ORACLE/database/response/oracle_netca.rsp 
 netca /silent /responseFile /ORACLE/database/response/oracle_netca.rsp
 
@@ -308,7 +308,7 @@ tcp.validnode_checking = no
 
 ### Create Database (Silent Mode)
 
-```bash
+```md
 # For Creating Database, I used template, not responsefile. You can also use responsefile if you want
 # Also you can change those options in a way you want.
 dbca -silent -createDatabase -templateName General_Purpose.dbc -gdbname ORADB -sid ORADB -sysDBAUserName sys -sysDBAPassword password -responseFile NO_VALUE -characterSet AL32UTF8 -memoryPercentage 20 -emConfiguration NONE
@@ -316,7 +316,7 @@ dbca -silent -createDatabase -templateName General_Purpose.dbc -gdbname ORADB -s
 
 ### Connect to Database as sysdba
 
-```bash
+```md
 sqlplus / as sysdba
 # if it does not show anything like "ORACLE not available". Then it's working.
 # The Thing is, when you create database, oracle try to mount and open the database. So If the database is created without errors, then the status should not be "not available"

@@ -16,7 +16,7 @@ redirect_from:
 
 ### Append Text Before Matching Text
 
-```bash
+```md
 
 # The following sed command will paste "Some More Text is appended" after matching text "Please Put it here"
 sed -i'' -r -e "/Please Put it here/i\Some More Text is appended/" your_file.txt 
@@ -25,7 +25,7 @@ sed -i'' -r -e "/Please Put it here/i\Some More Text is appended/" your_file.txt
 
 ### Append Text After Matching Text
 
-```bash
+```md
 
 # The following sed command will paste "Some More Text is appended" after matching text "Please Put it here"
 sed -i'' -r -e "/Please Put it here/a\Some More Text is appended/" your_file.txt 

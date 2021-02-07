@@ -11,7 +11,7 @@ redirect_from:
 > CentOS 6 JAVA 설치
 
 ### CentOS 6 JAVA 설치 {#toc1}
-```bash
+```md
 # 자바 설치 여부 확인
 rpm -qa | grep java
 # 존재하면 나오는 java 이름으로 삭제

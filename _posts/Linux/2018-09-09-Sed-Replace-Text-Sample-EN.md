@@ -16,7 +16,7 @@ redirect_from:
 
 ### Basic Sed Test
 
-```bash
+```md
 
 # If you use the following command it will display all of the file contents including text replacement.
 sed "s/my target text/my replaced text/" your_file.txt 
@@ -25,7 +25,7 @@ sed "s/my target text/my replaced text/" your_file.txt
 
 ### Print Only Matching Case
 
-```bash
+```md
 
 # In case when you want to see only the changes of your sed command, then use the following options.
 sed -n "s/my target text/my replaced text/p" your_file.txt 
@@ -38,7 +38,7 @@ sed -n "s/my target text/my replaced text/p" your_file.txt
 
 ### Use Regular Expression in Sed. (Sed with Regex)
 
-```bash
+```md
 
 # When you want to use regular expression in sed command, then you need -r option.
 # In this example, the case is where you need grouping and multiple matching (A Or B. Pipeline in other word)
@@ -53,7 +53,7 @@ sed -n -r "s/(SEGMENT) CREATE IMMEDIATE/\1 DROP IMMEDIATE/p" your_file.txt
 
 ### Replace contents of the file using Sed (Apply Changes to the files)
 
-```bash
+```md
 
 # Finally, when you are sure about the apply the modification, use the following
 
@@ -70,7 +70,7 @@ sed -i'' -r -e "s/SEGMENT CREATE IMMEDIATE|SEGMENT CREATE DEFERRED/I DO NOT WANT
 
 ### Find file and Replace contents of each file using Find and Sed Command (Apply Changes to the files)
 
-```bash
+```md
 
 # When you want to find more than one file and replace some common text, then use the following.
 find . -type f -name my_*.log -exec sed -i'' -e "s/foo/bar/" {} \;
@@ -80,7 +80,7 @@ find . -type f -name my_*.log -exec sed -i'' -e "s/foo/bar/" {} \;
 
 ### Some Other Simple Options in sed (Ignore Case, Global)
 
-```bash
+```md
 
 # Ignore Case Option can be used in sed. see below 
 sed -i'' -e "s/foo/bar/i" your_file.txt

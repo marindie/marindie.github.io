@@ -11,7 +11,7 @@ redirect_from:
 > Rpm Header V4 RSA/SHA1 Signature, key ID ... NOKEY
 
 ### RPM file install 시 경고 {#toc1}
-```bash
+```md
 
 # GPG Key가 만료되어 뜨는 문제이므로 아래 명령어를 통해 해결할 수 있다고 한다.
 # 경고여서 설치가 안되는건 아니였다.

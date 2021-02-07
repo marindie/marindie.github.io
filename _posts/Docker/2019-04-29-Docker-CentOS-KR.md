@@ -12,7 +12,7 @@ redirect_from:
 
 ### CentOS 7 Docker 를 사용한 Concourse 설치 {#toc1}
 
-```bash
+```md
 
 # yum 을통한 Docker Repository 추가시 CA 인증과 같은 문제가 발생해서 
 /etc/yum.conf 파일 안에
@@ -89,7 +89,7 @@ sudo vi /lib/systemd/system/docker.service
 
 ### Concourse fly 명령어 {#toc2}
 
-```bash
+```md
 
 # Target Concourse
 fly --target tutorial login --concourse-url http://127.0.0.1:8080 -u admin -p admin --ca-cert ~/POSCO.cer
@@ -114,7 +114,7 @@ fly -t tutorial set-pipeline -c pipeline.yml -p hello-world
 
 ### CA 설정 {#toc3}
 
-```bash
+```md
 # 인증서 파일 ex) ca.crt or ca.cer 파일을 아래의 경로에 두고 update 
 cp ca.cer /etc/pki/ca-trust/source/anchors/ 
 update-ca-trust 
@@ -144,7 +144,7 @@ openssl req -newkey rsa:4096 -nodes -sha256 -keyout certs/domain.key -x509 -days
 
 ###  Concourse 와 Postgres Manual 설치 {#toc4}
 
-```bash
+```md
 
 firewall-cmd --add-port=8080/tcp --permanent
 firewall-cmd --reload

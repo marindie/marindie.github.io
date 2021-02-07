@@ -91,7 +91,7 @@ END;
 3. Now it will generate csv file using given table name in current folder. "./${table}.csv Ex) ./test.csv"
 4. That's it.
 
-```bash
+```md
 
 #/bin/bash
 SOURCE_DB="TEST"

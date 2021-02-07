@@ -12,7 +12,7 @@ redirect_from:
 
 ### Setfacl
 
-```bash 
+```md 
 
 # 'u' stands for user, 'g' stands for group, 'o' stands for others
 # -m means modify
@@ -33,7 +33,7 @@ setfacl -x u:user1 /etc/sysconfig/iptables
 
 ### Getfacl
 
-```bash
+```md
 
 getfacl /DATA/work/CP_transaction
 

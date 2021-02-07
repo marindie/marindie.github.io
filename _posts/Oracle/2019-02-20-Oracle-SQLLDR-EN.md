@@ -22,7 +22,7 @@ redirect_from:
 
 ### PL/SQL Block in bash
 
-```bash
+```md
 
 #/bin/bash
 
@@ -111,7 +111,7 @@ rm TEMP.TXT
 
 ### TABLE_TEST1.ctl
 
-```bash
+```md
 
 LOAD DATA
 INFILE '/home/oracle/select/TABLE_TEST1.DAT'
@@ -138,7 +138,7 @@ CREATE_DT DATE "YYYY-MM-DD HH24:MI:SS"
    for handling next line within string data, put "var" in INFILE option or use LOBFILE
 
 
-```bash
+```md
 
 1&2003-07-14 15:52:43.000000&2019-02-11 13:11:57.536000
 2&2003-07-14 15:52:43.000000&2019-02-11 13:11:57.536000

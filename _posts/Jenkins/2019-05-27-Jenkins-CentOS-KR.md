@@ -12,18 +12,15 @@ redirect_from:
 
 ### Jenkins 레파지토리 추가 후 설치 {#toc1}
 
-```bash
-
+```md
 sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
 sudo rpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key
 sudo yum install jenkins
-
 ```
 
 ### Jenkin 포트 변경 {#toc2}
 
-```bash
-
+```md
 sudo vi /etc/sysconfig/jenkins
 아래의 JENKINS_PORT 값을 원하는 값으로 변경
 JENKINS_PORT="6000"
@@ -33,13 +30,11 @@ service jenkins stop #(or systemctl for CentOS7)
 service jenkins restart #(or systemctl for CentOS7)
 service jenkins status #(or systemctl for CentOS7)
 systemctl enable jenkins 
-
 ```
 
 ### 방화벽 설정 {#toc3}
 
-```bash
-
+```md
 # CentOS 6
 # 방법1.
 iptables -I INPUT 1 -p tcp --dport 443 -j ACCEPT 
@@ -66,14 +61,12 @@ systemctl enable iptables
 systemctl start iptables
 iptables --flush
 iptables-save > /etc/sysconfig/iptables
-
 ```
 
 ### 최초 로그인 암호 확인 {#toc4}
 
-```bash
+```md
 cat /var/lib/jenkins/secrets/initialAdminPassword
-
 # 이후에는 계정 생성하게 되고, 본인 선택에 따라 plugin 을 설치할 수도 아니면 일단 그냥 시작할 수도 있음.
 ```
 

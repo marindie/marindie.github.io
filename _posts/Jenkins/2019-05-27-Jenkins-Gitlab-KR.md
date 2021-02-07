@@ -11,17 +11,17 @@ redirect_from:
 > Jenkins Gitlab 연동. Gitlab Token, WebHook
 
 ### Jenkins 에서 Git 관련 플러그인 설치 {#toc1}
-```md
 
+```md
 Gitlab 관련 플러그인만 설치 해도 되겠으나, 그냥 
 Jenkins Server URL http://IP:PORT/pluginManager/available 로 이동
 혹은 Jenkins - Jenkins 관리 - 플러그인 관리 - 설치 가능 탭 클릭
 필터에 Git 입력 대문자 중요!! 
 해서 나오는것들중에 이것저것 맘에 드는거 체크 하고 설치해 보면 된다.
-
 ```
 
 ### Gitlab Access Token 생성 및 Jenkins에 해당 Token 등록 {#toc2}
+
 ```md
 Gitlab의 User Settings - Access Tokens에서 생성 가능
 
@@ -37,13 +37,11 @@ Connection name 입력
 Gitlab host URL 입력
 Credentials 에 none 클릭 하면 GitLab API token 이 보일거임 선택
 저장
-
-
 ```
 
 ### Jenkins Job 생성 {#toc3}
-```md
 
+```md
 Jenkins - 새로운 Item - Job 이름 입력 후 Freestyle project 클릭 후 OK 버튼 클릭
 General 에 GitHub project 항목에 체크
 URL 에 Git Repository URL 입력후 GitLab Connection 클릭해서 등록한 Credential 이름 확인 후 클릭
@@ -61,13 +59,11 @@ Build 항목에 원하는 형태로 작성
 Publish build status to GitLab 선택
 
 저장
-
 ```
 
 ### Gitlab WebHook 등록 {#toc4}
 
 ```md
-
 Gitlab으로 돌아와서
 Project - Settings - Integrations 을 클릭하면
 URL 항목에 Jenkin URL 입력 (http://IP:PORT/project/yourJobName)
@@ -84,7 +80,6 @@ Test 후 Save Change
 Jenkin Build 가 실행되었는지 확인
 잘 안되었으면 Jenkin Build 만 실행해서 Console 로그 확인
 Jenkin 가 Git Clone 을 잘 했으면 Gitlab 에서 WebHook Test 로그 확인해서 처리
-
 ```
 
 [^1]: This is a footnote.
