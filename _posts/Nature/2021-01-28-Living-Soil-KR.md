@@ -226,6 +226,17 @@ redirect_from:
 ![양치류01](/assets/images/screen/양치류02.png)
 양치류의 구조
 
+### 고사리 {#toc15}
+
+```md
+* 고사리는 하나의 종(species)을 지칭하는 말이 아니라, 약 10여 가지의 종이 속하는 속(genus)을 가리키는 말이다. 
+* 과거에는 Pteridium aquilinum라고 하는 하나의 종으로 취급했으나 최근에는 여러 종으로 분류한다. 세계적으로 가장 널리 퍼져 있는 양치류(fern)로써 남극대륙이나 사막과 같이 너무 춥거나 더운 지방을 제외한 모든 대륙에서 볼 수 있다. 
+* 다년생 식물로서 겨울에는 잎이 떨어진다.
+```
+
+![고사리](/assets/images/screen/고사리.png)
+고사리의 세대교번
+
 [^1]: This is a footnote.
 
 [kramdown]: https://kramdown.gettalong.org/
