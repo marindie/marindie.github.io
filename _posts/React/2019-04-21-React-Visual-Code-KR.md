@@ -26,7 +26,7 @@ rrc 타이핑 하고 탭 누르면 자동으로 Component Class 를 해당 파�
 이 녀석의 설명에 보면 위의 녀석과 마찬가지로 자동 완성문들이 여러개 있습니다.
 해당 정보를 기록해 뒀다가 사용하려합니다.
 
-가능한 사용명령어는 Visual Code 의 Extension 버튼을 누르면 
+가능한 사용명령어는 Visual Code 의 Extension 버튼을 누르면
 자동으로 ENABLED 라는 이름 아래에 설치 되어 사용중인 Snippets 들이 나옵니다.
 클릭하면 사용법 관련 정보가 있는데 rrc 이외에 rcc 등등 여러가지 취향에 따라 자주 사용할 법한 녀석들이 있습니다.
 
@@ -35,7 +35,7 @@ rrc 타이핑 하고 탭 누르면 자동으로 Component Class 를 해당 파�
 ### 기타 {#toc4}
 
 Visual Code 관련 단축키 URL
-https://docs.microsoft.com/ko-kr/visualstudio/mac/keyboard-shortcuts?view=vsmac-2019
+<https://docs.microsoft.com/ko-kr/visualstudio/mac/keyboard-shortcuts?view=vsmac-2019>
 
 [^1]: This is a footnote.
 
