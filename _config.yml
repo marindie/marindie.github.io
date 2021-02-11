@@ -313,7 +313,7 @@ defaults:
       comments: true
       share: false
       related: true
-      toc_sticky: true
+      class: wide
       sidebar:
         nav: "docs"
 
