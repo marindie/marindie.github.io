@@ -18,7 +18,7 @@ redirect_from:
 
 - Let's create a file and name it as "build.xml"
 
-```xml 
+```xml
 <?xml version = "1.0" encoding="utf-8"?>
 <project name = "Hello World Project" default = "compile" basedir="/var/lib/jenkins/workspace/src">
    <target name = "info">
@@ -49,7 +49,6 @@ redirect_from:
    </target>
 </project>
 ```
-
 
 ### Now add a new target compileClass that compiles java files {#toc4}
 
@@ -312,7 +311,7 @@ redirect_from:
 - I used exec task to run bash command. To run find command, I used dir and inputstring.
 - This sample maybe to simple. It would be a lot easier if you can run the bash script.
 - This is just a demo to show that it is possible to run bash command within ant script.
-- I also added and task to run another ant file that is located in same folder. 
+- I also added and task to run another ant file that is located in same folder.
 - Make user you use "target" attribute to specify what target you wish to run for the given "antfile"
 
 ```xml

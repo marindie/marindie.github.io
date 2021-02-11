@@ -16,16 +16,19 @@ redirect_from:
 cd git_folder 로 해당 폴더에 있다고 가정합니다.
 
 ### Git Local Repository 생성 {#b}
+
 ```md
 git init
 ```
 
 ### Git Remote Repository 추가 {#c}
+
 ```md
 git remote add origin GIT_URL
 ```
 
 ### Git Staging 하기 {#d}
+
 ```md
 git add .
 git add \*.java   #또는  
@@ -34,11 +37,13 @@ git add Documentation/\*.txt #(Documentation  폴더안의 모든 .txt 파일 st
 ```
 
 ### Git Commit 하기 {#e}
+
 ```md
 git commit -m "First Commit."
 ```
 
 ### Git Log 확인 {#f}
+
 ```md
 git log
 git log -p -2 
@@ -46,22 +51,26 @@ git log -p -2
 ```
 
 ### Git Remote Repository 에 Commit 하기 {#g}
+
 ```md
 git push origin master
 ```
 
 ### Git Remote Repository 내려받기(clone) {#h}
+
 ```md
 git clone GIT_URL
 ```
 
 ### Git Remote Repository 단축이름과 URL 확인 명령어. {#i}
+
 ```md
 cd git_folder
 git remote -v
 ```
 
 ### Git 설정하기. {#j}
+
 ```md
 #아래의 내용은 설정에 대한 부분인데, 나는 아래의 내용을 config 하지 않고 사용합니다
 #ssh 연결도 하지 않고 사용중입니다.
@@ -75,6 +84,7 @@ git config --global http.sslVerify false
 ```
 
 ### git 삭제 {#k}
+
 ```md
 #저는 명령어 보다는 그냥 .git 폴더를 직접 삭제하는 편입니다. 
 #현재까지 큰 문제는 없었습니다. 하지만, submodule을 사용할때는 명령어로 하라는 대로 처리하고 있습니다.
@@ -82,6 +92,7 @@ git config --global http.sslVerify false
 ```
 
 ### git remote master 브랜치에 커밋된 내용이 있는 상태에서 local push 에러 처리 명령어 {#aa}
+
 ```md
 # local 에서 commit 을 한 후에, git pull 시도시에, remote 에 commit 된 내용이 존재하면, 
 # pull 을 해도 push 시에 에러가 발생함.
@@ -100,6 +111,7 @@ git push origin master
 ```
 
 ### 기본 예제 {#l}
+
 ```md
 제가 일반적으로 remote repository 에 직접 작업한 프로젝트를 최초 등록할때의 작업 순서를 요약해 보았습니다.
 먼저 github 사이트에서 remote repository 를 만듬. 이때!!! readme.md 파일을 만들지 않고 프로젝트를 생성합니다.
@@ -124,7 +136,9 @@ git config --global http.sslVerify false
 로 https 비활성화 시켜놓고 일단 진행 하는것도 방법입니다.
 ssh 연동 관련 키 생성 및 github 에 추가하는 부분은 검색하시면 잘 나와 있습니다.
 ```
+
 ### 큰 프로젝트 안에 별도로 관리를 하고자 하는 작은 프로젝트를 관리하는 경우 {#m}
+
 ```md
 소스 관리중 어떤 프로젝트가 상위 프로젝트 안에 포함되어 있는 경우에,
 Ex) maven module 형태로 각각의 maven project 를 git repository 로 관리되고, 
@@ -140,6 +154,7 @@ parent 에서 git submodule foreach git pull origin master 나 git submodule ini
 ```
 
 ### git submodule 추가 방법 {#n}
+
 ```md
 git submodule add <repository_url> <submodule_dir_path_starting_from_parent>
 
@@ -151,6 +166,7 @@ git submodule add GIT_URL child/submod1
 ```
 
 ### submodule 파일 삭제 없이 git 에서만 삭제 방법 {#o}
+
 ```md
 # child 폴더를 child_bak 으로 이름 변경
 git submodule deinit child/submod1
@@ -160,6 +176,7 @@ git submodule add # 하면 정상적으로 다시 추가 됨.
 ```
 
 ### parent 에서 submodule 전부다 sync 하는 명령어 {#p}
+
 ```md
 # parent 입장에서 submodule 들이 에러가 나는 상황이 아니면, 최신 상태가 유지 되지 않아도 관계 없다.
 # 하지만, 어떤 이유에서 최신화를 시켜야 한다면, 아래의 명령어가 가장 편해 보인다.
@@ -167,6 +184,7 @@ git submodule foreach git pull origin master (submodule 들의 remote 이름이 
 ```
 
 # 새로운 폴더에 parent 부터 다시 clone 하는 경우 {#q}
+
 ```md
 git clone GIT_URL 를 하고나서 submodule 에 가서 보면 내용이 비어 있다.
 # 이때 개별적으로 내용을 받아오는 명령어는 아래와 같다.
@@ -177,6 +195,7 @@ git clone --recursive GIT_URL
 ```
 
 ### submodule 작업한 파일은 남겨 놓고 git 설정 정보만 삭제 {#r}
+
 ```md
 mv subfolder subfolder_tmp
 git submodule deinit subfolder
@@ -193,6 +212,7 @@ git add subfolder
 ```
 
 ### Submodule 기본 예제 {#s}
+
 ```md
 위의 Submodule 내용을 다시 한번 설명하는 것입니다.
 저의 경우는 대부분 git 설정을 먼저하기 보다는, 작업을 먼저하고 나서 git을 연동하는 편입니다.
@@ -223,6 +243,7 @@ Submodule repository url 가서 커밋 내용 확인.
 ```
 
 ### unable to rewind rpc post data - try increasing http.postBuffer {#toc1}
+
 ```js
 git config --global http.postBuffer 2097152000
 git config --global https.postBuffer 2097152000
@@ -230,6 +251,7 @@ git config --global https.postBuffer 2097152000
 ```
 
 ### add commit rollback 취소 {#toc2}
+
 ```js
 // add 를 rollback. 취소
 git reset HEAD CONTRIBUTING.md
@@ -245,6 +267,7 @@ git reset HEAD~2 // 마지막 2개의 commit 취소
 ```
 
 ### git http basic access denied {#toc3}
+
 ```js
 // 해당 git 에 계정이 없거나, 계정 정보가 변경되어 있는데 일치 하지 않거나 등등. 어쨌든 계정 이슈이므로 기존 정보 날리고 다시 시도
 git config --system --unset credential.helper

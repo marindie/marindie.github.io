@@ -11,7 +11,8 @@ redirect_from:
 > Android Permission 체크 및 요청 샘플
 
 ### ContextCompat.checkSelfPermission {#toc1}
-```java 
+
+```java
     ArrayList<String> permissions = new ArrayList<String>();
     if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
         Log.i("WONY", "CAMERA");
@@ -60,6 +61,7 @@ redirect_from:
 ```
 
 ### onRequestPermissionsResult {#toc2}
+
 ```java
 @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {

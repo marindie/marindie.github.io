@@ -14,12 +14,12 @@ redirect_from:
 
 저는 이 구성을 위해 2개의 서버 프로젝트를 생성 하였습니다.
 
-첫번째 프로젝트: 
+첫번째 프로젝트:
 https://start.spring.io/ 접속.
 Groujp Artifact 는 취향대로 적고, (Group: com.test.main, Artifact: eureka-zuul-server)
 Dependencies 에 web, Eureka Server, Zuul 을 검색하여 추가 하고 Generate Project 클릭
 
-두번째 프로젝트: 
+두번째 프로젝트:
 https://start.spring.io/ 접속.
 Groujp Artifact 는 취향대로 적고, (Group: com.test.main, Artifact: eureka-discovery-server)
 Dependencies 에 web, Eureka Discovery 을 검색하여 추가 하고 Generate Project 클릭

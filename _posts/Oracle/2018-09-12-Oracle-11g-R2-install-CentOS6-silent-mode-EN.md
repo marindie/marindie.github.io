@@ -14,25 +14,26 @@ redirect_from:
 
 1. You have VM
 2. Make sure you allocate more than 4Gb to SWAP partition during CentOS installation step
-2. You successfully installed CentOS6.6 on VM somehow (For download CentOS6.6 see below)
+3. You successfully installed CentOS6.6 on VM somehow (For download CentOS6.6 see below)
 
 ### Download CentOS6.5 64bit
 
 - Go to the following URL and Download minimal version of CentOS6.6
 - http://vault.centos.org/6.5/isos/x86_64/
 
-### Download Oracle 11g r2 64bit Linux 
+### Download Oracle 11g r2 64bit Linux
 
 - Go to the following URL and Download
 - https://www.oracle.com/technetwork/database/enterprise-edition/downloads/112010-linx8664soft-100572.html
 
-### Ready to install Oracle 
+### Ready to install Oracle
 
 Now Copy linux.x64_11gR2_database_1of2.zip linux.x64_11gR2_database_2of2.zip into your root home directory
 
-### Pre-conditions before run install.
+### Pre-conditions before run install
 
 When you try to install oracle on linux environment, you need to check the followings
+
 ```md
 - Kernel Parameter should meet oracle installer's mininum requirement
 - User Resource Limit should meet oracle installer's mininum requirement
@@ -42,6 +43,7 @@ When you try to install oracle on linux environment, you need to check the follo
 - So you don't have a choice but to follow
 - Add your hostname in /etc/hosts ("vi /etc/hosts " and put your hostname at the end of the first line. Then save it)
 ```
+
 ### Install packages for oracle installation
 
 ```md
@@ -101,7 +103,7 @@ source /home/oracle/.bash_profile
 
 ```
 
-### Kernel Parameter 
+### Kernel Parameter
 
 ```md
 
@@ -124,10 +126,10 @@ sed -i'' -e "\$a\kernel.sem = 250 32000 100 128\nfs.file-max = 6815744\nnet.ipv4
 sysctl -p
 
 ```
+
 ### USER RESOURCE LIMIT Setting
 
 ```md
-
 # Plain Text
 vi /etc/security/limits.conf
 *               soft    nofile          8192
@@ -138,10 +140,10 @@ vi /etc/security/limits.conf
 
 # sed command
 sed -i'' -e "\$a\*               hard    nofile          65536\n*               soft    nproc           8192\n*               hard    nproc           16384\n*               soft    core            20480\n" /etc/security/limits.conf
-
 ```
 
-### Unzip Files to /ORACLE and change ownership to oracle.
+### Unzip Files to /ORACLE and change ownership to oracle
+
 ### Give Read and Execute permissions to files
 
 ```md
@@ -152,6 +154,7 @@ chmod -R 755 /ORACLE
 ```
 
 ### Switch user that will install oracle instance
+
 ```md
 su - oracle
 ```
@@ -159,7 +162,6 @@ su - oracle
 ### Use response file to install oracle instance in silent mode
 
 ```md
-
 # When we install oracle in linux, we use command runInstaller.
 # Since I prefer to use CLI than GUI, I will use silent mode.
 # That way I can install oracle without GUI (X Window, in this case)
@@ -299,7 +301,8 @@ ADR_BASE_LISTENER = /ORACLE
 
 ```
 
-### Modify sqlnet.ora 
+### Modify sqlnet.ora
+
 ```sql
 --add the following option in sqlnet.ora
 --It will solve Spring Boot "Got minus one from a read call" Error

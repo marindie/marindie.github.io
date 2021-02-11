@@ -11,6 +11,7 @@ redirect_from:
 > Mac을 사용하면서 필요했던 정보들을 기록
 
 ### 명령어 {#toc1}
+
 ```md
 화면 최소화 : command + m
 크롬 탭 전환 : option + command + 오른쪽 왼쪽
@@ -24,6 +25,7 @@ vim 분할 상태에서 왼쪽 창으로 커서 이동 : control + w and l
 ```
 
 ### vim plugin 사용법
+
 ```md
 #Install vim-plug : 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \

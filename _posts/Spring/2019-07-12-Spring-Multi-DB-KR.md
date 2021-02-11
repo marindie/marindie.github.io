@@ -11,6 +11,7 @@ redirect_from:
 > Spring Multiple Datasource Sample 예제
 
 ### 설정 관련 설명 {#toc1}
+
 ```md
 간단히 설명하지만, 매우매우 중요하니 잘 기억하기 바란다.
 처음 Datasoure 에는 Bean 생성 객체들위에 @Primary 가 있어야만 한다. 나머지 것들에는 반드시 없어야 한다.
@@ -99,9 +100,10 @@ public class FirstDatasourceConfig {
 Secondary 또는 그 이상의 Datasource 에는 @Primary 가 없다.
 붙이면 Bean 생성 관련 에러가 발생했던것으로 기억한다.
 참고로 hibernate 와 hikariCP 의 설정을 application.yml 에 기록해도 동작하지 않아서
-매우 오랜 검색 끝에 아래와 같이 설정하여 동작하는 소스를 만들었다. 
+매우 오랜 검색 끝에 아래와 같이 설정하여 동작하는 소스를 만들었다.
 찾기 어려움으로. properties 파일이나, yml 파일에 하나의 Datasource 가 있는게 아니라면
 아래의 방식을 따르기로 나는 일단 마음 먹었다. 잊어버릴가봐 기록해둠.
+
 ```java
 import java.util.Properties;
 
@@ -200,6 +202,7 @@ public class WonyDatasourceConfig extends HikariConfig {
 ```
 
 ### 설정들이 잘 되어 있는지 확인 하기 위한 logging setting {#toc4}
+
 ```yml
 server:
   port: 8080

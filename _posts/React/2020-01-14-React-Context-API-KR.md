@@ -12,6 +12,7 @@ redirect_from:
   개념은 간단하게, 사용방법에 초점을 마추어 코드 Syntax 관련된 부분만 적을 것입니다.
 
 ### 기본 개념 {#toc1}
+
 ```md
 이걸 사용하는 목적은 단 하나입니다. 함수처럼 IN -> OUT 이 가능하도록 하기 위함입니다.
 왜 이 단순한걸 못하냐구요? React 는 prop, state 같은 개념을 도입해서 Component 라는 이름안에
@@ -34,7 +35,9 @@ MainProvider 에서 {this.props.children} 을 안 넣으니 에러가 났었습�
 Single Dom Return 은 언제나 자주 실수하는 부분.. 
 그외에 특별한 에러는 없었네요..
 ```
+
 ### Context API Provider Consumer {#toc2}
+
 ```js
 //MainContext.js
 import React from 'react';

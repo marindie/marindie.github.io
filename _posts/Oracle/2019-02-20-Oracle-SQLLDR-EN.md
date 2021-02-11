@@ -98,14 +98,14 @@ rm TEMP.TXT
    Using selected information, I generated information that SQL LOADER need it for the INSERT DML
 2. LOAD DATA means the name of ctl (Control file) for this run. (In this example TABLE_TEST1.ctl TABLE_TEST2.ctl would be the case)
 3. INFILE means the name of data file for this run. (In this example TABLE_TEST1.DAT TABLE_TEST2.DAT would be the case.)
-4. BADFILE, DISCARDFILE, DISCARDMAX are used to define ERROR CASES. 
-5. APPEND means table is not empty and insert after the exsiting data. If you change "APPEND" to "INSERT", then it means the target table is 
+4. BADFILE, DISCARDFILE, DISCARDMAX are used to define ERROR CASES.
+5. APPEND means table is not empty and insert after the exsiting data. If you change "APPEND" to "INSERT", then it means the target table is
    empty. If the target table is not empty when SQL LOADER try to insert, it will throw errors.
 6. INSERT INTO TABLE_TEST1 is the insert DML, and FIELDS TERMINATED BY & is the DELIMETER being used between each column values.
-7. TRAILING NULLCOLS used to avoid error case where SQL LOADER expect number of DELIMETER SYMBOL is same as 
-   the number of columns defined in control file. If they are not the same SQL LOADER throws error. But using TRAILING NULLCOLS, you can skip the error. 
-8. For example, if there were extra '&' in TABLE_TEST1.DAT file, SQL LOADER will load the data incorrectly only if the remaining data are 
-   loadable   
+7. TRAILING NULLCOLS used to avoid error case where SQL LOADER expect number of DELIMETER SYMBOL is same as
+   the number of columns defined in control file. If they are not the same SQL LOADER throws error. But using TRAILING NULLCOLS, you can skip the error.
+8. For example, if there were extra '&' in TABLE_TEST1.DAT file, SQL LOADER will load the data incorrectly only if the remaining data are
+   loadable
 9. PL/SQL BLOCK generate column information for each column's data type. I focused only on TIMESTAMP and DATE. The rest is treated as string.
    LOB type is ignored
 
@@ -134,9 +134,8 @@ CREATE_DT DATE "YYYY-MM-DD HH24:MI:SS"
 
 1. I assumed that apart from DATE TIMESTAMP data type, all are STRING data type.
 2. For LOB case, which exceeds over 4000 characters, simply put max char value in ctl file.
-   Ex) COLUMN_NAME char(10000) 
+   Ex) COLUMN_NAME char(10000)
    for handling next line within string data, put "var" in INFILE option or use LOBFILE
-
 
 ```md
 
@@ -148,6 +147,7 @@ CREATE_DT DATE "YYYY-MM-DD HH24:MI:SS"
 ```
 
 ### READSIZE BINDSIZE ROWS
+
 ```md
 When you actually use sqlldr, you may want to control number of rows to insert at each operation.
 ROWS are the one you need to change number of rows per each load operation.
@@ -158,7 +158,6 @@ Max is 20971520 (20MB)
 Ex)
 sqlldr test/test22@TEST control="./insert/TEST.ctl" log="./log/TEST.log" ROWS=1000 BINDSIZE =20971520 READSIZE =20971520 
 ```
-
 
 ### CSV Format file Generator
 

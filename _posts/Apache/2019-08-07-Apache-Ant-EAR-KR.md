@@ -57,7 +57,7 @@ javac 할때 JDK 홈 경로 변경 가능한 부분 소스가 있습니다. 인�
 파일 및 폴더를 복사할때 필터링 하는 부분의 소스가 있습니다. 
 ```
 
-```xml 
+```xml
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project basedir="." default="build" name="TEST_APP">
     <property environment="env"/>
@@ -85,7 +85,7 @@ javac 할때 JDK 홈 경로 변경 가능한 부분 소스가 있습니다. 인�
 	</path>
 	-->
 	<property name="ejb.builddir" value="${outputartifacts}/ejb" />
-	<property name="ejb.builddir.classes" value="${ejb.builddir}/classes" />	
+	<property name="ejb.builddir.classes" value="${ejb.builddir}/classes" />
 	
 	<property name="web.name" value="WEB" />
 	<property name="web.src" value="src/com/test/app/controller" />
@@ -97,12 +97,12 @@ javac 할때 JDK 홈 경로 변경 가능한 부분 소스가 있습니다. 인�
 	</path>
 	-->	
 	<property name="web.builddir" value="${outputartifacts}/web" />
-	<property name="web.builddir.classes" value="${web.builddir}/WEB-INF/classes"/>	
+	<property name="web.builddir.classes" value="${web.builddir}/WEB-INF/classes"/>
 	
 	<target name="build" depends="create-ear">
 	    <echo message="==========================="/>
 	    <echo message="  EAR Build Start     "/>
-	    <echo message="==========================="/>	
+	    <echo message="==========================="/>
 	</target>
 	<target name="create-ear" depends="create-web,create-ejb">
 	    <ear destfile="${outputartifacts}/${ear.name}.ear" appxml="META-INF/application.xml">
@@ -114,11 +114,11 @@ javac 할때 JDK 홈 경로 변경 가능한 부분 소스가 있습니다. 인�
 	        	</patternset>
 	        </fileset>
 	    </ear>
-	</target>	
+	</target>
 	<target name="create-ejb" depends="init-ejb">
 	    <echo message="==========================="/>
 	    <echo message="  Make ${ejb.name}.jar     "/>
-	    <echo message="==========================="/>					
+	    <echo message="==========================="/>
 	    <jar destfile="${outputartifacts}/${ejb.name}.jar" basedir="${ejb.builddir.classes}" includes="**/*"/>
 	</target>
 	<!-- 
@@ -197,15 +197,15 @@ javac 할때 JDK 홈 경로 변경 가능한 부분 소스가 있습니다. 인�
 					<exclude name="**/PosConfigHandleException.class"/>
 					<exclude name="**/PosConfigHandler.class"/>
 					<exclude name="**/PosLogExtractor.class"/>
-					<exclude name="**/PosLogHandler.class"/>					
+					<exclude name="**/PosLogHandler.class"/>
 				</patternset>
 	        </fileset>
-	    </copy>	    	
+	    </copy>
 		<jar destfile="${outputartifacts}/${app.name}.jar" basedir="${app.builddir.classes}" includes="**/*">
 			<manifest>
 				<attribute name="Trusted-Library" value="true"/>
 	            <attribute name="Application-Library-Allowable-Codebase" value="*"/>
-	            <attribute name="Trusted-Only" value="true"/>				
+	            <attribute name="Trusted-Only" value="true"/>
 	            <attribute name="Permissions" value="all-permissions"/>
 				<attribute name="Caller-Allowable-Codebase" value="*"/>
 	            <attribute name="Codebase" value="*"/>
@@ -220,7 +220,7 @@ javac 할때 JDK 홈 경로 변경 가능한 부분 소스가 있습니다. 인�
 	        <fileset dir="${outputartifacts}">
 	        	<include name="**/logviewscreen.jar"/>
 	        </fileset>
-	    </copy>	    			
+	    </copy>
 		<exec executable="cmd">
 		    <arg value="/c"/>
 		    <arg value="${signing}"/>
@@ -229,12 +229,12 @@ javac 할때 JDK 홈 경로 변경 가능한 부분 소스가 있습니다. 인�
 	        <fileset dir="${sign.dir}">
 	        	<include name="**/logviewscreen.jar"/>
 	        </fileset>
-	    </copy>	    					
+	    </copy>
 	</target>
 	<target name="create-web" depends="init-web">
 	    <echo message="==========================="/>
 	    <echo message="  Make ${web.name}.war     "/>
-	    <echo message="==========================="/>							
+	    <echo message="==========================="/>
 	    <war destfile="${outputartifacts}/${web.name}.war" basedir="${web.builddir}" webxml="WebContent/WEB-INF/web.xml"/>
 	</target>
 	<!-- 
@@ -267,7 +267,7 @@ javac 할때 JDK 홈 경로 변경 가능한 부분 소스가 있습니다. 인�
 				</patternset>
 	        </fileset>
 	    </copy>
-	</target>	
+	</target>
 </project>
 
 ```

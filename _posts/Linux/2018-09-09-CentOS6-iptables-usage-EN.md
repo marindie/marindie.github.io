@@ -99,17 +99,20 @@ iptables -A INPUT -p tcp --match multiport --dports 1024:3000 -j ACCEPT
 ### Iptables filter table Description
 
 Chain - There are three different types of chains in iptables
+
 - INPUT : All the packets to host machine
 - OUTPUT : All the packets caused by host machine
 - FORWARD : All the packets where host machine is not their destination
 
 Match - Conditions that need to be satisfied to handle the given packets
+
 - -s : source ip address
 - -d : destination ip address
 - -p : protocol Ex) tcp, udp
 - -j : jump how those packets which satisfied the rule will be handled. Look At Target for possible options
 
 Target - Actions where packets are meet certain Match conditions
+
 - ACCEPT : Allow Packets
 - DROP : Drop Packets (As if the packet has not been delivered)
 - REJECT : Drop Packets and send response to source ip address

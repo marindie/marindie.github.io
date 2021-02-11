@@ -189,6 +189,7 @@ END;
 ```
 
 ### 추출한 테이블 순서 대로 Table 생성문 생성해주는 프로그램 {#toc2}
+
 ```sql
 column res Format a20000;
 EXEC DBMS_METADATA.SET_TRANSFORM_PARAM(DBMS_METADATA.SESSION_TRANSFORM, 'PRETTY', TRUE);
@@ -212,6 +213,7 @@ END;
 ```
 
 ### Table 및 Index 삭제 {#toc3}
+
 ```sql
 -- 내가 테이블 생성 스크립트를 뽑는 방식은 주로 DBMS_METADATA.GET_DDL 이라서 Constraints 정보가
 -- Table 생성 문에 같이 들어가 있다.

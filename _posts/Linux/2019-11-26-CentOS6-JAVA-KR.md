@@ -11,6 +11,7 @@ redirect_from:
 > CentOS 6 JAVA 설치
 
 ### CentOS 6 JAVA 설치 {#toc1}
+
 ```md
 # 자바 설치 여부 확인
 rpm -qa | grep java
@@ -42,13 +43,9 @@ JAVA_HOME=/usr/java/jdk1.8.0_131
 JRE_HOME=/usr/java/jdk1.8.0_131/jre
 PATH=$PATH:JAVA_HOME/bin:JRE_HOME/bin
 export JAVA_HOME JRE_HOME PATH
-
-
 ```
-
 
 [^1]: This is a footnote.
 
 [kramdown]: https://kramdown.gettalong.org/
 [My Blog]: https://marindie.github.io
-

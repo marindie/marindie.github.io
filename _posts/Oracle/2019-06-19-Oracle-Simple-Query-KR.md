@@ -59,6 +59,7 @@ END;
 ```
 
 ### Database Character Set {#toc3}
+
 ```sql
 SELECT VALUE FROM NLS_DATABASE_PARAMETERS WHERE PARAMETER='NLS_CHARACTERSET';
 ALTER DATABASE CHARACTER SET INTERNAL_USE WE8ISO8859P1;
@@ -81,6 +82,7 @@ SELECT * FROM NLS_DATABASE_PARAMETERS;
 ```
 
 ### SPOOL 시 사용하는 Option 들 {#toc4}
+
 ```sql
 SET ECHO OFF
 SET TERM OFF
@@ -103,6 +105,7 @@ EXECUTE DBMS_METADATA.SET_TRANSFORM_PARAM(DBMS_METADATA.SESSION_TRANSFORM,'STORA
 ```
 
 ### Oracle 삭제 방법 {#toc4}
+
 ```sql
 su - oracle
 $ORACLE_HOME/deinstall/deinstall
@@ -115,12 +118,14 @@ $ORACLE_HOME에 있는 폴더 모두 삭제.
 ```
 
 ### 사용자 추가 및 DBA 권한 부여 {#toc5}
+
 ```sql
 CREATE USER NEW_USER IDENTIFIED BY newuser DEFAULT TABLESPACE USERS ;
 GRANT CONNECT, RESOURCE, DBA TO NEW_USER;
 ```
 
 ### Oracle Partitioning 활성화 {#toc6}
+
 ```sql
 select * from v$option where parameter = 'Partitioning';
 
@@ -138,12 +143,14 @@ make -f ins_rdbms.mk ioracle
 ```
 
 ### Oracle Password Limit Off {#toc7}
+
 ```sql
 select RESOURCE_NAME,RESOURCE_TYPE,LIMIT from dba_profiles where PROFILE='DEFAULT' and RESOURCE_NAME='PASSWORD_VERIFY_FUNCTION';
 alter profile default limit PASSWORD_VERIFY_FUNCTION NULL;
 ```
 
 ### Add Partition SQL {#toc8}
+
 ```sql
 ALTER TABLE TB_TEST
 ADD PARTITION "PT_201807"  VALUES LESS THAN (TO_DATE(' 2018-08-01 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN')) 
@@ -152,6 +159,7 @@ TABLESPACE "DATA02" NOCOMPRESS;
 ```
 
 ### Session Number Control {#toc9}
+
 ```sql
 
 SHOW PARAMETER SESSIONS;
@@ -164,6 +172,7 @@ ALTER SYSTEM SET TRANSACTIONS=610 SCOPE=BOTH SID='*';
 ```
 
 ### Lock 관련 {#toc10}
+
 ```sql
 SELECT * FROM V$SESSION WHERE USERNAME = 'WONY';
 -- 실제로 테이블 락 걸고 안해봐서 잘되는건지는 모르고 그냥 검색한거 기록함.
@@ -209,6 +218,7 @@ ALTER SYSTEM KILL SESSION 'SESSION_ID, SERIAL#';
 ```
 
 ### Date and Time Format 변경 {#toc11}
+
 ```sql
 ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD HH24:MI:SS';
 ALTER SESSION SET NLS_TIMESTAMP_FORMAT = 'YYYY-MM-DD HH24:MI:SS.FF';
@@ -216,6 +226,7 @@ ALTER SESSION SET NLS_TIMESTAMP_TZ_FORMAT = 'YYYY-MM-DD HH:MI:SS.FF TZH:TZM'
 ```
 
 ### Hex Code 표시 방법 {#toc12}
+
 ```sql
 select utl_raw.cast_to_raw('|'||chr(10)) from dual;              -- 유닉스에서 줄의종결표시는 chr(10), 특수문자표시는 | 라고 가정했을때
 utl_raw.cast_to_row('|'||chr(10))
@@ -229,11 +240,13 @@ UTL_RAW.CAST_TO_RAW('|'||CHR(13)||CHR(10))
 ```
 
 ### PGA_AGGREGATE_LIMIT 설정 {#toc13}
+
 ```sql
 alter system set pga_aggregate_limit = 0 -- 제한을 두지 않음
 ```
 
 ### Oracle Paging Query {#toc14}
+
 ```sql
 SELECT * FROM 
 (SELECT /*+ INDEX_DESC(Z TEST_PK) */ ROWNUM AS RNUM, A.* 
@@ -247,6 +260,7 @@ WHERE RNUM >= 100;
 ```
 
 ### Oracle NLS_CHARACTERSET 확인 및 변경{#toc15}
+
 ```sql
 --확인
 SELECT * FROM NLS_DATABASE_PARAMETERS;
@@ -271,6 +285,7 @@ STARTUP;
 ```
 
 ### Oracle DB LINK 생성 삭제 {#toc16}
+
 ```sql
 -- DROP 하기 전에 조회했던 쿼리 결과들 닫아야 함. Ex) Jdeveloper 는 query result 같은거
 CREATE DATABASE LINK TESDB CONNECT TO SCOTT TIGER BY TESDB USING 'TES';
@@ -285,6 +300,7 @@ DROP DATABASE LINK TESDB;
 ```
 
 ### Oracle Tablespace Datafile 사용량 조회 및 사이즈 재조정, Undotable space 삭제 방법 {#toc16}
+
 ```sql
 SELECT  SUBSTR(DF.TABLESPACE_NAME,1,20) "Tablespace Name",
         SUBSTR(DF.FILE_NAME,1,80) "File Name",
@@ -325,6 +341,7 @@ drop tablespace undotbs2 including contents and datafiles;
 ```
 
 ### Oracle INACTIVE Session 삭제 DBMS_SCHEDULER Job 등록 {#toc17}
+
 ```sql
 -- 일단 이슈는 같은 row lock 현상으로 인해서 이렇게 처리하게 되었음.
 -- 락 발생시, 세션을 일단 검색, EVENT 값을 보니 TX lock 발생
@@ -406,7 +423,6 @@ SELECT * FROM USER_SCHEDULER_JOBS;
 SELECT * FROM USER_SCHEDULER_JOB_LOG ORDER BY LOG_DATE DESC;
 
 ```
-
 
 [^1]: This is a footnote.
 

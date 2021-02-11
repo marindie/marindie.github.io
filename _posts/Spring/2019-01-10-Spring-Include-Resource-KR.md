@@ -26,10 +26,12 @@ pom.xml 파일에 Maven Dependency 추가
 ```
 
 ### Servlet 설정에 resource 설정 부분 확인 {#toc2}
+
 기본적으로 이클립스에서 Dynamic Web Project 로 프로젝트를 만들고 나면 web.xml 이라고하는 DD(Deployment Descriptor) 를 만들어줍니다.
 해당 web.xml 에 servlet 설정 파일명 위치를 일반적으로 적어 놓는데요.. 이름은 다를 수 있습니다. xxx-context.xml 이라고 보통 명시합니다.
 
 Ex) web.xml 내용 일부
+
 ```xml
 <servlet>
 ...
@@ -42,6 +44,7 @@ Ex) web.xml 내용 일부
 ```
 
 Ex) servlet-context.xml 내용 일부
+
 ```xml
 <beans ...>
 ...
@@ -60,6 +63,7 @@ Ex) servlet-context.xml 내용 일부
 ### JSP 에 실제로 JS, CSS 불러보기 {#toc3}
 
 test.jsp
+
 ```jsp
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -76,6 +80,7 @@ test.jsp
 ```
 
 common.js
+
 ```js
 alert("common");
 ```
@@ -95,11 +100,13 @@ body {
 ```
 
 ### 기타 관련 정보 {#toc5}
+
 해당 test.jsp 로 화면을 뿌려주는 controller 샘플입니다.
 viewresolver 설정은 되어 있는 것으로 가정합니다. 모르지면 spring viewresolver 로 검색하시면 관련 내용이 많이 나옵니다.
 viewresolver 의 요점은 url 경로를 어떻게 해석해서 test.jsp 와 같은 파일을 호출 시키면서 data 를 전송하는가에 대한 내용으로 보입니다.
 
 RootController.java
+
 ```java
 @controller
 @RequestMapping("/")
@@ -125,7 +132,7 @@ test.jsp 내용이 나오게 됩니다.
 아래는 제가 참고한 사이트 입니다. 영어로 되어 있지만 그림도 있고 괜찮은 것 같아 링크 겁니다.
 https://www.mkyong.com/spring-mvc/spring-mvc-how-to-include-js-or-css-files-in-a-jsp-page/
 
-Spring 을 매번 새로 세팅할 때마다, Resource 설정 부분이 기억이 안나서 작성해보았습니다. 
+Spring 을 매번 새로 세팅할 때마다, Resource 설정 부분이 기억이 안나서 작성해보았습니다.
 이해에 도움이 되었으면 합니다. 감사합니다.
 
 [^1]: This is a footnote.

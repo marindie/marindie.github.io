@@ -49,6 +49,7 @@ jar 파일을 zip 으로 묶어서 loadjava 하면 의존성 체크 안하고 �
 ```
 
 ### JVM 생성 관련 스크립트 파일 실행 명령어 {#toc11}
+
 ```sql
 SQL>@$ORACLE_HOME/javavm/install/initjvm.sql
 SQL>@$ORACLE_HOME/xdk/admin/initxml.sql
@@ -57,6 +58,7 @@ SQL>@$ORACLE_HOME/rdbms/admin/catjava.sql
 ```
 
 ### 필요 권한 부여 {#toc2}
+
 ```sql
 call dbms_java.grant_permission('USERNAME', 'java.util.PropertyPermission','*', 'read,write');
 execute dbms_java.grant_permission('USERNAME','java.util.PropertyPermission','*','read');
@@ -68,6 +70,7 @@ execute dbms_java.grant_permission( 'USERNAME', 'SYS:java.lang.RuntimePermission
 ```
 
 ### loadjava 실행문 예시 {#toc3}
+
 ```md
 loadjava -u scott/tiger@ORCL -verbose -resolve OracleJDBCExample.java
 loadjava -u scott/tiger@ORCL -verbose -resolve OracleJDBCExample.class
@@ -76,6 +79,7 @@ loadjava -u scott/tiger@ORCL -verbose -resolve test.jar
 ```
 
 ### loadjava 로 올라간 객체 상태 확인 {#toc4}
+
 ```sql
 SELECT OBJECT_NAME, OBJECT_TYPE, STATUS
 FROM USER_OBJECTS
@@ -84,6 +88,7 @@ AND OBJECT_NAME = 'OracleJDBCExample';
 ```
 
 ### 함수 호출 관련 샘플 {#toc5}
+
 ```sql
 CREATE OR REPLACE FUNCTION OracleTest (str VARCHAR2)
 RETURN VARCHAR AS
@@ -113,7 +118,7 @@ CREATE OR REPLACE and RESOLVE JAVA SOURCE NAMED "HelloWorld" AS /*파일명*/
             } catch(Exception e) {
                 System.out.println(e.getMessage() + "bye");
                 e.printStackTrace();
-            }					
+            }
         }
     };
 /

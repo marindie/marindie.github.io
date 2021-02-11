@@ -11,6 +11,7 @@ redirect_from:
 > JAVA Certificate 추가 방법. CACERTS, KEYTOOL
 
 ### 발생하는 상황들 {#toc1}
+
 ```md
 
 회사에서 환경 구축을 하다 보면, Eclipse, Jenkins, git, npm든 각종 IDE 나 application tool 에서 ssl 이슈가 발생이 종종난다.
@@ -22,6 +23,7 @@ redirect_from:
 ```
 
 ### JAVA CACERT (인증저장소) Certificate 추가 {#toc2}
+
 ```text
 
 eclipse, android, jenkins 등등 JAVA 를 기반으로 돌아가는 녀석들은
@@ -51,6 +53,7 @@ PC 재부팅 후에 테스트 하기를 권장한다.
 ```
 
 ### 그 외에 SSL 관련 발생한 경험들 {#toc3}
+
 ```md
 
 git 의 경우에는 ssl disable 옵션으로 처리했다.
@@ -60,7 +63,6 @@ insomnia 에서 https 연동 테스트시에도 ssl disable 을 설정 화면에
 잘 되던것으로 기억한다.
 
 ```
-
 
 [^1]: This is a footnote.
 

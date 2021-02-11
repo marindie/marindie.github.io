@@ -10,7 +10,7 @@ redirect_from:
 
 > CentOS7 Kernel Update 정리
 
-###  실행 명령어 {#toc1}
+### 실행 명령어 {#toc1}
 
 ```md
 # Default
@@ -35,7 +35,6 @@ sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 # Remove Old Kernel
 yum install yum-utils
 package-cleanup --oldkernels
-
 ```
 
 [^1]: This is a footnote.

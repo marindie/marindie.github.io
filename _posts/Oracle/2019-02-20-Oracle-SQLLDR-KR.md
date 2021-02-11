@@ -148,6 +148,7 @@ CREATE_DT DATE "YYYY-MM-DD HH24:MI:SS"
 ```
 
 ### READSIZE BINDSIZE ROWS 설정 {#toc6}
+
 ```md
 실제로 사용을 하다 보면 한꺼번에 넣는 ROWS 개수를 조절하고 싶어집니다.
 
@@ -158,7 +159,8 @@ Ex)
 sqlldr test/test22@TEST control="./insert/TEST.ctl" log="./log/TEST.log" ROWS=1000 BINDSIZE =20971520 READSIZE =20971520 
 ```
 
-### sqlldr 사용시 SQL*Loader-704: Internal error: ulconnect: OCIServerAttach 에러 처리 {#toc6}
+### sqlldr 사용시 SQL*Loader-704: Internal error: ulconnect: OCIServerAttach 에러 처리 {#toc7}
+
 ```sql
 -- 아래 쿼리로 조회해 보면, 두개 이상의 Characterset 이 보이게 된다.  Ex)KO16KSC5601, AL16UTF16
 -- 내가 DB 를 설치하고 구성할때, 일부 Characterset 을 변경하지 않고 만들어서 그런거 같은데, 어디를 놓친건지 모르는 상황
@@ -185,14 +187,11 @@ SHUTDOWN IMMEDIATE;
 
 ```
 
-
 ### TABLE_TEST1.DAT 와 같은 CSV 형태의 파일 생성 관련 정보 {#toc7}
 
 CSV 파일 형태로 쿼리 조회 결과를 출력해주는 프로그램 정보를 원하신다면
 
 [클릭](https://marindie.github.io/databases/Oracle-CSV-SQLPLUS-KR/)
-
-도움이 되었으면 좋겠네요. 감사합니다.
 
 [^1]: This is a footnote.
 

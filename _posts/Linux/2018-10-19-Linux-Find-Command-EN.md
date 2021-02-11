@@ -12,8 +12,7 @@ redirect_from:
 
 ### Find Command with Options
 
-```md 
-
+```md
 # Some of Useful Options that I use often
 # -t type, -name filename (Regex Possible)
 # -maxdepth 1 (current path only)
@@ -21,13 +20,11 @@ redirect_from:
 find / -type f -name "*.java"
 find /home -type d -name "*test"
 find . -maxdepth 1 -name "*.txt"
-
 ```
 
 ### Run Shell command after mathing file found
 
 ```md
-
 # To execute linux command for each files that were found, type "{} \;" in the end
 # Ex)
 find . -name "*.txt" -exec grep chrome {} \;
@@ -35,18 +32,16 @@ find . -name "*.txt" -exec grep chrome {} \;
 # To execute linux command for all files that were found, type "{} +;" in the end
 # Ex)
 find . -name "*.txt" -exec grep chrome {} +;
-
 ```
 
 ### Find file whose size is over 20Mb
 
 ```md
-
 find /usr -size +20000 -print -exec ls -alt {} +; 
-
 ```
 
 ### Find file where modified date is over 3 days in current folder level. Print Timestamp Format
+
 ```md
 find . -maxdepth 1 -type f -ctime +3 -printf "%p %TY-%Tm-%Td %TH:%TM:%TS %Tz\n"
 find . -maxdepth 1 -type f -ctime +3 -printf "%p %TY-%Tm-%Td %TH:%TM:%TS %Tz\n" -delete

@@ -89,7 +89,7 @@ cordova build --release --storePassword=release1
 
 ### ANDROID STUDIO AVD 생성 {#toc7}
 
-```md 
+```md
 ANDROID STUDIO 실행 - 새로운 프로젝트 생성 - Gradle Sync 완료 대기 - Tool 에 AVD Manager 나오는지 확인
 나오면 클릭해서 AVD 하나 생성. 
 이렇게 만들어 놓으면 나중에 cordova run android 하면 만들어져 있는 녀석을 알아서 찾아서 띄워줌.

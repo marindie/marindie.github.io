@@ -40,6 +40,7 @@ root 계정으로 접속
 ```md
 vi /etc/sysconfig/network-scripts/ifcfg-eth1
 ```
+
 BOOTPROTO=dhcp => BOOTPROTO=none 변경
 아래 내용 추가 후 저장
 IPADDR=192.168.56.141
@@ -62,6 +63,7 @@ ping 192.168.56.141
 Putty 등등의 IDE 로 접속 하기 전에 방화벽 및 openssl 설치 확인하셔야 합니다.
 
 방화벽 파일을 수정하는 방법
+
 ```md
 service iptables status # 방화벽 정보 확인
 
@@ -72,6 +74,7 @@ service iptables restart
 ```
 
 명령어로 하는 방법
+
 ```md
 service iptables status # 방화벽 정보 확인
 
@@ -79,6 +82,7 @@ iptables -I INPUT 1 -p tcp --dport 22 -j ACCEPT
 service iptables save 
 service iptables restart
 ```
+
 ssh 툴로 원격 접속 시도
 
 [^1]: This is a footnote.

@@ -29,7 +29,6 @@ reckoning : (특히 정확하지 않은) 계산, 추산, 추정
 beget : (어떤 결과를) 부르다, 야기하다
 ```
 
-
 [^1]: This is a footnote.
 
 [kramdown]: https://kramdown.gettalong.org/

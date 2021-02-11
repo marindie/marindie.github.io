@@ -18,7 +18,6 @@ SELF_SIGNED 인증서를 등록하는 방법을 찾으려다가 일단 패스하
 npm set strict-ssl false
 ```
 
-
 ### 해결방법들 {#toc2}
 
 Front 단에 설정을 하든 Back 단에 설정을 하든 둘중 하나만 하면 되는것으로 알고 있습니다.

@@ -11,6 +11,7 @@ redirect_from:
 > Portable JDK 만들기
 
 ### Recipe for JDK 8 (update 93 and newer) {#toc1}
+
 ```md
 Prerequisite: Install 7-Zip file archiver (or its portable alternative).
 Download the Java 8 SDK for Windows from Oracle. You will get a file named like jdk-8u101-windows-x64.exe.
@@ -31,6 +32,7 @@ The downloaded .exe file also contains the JDK sources. Navigating through the f
 ```
 
 ### Recipe for JDK 8 (update 92 and older) {#toc2}
+
 ```md
 Prerequisite: Install 7-Zip file archiver (or its portable alternative).
 Download the Java 8 SDK for Windows from Oracle. You will get a file named like jdk-8u74-windows-x64.exe.
@@ -43,7 +45,6 @@ From within this directory, search for all .pack files and extract them using un
 prompt command does the trick when executed from within the extracted directory: 
 for /r %i in (*.pack) do .\bin\unpack200.exe %i %~pi%~ni.jar
 ```
-
 
 [^1]: This is a footnote.
 

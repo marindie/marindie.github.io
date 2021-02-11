@@ -24,6 +24,7 @@ grant create external job to SCOTT;
 ```
 
 ### 등록시 순서 Program -> Schedule -> Job {#toc2}
+
 ```sql
 BEGIN
     sys.dbms_scheduler.create_program(
@@ -98,11 +99,11 @@ order by log_id desc;
 ```
 
 ### 삭제시 순서 Job -> Schedule -> Program {#toc3}
+
 ```sql
 exec sys.dbms_scheduler.drop_job(name=>'"SCOTT"."TEST_SH_JOB_SCHED"');
 exec sys.dbms_scheduler.drop_schedule(schedule_name => '"SCOTT"."TEST_SH_JOB_SCHED"',force => false) ;
 exec sys.dbms_scheduler.drop_program(program_name => '"SCOTT"."TEST_SH_JOB"',force => false) ;
-
 ```
 
 [^1]: This is a footnote.

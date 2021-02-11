@@ -8,7 +8,7 @@ redirect_from:
   - /2019/09/04/
 ---
 
-> Oracle Statistic 관련 
+> Oracle Statistic 관련
 
 ### Oracle Statistic Pending {#toc1}
 
@@ -17,6 +17,7 @@ https://docs.oracle.com/cd/B28359_01/appdev.111/b28419/d_stats.htm#i1049486  내
 통계 정보를 모을때, 새로 모은 통계 정보가 plan 에 악영향을 준다고 생각이 되면,
 테스트 후에 적용이 되도록 하는 방법이 있다고 한다.
 ```
+
 ```sql
 -- 아래의 PUBLISH false 는 통계정보의 즉각 update 를 방지한다. 
 EXEC DBMS_STATS.SET_TABLE_PREFS('hr', 'employees', 'PUBLISH', 'false');
@@ -50,6 +51,7 @@ EXEC DBMS_STATS.GATHER_SCHEMA_STATS('TEST',);
 ```
 
 ### 내가 사용하는 쿼리 {#toc2}
+
 ```sql
 -- USER 라고만 적으면 현재 접속한 사용자로 ORACLE 은 인식한다. 'TEST'
 SET SERVEROUTPUT ON

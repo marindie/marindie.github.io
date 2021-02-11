@@ -22,7 +22,7 @@ redirect_from:
 - build.xml 이란 파일을 하나 생성합니다.
 ```
 
-```xml 
+```xml
 <?xml version = "1.0" encoding="utf-8"?>
 <project name = "Hello World Project" default = "compile" basedir="/var/lib/jenkins/workspace/src">
    <target name = "info">
@@ -54,7 +54,6 @@ redirect_from:
 </project>
 ```
 
-
 ### Java 파일을 컴파일하는 compileClass 이라는 target 작성  {#toc4}
 
 ```md
@@ -77,7 +76,7 @@ redirect_from:
     <target name="compileClass" >
         <echo message="==========================="/>
         <echo message="  Compile Java Files Start "/>
-        <echo message="==========================="/>		
+        <echo message="==========================="/>
         <javac srcdir="${src.dir}" destdir="${classes.dir}" encoding="euc-kr">
             <include name="**/*.java"/>
 			<exclude name="**/*Bean.java"/>
@@ -96,7 +95,7 @@ redirect_from:
         </javac>
         <echo message="==========================="/>
         <echo message="  Compile Java Files End   "/>
-        <echo message="==========================="/>				
+        <echo message="==========================="/>
     </target>
 
 </project>
@@ -125,12 +124,12 @@ redirect_from:
         <echo message="  Delete Class Files       "/>
         <echo message="==========================="/>
         <delete dir="${classes.dir}/com" />
-    </target>	
+    </target>
 
     <target name="compileClass" >
         <echo message="==========================="/>
         <echo message="  Compile Java Files Start "/>
-        <echo message="==========================="/>		
+        <echo message="==========================="/>
         <javac srcdir="${src.dir}" destdir="${classes.dir}" encoding="euc-kr">
             <include name="**/*.java"/>
 			<exclude name="**/*Bean.java"/>
@@ -149,7 +148,7 @@ redirect_from:
         </javac>
         <echo message="==========================="/>
         <echo message="  Compile Java Files End   "/>
-        <echo message="==========================="/>				
+        <echo message="==========================="/>
     </target>
 
 </project>
@@ -202,7 +201,7 @@ redirect_from:
     <target name="compileClass" >
         <echo message="==========================="/>
         <echo message="  Compile Java Files Start "/>
-        <echo message="==========================="/>		
+        <echo message="==========================="/>
         <javac srcdir="${src.dir}" destdir="${classes.dir}" encoding="euc-kr">
             <include name="**/*.java"/>
 			<exclude name="**/*Bean.java"/>
@@ -221,7 +220,7 @@ redirect_from:
         </javac>
         <echo message="==========================="/>
         <echo message="  Compile Java Files End   "/>
-        <echo message="==========================="/>				
+        <echo message="==========================="/>
     </target>
 
 </project>
@@ -290,12 +289,12 @@ You can use fileset attribute to specify types of file to copy from "dir"
         <echo message="  Delete Class Files       "/>
         <echo message="==========================="/>
         <delete dir="${classes.dir}/com" />
-    </target>	
+    </target>
 
     <target name="compileClass" >
         <echo message="==========================="/>
         <echo message="  Compile Java Files Start "/>
-        <echo message="==========================="/>		
+        <echo message="==========================="/>
         <javac srcdir="${src.dir}" destdir="${classes.dir}" encoding="euc-kr">
             <include name="**/*.java"/>
 			<exclude name="**/*Bean.java"/>
@@ -314,7 +313,7 @@ You can use fileset attribute to specify types of file to copy from "dir"
         </javac>
         <echo message="==========================="/>
         <echo message="  Compile Java Files End   "/>
-        <echo message="==========================="/>				
+        <echo message="==========================="/>
     </target>
 
 </project>
@@ -355,7 +354,7 @@ You can use fileset attribute to specify types of file to copy from "dir"
         <echo message="==========================="/>
         <echo message="  TestBean End  "/>
         <echo message="==========================="/>
-	</target>	
+	</target>
 
 </project>
 ```

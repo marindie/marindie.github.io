@@ -222,8 +222,7 @@ netstat -lnpt
 
 ```
 
-### Visit localhost and localhost/index.jsp 
-
+### Visit localhost and localhost/index.jsp
 
 [^1]: This is a footnote.
 

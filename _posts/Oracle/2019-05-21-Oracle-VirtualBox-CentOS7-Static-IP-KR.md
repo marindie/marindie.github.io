@@ -39,6 +39,7 @@ root 계정으로 접속
 ```md
 vi /etc/sysconfig/network-scripts/ifcfg-enp0s3
 ```
+
 ONBOOT=yes 인지 확인
 
 /etc/sysconfig/network-scripts/ifcfg-enp0s8 은 Static IP 설정으로 사용한다 (어댑터2)
@@ -46,6 +47,7 @@ ONBOOT=yes 인지 확인
 ```md
 vi /etc/sysconfig/network-scripts/ifcfg-enp0s8
 ```
+
 BOOTPROTO=dhcp => BOOTPROTO=none 변경
 아래 내용 추가 후 저장
 IPADDR=192.168.56.142
@@ -75,6 +77,7 @@ ping 192.168.56.142
 Putty 등등의 IDE 로 접속 하기 전에 방화벽 및 openssl 설치 확인하셔야 합니다.
 
 방화벽 설정
+
 ```md
 firewall-cmd --list-all # 로 리스트 확인
 firewall-cmd --permanent --zone=public --add-port=22/tcp # 로 22 포트 OPEN
@@ -83,6 +86,7 @@ firewall-cmd --list-all # 로 리스트 확인
 ```
 
 방화벽 사용안하고 싶으면 아래처럼
+
 ```md
 systemctl stop firewalld.service && systemctl disable firewalld.service
 ```

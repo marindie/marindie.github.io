@@ -12,7 +12,7 @@ redirect_from:
 
 ### Setfacl
 
-```md 
+```md
 
 # 'u' stands for user, 'g' stands for group, 'o' stands for others
 # -m means modify
@@ -28,15 +28,12 @@ setfacl -R -d -m g::rwx /file
 
 # Delete 
 setfacl -x u:user1 /etc/sysconfig/iptables
-
 ```
 
 ### Getfacl
 
 ```md
-
 getfacl /DATA/work/CP_transaction
-
 ```
 
 [^1]: This is a footnote.

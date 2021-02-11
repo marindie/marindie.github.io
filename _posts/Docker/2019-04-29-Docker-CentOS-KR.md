@@ -142,7 +142,7 @@ openssl req -newkey rsa:4096 -nodes -sha256 -keyout certs/domain.key -x509 -days
 
 ```
 
-###  Concourse 와 Postgres Manual 설치 {#toc4}
+### Concourse 와 Postgres Manual 설치 {#toc4}
 
 ```md
 
@@ -197,8 +197,6 @@ sudo concourse worker \
   --tsa-public-key /opt/concourse/tsa_host_key.pub \
   --tsa-worker-private-key /opt/concourse/worker_key
 ```
-
-
 
 [^1]: This is a footnote.
 

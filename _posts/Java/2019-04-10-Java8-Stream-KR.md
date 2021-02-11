@@ -13,7 +13,6 @@ redirect_from:
 ### List Object 의 각 Object를 새로운 Object로 mapping 후 List 로 리턴 {#toc1}
 
 ```java
-
 this.playerRepository.findAll()
 				.stream()
 				.collect(Collectors.mapping(p -> new Player(p.getId(),p.getName(),p.getNum(),p.getPosition()), Collectors.toList()));
@@ -21,14 +20,12 @@ this.playerRepository.findAll()
 // 기존의 List 로 Return
 this.playerRepository.findAll()
 				.stream()
-				.collect(Collectors.toList()));				
-
+				.collect(Collectors.toList()));
 ```
 
 ### List Object Filter 후 리턴 {#toc2}
 
 ```java
-
 // 명령어 한줄로 사용시
 foundBoard.getArticles().stream().filter(article -> article.getArticleId().equals(articleId)).findFirst().get();
 
@@ -39,21 +36,17 @@ foundBoard.getArticles().stream().filter(article -> {
 			}
 			return false;
 		}).findFirst().get();
-
 ```
 
 ### Map 형태의 key,value Stream 사용법 {#toc3}
 
 ```java
-
 boardMap.values().stream().findFirst().get()
-
 ```
 
 ### Nested Loop 형태를 Stream 형태로 구현 {#toc4}
 
 ```java
-
 // anyMatch 를 사용해서 또하나의 List 에 있는 정보를 비교 가능함.
 // Stream 은 한번만 사용가능. For loop 안에 Stream 사용하면 에러남.
 
@@ -64,9 +57,7 @@ List<Car> filteredCars =
                          .anyMatch(wheel -> wheel.getColor() == car.getColor() &&      
                                             wheel.isWorking()))
         .collect(Collectors.toList());
-
 ```
-
 
 ### JSON to List Object  {#toc5}
 
@@ -79,7 +70,7 @@ List<Car> filteredCars =
 // 반대로 List<Object> to JSON
     this.ItemsJson = (new Gson()).toJson(getItems());
 
-// Gson format 적용		
+// Gson format 적용
 Gson gson = new GsonBuilder().setPrettyPrinting().create();
 gson.toJson(Obj);
 
@@ -88,7 +79,6 @@ gson.toJson(Obj);
 ### JSON from/to Object  {#toc6}
 
 ```java
-
 ObjectMapper mapper = new ObjectMapper();
 Test obj = new Test();
 
@@ -97,13 +87,11 @@ mapper.writeValue(new File("c:\\file.json"), obj);
 
 //Object to JSON in String
 String jsonInString = mapper.writeValueAsString(obj);
-
 ```
 
 ### Sort 사용법  {#toc7}
 
 ```java
-
 attrs.get().stream().sorted().collect(Collectors.toList());
 
 //관련 형태 사용법
@@ -120,7 +108,6 @@ public class AttrsJpo implements Comparable<AttrsJpo>{
 		return id.compareTo(o.getId());
 	}
 }
-
 ```
 
 [^1]: This is a footnote.

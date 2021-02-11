@@ -16,7 +16,7 @@ redirect_from:
 
 ### 소스 {#toc2}
 
-```md
+```bash
 #/bin/bash
 SRC=$1
 TG=$2
@@ -82,7 +82,7 @@ pom.xml
 
 ### 추가적으로 기본적인 sed 명령어 관련 POST 링크 {#toc4}
 
-클릭 => [sed 사용법](https://marindie.github.io/linux/Sed-Replace-Text-Sample-EN/) 
+클릭 => [sed 사용법](https://marindie.github.io/linux/Sed-Replace-Text-Sample-EN/)
 
 감사합니다.
 
@@ -90,6 +90,3 @@ pom.xml
 
 [kramdown]: https://kramdown.gettalong.org/
 [My Blog]: https://marindie.github.io
-
-
-

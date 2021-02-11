@@ -11,6 +11,7 @@ redirect_from:
 > logrotate 사용법, 옵션들 의미 및 장단점 소개
 
 ### logrorate 동작 방식 {#toc1}
+
 ```md
 # 기본적으로 logrotate 를 설치하면 cron.daily 에 자동으로 등록됨
 cat /etc/cron.daily/logrotate
@@ -23,6 +24,7 @@ cat /etc/cron.daily/logrotate
 # 마지막 실행 로그 보기 
 cat /var/lib/logrotate/status
 ```
+
 ```md
 * 파일을 타겟으로 잡는 방식에 정규식을 주로 먹일 텐데, 거기에 걸려든 모든 파일에 대하여
   압축을 해주지는 않음. 
@@ -43,6 +45,7 @@ cat /var/lib/logrotate/status
 ```
 
 ### logrorate 단점 {#toc3}
+
 ```md
 * 여러파일을 하나의 파일로 압축을 해주지 못함
 * 일별로 로그를 압축하는것 까지도 사용하기에는 무방하지만, 일별, 월별, 연별로 
@@ -50,6 +53,7 @@ cat /var/lib/logrotate/status
 ```
 
 ### logrotate 옵션 {#toc4}
+
 ```md
 # https://man7.org/linux/man-pages/man5/logrotate.conf.5.html 사이트 참고를 추천
 
@@ -69,6 +73,7 @@ create 0600 root root # rotate 파일을 만들면서 파일 권한 그룹 사�
 ```
 
 ### logrotate 예제 {#toc5}
+
 ```md
 vi /etc/logrotate.d/tomcat
 

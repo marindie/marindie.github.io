@@ -18,7 +18,6 @@ redirect_from:
 ### Set System Variable
 
 ```sql
-
 -- You May Not Like the Following Options.. So it's up to you
 SET ECHO OFF         -- Show Each Command before execute it
 SET TRIMOUT ON
@@ -64,7 +63,6 @@ EXEC DBMS_OUTPUT.ENABLE(1000000);
 ### Extract Object Queries
 
 ```sql
-
 -- I assume that you are reading this article, because you decided to recreate objects and insert data from production database.
 -- And since the production data is so huge, You may not be able to use data pump or exp command to export the whole. Anyway, I hope this help. Let's move on.
 
@@ -112,7 +110,6 @@ SPOOL OFF
 ### Remove `SEGMENT CREATE IMMEDIATE` or `SEGMENT CREATE DEFERRERD` in the file
 
 ```md
-
 # Now I will share SED command that will remove SEGMENT CREATE stuff syntax in your results files
 # In Linux, type this, to check there are some matching lines
 sed -n -r -e "s/SEGMENT CREATE IMMEDIATE|SEGMENT CREATE DEFERRERD//p" *.SQL 
@@ -125,7 +122,6 @@ sed -i'' -r -e "s/SEGMENT CREATE IMMEDIATE|SEGMENT CREATE DEFERRERD//" *.SQL
 gsed -n -r -e "s/SEGMENT CREATE IMMEDIATE|SEGMENT CREATE DEFERRERD//gp" *.SQL 
 # Then Run to remove the syntax
 gsed -i'' -r -e "s/SEGMENT CREATE IMMEDIATE|SEGMENT CREATE DEFERRERD//g" *.SQL
-
 ```
 
 [^1]: This is a footnote.

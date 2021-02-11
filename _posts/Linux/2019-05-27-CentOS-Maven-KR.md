@@ -33,8 +33,6 @@ source /etc/profile
 mvn -version
 ```
 
-
-
 [^1]: This is a footnote.
 
 [kramdown]: https://kramdown.gettalong.org/

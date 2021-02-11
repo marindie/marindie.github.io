@@ -258,7 +258,7 @@ public interface TestRepository extends JpaRepository<TestJpo,Long> {
 	public Optional<TestJpo> findByTestId(Long testId);
 }
 ```
-PK 가 한개 이상인 경우 
+PK 가 한개 이상인 경우
 
 ```java
 @Entity

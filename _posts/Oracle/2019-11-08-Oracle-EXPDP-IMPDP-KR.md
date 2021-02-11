@@ -24,6 +24,7 @@ expdp USER/pwd@TEST directory=data_pump schemas=USER job_name=TEST_DUMP_01_EXP d
 ```
 
 ### IMPDP {#toc2}
+
 ```sql
 sqlplus / as sysdba
 drop user USER cascade;
@@ -36,6 +37,7 @@ impdp USER/pwd@TEST directory=data_pump job_name=TEST_DUMP_01_IMP dumpfile=expdp
 ```
 
 ### ORA-14102: only one LOGGING or NOLOGGING clause may be specified {#toc3}
+
 ```md
 해당 이슈는 LOGGING NOLOGGING 을 둘다 추출하는 11g 의 export 나 DBMS_METADATA 쪽의 에러인데,
 import 할때 TRANSFORM=SEGMENT_ATTRIBUTES:N 옵션으로 우회 가능하기에 그렇게 사용중. 필요에 따라 추가적으로 LOGGING, NOLOGING 확인하고 변경을 해야할 수도

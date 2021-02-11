@@ -10,7 +10,7 @@ redirect_from:
 
 > Oracle SQLPLUS 에서 쿼리 조회 결과를 CSV 포맷 형식으로 만드는 방법을 공유합니다.
 
-# 배경지식 {#toc1}
+### 배경지식 {#toc1}
 
 1. PL/SQL 에 대한 지식이 있다고 합니다.
 2. 기본적은 SQL 지식이 있다고 가정합니다.
@@ -19,7 +19,7 @@ redirect_from:
    해서 TABLE 명과 WHERE 조건절을 동적으로 받아서 해당 조회 결과를 CSV 형태로 (DELIMITER 는 변경 가능) 출력하는 방식을 고민하게 되었고, 
    제가 만들 결과물을 공유합니다.
 
-# PL/SQL Block {#toc2}
+### PL/SQL Block {#toc2}
 
 ```sql
 SET SERVEROUTPUT ON SIZE UNLIMITED FORMAT WRAPPED
@@ -94,7 +94,8 @@ END;
 
 #/bin/bash
 
-# Generate Data for SQL Loader
+### Generate Data for SQL Loader
+
 SOURCE_DB="TEST"
 S_USER="TEST"
 S_PWD="test"

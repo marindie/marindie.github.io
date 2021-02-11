@@ -12,7 +12,7 @@ redirect_from:
 
 ### Oracle 두 동일한 테이블간의 Merge 문 자동 생성 {#toc1}
 
-```md
+```bash
 #/bin/bash
 
 TARGET_DB="TEST"

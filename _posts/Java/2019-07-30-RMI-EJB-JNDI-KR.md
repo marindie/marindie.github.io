@@ -11,6 +11,7 @@ redirect_from:
 > Java RMI, EJB JNDI 사용법 정리
 
 ### JAVA RMI {#toc1}
+
 ```md
 JAVA 에서 제공하는 RMI 사용방식으로 매우 간단하고, WAS(Middleware) 에 종속적이지 않다.
 무슨말인가 하면, WAS 에서는 WAS 내부에 REMOTE 설정이 가능하고, 
@@ -19,7 +20,9 @@ JAVA RMI 도 다른데 rmi://IP:PORT 이다.
 JAVA RMI 의 특징으로는 rmiregistry 를 기동시켜서 설정한 IP, PORT 로 서버를 기동해야 하는 불편함이 있다.
 아래는 JAVA RMI SAMPLE.
 ```
-Interface
+
+- Interface
+
 ```java
 import java.rmi.Remote;
 import java.rmi.RemoteException;
@@ -30,8 +33,10 @@ public interface Test extends Remote
     String testLog(String keyword, String term, String logPath) throws RemoteException;
 }
 ```
-Implement
+
+- Implement  
 main 함수가 rmiregistry 를 실행하는 것과 같은 역할을 수행한다.
+
 ```java
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
@@ -42,7 +47,6 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class TestImpl implements Test{
-	
     public TestImpl() throws RemoteException {
 		super();
 		// TODO Auto-generated constructor stub
@@ -79,14 +83,18 @@ public class TestImpl implements Test{
         }
     }    
 ```
-Client 쪽에서 사용시
+
+- Client 쪽에서 사용시
+
 ```java
 import java.rmi.Naming;
 
 Test test = (TESTEAPP) Naming.lookup("rmi://127.0.0.1:1099/TESTAPP");
 System.out.println(test.testLog("asdfas","asdfasd","asdf"));
 ```
+
 ### JBoss EJB JNDI(RMI) 사용법 {#toc2}
+
 ```md
 내가 테스트 하면서 가장 애를 먹고 시간을 낭비한 부분이 바로 standalone.bat -b 111.222.33.444 로 서버를 기동안시킨 부분이였다.
 -b 옵션은 binding 옵션인데, ip 를 지정해서 서버를 기동 시키는데에 사용되어 보인다. 
@@ -125,6 +133,7 @@ XXXWEB.war 파일인 Web Application 관련 파일들을 묶은 war 파일이 �
 
 .ear 파일 안에 META-INF 폴더안에 application.xml 을 작성하는데 아래는 샘플
 ```
+
 ```xml
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <!DOCTYPE application PUBLIC "-//Sun Microsystems, Inc.//DTD J2EE Application 1.3//EN" "http://java.sun.com/dtd/application_1_3.dtd">
@@ -150,6 +159,7 @@ XXXWEB.war 파일인 Web Application 관련 파일들을 묶은 war 파일이 �
    </module>
 </application>
 ```
+
 ```md
 폴더 구조
 TESTAPP.ear 
@@ -166,7 +176,9 @@ TESTAPP.ear
 이제부터는 TESTEJB.jar 와 TESTWEB.war 의 자원에 EJB-JNDI 를 설정해서 사용하는 법을 설명한다.
 Middleware 인 Weblogic과 Jboss 는 Bender 사 별로 INITIAL_CONTEXT_FACTORY 를 지정하여 사용한다.
 ```
-JBoss Client 에서 EJB 호출시 사용하는 소스
+
+- JBoss Client 에서 EJB 호출시 사용하는 소스
+
 ```java
         Context ctx = null;
         Hashtable env = new Hashtable();
@@ -182,6 +194,7 @@ JBoss Client 에서 EJB 호출시 사용하는 소스
         Test test = (Test)home.create();
         test.runMethod();
 ```
+
 ```md
 정신건강을 위해 JBoss6.4 를 로컬에 설치해 놓고 테스트 하기 바란다. 
 JAVA_HOME 환경변수가 잡혀있어야 한다. 
@@ -217,10 +230,12 @@ TESTEJB.jar 의 META-INF 폴더에 넣는다.
   </enterprise-beans>
 </ejb-jar>
 ```
+
 ```md
 같은 META-INF 폴더 안에 jboss-ejb-client.xml 파일을 만들고
 아래의 내용을 기술한다.
 ```
+
 ```xml
 <jboss-ejb-client xmlns="urn:jboss:ejb-client:1.0">
    <client-context>
@@ -230,11 +245,13 @@ TESTEJB.jar 의 META-INF 폴더에 넣는다.
    </client-context>
  </jboss-ejb-client>
 ```
+
 ```md
  TESTWEB.war 안에 META-INF 폴더 안에 web.xml 을 만들고 설정을 한다.
  Servlet 3.0 이상부터는 보통 Annotation 기반의 sample 소스가 많은듯 하다. 이거는 옜날 동작방식에서
  못벗어 나는 상황에서 수정이 발생할 때, 이해를 하기 위해 적어 놓았다.
  ```
+
  ```xml
  <?xml version = '1.0' encoding = 'EUC-KR'?>
 <!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
@@ -269,6 +286,7 @@ TESTEJB.jar 의 META-INF 폴더에 넣는다.
   </welcome-file-list>
 </web-app>
 ```
+
 ```md
 해당 자원들의 설정 정보가 정상적으로 들어가 있는 상태에서
 TESTAPP.ear 를 JBoss6.4 의 standalone/deployments 안에 복사해 두고
@@ -289,6 +307,7 @@ bdeployment "TESTEJB.jar" of deployment "TESTEAPP.ear" are as follows:
 
 이런 로그가 나온다는 것을 JNDI Binding 이 되었다는 의미로, ejb-jar.xml 에 기술한 내용이 등록되었다는 의미이다.        
 ```
+
 ```java
 // 위에 아래의 샘플 소스가 있었는데, lookup 부분을 보면 
 // java:jboss/exported/TESTEAPP/TESTEJB/Test!com.test.TestHome 와 비슷함을 알 수 있다.
@@ -303,6 +322,7 @@ TestHome home = (TestHome) ctx.lookup("TESTAPP/TESTEJB/Test!com.test.TestHome");
 ```
 
 ### Weblogic EJB JNDI(RMI) 사용법 {#toc3}
+
 ```md
 JBoss에 설명한 내용의 대부분이 그대로 사용된다. 
 다른 부분은 사용할때 필요로 하는 library 와 Context.INITIAL_CONTEXT_FACTORY 와 같은 Context 설정 정보 내용이 
@@ -318,7 +338,8 @@ javax.servlet_1.0.0.0_2-5.jar
 jmxri.jar
 ```
 
-Welogic용 Client가 EJB JNDI 사용시 사용하는 소스
+- Welogic용 Client가 EJB JNDI 사용시 사용하는 소스
+
 ```java
 // 왜 TESTAPP 으로 이름이 따지는가 생각해 보면, 기본적으로 .ear 파일의 이름을 따서 만드는 듯 하다.
 // 이 부분은 변경이 가능할 것 같고, 정확하지 않으니 믿지 말것. 그냥 추측일 뿐. 로그에 정보가 나오는 지도 확인
@@ -334,6 +355,7 @@ Welogic용 Client가 EJB JNDI 사용시 사용하는 소스
         Test test = (Test)home.create();
         test.runMethod();
 ```
+
 ```md
 마지막으로 JBoss 의 기본 REMOTE PORT 는 4447, Weblogic 은 9403 인듯하다.
 ```

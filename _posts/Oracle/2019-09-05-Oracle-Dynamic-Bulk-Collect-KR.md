@@ -66,6 +66,7 @@ END;
 ```
 
 ### Sample Bulk Collect Forall Delete {#toc2}
+
 ```sql
 -- 자동생성기에는 맨 마지막 / slash 가 없습니다. 개별로 사용하게 되면 / 는 붙여줘야 합니다.
 -- 이거 STRING 으로 하면 에러가 나서.. 일단 없앰..

@@ -41,7 +41,9 @@ proxy: http://localhost:8080
 
 혹은 @Configure 로 설정하는 방법이 있습니다.
 ```
+
 ### CORS 관련 preflight 403 Error 이슈 {#toc2}
+
 Spring Boot Security 설정시 CORS Preflight 403 이슈가 발생하였습니다.
 검색해 보니 실제 전송전에 전송가능한지 확인하는 방식이 preflight 방식이라고 합니다.
 문제는 REQUEST METHOD 가 OPTION 인데 응답을 Spring이 정상으로 던지지 않는것이 문제인듯 합니다.

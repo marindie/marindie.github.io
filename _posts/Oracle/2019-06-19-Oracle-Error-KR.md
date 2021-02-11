@@ -8,7 +8,7 @@ redirect_from:
   - /2019/06/19/
 ---
 
-> Oracle 에러 이슈 모음. 
+> Oracle 에러 이슈 모음
 
 ### DBMS_METADATA.GET_DDL ORA-31603 이슈 원인 및 처리 방법 {#toc1}
 
