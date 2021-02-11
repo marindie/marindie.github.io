@@ -314,6 +314,7 @@ defaults:
       share: false
       related: true
       classes: wide
+      toc_sticky: true
       sidebar:
         nav: "docs"
 
