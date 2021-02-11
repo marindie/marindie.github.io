@@ -214,6 +214,18 @@ redirect_from:
 
 ![종자](/assets/images/screen/종자.png)
 
+### 양치류 {#toc14}
+
+```md
+* 잎은 일반적으로 평면적이고 드물게 포자엽, 영양엽이 2장씩 합하여 입체구성을 하며, 기부가 담엽체가 되고(나도고사리삼목), 생이가래에서는 뿌리모양의 수생엽이다. 
+* 포자낭이 1세포층인 것을 박낭양치류, 다세포층인 것을 진낭양치류로 구분한다.
+```
+
+![양치류01](/assets/images/screen/양치류01.png)
+양치류의 생활사
+![양치류01](/assets/images/screen/양치류02.png)
+양치류의 구조
+
 [^1]: This is a footnote.
 
 [kramdown]: https://kramdown.gettalong.org/

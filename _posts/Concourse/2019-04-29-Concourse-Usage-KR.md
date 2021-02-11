@@ -10,7 +10,7 @@ redirect_from:
 
 > CentOS 7에 설치된 Concourse 사용법 정리
 
-###  Concourse fly 명령어 {#toc1}
+### Concourse fly 명령어 {#toc1}
 
 ```md
 # Docker 실행
