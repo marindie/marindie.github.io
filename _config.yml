@@ -107,7 +107,7 @@ analytics:
 # Site Author
 author:
   name             : "정승원 (Patrick)"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/sunset-3325080_1920.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Contact: marindie@naver.com"
   location         : "대한민국. Republic Of Korea."
   email            : 
