@@ -313,7 +313,7 @@ defaults:
       comments: true
       share: false
       related: true
-      class: wide
+      classes: wide
       sidebar:
         nav: "docs"
 
