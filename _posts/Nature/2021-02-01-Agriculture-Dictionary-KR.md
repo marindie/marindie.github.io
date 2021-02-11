@@ -30,9 +30,6 @@ beget : (어떤 결과를) 부르다, 야기하다
 ```
 
 
-
-도움이 되었으면 좋겠네요. 감사합니다.
-
 [^1]: This is a footnote.
 
 [kramdown]: https://kramdown.gettalong.org/
