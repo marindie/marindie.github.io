@@ -313,5 +313,6 @@ defaults:
       comments: true
       share: false
       related: true
+      toc_sticky: true
       sidebar:
         nav: "docs"
