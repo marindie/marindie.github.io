@@ -91,6 +91,30 @@ git config --global http.sslVerify false
 #submodule 삭제 관련해서는 아래의 5-4번 내용을 참고하시기 바랍니다.
 ```
 
+### git stash {#toc1}
+
+```bash
+# 현재 로컬에서 사용해야 하는 파일들을 저장하고 다른 브랜치로 넘어갈때
+# 혹은 다른 브랜치로 넘어가려는데, 설정 파일 충돌이 나서 문제가 될때, 현재 변경된 파일들을 모두 임시저장 해줍니다.
+git stash 
+
+# 저장 내역 확인
+git stash list
+
+# 저장된 내용 불러오기 (가장 최근)
+git stash apply
+
+# 원하는 목록에서 index 번호로
+git stash apply indexNumber
+
+# git stash 를 했는데, 충돌이 나는경우, stash 버전으로 강제로 덮어쓰기
+git checkout stash -- .
+git checkout stash -- filepath #파일을 수기로 하나씩 덮어써야 할때
+
+# 머지하면서 처리하고 싶을때
+git merge --squash --strategy-option=theirs stash
+```
+
 ### git remote master 브랜치에 커밋된 내용이 있는 상태에서 local push 에러 처리 명령어 {#aa}
 
 ```md
