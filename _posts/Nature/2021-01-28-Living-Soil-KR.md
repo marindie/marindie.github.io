@@ -168,6 +168,7 @@ redirect_from:
 ```
 
 ![매리골드](/assets/images/screen/매리골드.png)
+매리골드
 
 ### 한해살이 풀 {#toc10}
 
