@@ -115,6 +115,11 @@ fertilizer : 비료
 myriad : 무수히
 plethora : 과다, 과잉
 algae : 조류 (물속에 사는 식물의 한 무리)
+hydroponic : 수경 재배법
+aquaculture : 양식산업
+nitrosomonas : (토양비료학) 니트로소모나스
+nitrobacter : (토양비료학) 니트로박터
+nitrate : 질산염
 ```
 
 [^1]: This is a footnote.
