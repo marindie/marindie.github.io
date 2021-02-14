@@ -252,6 +252,7 @@ plugins:
   # - jekyll-toc
   - jekyll/tagging
   - jekyll-tagging-related_posts
+  - hook-add-last-modified-date
 
 # mimic GitHub Pages with --safe
 whitelist:
