@@ -5,7 +5,7 @@ description: "토양에 대해 공부하고자 메모, 정리, 생각들을 기�
 categories: [Permaculture]
 tags: [Soil]
 redirect_from:
-  - /2021/01/28/
+  - /2021/02/14/
 ---
 
 > 토양에 대해 공부하고자 메모, 정리, 생각들을 기록

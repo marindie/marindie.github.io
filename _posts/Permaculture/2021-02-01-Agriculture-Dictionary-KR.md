@@ -5,7 +5,7 @@ description: "퍼머컬처, 무경운 농법, 친환경 농법, 자연 관련 �
 categories: [Permaculture]
 tags: [Dictionary]
 redirect_from:
-  - /2021/02/01/
+  - /2021/02/14/
 ---
 
 > 퍼머컬처, 무경운 농법, 친환경 농법, 자연 관련 영어 책에서 나오는 단어 모음
