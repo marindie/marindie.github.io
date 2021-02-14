@@ -16,8 +16,8 @@ main:
 docs:
   - title: "Category"
     children:
-      - title: "Nature"
-        url: /categories/#nature    
+      - title: "Permaculture"
+        url: /categories/#permaculture    
       - title: "Oracle"
         url: /categories/#oracle      
       - title: "Spring"
