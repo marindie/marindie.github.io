@@ -92,6 +92,13 @@ dilute : 희석하다
 lethal : 치명적인
 omnivorous : 잡식성인, 두루관심을 갖는
 epistemology : 인식론
+aspire : 열망,염원하다
+forage : 사료
+coop : 닭장, (짐승의)우리
+condense : (기체가) 응결되다, (액체를) 농축시키다
+atmospheric : 대기의
+atmospheric water harvester : 대기중의 물 수확
+laden : 가득한, 잔뜩 실은
 ```
 
 [^1]: This is a footnote.
