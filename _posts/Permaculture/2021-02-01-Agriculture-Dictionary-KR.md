@@ -99,6 +99,13 @@ condense : (기체가) 응결되다, (액체를) 농축시키다
 atmospheric : 대기의
 atmospheric water harvester : 대기중의 물 수확
 laden : 가득한, 잔뜩 실은
+guppy : 수족관에서 흔히 기르는 담수어
+minnow : 피라미
+polliwog : 올챙이
+dehydrator : 탈수기
+take food out : 식량(식품)을 꺼내다
+raft : 뗏목
+mitigate : 경감(완화) 시키다
 ```
 
 [^1]: This is a footnote.
