@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "영어 단어 모음 (주로 퍼머컬처, 무경운 관련)"
+title: "영어 단어 모음 (퍼머컬처, 무경운 관련)"
 description: "퍼머컬처, 무경운 농법, 친환경 농법, 자연 관련 영어 책에서 나오는 단어 모음" 
 categories: [Permaculture]
 tags: [Dictionary]
@@ -10,12 +10,18 @@ redirect_from:
 
 > 퍼머컬처, 무경운 농법, 친환경 농법, 자연 관련 영어 책에서 나오는 단어 모음
 
-### 읽는 책이나 영상 목록 {#toc1}
+### 읽는 책, 영상, 참조 (reference) {#toc1}
 
 ```md
 Kiss The Groud (e-book, 넷플릭스
 Permaculture in a Nutshell (e-book)
 The Living Soil (youtube)
+John Todd
+Gregory Bateson
+Stuart Brand 
+William Irwin Thompson
+Margaret Mead
+Joseph Needham
 ```
 
 ### 단어장 {#toc2}
@@ -72,6 +78,20 @@ vine : 포도나무, 덩굴
 orchard : 과수원
 fiber, fibre : 섬유
 foreseeable : 예측할 수 있는
+notion : 개념
+niche : (꼭맞는) 자리
+oxygenation : 산소처리
+intrinsic : 고유한
+exert : (영향력을) 가하다, 있는 힘껏 노력하다
+polyculture : 농업 복작
+indigenous : 원시의(토착의)
+unravel : (미스테리등을) 풀다, 매듭을 풀다
+disrupt : 방해하다
+magnitude : (엄청난)규모, 지진 규모, (별의) 광도
+dilute : 희석하다
+lethal : 치명적인
+omnivorous : 잡식성인, 두루관심을 갖는
+epistemology : 인식론
 ```
 
 [^1]: This is a footnote.

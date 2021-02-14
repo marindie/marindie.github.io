@@ -221,8 +221,6 @@ $(window).on('load', function() {
 </div>
 ```
 
-- 글이 맘에 드시면, 광고 클릭 해주세요~!! 그래봤자 1000원 정도도 안들어오겠지만요 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
-
 [^1]: This is a footnote.
 
 [kramdown]: https://kramdown.gettalong.org/
