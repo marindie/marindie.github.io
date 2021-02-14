@@ -106,6 +106,7 @@ dehydrator : 탈수기
 take food out : 식량(식품)을 꺼내다
 raft : 뗏목
 mitigate : 경감(완화) 시키다
+rainbow trout : 무지개송어
 ```
 
 [^1]: This is a footnote.
