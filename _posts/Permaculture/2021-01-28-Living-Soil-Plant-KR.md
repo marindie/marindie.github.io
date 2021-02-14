@@ -2,7 +2,7 @@
 toc: true
 title: "건강한 토양, 살아있는 생명 활동. Living Soil, Healthy Soil"
 description: "토양에 대해 공부하고자 메모, 정리, 생각들을 기록" 
-categories: [Permaculture]
+categories: [Nature]
 tags: [Soil]
 redirect_from:
   - /2021/02/14/

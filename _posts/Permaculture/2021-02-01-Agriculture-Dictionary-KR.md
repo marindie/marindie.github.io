@@ -2,7 +2,7 @@
 toc: true
 title: "영어 단어 모음 (퍼머컬처, 무경운 관련)"
 description: "퍼머컬처, 무경운 농법, 친환경 농법, 자연 관련 영어 책에서 나오는 단어 모음" 
-categories: [Permaculture]
+categories: [Nature]
 tags: [Dictionary]
 redirect_from:
   - /2021/02/14/
