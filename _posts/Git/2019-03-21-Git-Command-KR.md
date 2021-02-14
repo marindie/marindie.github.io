@@ -137,6 +137,7 @@ git fetch --all
 git reset --hard origin/master
 # 이후에 다시 푸쉬
 git push origin master
+git push origin/remote_branch_name local_branch_name
 ```
 
 ### 기본 예제 {#l}
