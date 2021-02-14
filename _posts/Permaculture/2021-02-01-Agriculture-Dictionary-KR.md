@@ -107,6 +107,14 @@ take food out : 식량(식품)을 꺼내다
 raft : 뗏목
 mitigate : 경감(완화) 시키다
 rainbow trout : 무지개송어
+sulplus : 잉여가치
+sterile : 무균, 멸균, 불임
+shed : 헛간, 작업장, 하치장
+slurry : 고체와 액체의 혼합물 또는 미세한 고체가 물속에 현탁된 현탁액
+fertilizer : 비료
+myriad : 무수히
+plethora : 과다, 과잉
+algae : 조류 (물속에 사는 식물의 한 무리)
 ```
 
 [^1]: This is a footnote.
