@@ -299,6 +299,8 @@ compress_html:
   ignore:
     envs: production
 
+liquid:
+  error_mode: warn
 
 # Defaults
 defaults:
