@@ -1,14 +1,14 @@
 ---
 toc: true
-title: " Spring Boot Build 없이 Run"
-description: "Spring Spring Boot Build 없이 Run"
+title: "Spring Boot Build 없이 Run. 톰캣 서버 재기동 없이 수정 반영 class resource jsp 등등"
+description: "Spring Boot Build 없이 Run. 톰캣 서버 재기동 없이 수정 반영 class resource jsp 등등"
 categories: [Spring]
 tags: [Spring]
 redirect_from:
   - /2019/07/19/
 ---
 
-> Spring Boot Build 없이 Run
+> Spring Boot Build 없이 Run. 톰캣 서버 재기동 없이 수정 반영 class resource jsp 등등
 
 ### Spring Boot Build 없이 Run {#toc1}
 
