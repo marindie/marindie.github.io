@@ -226,7 +226,7 @@ redirect_from:
 * 포자낭이 1세포층인 것을 박낭양치류, 다세포층인 것을 진낭양치류로 구분한다.
 ```
 
-![양치류01](/assets/images/screen/양치류01.png)
+![양치류01](/assets/images/screen/양치류01.png){: .aligh-right}
 
 양치류의 생활사
 
