@@ -322,13 +322,28 @@ redirect_from:
 ### Permaculture & Aquaponic {#toc21}
 
 ```md
-1. Solar Panel 을 통해 에너지를 생산
-2. 물고기를 먹이기 위한 물고기(담수어, 피래미), 토끼를 가두고 키우면서 그 아래에 구더기 통을 놓고 기르면 구더기가 아주 잘 자람
+* Solar Panel 을 통해 에너지를 생산
+* 물고기를 먹이기 위한 물고기(담수어, 피래미), 토끼를 가두고 키우면서 그 아래에 구더기 통을 놓고 기르면 구더기가 아주 잘 자람
    biogas 나 bio digester와 같은 것의 찌꺼기는 물고기에게 영양분 많은 먹이가 될 수 있음
    지렁이가 만든 퇴비를 따듯한 물에 풀어서 줄 수도 있다
-3. 식물은 지렁이가 만든 퇴비등을 바탕으로 번식
-4. 식물을 통과한 물을 다시 물고기 식수로 재사용
+* 식물은 지렁이가 만든 퇴비등을 바탕으로 번식
+* 식물을 통과한 물을 다시 물고기 식수로 재사용
 ```
+
+### The LEAF Aquaponic Greenhouse {#toc22}
+
+```md
+Living Ecosystem Aquaponic Facility (LEAF)
+30(foot) x 60 (foot) solar greenhouse
+controlled environment in it
+raised beds closed-loop aquaponics
+
+* 4줄의 물을 채운 가로로된 박스 (1 Foot) 높이 정도
+* 2줄의 토양을 채운 가로로된 박스 1 Foot 보다 좀 더 높게
+* 6개 정도의 4 Foot 드럼통
+```
+
+![aquaponic-01](/assets/images/screen/aquaponic-01.png)
 
 [^1]: This is a footnote.
 

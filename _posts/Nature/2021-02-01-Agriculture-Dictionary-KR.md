@@ -120,6 +120,32 @@ aquaculture : 양식산업
 nitrosomonas : (토양비료학) 니트로소모나스
 nitrobacter : (토양비료학) 니트로박터
 nitrate : 질산염
+irrigate : 물을 관개하다, 땅에 물을 대다
+solubilize : 가용성, 용해도를 높이다, 물에 잘녹도록 하다
+neutralize : 중화시키다 무효화시키다
+aquifer : 대수층 
+drain : 물을 빼다
+deprive : 사람에게서 물건을 빼앗다
+anoxic : 무산소, 무산소증, 산소결핍
+decay : 부패, 부식, 쇠퇴, 쇠락
+repercussion : 영향
+quantify : 양을 나타내다, 수량화 하다
+proximity : 가까움(근접)
+sustainable : 지속가능한, 오랫동안 유지가능한
+raised bed : A garden that is planted in soil that 
+             raised above the ground level, 
+             typically enclosed by a frame made of 
+             wood, rock, bricks, or concrete blocks
+closed-loop : 재활용하는 시스템의
+nutrition : 영양(처리과정)
+scribble : 낙서하다, 휘갈겨쓰다
+chalkboard : 칠판
+hands-on : 직접해보는
+strive : 분투하다
+tangible : 분명히 존재하는, 만질 수 있는
+STEM education : 과학, 기술, 공학, 수학 교육
+district : 지역, 지구
+wicking : 양초의 심지
 ```
 
 [^1]: This is a footnote.
