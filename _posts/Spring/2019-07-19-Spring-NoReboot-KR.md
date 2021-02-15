@@ -98,7 +98,8 @@ app2
   - webapps
   - work
 
-* 포인트는 app1, app2 의 CATALINA_HOME, CATALINA_BASE 의 경로를 다르게 잡아주기 위해 파라미터를 받아서 app1, app2 경로로 바꿔주고, 기존 톰캣에 들어있던 startup.sh 파일을 호출
+* 포인트는 app1, app2 의 CATALINA_HOME, CATALINA_BASE 의 경로를 다르게 잡아주기 위해 파라미터를 받아서 
+  app1, app2 경로로 바꿔주고, 기존 톰캣에 들어있던 startup.sh 파일을 호출
 * 각 app1, app2 폴더안의 setenv.sh 파일에 CATALINA_OPTS 를 설정해서 기본적인 추가 옵션 처리
 
 # start.sh stop.sh 파일 내용
