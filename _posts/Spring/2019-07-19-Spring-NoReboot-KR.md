@@ -65,10 +65,10 @@ export CATALINA_OPTS="$CATALINA_OPTS -javaagent:/root/username/tomcat8.5/springl
 -javaagent:C:\springloaded-1.2.8.RELEASE.jar -noverify 
 ```
 
-![eclipse톰캣](/assets/images/screen/eclipse-tomcat01.png){: align-left}
+![eclipse톰캣](/assets/images/screen/eclipse-tomcat01.png){: align-center}
 서버 설정 화면
 
-![eclipse톰캣](/assets/images/screen/eclipse-tomcat02.png){: align-left}
+![eclipse톰캣](/assets/images/screen/eclipse-tomcat02.png){: align-center}
 Open launch configuration 팝업 argument 세팅
 
 ### 하나의 톰캣 서버에 여려개의 Application 을 설정해서 원하는 대로 기동하는 방법 {#toc4}
