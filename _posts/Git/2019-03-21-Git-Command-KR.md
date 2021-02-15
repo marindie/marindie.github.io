@@ -94,6 +94,29 @@ git config --global http.sslVerify false
 ### git stash {#toc1}
 
 ```bash
+# 결론만 얘기하자면 아래 명령어로 각각 파일별로 처리하는게 속편함
+# git stash apply 로 파일 불러들일때, Eclipse .classpath 파일에서 conflict 나는게 귀찮음.
+# 비슷한 현상들이 있을 수 있어서, 정말 필요한 파일만 개별적으로 선별해서 git stash 하는게 좋은
+git stash save "commit message" -p
+
+# 위 명령어를 날리면 잠시후에 user input 형태로 각 diff 별로 어떻게 처리할 지 물어본다
+# 그에 대한 답변 옵션 정보는 아래와 같음
+# 난 파일 단위로 처리 하고 싶어서 a (all), d (discard) 의미의 두 옵션만 사용해서 처리한다.
+   y - stage this hunk
+   n - do not stage this hunk
+   q - quit; do not stage this hunk or any of the remaining ones
+   a - stage this hunk and all later hunks in the file
+   d - do not stage this hunk or any of the later hunks in the file
+   g - select a hunk to go to
+   / - search for a hunk matching the given regex
+   j - leave this hunk undecided, see next undecided hunk
+   J - leave this hunk undecided, see next hunk
+   k - leave this hunk undecided, see previous undecided hunk
+   K - leave this hunk undecided, see previous hunk
+   s - split the current hunk into smaller hunks
+   e - manually edit the current hunk
+   ? - print help
+
 # 현재 로컬에서 사용해야 하는 파일들을 저장하고 다른 브랜치로 넘어갈때
 # 혹은 다른 브랜치로 넘어가려는데, 설정 파일 충돌이 나서 문제가 될때, 현재 변경된 파일들을 모두 임시저장 해줍니다.
 git stash 
