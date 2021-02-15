@@ -30,9 +30,13 @@ redirect_from:
 6. End block syntax 는 "END {awk-commands}" 와 같은 형태이며, 호출한 AWK 가 최종 종료시점에 동작합니다. 로그 파일 전체를 파싱해서 어떤 특정 케이스의 건수를 리포트 형태로 출력하고자 할 때, END block 에 awk-command 로 작성하면 최종 결과를 뿌려줄 수 있습니다.
 ```
 
-### AWK 활용법 {#toc3}
+### AWK 활용법 Window, Linux {#toc3}
 
 ```bash
+# Linux는 대부분 문제 없이 사용가능
+# Windows 에서 사용하는 방법은, git을 설치하면 git bash 가 있음
+# 거기에 awk 명령어가 동작해서 나는 git bash 로 awk 명령어 cat, tail 등 실행
+
 # log4j, logback 등의 로그를 cat 한후, sql 만추출하는 awk 실행
 cat /tomcat/log/debug.log | awk -f sqllog.awk
 
