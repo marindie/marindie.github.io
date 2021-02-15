@@ -15,8 +15,7 @@ redirect_from:
 ```md
 1. AWK 는 Text 파싱에 사용 될 수 있는 명령어로서 일반적인 GNU/Linux 환경에서 사용이 가능합니다.
 2. 정규식에 대한 이해가 있어야 샘플에 대한 이해가 가능할 것 같습니다. 설명은 달겠지만, 처음 접하시는 분들에게는 어려울 수 있습니다.
-3. 샘플 소스는 CentOS 6 에서 사용이 가능한 샘플입니다. 다른 Linux 에서 정상 동작 여부는 확인 하지 않았습니다.
-4. AWK 를 사용하게 된 배경은, grep 결과의 내용을 가공하여 제가 원하는 내용으로 출력하고자 함이였습니다. 
+3. AWK 를 사용하게 된 배경은, grep 결과의 내용을 가공하여 제가 원하는 내용으로 출력하고자 함이였습니다. 
    이와 비슷한 이유로 오신 분에게 도움이 될 것으로 생각합니다.
 ```
 
@@ -31,14 +30,83 @@ redirect_from:
 6. End block syntax 는 "END {awk-commands}" 와 같은 형태이며, 호출한 AWK 가 최종 종료시점에 동작합니다. 로그 파일 전체를 파싱해서 어떤 특정 케이스의 건수를 리포트 형태로 출력하고자 할 때, END block 에 awk-command 로 작성하면 최종 결과를 뿌려줄 수 있습니다.
 ```
 
-### SQL 쿼리문 파싱 샘플 {#toc3}
+### AWK 활용법 {#toc3}
 
-```md
-1. log4j 에서 SQL 문중에 PreparedStatement 와 같은 경우, Binding 하려는 Parameter 값이 쿼리문에 들어가지 있지 않은 상태로 "?" 로 표시가 되고 그 다음 라인에 해당 값들에 대한 정보를 뿌려주는게 일반적인것 같습니다. 
-2. 저는 해당 쿼리에서 에러가 나거나 할때, 로그에서 복사한 쿼리를 그대로 복사해서 테스트 해보고 싶어서 AWK 를 사용해서 완성된 쿼리문을 만들어 사용하고자 AWK 를 배우게 되었습니다. 아래는 그 결과물입니다.
+```bash
+# log4j, logback 등의 로그를 cat 한후, sql 만추출하는 awk 실행
+cat /tomcat/log/debug.log | awk -f sqllog.awk
+
+# 운영에서 sql 쿼리가 정상적인지, 또는 sql 문만 집중해서 보면서 테스트 할때,
+tail -f /tomcat/log/debug.log | awk -f sqllog.awk
+
+# alias 를 통해서 sql 문의 결과를 특정 파일에 남김
+alias sql1='cat /tomcat/log/debug.log | awk -f sqllog.awk > /tomcat/log/sql.log'
+alias sql1 >> ~/.bashrc
+alias tsql1='tail -f /tomcat/log/debug.log | awk -f sqllog.awk > /tomcat/log/sql.log'
+alias tsql1 >> ~/.bashrc
 ```
 
-```sh
+### Logback 에서 sqlonly, sqltiming 등과 같은 특정 쿼리문만 추출 {#toc4}
+
+```bash
+# 소스 설명
+# 주석 처리한 내용은 필요 없고 AWK 소스는 BEGIN 부터입니다.
+# 대략 jdbc.sqlonly 로 시작하는 logback 로그를 대상으로 어떤 작업을 진행한다.
+# getline 을 통해서 다음 줄을 계속 읽는다.
+# select 1 로만 끝나는 connection 체크 쿼리는 print 하지 않고 스킵
+# filterSql 등 쿼리중에서 AOP 나 쿼리가 너무 길고 자주 나타나서 소스 흐름을 읽는데 방해가 되는 녀석들 스킵
+# 위 두 케이스가 아니면 출력
+# 출력을 하다가 종료하는 조건은 스페이스 1칸만 있는 줄을 만나면 종료. 
+# 이유는 sqlonly 가 쿼리 출력후 반복적으로 그렇게 로그를 찍기에, 이를 활용해서 SQL 문만 추출
+
+BEGIN{
+    IGNORECASE=1
+}
+{
+    if(/jdbc.sqlonly/){
+		good = "Y";
+		while(getline>0){
+			if(/[0-9]. select 1$/){
+				while(getline>0){
+					if(/^ $/){
+						break;
+					}					
+				}
+			}else if(/filterSql/){
+				while(getline>0){
+					if(/^ $/){
+						break;
+					}					
+				}
+			}else{
+				print;
+			}
+			if(/^ $/){
+				break;
+			}
+		}
+		if(good == "Y"){
+			
+		}
+    }
+}
+```
+
+### SQL 쿼리문 파싱 샘플 (옜날 log4j) {#toc5}
+
+```md
+* log4j 에서 SQL 문중에 PreparedStatement 와 같은 경우, Binding 하려는 Parameter 값이 
+  쿼리문에 들어가지 있지 않은 상태로 "?" 로 표시가 되고 
+  그 다음 라인에 해당 값들에 대한 정보를 뿌려주는게 일반적인것 같습니다. 
+* 저는 해당 쿼리에서 에러가 나거나 할때, 
+  로그에서 복사한 쿼리를 그대로 복사해서 테스트 해보고 싶어서 
+  AWK 를 사용해서 완성된 쿼리문을 만들어 사용하고자 AWK 를 배우게 되었습니다. 
+* 이 소스는 최근에는 사용할 일이 없을것 같네요. 
+* 하지만 소스의 syntax 를 이해하시면, 조건분기가 좀 많이 필요할 경우 도움이 되실 것입니다.
+* replace, split 등을 활용했기에 저에게는 굉장히 도움이 많이 되는 소스입니다.
+```
+
+```bash
 BEGIN{
     IGNORECASE=1
 }
@@ -68,7 +136,7 @@ BEGIN{
 }
 ```
 
-### 소스 설명 쿼리 파싱 {#toc4}
+### 소스 설명 쿼리 파싱 {#toc6}
 
 ```md
 1. IGNORECASE 문은 옵션과 같은 것으로, 대소문자 구분을 무시하는것을 말합니다. 
@@ -84,7 +152,7 @@ BEGIN{
 11. 다음 매칭되는 Executing Statement 문이 나오기 전까지의 라인은 패스 하게 됩니다. 파일의 끝에 도달할때까지 진행됩니다.
 ```
 
-### COUNT 리포트 생성 샘플 {#toc5}
+### COUNT 리포트 생성 샘플 {#toc7}
 
 ```md
 1. 로그 파일을 보게 되던중, 해당 라인중에서 처리에 걸리는 시간을 출력하는 로그가 있었는데, 그 건들을 처리시간 단위로 분류하여 개수를 뽑아보고 싶어서 아래의 AWK 를 작성하게 되었습니다. 아래는 해당 예제 샘플입니다.
@@ -139,7 +207,7 @@ END{
 
 ```
 
-### 소스 설명 COUNT 리포트 {#toc6}
+### 소스 설명 COUNT 리포트 {#toc8}
 
 ```md
 1. "START" 라는 String 을 출력해주고 변수들을 선언하면서 0으로 초기화 시킵니다.
