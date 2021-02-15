@@ -68,30 +68,26 @@ BEGIN{
 }
 {
     if(/jdbc.sqlonly/){
-		good = "Y";
-		while(getline>0){
-			if(/[0-9]. select 1$/){
-				while(getline>0){
-					if(/^ $/){
-						break;
-					}					
-				}
-			}else if(/filterSql/){
-				while(getline>0){
-					if(/^ $/){
-						break;
-					}					
-				}
-			}else{
-				print;
-			}
-			if(/^ $/){
-				break;
-			}
-		}
-		if(good == "Y"){
-			
-		}
+        while(getline>0){
+            if(/[0-9]. select 1$/){
+                while(getline>0){
+                if(/^ $/){
+                    break;
+                }
+            }
+            }else if(/filterSql/){
+                while(getline>0){
+                    if(/^ $/){
+                        break;
+                    }
+                }
+            }else{
+                print;
+            }
+            if(/^ $/){
+                break;
+            }
+        }
     }
 }
 ```
