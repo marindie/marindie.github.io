@@ -1,14 +1,14 @@
 ---
 toc: true
-title: " Spring Boot Build 없이 Run"
-description: "Spring Spring Boot Build 없이 Run"
+title: "Spring Boot Build 없이 Run. 톰캣 서버 재기동 없이 수정 반영 class resource jsp 등등"
+description: "Spring Boot Build 없이 Run. 톰캣 서버 재기동 없이 수정 반영 class resource jsp 등등"
 categories: [Spring]
 tags: [Spring]
 redirect_from:
   - /2019/07/19/
 ---
 
-> Spring Boot Build 없이 Run
+> Spring Boot Build 없이 Run. 톰캣 서버 재기동 없이 수정 반영 class resource jsp 등등
 
 ### Spring Boot Build 없이 Run {#toc1}
 
@@ -24,7 +24,7 @@ redirect_from:
 2. run Configurations 설정
 boot 서비스 우클릭 → Run As → Run Configurations → Spring Boot App  → Arguments → VM arguments 에디터 창에서 아래 설정 작성
 -javaagent:C:\Users\Administrator\.m2\repository\org\springframework\springloaded\1.2.8.RELEASE\springloaded-1.2.8.RELEASE.jar -noverify
-※ 단, 경로는 본인 PC 경로 설정 할것
+단, 경로는 본인 PC 경로 설정 할것
 
 3. Mvn update 실시
 
@@ -32,6 +32,75 @@ boot 서비스 우클릭 → Run As → Run Configurations → Spring Boot App  
 C:\Users\Administrator\.m2\repository\org\springframework\springloaded\1.2.8.RELEASE\ 내에 springloaded-1.2.8.RELEASE.jar 확인
 
 5. Run As → Spring Boot App
+```
+
+### Tomcat 서버에 설정하는 방법 {#toc2}
+
+```bash
+# 1번 내용에서 Maven Repository 로 경로를 잡든
+# 그냥 Maven Central 에서 직접 jar 파일을 다운받든 어디든 내려 받은 다음
+# 파일이 있는 경로에 CATALINA_OPTS 로 export 걸면, 톰캣 기동시 해당 옵션이 포함되어 서버가 기동 된다.
+export CATALINA_OPTS="$CATALINA_OPTS -javaagent:/root/username/tomcat8.5/springloaded-1.2.8.RELEASE.jar -noverify"
+
+# 위의 옵션을 적는 파일은 톰캣 폴더 구조에서 bin 폴더 안의 setenv.sh 파일을 생성해서 적는다
+# 톰캣 8 에서는 이 파일이 존재하지 않는다. 생성하면 된다.
+# 아래는 catalina.sh 파일의 내용 중 일부 인데, CATALINA_BASE 또는 CATALINA_HOME 으로 잡힌 경로 안에서 bin/setenv.sh 파일이 존재하면 해당 파일을 실행해 준다.
+# 기본적으로 startup.sh 든 shutdown.sh 든 내부적으로 catalina.sh 를 호출하게 되어 있다. Ex) catalina.sh start or catalina.sh stop
+ if [ -r "$CATALINA_BASE/bin/setenv.sh" ]; then
+   . "$CATALINA_BASE/bin/setenv.sh"
+ elif [ -r "$CATALINA_HOME/bin/setenv.sh" ]; then
+   . "$CATALINA_HOME/bin/setenv.sh"
+ fi
+```
+
+### 하나의 톰캣 서버에 여려개의 Application 을 설정해서 원하는 대로 기동하는 방법 {#toc3}
+
+```md
+* 대부분 톰캣 서버 압축푼 폴더 전체를 복사해서 서버 별로 기동하는게 속이 편하긴 하다
+* 하지만 난 궁금해서 한번 한대의 서버에 어떻게 하면 되는지 검색해 봤다
+* 폴더 구조를 대충 그리자면
+tomcat
+ - bin (기존 모든 파일 존재)
+ - controller (start.sh stop.sh 파일이 존재)
+ - lib
+app1
+  - bin (여기 폴더에는 setenv.sh 파일만 존재)
+  - conf
+  - lib
+  - logs
+  - temp
+  - webapps
+  - work
+app2
+  - bin (여기 폴더에는 setenv.sh 파일만 존재)
+  - conf
+  - lib
+  - logs
+  - temp
+  - webapps
+  - work
+
+* 포인트는 app1, app2 의 CATALINA_HOME, CATALINA_BASE 의 경로를 다르게 잡아주기 위해 파라미터를 받아서 app1, app2 경로로 바꿔주고, 기존 톰캣에 들어있던 startup.sh 파일을 호출
+* 각 app1, app2 폴더안의 setenv.sh 파일에 CATALINA_OPTS 를 설정해서 기본적인 추가 옵션 처리
+
+# start.sh stop.sh 파일 내용
+#! /usr/bin/env sh
+
+app_instance=$1;
+
+BASE_TOMCAT=/home/yourBaseDirectory
+
+export CATALINA_HOME=$BASE_TOMCAT/tomcat8.5
+export CATALINA_BASE=$BASE_TOMCAT/$app_instance
+
+$CATALINA_HOME/bin/startup.sh
+# stop.sh 는 startup.sh 를 shutdown.sh 로 변경 하면 나머진 동일
+$CATALINA_HOME/bin/shutdown.sh
+
+# setenv.sh 파일 내용
+export CATALINA_OPTS="$CATALINA_OPTS -Xms1024m"
+export CATALINA_OPTS="$CATALINA_OPTS -Xmx4096m"
+export CATALINA_OPTS="$CATALINA_OPTS -XX:MaxPermSize=1024m"
 ```
 
 [^1]: This is a footnote.

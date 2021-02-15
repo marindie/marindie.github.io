@@ -133,21 +133,27 @@ git config --global alias.stash-rollback '!git stash show -p | git apply -R'
 
 ### git remote master 브랜치에 커밋된 내용이 있는 상태에서 local push 에러 처리 명령어 {#aa}
 
-```md
+```bash
 # local 에서 commit 을 한 후에, git pull 시도시에, remote 에 commit 된 내용이 존재하면, 
 # pull 을 해도 push 시에 에러가 발생함.
 # 이럴때 사용하는 명령어.
 
 # git pull 을 해도 checkout version update 가 되지 않아서 merge 로 사용한다.
+git pull origin master
+git pull origin/branch_name local_branch_name
 git merge origin/master 
 
-# 충돌 내용이 있다면 로컬 수정본을 백업해 두고 origin master 것으로 엎어치는것이 빠르다.
+# 대부분 요즘 VS CODE 의 Git 관련 Extension 이나, 다른 IDE 에서 보여주는 Git Diff 툴로 대부분 머지한다
+
+# Remote 의 버전으로 엎어치려는 경우
+# git pull --rebase origin/remote_branch_name local_branch_name
 git pull --rebase origin master
 # 또는 
 git fetch --all
 git reset --hard origin/master
 # 이후에 다시 푸쉬
 git push origin master
+git push origin/remote_branch_name local_branch_name
 ```
 
 ### 기본 예제 {#l}

@@ -12,7 +12,7 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "dark" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "neon" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "ko"
@@ -252,6 +252,7 @@ plugins:
   # - jekyll-toc
   - jekyll/tagging
   - jekyll-tagging-related_posts
+  - hook-add-last-modified-date
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -299,6 +300,8 @@ compress_html:
   ignore:
     envs: production
 
+liquid:
+  error_mode: warn
 
 # Defaults
 defaults:

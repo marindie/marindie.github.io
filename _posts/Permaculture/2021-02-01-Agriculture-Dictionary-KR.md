@@ -2,10 +2,10 @@
 toc: true
 title: "영어 단어 모음 (퍼머컬처, 무경운 관련)"
 description: "퍼머컬처, 무경운 농법, 친환경 농법, 자연 관련 영어 책에서 나오는 단어 모음" 
-categories: [Permaculture]
+categories: [Nature]
 tags: [Dictionary]
 redirect_from:
-  - /2021/02/01/
+  - /2021/02/14/
 ---
 
 > 퍼머컬처, 무경운 농법, 친환경 농법, 자연 관련 영어 책에서 나오는 단어 모음
@@ -107,6 +107,19 @@ take food out : 식량(식품)을 꺼내다
 raft : 뗏목
 mitigate : 경감(완화) 시키다
 rainbow trout : 무지개송어
+sulplus : 잉여가치
+sterile : 무균, 멸균, 불임
+shed : 헛간, 작업장, 하치장
+slurry : 고체와 액체의 혼합물 또는 미세한 고체가 물속에 현탁된 현탁액
+fertilizer : 비료
+myriad : 무수히
+plethora : 과다, 과잉
+algae : 조류 (물속에 사는 식물의 한 무리)
+hydroponic : 수경 재배법
+aquaculture : 양식산업
+nitrosomonas : (토양비료학) 니트로소모나스
+nitrobacter : (토양비료학) 니트로박터
+nitrate : 질산염
 ```
 
 [^1]: This is a footnote.
