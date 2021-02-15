@@ -53,7 +53,24 @@ export CATALINA_OPTS="$CATALINA_OPTS -javaagent:/root/username/tomcat8.5/springl
  fi
 ```
 
-### 하나의 톰캣 서버에 여려개의 Application 을 설정해서 원하는 대로 기동하는 방법 {#toc3}
+### Eclipse Tomcat 서버 설정 {#toc3}
+
+```md
+* 아래의 스샷들을 참고
+* Server Option 관련 영역은 모두 체크 해제
+* Publishing 관련 해서는 automatically publish when resourses change 선택
+* server.xml 파일 안의 reloadable 속성 false로. 아래 정보 참고
+<Context docBase="front" path="/" reloadable="false" source="org.eclipse.jst.jee.server:front"/>
+* 마지막으로 아래 옵션을 넣어줘야 하는데.. 서버 만든거 더블클릭하면 뜨는 아래의 스샷 에서 Open launch configuration 클릭후 argument 탭 안의 VM argument 안에 아래의 명령어 입력. -D 옵션을 빼고 있는 그대로 붙여주면 됨. 경로는 알아서 다운받은 경로로 바꿔주기
+-javaagent:C:\springloaded-1.2.8.RELEASE.jar -noverify 
+```
+
+![eclipse톰캣](/assets/images/screen/eclipse-tomcat01.png){: align-left}
+서버 설정 화면
+![eclipse톰캣](/assets/images/screen/eclipse-tomcat02.png){: align-left}
+Open launch configuration 팝업 argument 세팅
+
+### 하나의 톰캣 서버에 여려개의 Application 을 설정해서 원하는 대로 기동하는 방법 {#toc4}
 
 ```md
 * 대부분 톰캣 서버 압축푼 폴더 전체를 복사해서 서버 별로 기동하는게 속이 편하긴 하다
