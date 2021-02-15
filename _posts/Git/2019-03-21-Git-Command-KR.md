@@ -113,6 +113,22 @@ git checkout stash -- filepath #파일을 수기로 하나씩 덮어써야 할�
 
 # 머지하면서 처리하고 싶을때
 git merge --squash --strategy-option=theirs stash
+
+# 마지막으로 저장한 stash 제거
+git stash drop
+
+# 이름으로 삭제를 원할경우 index 번호로 삭제
+git stash drop 1
+
+# stash 내용 불러오고 해당 stash 삭제시
+git stash pop
+
+# stash 적용한거 롤백
+git stash show -p | git apply -R # 가장 최근
+git stash show -p 1 | git apply -R # 다른 stash 이면 index 도 뒤에 추가
+
+# stash rollback alias 생성
+git config --global alias.stash-rollback '!git stash show -p | git apply -R'
 ```
 
 ### git remote master 브랜치에 커밋된 내용이 있는 상태에서 local push 에러 처리 명령어 {#aa}
