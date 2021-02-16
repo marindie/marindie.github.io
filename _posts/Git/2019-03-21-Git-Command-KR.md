@@ -15,63 +15,43 @@ redirect_from:
 이해를 위해 git local 저장소의 폴더명을 git_folder 라고 하고 진행하겠습니다.
 cd git_folder 로 해당 폴더에 있다고 가정합니다.
 
-### Git Local Repository 생성 {#b}
+### Git 기본 명령어 {#b}
 
-```md
+```bash
+# local repository 생성
 git init
-```
 
-### Git Remote Repository 추가 {#c}
-
-```md
+# remote repository 추가
 git remote add origin GIT_URL
-```
 
-### Git Staging 하기 {#d}
-
-```md
+# Git Staging 하기 
 git add .
 git add \*.java   #또는  
 git add *.java
 git add Documentation/\*.txt #(Documentation  폴더안의 모든 .txt 파일 staging)
-```
 
-### Git Commit 하기 {#e}
-
-```md
+# Git Commit 하기 
 git commit -m "First Commit."
-```
 
-### Git Log 확인 {#f}
-
-```md
+# Git Log 확인
 git log
 git log -p -2 
 #p 옵션은 커밋의 diff 를 보여줌. -2 는 최근 2개의 결과만 보여달라는 의미
-```
 
-### Git Remote Repository 에 Commit 하기 {#g}
-
-```md
+# Git Remote Repository 에 Commit 하기 
 git push origin master
-```
 
-### Git Remote Repository 내려받기(clone) {#h}
-
-```md
+# Git Remote Repository 내려받기(clone)
 git clone GIT_URL
-```
 
-### Git Remote Repository 단축이름과 URL 확인 명령어. {#i}
-
-```md
+# Git Remote Repository 단축이름과 URL 확인 명령어
 cd git_folder
 git remote -v
 ```
 
-### Git 설정하기. {#j}
+### Git 설정하기. {#c}
 
-```md
+```bash
 #아래의 내용은 설정에 대한 부분인데, 나는 아래의 내용을 config 하지 않고 사용합니다
 #ssh 연결도 하지 않고 사용중입니다.
 
@@ -83,12 +63,49 @@ git config --global user.email johndoe@example.com
 git config --global http.sslVerify false
 ```
 
-### git 삭제 {#k}
+### git pull to, push from, remote master 명령어 {#aa}
 
-```md
-#저는 명령어 보다는 그냥 .git 폴더를 직접 삭제하는 편입니다. 
-#현재까지 큰 문제는 없었습니다. 하지만, submodule을 사용할때는 명령어로 하라는 대로 처리하고 있습니다.
-#submodule 삭제 관련해서는 아래의 5-4번 내용을 참고하시기 바랍니다.
+```bash
+# git pull 명령어
+git pull origin master
+git pull origin/branch_name local_branch_name
+
+# merge 명령어
+# origin/master 의 remote 브랜치와
+# 현재 있는 branch 간의 동기화
+# 머지의 결과는 양쪽 브랜치 모두 같은 내용으로 싱크가 마춰진다는 개념으로 이해해야한다
+git merge origin/master 
+
+# Remote 브랜치의 Head 버전으로 엎어치려는 경우
+git pull --rebase origin/remote_branch_name local_branch_name
+git pull --rebase origin master
+# 또는 
+git fetch --all
+git reset --hard origin/master
+
+# 이후에 다시 푸쉬
+git push origin master
+git push origin/remote_branch_name local_branch_name
+```
+
+### git checkout, fetch, branch 명령어
+
+```bash
+# head 커밋의 내용으로 해당 파일을 엎어침
+git checkout -- filename
+git checkout head filename
+
+# 새로운 브랜치 생성시, remote 의 특정 브랜치의 head 커밋 버전을 복사해서 생성
+# 종종 브랜치 이동시, 충돌이슈를 겪는데, 
+# git stash 명령어로 로컬 수정본들을 저장하면 문제가 없다 아래의 git stash 설명도 참고하시길
+git checkout -b local-branch-name remote-branch-name(origin/master)
+git checkout -b branch01 origin/branch01
+
+# remote branch 정보 갱신
+git fetch origin
+
+# 모든 브랜치 정보 보기
+git branch -v -a
 ```
 
 ### git stash {#toc1}
@@ -154,31 +171,6 @@ git stash show -p 1 | git apply -R # 다른 stash 이면 index 도 뒤에 추가
 git config --global alias.stash-rollback '!git stash show -p | git apply -R'
 ```
 
-### git remote master 브랜치에 커밋된 내용이 있는 상태에서 local push 에러 처리 명령어 {#aa}
-
-```bash
-# local 에서 commit 을 한 후에, git pull 시도시에, remote 에 commit 된 내용이 존재하면, 
-# pull 을 해도 push 시에 에러가 발생함.
-# 이럴때 사용하는 명령어.
-
-# git pull 을 해도 checkout version update 가 되지 않아서 merge 로 사용한다.
-git pull origin master
-git pull origin/branch_name local_branch_name
-git merge origin/master 
-
-# 대부분 요즘 VS CODE 의 Git 관련 Extension 이나, 다른 IDE 에서 보여주는 Git Diff 툴로 대부분 머지한다
-
-# Remote 의 버전으로 엎어치려는 경우
-# git pull --rebase origin/remote_branch_name local_branch_name
-git pull --rebase origin master
-# 또는 
-git fetch --all
-git reset --hard origin/master
-# 이후에 다시 푸쉬
-git push origin master
-git push origin/remote_branch_name local_branch_name
-```
-
 ### 기본 예제 {#l}
 
 ```md
@@ -229,8 +221,8 @@ git submodule add <repository_url> <submodule_dir_path_starting_from_parent>
 
 Ex) 폴더 구조
 parent
-	/child
-		/submod1
+  /child
+    /submod1
 git submodule add GIT_URL child/submod1
 ```
 
@@ -252,7 +244,7 @@ git submodule add # 하면 정상적으로 다시 추가 됨.
 git submodule foreach git pull origin master (submodule 들의 remote 이름이 전부 origin에 master branch 이어야 가능할 듯.)
 ```
 
-# 새로운 폴더에 parent 부터 다시 clone 하는 경우 {#q}
+### 새로운 폴더에 parent 부터 다시 clone 하는 경우 {#q}
 
 ```md
 git clone GIT_URL 를 하고나서 submodule 에 가서 보면 내용이 비어 있다.
@@ -292,8 +284,8 @@ child/submod1 이라고 명시하니까 잘 되었습니다. window 에서는 �
 
 Ex) 폴더 구조
 parent
-	/child
-		/submod1
+  /child
+    /submod1
 cd parent
 git init
 git remote add origin PARENT_GIT_URL
@@ -339,7 +331,15 @@ git reset HEAD~2 // 마지막 2개의 commit 취소
 
 ```js
 // 해당 git 에 계정이 없거나, 계정 정보가 변경되어 있는데 일치 하지 않거나 등등. 어쨌든 계정 이슈이므로 기존 정보 날리고 다시 시도
-git config --system --unset credential.helper
+ git config --system --unset credential.helper
+```
+
+### git 삭제 {#k}
+
+```bash
+#저는 명령어 보다는 그냥 .git 폴더를 직접 삭제하는 편입니다. 
+#현재까지 큰 문제는 없었습니다. 하지만, submodule을 사용할때는 명령어로 하라는 대로 처리하고 있습니다.
+#submodule 삭제 관련해서는 아래의 5-4번 내용을 참고하시기 바랍니다.
 ```
 
 감사합니다.
