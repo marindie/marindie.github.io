@@ -15,7 +15,7 @@ redirect_from:
 이해를 위해 git local 저장소의 폴더명을 git_folder 라고 하고 진행하겠습니다.
 cd git_folder 로 해당 폴더에 있다고 가정합니다.
 
-### Git 기본 명령어 {#b}
+### Git 기본 명령어 {#toc1}
 
 ```bash
 # local repository 생성
@@ -49,7 +49,7 @@ cd git_folder
 git remote -v
 ```
 
-### Git 설정하기. {#c}
+### Git 설정하기. {#toc2}
 
 ```bash
 #아래의 내용은 설정에 대한 부분인데, 나는 아래의 내용을 config 하지 않고 사용합니다
@@ -63,7 +63,7 @@ git config --global user.email johndoe@example.com
 git config --global http.sslVerify false
 ```
 
-### git pull to, push from, remote master 명령어 {#aa}
+### git pull to, push from, remote master 명령어 {#toc3}
 
 ```bash
 # git pull 명령어
@@ -88,7 +88,7 @@ git push origin master
 git push origin/remote_branch_name local_branch_name
 ```
 
-### git checkout, fetch, branch 명령어
+### git checkout, fetch, branch 명령어 {#toc4}
 
 ```bash
 # head 커밋의 내용으로 해당 파일을 엎어침
@@ -111,7 +111,54 @@ git fetch origin
 git branch -v -a
 ```
 
-### git stash {#toc1}
+### git merge 명령어 {#toc5}
+
+```bash
+# 현재 있는 브랜치가 master 라고 가정
+# merge with another branch
+git merge branch-name
+
+# 충돌이 났다고 가정 Ex. staging|MERGING 상태
+# master 버전으로 업데이트
+git checkout --ours file.js
+# branch-name 으로 업데이트
+git checkout --theirs file.js
+# 하고 나서는 add 해주기
+git add file.js
+# 머지 진행 요청. 재검토 요청. 충돌이 없으면 머지 완료됨
+git merge --continue
+```
+
+### add commit rollback 취소 {#toc5}
+
+```js
+// add 를 rollback. 취소
+git reset HEAD CONTRIBUTING.md
+// add 한 전체 파일 rollback 
+git reset
+
+// commit을 취소하고 해당 파일들은 staged 상태로 워킹 디렉터리에 보존
+git reset --soft HEAD^
+// commit을 취소하고 해당 파일들은 unstaged 상태로 워킹 디렉터리에 보존
+git reset --mixed HEAD^ // 기본 옵션
+git reset HEAD^ // 위와 동일
+git reset HEAD~2 // 마지막 2개의 commit 취소
+```
+
+### git http basic access denied {#toc6}
+
+```bash
+# 해당 git 에 계정이 없거나, 계정 정보가 변경되어 있는데 일치 하지 않거나 등등. 
+# authentication failed
+git remote -v
+git remote remove origin #origin 이 아닐 수 있음
+git remote add origin http-url-of-your-git-project
+
+# 또 다른 방법
+git config --system --unset credential.helper
+```
+
+### git stash {#toc7}
 
 ```bash
 # 결론만 얘기하자면 아래 명령어로 각각 파일별로 처리하는게 속편함
@@ -174,7 +221,7 @@ git stash show -p 1 | git apply -R # 다른 stash 이면 index 도 뒤에 추가
 git config --global alias.stash-rollback '!git stash show -p | git apply -R'
 ```
 
-### 기본 예제 {#l}
+### 기본 예제 {#toc8}
 
 ```md
 제가 일반적으로 remote repository 에 직접 작업한 프로젝트를 최초 등록할때의 작업 순서를 요약해 보았습니다.
@@ -201,7 +248,7 @@ git config --global http.sslVerify false
 ssh 연동 관련 키 생성 및 github 에 추가하는 부분은 검색하시면 잘 나와 있습니다.
 ```
 
-### 큰 프로젝트 안에 별도로 관리를 하고자 하는 작은 프로젝트를 관리하는 경우 {#m}
+### 큰 프로젝트 안에 별도로 관리를 하고자 하는 작은 프로젝트를 관리하는 경우 {#toc7}
 
 ```md
 소스 관리중 어떤 프로젝트가 상위 프로젝트 안에 포함되어 있는 경우에,
@@ -217,7 +264,7 @@ parent 에서 git submodule foreach git pull origin master 나 git submodule ini
 그냥 둘다 최신화 시키고 있습니다.
 ```
 
-### git submodule 추가 방법 {#n}
+### git submodule 추가 방법 {#toc8}
 
 ```md
 git submodule add <repository_url> <submodule_dir_path_starting_from_parent>
@@ -229,7 +276,7 @@ parent
 git submodule add GIT_URL child/submod1
 ```
 
-### submodule 파일 삭제 없이 git 에서만 삭제 방법 {#o}
+### submodule 파일 삭제 없이 git 에서만 삭제 방법 {#toc9}
 
 ```md
 # child 폴더를 child_bak 으로 이름 변경
@@ -239,7 +286,7 @@ git rm -r --cache child/submod1
 git submodule add # 하면 정상적으로 다시 추가 됨.
 ```
 
-### parent 에서 submodule 전부다 sync 하는 명령어 {#p}
+### parent 에서 submodule 전부다 sync 하는 명령어 {#toc10}
 
 ```md
 # parent 입장에서 submodule 들이 에러가 나는 상황이 아니면, 최신 상태가 유지 되지 않아도 관계 없다.
@@ -247,7 +294,7 @@ git submodule add # 하면 정상적으로 다시 추가 됨.
 git submodule foreach git pull origin master (submodule 들의 remote 이름이 전부 origin에 master branch 이어야 가능할 듯.)
 ```
 
-### 새로운 폴더에 parent 부터 다시 clone 하는 경우 {#q}
+### 새로운 폴더에 parent 부터 다시 clone 하는 경우 {#toc11}
 
 ```md
 git clone GIT_URL 를 하고나서 submodule 에 가서 보면 내용이 비어 있다.
@@ -258,9 +305,9 @@ git submodule update
 git clone --recursive GIT_URL
 ```
 
-### submodule 작업한 파일은 남겨 놓고 git 설정 정보만 삭제 {#r}
+### submodule 작업한 파일은 남겨 놓고 git 설정 정보만 삭제 {#toc12}
 
-```md
+```bash
 mv subfolder subfolder_tmp
 git submodule deinit subfolder
 git rm --cached subfolder
@@ -272,10 +319,9 @@ git add subfolder
 
 # 가장 특이한 점이자 중요한 점은, submodule 폴더경로는 parent 폴더를 기준으로 작성해야 하며, parent 폴더에서 git submodule
 # 명령어를 먹여야 하는것 같습니다.
-
 ```
 
-### Submodule 기본 예제 {#s}
+### Submodule 기본 예제 {#toc13}
 
 ```md
 위의 Submodule 내용을 다시 한번 설명하는 것입니다.
@@ -306,7 +352,7 @@ git push origin master
 Submodule repository url 가서 커밋 내용 확인.
 ```
 
-### unable to rewind rpc post data - try increasing http.postBuffer {#toc1}
+### unable to rewind rpc post data - try increasing http.postBuffer {#toc14}
 
 ```js
 git config --global http.postBuffer 2097152000
@@ -314,30 +360,7 @@ git config --global https.postBuffer 2097152000
 //(2097152000byte == 2000mb)
 ```
 
-### add commit rollback 취소 {#toc2}
-
-```js
-// add 를 rollback. 취소
-git reset HEAD CONTRIBUTING.md
-// add 한 전체 파일 rollback 
-git reset
-
-// commit을 취소하고 해당 파일들은 staged 상태로 워킹 디렉터리에 보존
-git reset --soft HEAD^
-// commit을 취소하고 해당 파일들은 unstaged 상태로 워킹 디렉터리에 보존
-git reset --mixed HEAD^ // 기본 옵션
-git reset HEAD^ // 위와 동일
-git reset HEAD~2 // 마지막 2개의 commit 취소
-```
-
-### git http basic access denied {#toc3}
-
-```js
-// 해당 git 에 계정이 없거나, 계정 정보가 변경되어 있는데 일치 하지 않거나 등등. 어쨌든 계정 이슈이므로 기존 정보 날리고 다시 시도
- git config --system --unset credential.helper
-```
-
-### git 삭제 {#k}
+### git 삭제 {#toc16}
 
 ```bash
 #저는 명령어 보다는 그냥 .git 폴더를 직접 삭제하는 편입니다. 
