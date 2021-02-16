@@ -95,6 +95,9 @@ git push origin/remote_branch_name local_branch_name
 git checkout -- filename
 git checkout head filename
 
+# head가 아닌 특정 커밋 버전의 파일 내용으로 덮어씌울때
+git checkout commit-id filename
+
 # 새로운 브랜치 생성시, remote 의 특정 브랜치의 head 커밋 버전을 복사해서 생성
 # 종종 브랜치 이동시, 충돌이슈를 겪는데, 
 # git stash 명령어로 로컬 수정본들을 저장하면 문제가 없다 아래의 git stash 설명도 참고하시길
