@@ -373,6 +373,7 @@ raised beds closed-loop aquaponics
 ```
 
 ![denitrification](/assets/images/screen/denitrification.png)
+![질소순환](/assets/images/screen/질소순환.png)
 
 [^1]: This is a footnote.
 
