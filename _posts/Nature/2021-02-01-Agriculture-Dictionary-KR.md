@@ -150,6 +150,11 @@ aeration : 탄산 가스 포화, aeration basion(공기 분지)
 basin : (큰 강의) 유역, 양푼, 대야
 oxidize : 산화시키다
 oxidatoin : 산화
+gravel : 자갈
+negligible : (중요성,규모가 작아) 무시해도 될 정도의
+crushed granite : 으개진 화강암
+nonwoven : 부직포의 
+crank : 기계등을 돌아가게 하다
 ```
 
 [^1]: This is a footnote.

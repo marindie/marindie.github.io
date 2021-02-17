@@ -351,11 +351,18 @@ raised beds closed-loop aquaponics
 * two important workers who help treat wastewater
 * They break down ammonia from pee
 * Nitrosomonas turns ammonia into nitrites using oxygen
-* Then Nitrobacter turn nitrites into nitrate
+* Then Nitrobacter turns nitrites into nitrate
 * fish poop ammonia(nh3, higher than ph7, harmful to the fish) & 
   ammonium(nh4+, lower than ph7 which is not harmful to the fish) 
   based on the ph of the aquarium
-* 
+* wimp when it comes to UV light
+* Nitrosomonas 는 암모니아를 아질산염으로 바꾸고
+* Nitrobacter 는 아질산염을 질산염으로 바꾼다
+* ph 정도는 6.2 ~ 6.4 정도가 제일 좋은데
+* 이유는 이런 nitrification 작용을 하는 다른 박테리아들이 활동 하는 구간이
+* ph6 ~ 6.8 정도의 구간이기 때문이다.
+* 이 nitrifier 박테리아들은 매우 민감하기에, ph 나 온도가 갑자기 변하면 활동이 둔해진다고 한다
+* 자갈밭을 휘젓거나 하는 행동만으로도 박테리아들이 빛에 노출되 죽거나 nitrification 활동이 낮아질 수 있다.
 ```
 
 ![denitrification](/assets/images/screen/denitrification.png)
