@@ -30,7 +30,6 @@ Joseph Needham
 cover crop : 피복작물
 forage crop/grass : 사료용 작물/풀
 erosion : 침식
-weed : 잡초
 sedimentation : 퇴적(작용)
 mowing : 풀[잔디, 보리] 베기
 noxious : 유해한,유독한
@@ -54,7 +53,7 @@ climber : 덩굴식물
 mindbogging : 믿기 어려울 만큼 놀라운, 너무나 놀라운, 상상도 안되는
 wheat : 밀
 abundant : 풍부한
-biomass : 생물량
+biomass : 생물량 (합성에 의하여 생성되는 다양한 조류(藻類) 및 식물 자원, 즉 나무, 풀, 농작물의 가지, 잎, 뿌리, 열매 등)
 sorry state : 유감스런상태, 서투른 상태
 plough : 쟁기, 쟁기로 갈다
 weed : 잡초, 잡초를 뽑다
