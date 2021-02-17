@@ -345,6 +345,21 @@ raised beds closed-loop aquaponics
 
 ![aquaponic-01](/assets/images/screen/aquaponic-01.png)
 
+### Nitrosomonas and Nitrobacter {#toc23}
+
+```md
+* two important workers who help treat wastewater
+* They break down ammonia from pee
+* Nitrosomonas turns ammonia into nitrites using oxygen
+* Then Nitrobacter turn nitrites into nitrate
+* fish poop ammonia(nh3, higher than ph7, harmful to the fish) & 
+  ammonium(nh4+, lower than ph7 which is not harmful to the fish) 
+  based on the ph of the aquarium
+* 
+```
+
+![denitrification](/assets/images/screen/denitrification.png)
+
 [^1]: This is a footnote.
 
 [kramdown]: https://kramdown.gettalong.org/

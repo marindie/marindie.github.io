@@ -118,6 +118,7 @@ hydroponic : 수경 재배법
 aquaculture : 양식산업
 nitrosomonas : (토양비료학) 니트로소모나스
 nitrobacter : (토양비료학) 니트로박터
+nitrite : 아질산염 (물고기에게 좋지 않음)
 nitrate : 질산염
 irrigate : 물을 관개하다, 땅에 물을 대다
 solubilize : 가용성, 용해도를 높이다, 물에 잘녹도록 하다
@@ -145,6 +146,10 @@ tangible : 분명히 존재하는, 만질 수 있는
 STEM education : 과학, 기술, 공학, 수학 교육
 district : 지역, 지구
 wicking : 양초의 심지
+aeration : 탄산 가스 포화, aeration basion(공기 분지)
+basin : (큰 강의) 유역, 양푼, 대야
+oxidize : 산화시키다
+oxidatoin : 산화
 ```
 
 [^1]: This is a footnote.

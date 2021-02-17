@@ -161,9 +161,43 @@ git config --system --unset credential.helper
 ### git stash {#toc7}
 
 ```bash
-# 결론만 얘기하자면 아래 명령어로 각각 파일별로 처리하는게 속편함
-# git stash apply 로 파일 불러들일때, Eclipse .classpath 파일에서 conflict 나는게 귀찮음.
-# 비슷한 현상들이 있을 수 있어서, 정말 필요한 파일만 개별적으로 선별해서 git stash 하는게 좋은
+# 현재 로컬에서 사용해야 하는 파일들을 저장하고 다른 브랜치로 넘어갈때
+# 혹은 다른 브랜치로 넘어가려는데, 설정 파일 충돌이 나서 문제가 될때, 현재 변경된 파일들을 모두 임시저장 해줍니다.
+git stash 
+
+# 저장 내역 확인
+git stash list
+# stash 내용 확인
+git stash show 1 (index 0,1,2 ...)
+# stash 내용의 파일들만 보고 싶을때
+git stash show 1 --name-only
+
+# 저장된 내용 불러오기 (가장 최근)
+git stash apply
+
+# 원하는 목록에서 index 번호로
+git stash apply indexNumber
+
+# git stash 를 했는데, 충돌이 나는경우, stash 버전으로 강제로 덮어쓰기
+git checkout stash -- .
+# 파일을 하나씩 불러들일때
+git checkout stash -- filepath 
+# 가장 최근이 아닌 다른 stash 정보에서 파일 정보를 사용할때
+git checkout stash@{1} -- filepath  
+
+# 머지하면서 처리하고 싶을때
+git merge --squash --strategy-option=theirs stash
+
+# 마지막으로 저장한 stash 제거
+git stash drop
+
+# 이름으로 삭제를 원할경우 index 번호로 삭제
+git stash drop 1
+
+# stash 내용 불러오고 해당 stash 삭제시
+git stash pop
+
+# 필요한 파일만 개별적으로 선별해서 git stash 할 수 있도록 사용자 입력을 받음
 git stash save "commit message" -p
 
 # 위 명령어를 날리면 잠시후에 user input 형태로 각 diff 별로 어떻게 처리할 지 물어본다
@@ -183,35 +217,6 @@ git stash save "commit message" -p
    s - split the current hunk into smaller hunks
    e - manually edit the current hunk
    ? - print help
-
-# 현재 로컬에서 사용해야 하는 파일들을 저장하고 다른 브랜치로 넘어갈때
-# 혹은 다른 브랜치로 넘어가려는데, 설정 파일 충돌이 나서 문제가 될때, 현재 변경된 파일들을 모두 임시저장 해줍니다.
-git stash 
-
-# 저장 내역 확인
-git stash list
-
-# 저장된 내용 불러오기 (가장 최근)
-git stash apply
-
-# 원하는 목록에서 index 번호로
-git stash apply indexNumber
-
-# git stash 를 했는데, 충돌이 나는경우, stash 버전으로 강제로 덮어쓰기
-git checkout stash -- .
-git checkout stash -- filepath #파일을 수기로 하나씩 덮어써야 할때
-
-# 머지하면서 처리하고 싶을때
-git merge --squash --strategy-option=theirs stash
-
-# 마지막으로 저장한 stash 제거
-git stash drop
-
-# 이름으로 삭제를 원할경우 index 번호로 삭제
-git stash drop 1
-
-# stash 내용 불러오고 해당 stash 삭제시
-git stash pop
 
 # stash 적용한거 롤백
 git stash show -p | git apply -R # 가장 최근
