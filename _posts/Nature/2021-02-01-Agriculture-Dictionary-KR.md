@@ -1,14 +1,14 @@
 ---
 toc: true
 title: "영어 단어 모음 (퍼머컬처, 무경운 관련)"
-description: "퍼머컬처, 무경운 농법, 친환경 농법, 자연 관련 영어 책에서 나오는 단어 모음" 
+description: "퍼머컬처, 수경재배, 무경운 농법, 친환경 농법, 자연 관련 영어 책에서 나오는 단어 모음" 
 categories: [Nature]
 tags: [Dictionary]
 redirect_from:
   - /2021/02/14/
 ---
 
-> 퍼머컬처, 무경운 농법, 친환경 농법, 자연 관련 영어 책에서 나오는 단어 모음
+> 퍼머컬처, 수경재배, 무경운 농법, 친환경 농법, 자연 관련 영어 책에서 나오는 단어 모음
 
 ### 읽는 책, 영상, 참조 (reference) {#toc1}
 
@@ -155,6 +155,8 @@ negligible : (중요성,규모가 작아) 무시해도 될 정도의
 crushed granite : 으개진 화강암
 nonwoven : 부직포의 
 crank : 기계등을 돌아가게 하다
+symbiotic : 공생하는
+mutualize : 상호작용을 하다
 ```
 
 [^1]: This is a footnote.
