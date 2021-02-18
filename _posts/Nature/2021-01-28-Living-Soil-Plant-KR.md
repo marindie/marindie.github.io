@@ -1,4 +1,8 @@
 ---
+header:
+  video:
+    id: ntJouJhLM48
+    provider: youtube
 toc: true
 title: "건강한 토양, 살아있는 생명 활동, Living Soil, Healthy Soil"
 description: "토양에 대해 공부하고자 메모, 정리, 생각들을 기록" 
