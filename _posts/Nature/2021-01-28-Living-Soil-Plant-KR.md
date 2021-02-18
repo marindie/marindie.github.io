@@ -387,7 +387,7 @@ redirect_from:
 - 아래의 영상은 퍼머컬처와 아쿠아포닉에 대해 예시를 들어가며 설명하는 유투브 컨텐츠이다
 - 조금 집중이 떨어지기도 하는 영상이지만, 신선한 충격을 받았다
 
-{% include video id="Ry72KdGeSb-E3QON" provider="youtube" %}
+{% include video id="Zv2kLAK73Vs" provider="youtube" %}
 
 ### The LEAF Aquaponic Greenhouse {#toc22}
 
