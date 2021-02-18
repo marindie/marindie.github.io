@@ -157,6 +157,22 @@ nonwoven : 부직포의
 crank : 기계등을 돌아가게 하다
 symbiotic : 공생하는
 mutualize : 상호작용을 하다
+hairy vetch : 헤어리베치
+lurch : (갑자기) 휘청거리다
+catalyze : 촉진시키다, 촉매 작용을 하다
+cornucopia : 풍요의 뿔, 좋은것이 가득찬
+prevention : 예방, 방지
+petroleum : 석유
+dominating : 지배하는, 우세한
+preach : 설교하다
+enrich : 풍요롭게하다, 질을 높이다, 어떤영양소를 강화하다
+publicize : 광고하다, 일반사람들에게 알리다
+avidly : 열광적으로, 탐하여
+shyster : 사기꾼(특히 변호사)
+field pea : 필드 피, 완두콩의 일종, 목초용 품종
+crimson clover : 진홍 토끼풀, 쌍떡잎식물 장미콩 콩과의 한해살이풀
+winter rye : 가을에 파종하는 호밀
+rizobia : 근류균
 ```
 
 [^1]: This is a footnote.
