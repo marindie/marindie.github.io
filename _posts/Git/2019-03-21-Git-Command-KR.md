@@ -228,17 +228,7 @@ git config --global alias.stash-rollback '!git stash show -p | git apply -R'
 
 ### 기본 예제 {#toc8}
 
-```md
-제가 일반적으로 remote repository 에 직접 작업한 프로젝트를 최초 등록할때의 작업 순서를 요약해 보았습니다.
-먼저 github 사이트에서 remote repository 를 만듬. 이때!!! readme.md 파일을 만들지 않고 프로젝트를 생성합니다.
-이게 가장 중요한 점인데, 이유는 readme.md 를 만들게 되면 커밋이 발생하게 되고, 이 remote repository 에 
-바로 push 하면 readme.md 커밋한 내용이 내 로컬 PC 에 만든 local repository 에는 없기 때문에, 
-기존에 작업해 놓은 폴더를 다이렉트로 remote repository 에 연결하기 불편합니다.
-해결을 위해서는 새폴더 만들고 git clone GIT_URL 로 clone 하고 나서,
-내가 작업한 내용 다시 복사 해서 넣고 git add -> git commit 을 해야 정상적으로 진행 됩니다.
-뭐 하다 보면 그것도 하게 되기는 하는데... 내가 원하는 방식은,
-remote 에 만들고 기존에 작업한 최상위 폴더에 git local repository 만들고 연결해서 바로 커밋이 바로 되는게 목적입니다.
-
+```bash
 정상적으로 project 만 만들었다고 하면(commit 없이)
 작업 폴더에 가서
 git init
@@ -283,7 +273,7 @@ git submodule add GIT_URL child/submod1
 
 ### submodule 파일 삭제 없이 git 에서만 삭제 방법 {#toc9}
 
-```md
+```bash
 # child 폴더를 child_bak 으로 이름 변경
 git submodule deinit child/submod1
 git rm -r --cache child/submod1 
@@ -293,7 +283,7 @@ git submodule add # 하면 정상적으로 다시 추가 됨.
 
 ### parent 에서 submodule 전부다 sync 하는 명령어 {#toc10}
 
-```md
+```bash
 # parent 입장에서 submodule 들이 에러가 나는 상황이 아니면, 최신 상태가 유지 되지 않아도 관계 없다.
 # 하지만, 어떤 이유에서 최신화를 시켜야 한다면, 아래의 명령어가 가장 편해 보인다.
 git submodule foreach git pull origin master (submodule 들의 remote 이름이 전부 origin에 master branch 이어야 가능할 듯.)
@@ -301,7 +291,7 @@ git submodule foreach git pull origin master (submodule 들의 remote 이름이 
 
 ### 새로운 폴더에 parent 부터 다시 clone 하는 경우 {#toc11}
 
-```md
+```bash
 git clone GIT_URL 를 하고나서 submodule 에 가서 보면 내용이 비어 있다.
 # 이때 개별적으로 내용을 받아오는 명령어는 아래와 같다.
 git submodule init
@@ -328,7 +318,7 @@ git add subfolder
 
 ### Submodule 기본 예제 {#toc13}
 
-```md
+```bash
 위의 Submodule 내용을 다시 한번 설명하는 것입니다.
 저의 경우는 대부분 git 설정을 먼저하기 보다는, 작업을 먼저하고 나서 git을 연동하는 편입니다.
 git submodule add 를 할때 경험했던 어려움은,
