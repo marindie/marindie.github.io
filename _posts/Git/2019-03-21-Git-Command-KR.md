@@ -103,6 +103,10 @@ git checkout commit-id filename
 # git stash 명령어로 로컬 수정본들을 저장하면 문제가 없다 아래의 git stash 설명도 참고하시길
 git checkout -b local-branch-name remote-branch-name(origin/master)
 git checkout -b branch01 origin/branch01
+git checkout -b branch01 another-local-branch-name
+
+# remote 에 새로만든 브랜치 올리기
+git push -u origin branch01
 
 # remote branch 정보 갱신
 git fetch origin
