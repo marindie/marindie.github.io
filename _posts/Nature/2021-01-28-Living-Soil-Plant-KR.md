@@ -1,7 +1,7 @@
 ---
 header:
   video:
-    id: ntJouJhLM48
+    id: K3-V1j-zMZw
     provider: youtube
 toc: true
 title: "건강한 토양, 살아있는 생명 활동, Living Soil, Healthy Soil"
@@ -50,6 +50,13 @@ redirect_from:
 * 식물들은 광합성을 통해 생산한 탄소를 일종의 화폐 처럼 사용하여,  
   다른 박테리아나 균들에게서 물건이나 서비스를 조달 받는것으로 볼 수 있다
 ```
+
+- 맨 위의 유투브 클립을 통해, 현재 얼마나 심각한 일들이 과거에 일어났는지 깨달을 수 있고
+- 아래의 유투브 컨텐츠를 통해 어떠한 노력들을 해왔는지도 알 수 있다
+- 나는 넷플릭스를 통해 Kiss The Ground 풀 영상을 보았고, 현재 e-book으로 보고 있다
+- E-book 에서 Kiss The Ground 풀 영상보다 더 방대한 사실들과 자료를 접할수 있어서 너무 감사하다
+
+{% include video id="ntJouJhLM48" provider="youtube" %}
 
 ### 피복작물이란? {#toc3}
 
