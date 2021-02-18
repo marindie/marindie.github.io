@@ -1,6 +1,6 @@
 ---
 toc: true
-title: " Sed 명령어. 특정 라인 위 또는 아래에 Text 추가 하기"
+title: " Sed 명령어 특정 라인 위 또는 아래에 Text 추가 하기"
 description: "Linux sed 명령어를 사용하여 특정 라인 위 또는 아래에 Text 추가하는 방법을 다뤄 보도록 하겠습니다."
 categories: [Linux]
 tags: [Sed]
