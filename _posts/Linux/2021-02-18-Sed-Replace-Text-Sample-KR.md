@@ -61,6 +61,10 @@ sed -i'' -r -e "s/SEGMENT CREATE IMMEDIATE|SEGMENT CREATE DEFERRED/I DO NOT WANT
 find . -type f -name my_*.log -exec sed -i'' -e "s/foo/bar/" {} \;
 ```
 
+- find 관련 명령어가 궁금하다면 아래 링크 클릭
+
+[link](https://marindie.github.io/blog/linux/Linux-Find-Command-KR)
+
 ### 대소문자 무시, 중복허용 (Ignore Case, Global) {#toc6}
 
 ```md
