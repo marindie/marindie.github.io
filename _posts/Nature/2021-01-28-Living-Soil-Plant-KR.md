@@ -384,7 +384,10 @@ redirect_from:
 * 식물을 통과한 물을 다시 물고기 식수로 재사용
 ```
 
-{% include video id="Zv2kLAK73Vs&list=PL5Jq_c26xgz56VydWX6EWp8xw-F4vG-vL&index=2" provider="youtube" %}
+- 아래의 영상은 퍼머컬처와 아쿠아포닉에 대해 예시를 들어가며 설명하는 유투브 컨텐츠이다
+- 조금 집중이 떨어지기도 하는 영상이지만, 신선한 충격을 받았다
+
+{% include video id="Ry72KdGeSb-E3QON" provider="youtube" %}
 
 ### The LEAF Aquaponic Greenhouse {#toc22}
 
