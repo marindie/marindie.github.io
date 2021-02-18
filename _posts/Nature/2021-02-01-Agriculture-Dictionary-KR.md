@@ -22,6 +22,7 @@ Stuart Brand
 William Irwin Thompson
 Margaret Mead
 Joseph Needham
+One-Straw Revolution(Masanobu Fukoka) (e-book)
 ```
 
 ### 단어장 {#toc2}
@@ -173,6 +174,7 @@ field pea : 필드 피, 완두콩의 일종, 목초용 품종
 crimson clover : 진홍 토끼풀, 쌍떡잎식물 장미콩 콩과의 한해살이풀
 winter rye : 가을에 파종하는 호밀
 rizobia : 근류균
+hydrangea : 수국
 ```
 
 [^1]: This is a footnote.
