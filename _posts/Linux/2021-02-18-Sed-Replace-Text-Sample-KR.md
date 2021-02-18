@@ -61,9 +61,7 @@ sed -i'' -r -e "s/SEGMENT CREATE IMMEDIATE|SEGMENT CREATE DEFERRED/I DO NOT WANT
 find . -type f -name my_*.log -exec sed -i'' -e "s/foo/bar/" {} \;
 ```
 
-- find 관련 명령어가 궁금하다면 아래 링크 클릭
-
-[Find 명령어](https://marindie.github.io/blog/linux/Linux-Find-Command-KR)
+- find 관련 명령어가 궁금하다면 클릭 [Find 명령어](https://marindie.github.io/blog/linux/Linux-Find-Command-KR)
 
 ### 대소문자 무시, 중복허용 (Ignore Case, Global) {#toc6}
 
@@ -75,9 +73,7 @@ sed -i'' -e "s/foo/bar/i" your_file.txt
 sed -i'' -e "s/foo/bar/g" your_file.txt
 ```
 
-- Sed 를 사용하여 텍스트를 검색 매칭되는 라인 위 또는 아래에 추가하고 싶으면 아래의 링크 참고
-
-[Sed 텍스트 위 아래 추가](https://marindie.github.io/linux/Sed-Append-KR/)
+- Sed 를 사용하여 텍스트를 검색 매칭되는 라인 위 또는 아래에 추가하고 싶으면 클릭 [Sed 텍스트 위 아래 추가](https://marindie.github.io/linux/Sed-Append-KR/)
 
 [^1]: This is a footnote.
 
