@@ -384,6 +384,8 @@ redirect_from:
 * 식물을 통과한 물을 다시 물고기 식수로 재사용
 ```
 
+{% include video id="Zv2kLAK73Vs&list=PL5Jq_c26xgz56VydWX6EWp8xw-F4vG-vL&index=2" provider="youtube" %}
+
 ### The LEAF Aquaponic Greenhouse {#toc22}
 
 ```md
