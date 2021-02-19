@@ -16,16 +16,17 @@ redirect_from:
 for pid in $(ps -ef | grep "concourse" | grep -v "grep" | awk '{print $2}'); do kill -9 $pid; done
 ```
 
-### zip {#toc2}
+### zip 사용법 {#toc2}
 
-```md
+```bash
 yum install unzip
+# mydir 안에 zip 파일 내용을 압축푼다.
 unzip test.zip -d ./mydir
+# 폴더 구조를 만들지 않고 바로 파일이 현재 경로에 풀린다.
+unzip -j test.zip
 zip test.zip ./*
+# 하위 폴더 까지 압축하고 싶을때
 zip -r test.zip ./*  
-
-스크립트로 사용시 zip의 r 옵션은 절대경로로 잡은경우에, 압축을 풀면 해당 경로로 압축해제를 시도함
-결국 해당 폴더 생성해 놓고 적절한 폴더 위치에서 unzip을 추천
 ```
 
 ### ls 파일 이름만 {#toc3}
