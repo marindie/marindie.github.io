@@ -31,13 +31,13 @@ zip -r test.zip ./*
 
 ### ls 파일 이름만 {#toc3}
 
-```md
+```bash
 find . -name '*.jar' -exec basename {} \;
 ```
 
 ### VIM 에서 String Replace 관련 {#toc4}
 
-```md
+```bash
 :%s/.*System.out.println.*//gc # c 는 변환대상마다 확인 옵션
 # 그룹핑 하려면 VI 에서는 \( \) 형태로 escape 해줘야 그 안의 내용이 그룹화 된다. 일반 regex 랑 다름.
 # .*? 첫번째 매칭을 시도해 봤는데 잘 안됨.. 어떻게 해야 하는지 모르겠음.
@@ -45,20 +45,21 @@ find . -name '*.jar' -exec basename {} \;
 
 ### Disk Size {#toc5}
 
-```md
+```bash
 df -h
+du -sh /path/to/directory
 ```
 
 ### grep after grep {#toc6}
 
-```md
+```bash
 grep -l word ./* | xargs grep word2
 grep -lZ word ./* | xargs -r0 grep word2
 ```
 
 ### Find Command with Options {#toc7}
 
-```md
+```bash
 # Some of Useful Options that I use often
 # -t type, -name filename (Regex Possible)
 # -maxdepth 1 (current path only)
@@ -70,7 +71,7 @@ find . -maxdepth 1 -name "*.txt"
 
 ### Run Shell command after mathing file found {#toc8}
 
-```md
+```bash
 # To execute linux command for each files that were found, type "{} \;" in the end
 # Ex)
 find . -name "*.txt" -exec grep chrome {} \;
@@ -81,29 +82,37 @@ find . -name "*.txt" -exec grep chrome {} +;
 
 ### Find file whose size is over 20Mb {#toc9}
 
-```md
+```bash
 find /usr -size +20000 -print -exec ls -alt {} +; 
 ```
 
 ### Find file where modified date is over 3 days in current folder level. Print Timestamp Format  {#toc10}
 
-```md
+```bash
 find . -maxdepth 1 -type f -ctime +3 -printf "%p %TY-%Tm-%Td %TH:%TM:%TS %Tz\n"
 find . -maxdepth 1 -type f -ctime +3 -printf "%p %TY-%Tm-%Td %TH:%TM:%TS %Tz\n" -delete
 ```
 
 ### Change access modified timestamp 변경  {#toc11}
 
-```md
+```bash
 touch -a -m -t 202101280130.09 catalina.out
 ```
 
 ### Check if a directory exists  {#toc12}
 
-```md
+```bash
 if [ -d "$DIR" ]; then  
   mkdir ${DIR}
 fi
+```
+
+### Check if a directory exists  {#toc13}
+
+```bash
+# 0을 왼쪽에 붙여주는 명령어
+$(seq -w 1 12)
+Ex) for day in $(seq -w 1 31); do
 ```
 
 [^1]: This is a footnote.
