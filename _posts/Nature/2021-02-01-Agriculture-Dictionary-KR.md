@@ -175,6 +175,17 @@ crimson clover : 진홍 토끼풀, 쌍떡잎식물 장미콩 콩과의 한해살
 winter rye : 가을에 파종하는 호밀
 rizobia : 근류균
 hydrangea : 수국
+stipulation : 조항
+pellet : 조각
+urea : 요소 오줌속에 들어있는 질소 화합물
+pooltry : 닭,오리,거위등 가금류
+buffer zone : 완충 지대
+vasrness : 방대함
+trivial : 사소한 하찮은
+inquisitive : 꼬치꼬치 캐뭍는, 호기심 많은
+musty : 퀴퀴한 냄새가 나는
+cylindrical : 원통형
+fungus : 균류 곰팡이류 균상종
 ```
 
 [^1]: This is a footnote.
