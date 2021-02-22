@@ -24,9 +24,12 @@ yum install unzip
 unzip test.zip -d ./mydir
 # 폴더 구조를 만들지 않고 바로 파일이 현재 경로에 풀린다.
 unzip -j test.zip
-zip test.zip ./*
+
 # 하위 폴더 까지 압축하고 싶을때
 zip -r test.zip ./*  
+
+# 파일 리스트만 출력하고 압축은 풀고 싶지 않을때
+unzip -Z1 catalina-2021-02-22.zip
 ```
 
 ### ls 파일 이름만 {#toc3}

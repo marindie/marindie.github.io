@@ -15,6 +15,12 @@ redirect_from:
 ```md
 # crontab 수정
 crontab -e
+
+# 매일 1 am 실행
+0 1 * * * /home/runScript.sh
+
+# 매일 0 am 1 min 실행
+1 0 * * * /home/runScript.sh
 ```
 
 [^1]: This is a footnote.
