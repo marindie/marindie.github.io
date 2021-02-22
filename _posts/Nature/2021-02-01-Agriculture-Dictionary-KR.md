@@ -202,6 +202,22 @@ anchor : 닻을 내리다
 absorptive : 흡수하는 흡수성의
 reliant : 의존하는
 fossilize : 화석화하다
+grossly : 극도로 지극히
+underrepresent : 실제보다 낮게 표시하다
+critter : 생물
+squeamish : 비위가 상하는
+gut : 소화기관 내장 
+consumption : 소비
+fuzzy : 솜털이 보송보송한
+chiller : 스릴을 느끼게하는 영화,소설,스릴러물
+thread : 실
+tuft : 다발
+cotton : 목화 무명 실
+fungal : 균류에 의한
+hyphae : 균사
+fibrous : 섬유로된
+delicate : 연약한 다치기쉬운
+tentacle : 촉수
 ```
 
 [^1]: This is a footnote.
