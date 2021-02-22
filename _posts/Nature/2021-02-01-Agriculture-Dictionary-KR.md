@@ -218,6 +218,8 @@ hyphae : 균사
 fibrous : 섬유로된
 delicate : 연약한 다치기쉬운
 tentacle : 촉수
+fathom : 의미를 헤아리다
+devoid : ~이 전혀없는
 ```
 
 [^1]: This is a footnote.
