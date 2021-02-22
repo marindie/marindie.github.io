@@ -454,6 +454,21 @@ raised beds closed-loop aquaponics
 ![denitrification](/assets/images/screen/denitrification.png)
 ![질소순환](/assets/images/screen/질소순환.png)
 
+### 균근균 - Mycorrhizal fungi {#toc25}
+
+```md
+* 균근균은 500만년전의 화석에서도 발견되었으며, 
+* 태평양 연안 북서부 지역에 2500 에이커에 달하는 규모
+* 균근균 네트워크를 구성하고 있는것이 발견되었다.
+* 이 균근균이 물속에 존재하는 식물들(조류)의 생활서식지를 바다속에서
+* 땅위로 가능하게 해주었다
+* 균근균은 식물뿌리가 도달하지 못하는 영양분을 흡수 할 수 있도록 
+  식물 뿌리를 오가며 생활한다. 
+* 균근균은 식물 뿌리로부터 광합성을 통해 만들어진 영양분을 필요로한다.
+* 균근균과 박테리아 그 외에 다른 미생물들이 토양 생성 과정의
+  내면에서 중심을 이루고 있는것이다
+```
+
 [^1]: This is a footnote.
 
 [kramdown]: https://kramdown.gettalong.org/

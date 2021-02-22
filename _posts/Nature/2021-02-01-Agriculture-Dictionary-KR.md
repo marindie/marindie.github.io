@@ -186,6 +186,22 @@ inquisitive : 꼬치꼬치 캐뭍는, 호기심 많은
 musty : 퀴퀴한 냄새가 나는
 cylindrical : 원통형
 fungus : 균류 곰팡이류 균상종
+mycorrhizal fungi : 균근균 (기주식물과 함께 균근을 형성하는 사상균의 일종. 
+                    식물뿌리에 침입한 후 식물의 광합성산물을 이용하여 생활하면서 
+                    기주식물에는 뿌리가 직접 닿지 않는 먼 곳의 토양무기성분을 공급받을 수 있도록 해 준다.)
+microscopic : 미세한, 현미경으로 봐야하는
+Pacific Northwest : 태평양 연안 북서부, 오리건, 워싱턴, 아이다호 북부 일부
+armillaria root disease : 아밀라리아 뿌리 병
+armillaria ostoyae : 잣뽕나무버섯
+albeit : 비록 ~ 일지라도
+thusly : thus, 이와 같이, 따라서, 그러므로, 이렇게 하여
+murky : 흐린,탁한
+bioloy : 생물학
+molecule : 분자
+anchor : 닻을 내리다
+absorptive : 흡수하는 흡수성의
+reliant : 의존하는
+fossilize : 화석화하다
 ```
 
 [^1]: This is a footnote.
