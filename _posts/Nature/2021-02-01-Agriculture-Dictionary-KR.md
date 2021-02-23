@@ -228,6 +228,9 @@ pathology : 병리학 병적,이상측면 연구
 hydrology : 수문학 물을 연구하는 분야
 conquest : 정복 점령
 inorganic : 무기물의
+vivaciousness : 활발함 다년생식물
+oxide of nitrogen : 질소산화물
+atmospheric : 대기의
 ```
 
 [^1]: This is a footnote.
