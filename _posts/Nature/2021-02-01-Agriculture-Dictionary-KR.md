@@ -223,6 +223,7 @@ devoid : ~이 전혀없는
 deficient : 결함있는 모자라는
 precipitously : 무분별하게 급하게
 bushel : 과일 곡물의 중량 단위 8갤런
+bolster : 북돋우다 강화하다
 ```
 
 [^1]: This is a footnote.
