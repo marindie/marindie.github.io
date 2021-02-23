@@ -220,6 +220,9 @@ delicate : 연약한 다치기쉬운
 tentacle : 촉수
 fathom : 의미를 헤아리다
 devoid : ~이 전혀없는
+deficient : 결함있는 모자라는
+precipitously : 무분별하게 급하게
+bushel : 과일 곡물의 중량 단위 8갤런
 ```
 
 [^1]: This is a footnote.
