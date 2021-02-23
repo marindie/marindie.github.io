@@ -227,6 +227,7 @@ bolster : 북돋우다 강화하다
 pathology : 병리학 병적,이상측면 연구
 hydrology : 수문학 물을 연구하는 분야
 conquest : 정복 점령
+inorganic : 무기물의
 ```
 
 [^1]: This is a footnote.
