@@ -231,6 +231,9 @@ inorganic : 무기물의
 vivaciousness : 활발함 다년생식물
 oxide of nitrogen : 질소산화물
 atmospheric : 대기의
+acidic : 산성의
+sequestration : 격리 제거 추방 은퇴 은둔
+pile : 물건을 쌓다 포개놓다 더미
 ```
 
 [^1]: This is a footnote.
