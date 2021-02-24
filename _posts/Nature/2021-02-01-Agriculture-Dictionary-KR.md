@@ -270,6 +270,12 @@ traverse : 가로지르다, 횡단하다
 density : 인구 밀도
 cull : (개체 수를 제한하기 위해) 도태시키다
 continent : 대륙
+hooves : hoof 말굽의 복수형
+impenetrable : 들어갈 수 없는, 해치고 들어갈 수 없는, 눈앞이 안 보이는
+crest : 산마루
+whirlwind : 회오리바람, 정신없이 빠르게 진행되는, 돌개바람
+divine : 알다, 예측하다
+summit : 산 정상, 산꼭대기, 절정, 정점
 ```
 
 [^1]: This is a footnote.
