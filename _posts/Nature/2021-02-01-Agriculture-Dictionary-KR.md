@@ -276,6 +276,13 @@ crest : 산마루
 whirlwind : 회오리바람, 정신없이 빠르게 진행되는, 돌개바람
 divine : 알다, 예측하다
 summit : 산 정상, 산꼭대기, 절정, 정점
+gallop : 질주하다 전속력으로 달리다
+headlong : 저돌적인
+fertile : 비옥한 가임의 생식력
+testicle : 고환
+gristle : 연골
+bone marrow : 골수
+marrow : 동행 동료 짝패
 ```
 
 [^1]: This is a footnote.
