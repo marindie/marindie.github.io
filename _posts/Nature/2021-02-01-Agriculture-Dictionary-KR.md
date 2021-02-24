@@ -244,6 +244,32 @@ speck : 작은 얼룩, 반점, 작은알갱이, 입자
 suspended animation : 무기력감 가사상태
 hay : 건초, 적은돈, 산울타리
 neonicotinoid insecticide : 네오니코티노이드 살충제
+dioxin : 다이옥신 (매우 안좋은 화학물질)
+carbohydrate : 탄수화물
+etch : 뚜렷이 새기다 (감정을) 역력히 드러내다
+significance : 의미, 의의, 중요성, 중대성
+heretofore : 지금까지는, 이전에는, 종전과 같이
+prairie : (북미,캐나다의) 대초원
+perennial : 영원한, 오랫동안 지속되는, 계속 반복되는
+frontier : 개척지, 국경
+wheatgrass : 휘트그라스, 속털개밀(벼목 화본과의 두해살이풀)
+grama : 그라마 (화본과의 양용 식물)
+sedge : 사초과의 식물
+bluestem : 나도기름새(미국 서부 목초용 식물)
+dropseed : 쥐꼬리새풀 (벼목 화본과의 여러해살이풀)
+breadbasket : 곡창지대
+organism : 유기체, 생물
+symbiosis : (서로 다른 생물간의)공생
+forage : 먹이를 찾다, ~을 찾다, 사료
+bison : 들소 (American bison = buffalo)
+fur : 털, 모피(털이 붙은채로 벗긴 짐승의 가죽)
+muddle : 혼란, 혼동, 헝클어 뜨리다, 뒤죽박죽을 만들다
+carcass : 큰 동물의 시체
+massacre : 대학살
+traverse : 가로지르다, 횡단하다
+density : 인구 밀도
+cull : (개체 수를 제한하기 위해) 도태시키다
+continent : 대륙
 ```
 
 [^1]: This is a footnote.
