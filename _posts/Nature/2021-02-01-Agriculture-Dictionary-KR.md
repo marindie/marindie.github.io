@@ -234,6 +234,16 @@ atmospheric : 대기의
 acidic : 산성의
 sequestration : 격리 제거 추방 은퇴 은둔
 pile : 물건을 쌓다 포개놓다 더미
+pave : 포장하다 포장도로
+pavement : 인도 보도 포장지역 노면
+cheekly : 뻔뻔스럽게 건방지게
+torch : 손전등
+at stake : 성패가 달려있는, 위태로운
+interstake : 주와 주 사이에
+speck : 작은 얼룩, 반점, 작은알갱이, 입자
+suspended animation : 무기력감 가사상태
+hay : 건초, 적은돈, 산울타리
+neonicotinoid insecticide : 네오니코티노이드 살충제
 ```
 
 [^1]: This is a footnote.
