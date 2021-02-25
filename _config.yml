@@ -315,7 +315,7 @@ defaults:
       read_time: true
       comments: true
       share: false
-      related: true
+      related: false
       classes: wide
       toc_sticky: true
       sidebar:
@@ -330,4 +330,4 @@ defaults:
       read_time: false
       comments: false
       share: false
-      related: true        
+      related: false        
