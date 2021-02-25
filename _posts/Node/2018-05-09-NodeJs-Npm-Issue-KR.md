@@ -1,14 +1,14 @@
 ---
 toc: true
-title: " npm install 등등 명령시 npm ERR! code SELF_SIGNED_CERT_IN_CHAIN 에러 문제 관련"
-description: "npm 또는 nodejs 를 사용하면서 발생했던 에러 관련 모음으로 사용할 포스팅 입니다." 
+title: "npm install 등등 명령시 npm ERR code SELF_SIGNED_CERT_IN_CHAIN 에러 문제 관련"
+description: "npm 또는 nodejs 를 사용하면서 발생했던 에러 관련 모음으로 사용할 포스팅 입니다" 
 categories: [Nodejs]
 tags: [Npm]
 redirect_from:
   - /2018/05/09/
 ---
 
-> npm 또는 nodejs 를 사용하면서 발생했던 에러 관련 모음으로 사용할 포스팅 입니다.
+> npm 또는 nodejs 를 사용하면서 발생했던 에러 관련 모음으로 사용할 포스팅 입니다
 
 ### npm ERR! code SELF_SIGNED_CERT_IN_CHAIN {#toc1}
 

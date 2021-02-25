@@ -103,6 +103,10 @@ git checkout commit-id filename
 # git stash 명령어로 로컬 수정본들을 저장하면 문제가 없다 아래의 git stash 설명도 참고하시길
 git checkout -b local-branch-name remote-branch-name(origin/master)
 git checkout -b branch01 origin/branch01
+git checkout -b branch01 another-local-branch-name
+
+# remote 에 새로만든 브랜치 올리기
+git push -u origin branch01
 
 # remote branch 정보 갱신
 git fetch origin
@@ -161,9 +165,43 @@ git config --system --unset credential.helper
 ### git stash {#toc7}
 
 ```bash
-# 결론만 얘기하자면 아래 명령어로 각각 파일별로 처리하는게 속편함
-# git stash apply 로 파일 불러들일때, Eclipse .classpath 파일에서 conflict 나는게 귀찮음.
-# 비슷한 현상들이 있을 수 있어서, 정말 필요한 파일만 개별적으로 선별해서 git stash 하는게 좋은
+# 현재 로컬에서 사용해야 하는 파일들을 저장하고 다른 브랜치로 넘어갈때
+# 혹은 다른 브랜치로 넘어가려는데, 설정 파일 충돌이 나서 문제가 될때, 현재 변경된 파일들을 모두 임시저장 해줍니다.
+git stash 
+
+# 저장 내역 확인
+git stash list
+# stash 내용 확인
+git stash show 1 (index 0,1,2 ...)
+# stash 내용의 파일들만 보고 싶을때
+git stash show 1 --name-only
+
+# 저장된 내용 불러오기 (가장 최근)
+git stash apply
+
+# 원하는 목록에서 index 번호로
+git stash apply indexNumber
+
+# git stash 를 했는데, 충돌이 나는경우, stash 버전으로 강제로 덮어쓰기
+git checkout stash -- .
+# 파일을 하나씩 불러들일때
+git checkout stash -- filepath 
+# 가장 최근이 아닌 다른 stash 정보에서 파일 정보를 사용할때
+git checkout stash@{1} -- filepath  
+
+# 머지하면서 처리하고 싶을때
+git merge --squash --strategy-option=theirs stash
+
+# 마지막으로 저장한 stash 제거
+git stash drop
+
+# 이름으로 삭제를 원할경우 index 번호로 삭제
+git stash drop 1
+
+# stash 내용 불러오고 해당 stash 삭제시
+git stash pop
+
+# 필요한 파일만 개별적으로 선별해서 git stash 할 수 있도록 사용자 입력을 받음
 git stash save "commit message" -p
 
 # 위 명령어를 날리면 잠시후에 user input 형태로 각 diff 별로 어떻게 처리할 지 물어본다
@@ -184,35 +222,6 @@ git stash save "commit message" -p
    e - manually edit the current hunk
    ? - print help
 
-# 현재 로컬에서 사용해야 하는 파일들을 저장하고 다른 브랜치로 넘어갈때
-# 혹은 다른 브랜치로 넘어가려는데, 설정 파일 충돌이 나서 문제가 될때, 현재 변경된 파일들을 모두 임시저장 해줍니다.
-git stash 
-
-# 저장 내역 확인
-git stash list
-
-# 저장된 내용 불러오기 (가장 최근)
-git stash apply
-
-# 원하는 목록에서 index 번호로
-git stash apply indexNumber
-
-# git stash 를 했는데, 충돌이 나는경우, stash 버전으로 강제로 덮어쓰기
-git checkout stash -- .
-git checkout stash -- filepath #파일을 수기로 하나씩 덮어써야 할때
-
-# 머지하면서 처리하고 싶을때
-git merge --squash --strategy-option=theirs stash
-
-# 마지막으로 저장한 stash 제거
-git stash drop
-
-# 이름으로 삭제를 원할경우 index 번호로 삭제
-git stash drop 1
-
-# stash 내용 불러오고 해당 stash 삭제시
-git stash pop
-
 # stash 적용한거 롤백
 git stash show -p | git apply -R # 가장 최근
 git stash show -p 1 | git apply -R # 다른 stash 이면 index 도 뒤에 추가
@@ -223,17 +232,7 @@ git config --global alias.stash-rollback '!git stash show -p | git apply -R'
 
 ### 기본 예제 {#toc8}
 
-```md
-제가 일반적으로 remote repository 에 직접 작업한 프로젝트를 최초 등록할때의 작업 순서를 요약해 보았습니다.
-먼저 github 사이트에서 remote repository 를 만듬. 이때!!! readme.md 파일을 만들지 않고 프로젝트를 생성합니다.
-이게 가장 중요한 점인데, 이유는 readme.md 를 만들게 되면 커밋이 발생하게 되고, 이 remote repository 에 
-바로 push 하면 readme.md 커밋한 내용이 내 로컬 PC 에 만든 local repository 에는 없기 때문에, 
-기존에 작업해 놓은 폴더를 다이렉트로 remote repository 에 연결하기 불편합니다.
-해결을 위해서는 새폴더 만들고 git clone GIT_URL 로 clone 하고 나서,
-내가 작업한 내용 다시 복사 해서 넣고 git add -> git commit 을 해야 정상적으로 진행 됩니다.
-뭐 하다 보면 그것도 하게 되기는 하는데... 내가 원하는 방식은,
-remote 에 만들고 기존에 작업한 최상위 폴더에 git local repository 만들고 연결해서 바로 커밋이 바로 되는게 목적입니다.
-
+```bash
 정상적으로 project 만 만들었다고 하면(commit 없이)
 작업 폴더에 가서
 git init
@@ -278,7 +277,7 @@ git submodule add GIT_URL child/submod1
 
 ### submodule 파일 삭제 없이 git 에서만 삭제 방법 {#toc9}
 
-```md
+```bash
 # child 폴더를 child_bak 으로 이름 변경
 git submodule deinit child/submod1
 git rm -r --cache child/submod1 
@@ -288,7 +287,7 @@ git submodule add # 하면 정상적으로 다시 추가 됨.
 
 ### parent 에서 submodule 전부다 sync 하는 명령어 {#toc10}
 
-```md
+```bash
 # parent 입장에서 submodule 들이 에러가 나는 상황이 아니면, 최신 상태가 유지 되지 않아도 관계 없다.
 # 하지만, 어떤 이유에서 최신화를 시켜야 한다면, 아래의 명령어가 가장 편해 보인다.
 git submodule foreach git pull origin master (submodule 들의 remote 이름이 전부 origin에 master branch 이어야 가능할 듯.)
@@ -296,7 +295,7 @@ git submodule foreach git pull origin master (submodule 들의 remote 이름이 
 
 ### 새로운 폴더에 parent 부터 다시 clone 하는 경우 {#toc11}
 
-```md
+```bash
 git clone GIT_URL 를 하고나서 submodule 에 가서 보면 내용이 비어 있다.
 # 이때 개별적으로 내용을 받아오는 명령어는 아래와 같다.
 git submodule init
@@ -323,7 +322,7 @@ git add subfolder
 
 ### Submodule 기본 예제 {#toc13}
 
-```md
+```bash
 위의 Submodule 내용을 다시 한번 설명하는 것입니다.
 저의 경우는 대부분 git 설정을 먼저하기 보다는, 작업을 먼저하고 나서 git을 연동하는 편입니다.
 git submodule add 를 할때 경험했던 어려움은,

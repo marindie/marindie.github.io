@@ -32,7 +32,9 @@ sed -i'' -r -e "/Please Put it here/a\Some More Text is appended/" your_file.txt
 
 ```
 
-### Those who are interested in basic sed, click this [link](https://marindie.github.io/blog/2018/09/09/Sed-Replace-Text-Sample-EN)
+- Those who are interested in basic sed, click this
+
+[link](https://marindie.github.io/linux/Sed-Replace-Text-Sample-EN)
 
 [^1]: This is a footnote.
 

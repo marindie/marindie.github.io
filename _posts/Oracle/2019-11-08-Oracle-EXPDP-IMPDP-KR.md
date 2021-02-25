@@ -1,14 +1,14 @@
 ---
 toc: true
-title: " Oracle EXPDP IMPDP Example. ORA-14102 이슈 포함"
-description: "Oracle Oracle EXPDP IMPDP Example. ORA-14102 이슈 포함"
+title: " Oracle EXPDP IMPDP Example ORA-14102 이슈 포함"
+description: "Oracle Oracle EXPDP IMPDP Example ORA-14102 이슈 포함"
 categories: [Oracle]
 tags: [Oracle]
 redirect_from:
   - /2019/11/08/
 ---
 
-> Oracle EXPDP IMPDP Example. ORA-14102 이슈 포함
+> Oracle EXPDP IMPDP Example ORA-14102 이슈 포함
 
 ### EXPDP {#toc1}
 

@@ -1,14 +1,14 @@
 ---
 toc: true
 title: "영어 단어 모음 (퍼머컬처, 무경운 관련)"
-description: "퍼머컬처, 무경운 농법, 친환경 농법, 자연 관련 영어 책에서 나오는 단어 모음" 
+description: "퍼머컬처, 수경재배, 무경운 농법, 친환경 농법, 자연 관련 영어 책에서 나오는 단어 모음" 
 categories: [Nature]
 tags: [Dictionary]
 redirect_from:
   - /2021/02/14/
 ---
 
-> 퍼머컬처, 무경운 농법, 친환경 농법, 자연 관련 영어 책에서 나오는 단어 모음
+> 퍼머컬처, 수경재배, 무경운 농법, 친환경 농법, 자연 관련 영어 책에서 나오는 단어 모음
 
 ### 읽는 책, 영상, 참조 (reference) {#toc1}
 
@@ -22,6 +22,7 @@ Stuart Brand
 William Irwin Thompson
 Margaret Mead
 Joseph Needham
+One-Straw Revolution(Masanobu Fukoka) (e-book)
 ```
 
 ### 단어장 {#toc2}
@@ -30,7 +31,6 @@ Joseph Needham
 cover crop : 피복작물
 forage crop/grass : 사료용 작물/풀
 erosion : 침식
-weed : 잡초
 sedimentation : 퇴적(작용)
 mowing : 풀[잔디, 보리] 베기
 noxious : 유해한,유독한
@@ -54,7 +54,7 @@ climber : 덩굴식물
 mindbogging : 믿기 어려울 만큼 놀라운, 너무나 놀라운, 상상도 안되는
 wheat : 밀
 abundant : 풍부한
-biomass : 생물량
+biomass : 생물량 (합성에 의하여 생성되는 다양한 조류(藻類) 및 식물 자원, 즉 나무, 풀, 농작물의 가지, 잎, 뿌리, 열매 등)
 sorry state : 유감스런상태, 서투른 상태
 plough : 쟁기, 쟁기로 갈다
 weed : 잡초, 잡초를 뽑다
@@ -119,6 +119,7 @@ hydroponic : 수경 재배법
 aquaculture : 양식산업
 nitrosomonas : (토양비료학) 니트로소모나스
 nitrobacter : (토양비료학) 니트로박터
+nitrite : 아질산염 (물고기에게 좋지 않음)
 nitrate : 질산염
 irrigate : 물을 관개하다, 땅에 물을 대다
 solubilize : 가용성, 용해도를 높이다, 물에 잘녹도록 하다
@@ -146,6 +147,142 @@ tangible : 분명히 존재하는, 만질 수 있는
 STEM education : 과학, 기술, 공학, 수학 교육
 district : 지역, 지구
 wicking : 양초의 심지
+aeration : 탄산 가스 포화, aeration basion(공기 분지)
+basin : (큰 강의) 유역, 양푼, 대야
+oxidize : 산화시키다
+oxidatoin : 산화
+gravel : 자갈
+negligible : (중요성,규모가 작아) 무시해도 될 정도의
+crushed granite : 으개진 화강암
+nonwoven : 부직포의 
+crank : 기계등을 돌아가게 하다
+symbiotic : 공생하는
+mutualize : 상호작용을 하다
+hairy vetch : 헤어리베치
+lurch : (갑자기) 휘청거리다
+catalyze : 촉진시키다, 촉매 작용을 하다
+cornucopia : 풍요의 뿔, 좋은것이 가득찬
+prevention : 예방, 방지
+petroleum : 석유
+dominating : 지배하는, 우세한
+preach : 설교하다
+enrich : 풍요롭게하다, 질을 높이다, 어떤영양소를 강화하다
+publicize : 광고하다, 일반사람들에게 알리다
+avidly : 열광적으로, 탐하여
+shyster : 사기꾼(특히 변호사)
+field pea : 필드 피, 완두콩의 일종, 목초용 품종
+crimson clover : 진홍 토끼풀, 쌍떡잎식물 장미콩 콩과의 한해살이풀
+winter rye : 가을에 파종하는 호밀
+rizobia : 근류균
+hydrangea : 수국
+stipulation : 조항
+pellet : 조각
+urea : 요소 오줌속에 들어있는 질소 화합물
+pooltry : 닭,오리,거위등 가금류
+buffer zone : 완충 지대
+vasrness : 방대함
+trivial : 사소한 하찮은
+inquisitive : 꼬치꼬치 캐뭍는, 호기심 많은
+musty : 퀴퀴한 냄새가 나는
+cylindrical : 원통형
+fungus : 균류 곰팡이류 균상종
+mycorrhizal fungi : 균근균 (기주식물과 함께 균근을 형성하는 사상균의 일종. 
+                    식물뿌리에 침입한 후 식물의 광합성산물을 이용하여 생활하면서 
+                    기주식물에는 뿌리가 직접 닿지 않는 먼 곳의 토양무기성분을 공급받을 수 있도록 해 준다.)
+microscopic : 미세한, 현미경으로 봐야하는
+Pacific Northwest : 태평양 연안 북서부, 오리건, 워싱턴, 아이다호 북부 일부
+armillaria root disease : 아밀라리아 뿌리 병
+armillaria ostoyae : 잣뽕나무버섯
+albeit : 비록 ~ 일지라도
+thusly : thus, 이와 같이, 따라서, 그러므로, 이렇게 하여
+murky : 흐린,탁한
+bioloy : 생물학
+molecule : 분자
+anchor : 닻을 내리다
+absorptive : 흡수하는 흡수성의
+reliant : 의존하는
+fossilize : 화석화하다
+grossly : 극도로 지극히
+underrepresent : 실제보다 낮게 표시하다
+critter : 생물
+squeamish : 비위가 상하는
+gut : 소화기관 내장 
+consumption : 소비
+fuzzy : 솜털이 보송보송한
+chiller : 스릴을 느끼게하는 영화,소설,스릴러물
+thread : 실
+tuft : 다발
+cotton : 목화 무명 실
+fungal : 균류에 의한
+hyphae : 균사
+fibrous : 섬유로된
+delicate : 연약한 다치기쉬운
+tentacle : 촉수
+fathom : 의미를 헤아리다
+devoid : ~이 전혀없는
+deficient : 결함있는 모자라는
+precipitously : 무분별하게 급하게
+bushel : 과일 곡물의 중량 단위 8갤런
+bolster : 북돋우다 강화하다
+pathology : 병리학 병적,이상측면 연구
+hydrology : 수문학 물을 연구하는 분야
+conquest : 정복 점령
+inorganic : 무기물의
+vivaciousness : 활발함 다년생식물
+oxide of nitrogen : 질소산화물
+atmospheric : 대기의
+acidic : 산성의
+sequestration : 격리 제거 추방 은퇴 은둔
+pile : 물건을 쌓다 포개놓다 더미
+pave : 포장하다 포장도로
+pavement : 인도 보도 포장지역 노면
+cheekly : 뻔뻔스럽게 건방지게
+torch : 손전등
+at stake : 성패가 달려있는, 위태로운
+interstake : 주와 주 사이에
+speck : 작은 얼룩, 반점, 작은알갱이, 입자
+suspended animation : 무기력감 가사상태
+hay : 건초, 적은돈, 산울타리
+neonicotinoid insecticide : 네오니코티노이드 살충제
+dioxin : 다이옥신 (매우 안좋은 화학물질)
+carbohydrate : 탄수화물
+etch : 뚜렷이 새기다 (감정을) 역력히 드러내다
+significance : 의미, 의의, 중요성, 중대성
+heretofore : 지금까지는, 이전에는, 종전과 같이
+prairie : (북미,캐나다의) 대초원
+perennial : 영원한, 오랫동안 지속되는, 계속 반복되는
+frontier : 개척지, 국경
+wheatgrass : 휘트그라스, 속털개밀(벼목 화본과의 두해살이풀)
+grama : 그라마 (화본과의 양용 식물)
+sedge : 사초과의 식물
+bluestem : 나도기름새(미국 서부 목초용 식물)
+dropseed : 쥐꼬리새풀 (벼목 화본과의 여러해살이풀)
+breadbasket : 곡창지대
+organism : 유기체, 생물
+symbiosis : (서로 다른 생물간의)공생
+forage : 먹이를 찾다, ~을 찾다, 사료
+bison : 들소 (American bison = buffalo)
+fur : 털, 모피(털이 붙은채로 벗긴 짐승의 가죽)
+muddle : 혼란, 혼동, 헝클어 뜨리다, 뒤죽박죽을 만들다
+carcass : 큰 동물의 시체
+massacre : 대학살
+traverse : 가로지르다, 횡단하다
+density : 인구 밀도
+cull : (개체 수를 제한하기 위해) 도태시키다
+continent : 대륙
+hooves : hoof 말굽의 복수형
+impenetrable : 들어갈 수 없는, 해치고 들어갈 수 없는, 눈앞이 안 보이는
+crest : 산마루
+whirlwind : 회오리바람, 정신없이 빠르게 진행되는, 돌개바람
+divine : 알다, 예측하다
+summit : 산 정상, 산꼭대기, 절정, 정점
+gallop : 질주하다 전속력으로 달리다
+headlong : 저돌적인
+fertile : 비옥한 가임의 생식력
+testicle : 고환
+gristle : 연골
+bone marrow : 골수
+marrow : 동행 동료 짝패
 ```
 
 [^1]: This is a footnote.
