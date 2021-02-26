@@ -283,6 +283,8 @@ testicle : 고환
 gristle : 연골
 bone marrow : 골수
 marrow : 동행 동료 짝패
+bovine : 소의 사람이우둔한,미련한
+hides : 가죽
 ```
 
 [^1]: This is a footnote.
