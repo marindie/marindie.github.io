@@ -1,9 +1,9 @@
 ---
 toc: true
-title: "매밀의 방제 효과 파종시기 씨앗 생산 관련 정보"
-description: "매밀과 관련된 다양한 정보를 모으는 곳" 
+title: "메밀의 방제 효과 파종시기 씨앗 생산 관련 정보"
+description: "메밀과 관련된 다양한 정보를 모으는 곳" 
 categories: [Nature]
-tags: [매밀]
+tags: [메밀]
 redirect_from:
   - /2021/02/27/
 ---
