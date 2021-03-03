@@ -285,6 +285,8 @@ bone marrow : 골수
 marrow : 동행 동료 짝패
 bovine : 소의 사람이우둔한,미련한
 hides : 가죽
+stuffing : 만두에 넣는 소, 쿠션에 넣는 속(충전재)
+yarn : 실, 방적사
 ```
 
 [^1]: This is a footnote.
