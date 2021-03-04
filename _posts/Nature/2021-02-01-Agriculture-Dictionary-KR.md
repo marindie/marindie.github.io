@@ -291,6 +291,7 @@ sinew : 힘줄
 hoove : 고창증
 rattle : 딸랑이
 awl : 송곳
+ornament : 장식품
 ```
 
 [^1]: This is a footnote.
