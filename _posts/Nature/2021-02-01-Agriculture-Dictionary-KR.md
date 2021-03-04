@@ -13,7 +13,7 @@ redirect_from:
 ### 읽는 책, 영상, 참조 (reference) {#toc1}
 
 ```md
-Kiss The Groud (e-book, 넷플릭스
+Kiss The Groud (e-book, 넷플릭스)
 Permaculture in a Nutshell (e-book)
 The Living Soil (youtube)
 John Todd
@@ -150,7 +150,7 @@ wicking : 양초의 심지
 aeration : 탄산 가스 포화, aeration basion(공기 분지)
 basin : (큰 강의) 유역, 양푼, 대야
 oxidize : 산화시키다
-oxidatoin : 산화
+oxidation : 산화
 gravel : 자갈
 negligible : (중요성,규모가 작아) 무시해도 될 정도의
 crushed granite : 으개진 화강암
@@ -180,7 +180,7 @@ pellet : 조각
 urea : 요소 오줌속에 들어있는 질소 화합물
 pooltry : 닭,오리,거위등 가금류
 buffer zone : 완충 지대
-vasrness : 방대함
+vastness : 방대함
 trivial : 사소한 하찮은
 inquisitive : 꼬치꼬치 캐뭍는, 호기심 많은
 musty : 퀴퀴한 냄새가 나는
