@@ -287,6 +287,10 @@ bovine : 소의 사람이우둔한,미련한
 hides : 가죽
 stuffing : 만두에 넣는 소, 쿠션에 넣는 속(충전재)
 yarn : 실, 방적사
+sinew : 힘줄
+hoove : 고창증
+rattle : 딸랑이
+awl : 송곳
 ```
 
 [^1]: This is a footnote.
