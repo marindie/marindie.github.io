@@ -525,8 +525,8 @@ raised beds closed-loop aquaponics
   ammonium(nh4+, lower than ph7 which is not harmful to the fish) 
   based on the ph of the aquarium
 * wimp when it comes to UV light
-* Nitrosomonas 는 암모니아를 아질산염으로 바꾸고
-* Nitrobacter 는 아질산염을 질산염으로 바꾼다
+* Nitrosomonas 는 암모니아를 아질산염(이산화질소)으로 바꾸고
+* Nitrobacter 는 아질산염(이산화질소)을 질산염으로 바꾼다
 * ph 정도는 6.2 ~ 6.4 정도가 제일 좋은데
 * 이유는 이런 nitrification 작용을 하는 다른 박테리아들이 활동 하는 구간이
 * ph6 ~ 6.8 정도의 구간이기 때문이다.
