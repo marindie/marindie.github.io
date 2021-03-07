@@ -310,6 +310,9 @@ transcontinental : 대륙횡단
 throng : 인파 군중
 cull : 도태시키다 
 locomotive : 기관차
+carcass : 사체
+in favor of : 에 찬성하여, 위하여, 에 이익이 되도록
+veto : 거부 거부권
 ```
 
 [^1]: This is a footnote.
