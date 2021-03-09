@@ -291,29 +291,7 @@ sinew : 힘줄
 hoove : 고창증
 rattle : 딸랑이
 awl : 송곳
-ornament : 장식품
-enzyme : 효소
-intestine : 장 창자
-gallstone : 담석
-pigment : 색소
-lone : 혼자인 단독의
-disguise : 변장하다 위장하다 숨기다
-pelt : 생가죽
-ravine : 산골짜기 협곡
-demise : 종말 죽음 사망
-wagon : 화물기차
-skirmish : 소규모접전 작은충돌
-indigenous : 토종의
-fur trade : 모피무역
-entice : 유도하다
-transcontinental : 대륙횡단
-throng : 인파 군중
-cull : 도태시키다 
-locomotive : 기관차
-carcass : 사체
-in favor of : 에 찬성하여, 위하여, 에 이익이 되도록
-veto : 거부 거부권
-disenfranchise : 권리 박탈
+revere : 숭배하다
 ```
 
 [^1]: This is a footnote.
