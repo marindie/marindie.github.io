@@ -113,6 +113,12 @@ git fetch origin
 
 # 모든 브랜치 정보 보기
 git branch -v -a
+
+#아래 명령어로 삭제를 해도 되는 Branch 목록을 확인하고
+git remote prune origin --dry-run 
+# --dry-run 을 빼면 해당 브랜치 들이 사라진다.
+# 그리고 Eclipse 에서 보면 브랜치들 사라져있음
+git remote prune origin
 ```
 
 ### git merge 명령어 {#toc5}
