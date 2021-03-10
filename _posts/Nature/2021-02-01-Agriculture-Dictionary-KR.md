@@ -293,6 +293,13 @@ rattle : 딸랑이
 awl : 송곳
 revere : 숭배하다
 replenish : 다시채우다 보충하다
+potency : 효능, 힘, 성행위 능력
+toxic : 유독 화학 물질/연기/가스/물질
+degraded : 퇴화한 타락한
+rangeland : 방목장
+parcel : 땅의 구획, 소포, 꾸러미
+proportion : (전체의)부분,비율
+herculean : 엄청나게 힘든
 ```
 
 [^1]: This is a footnote.
