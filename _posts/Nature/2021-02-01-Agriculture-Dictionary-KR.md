@@ -292,6 +292,7 @@ hoove : 고창증
 rattle : 딸랑이
 awl : 송곳
 revere : 숭배하다
+replenish : 다시채우다 보충하다
 ```
 
 [^1]: This is a footnote.
