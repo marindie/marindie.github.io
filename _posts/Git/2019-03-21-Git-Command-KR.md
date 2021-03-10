@@ -119,6 +119,9 @@ git remote prune origin --dry-run
 # --dry-run 을 빼면 해당 브랜치 들이 사라진다.
 # 그리고 Eclipse 에서 보면 브랜치들 사라져있음
 git remote prune origin
+
+# 로컬 브랜치를 삭제
+git branch -d branch-name
 ```
 
 ### git merge 명령어 {#toc5}
