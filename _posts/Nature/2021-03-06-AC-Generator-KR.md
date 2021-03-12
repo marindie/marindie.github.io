@@ -76,13 +76,7 @@ P = Volts의 제곱 / Ohms
 두개의 1마력 모터는 1492W 를 생산하는 것을 의미 1.5KW 라 할 수 있다.
 ```
 
-### 전동기 {#toc6}
-
-```md
-추후 작성
-```
-
-### 전기모터 {#toc7}
+### 전기모터 {#toc6}
 
 ```md
 영구자석 처럼 자성을 띄도록 하기 위해 코일등을  
@@ -97,6 +91,7 @@ P = Volts의 제곱 / Ohms
 ![전기자02](/assets/images/screen/전기자02.png)
 ![전기자03](/assets/images/screen/전기자03.png)
 ![전기자04](/assets/images/screen/전기자04.png)
+![전동가01](/assets/images/screen/전동기01.png)
 
 ```md
 이 움직임을 지속적으로 유지 시키기 위해서는  
