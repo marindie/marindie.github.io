@@ -305,6 +305,7 @@ rain forest : 열대 다우림
 perk up : 기운을 되찾다
 ploy : 계책, 술책
 billow : 먼지구름등이 피어오르다
+pot-hole : 도로에 음푹 패인 곳
 ```
 
 [^1]: This is a footnote.
