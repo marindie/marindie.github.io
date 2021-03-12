@@ -300,6 +300,11 @@ rangeland : 방목장
 parcel : 땅의 구획, 소포, 꾸러미
 proportion : (전체의)부분,비율
 herculean : 엄청나게 힘든
+shrinking : 줄어든, 겁내는, 움츠리는
+rain forest : 열대 다우림
+perk up : 기운을 되찾다
+ploy : 계책, 술책
+billow : 먼지구름등이 피어오르다
 ```
 
 [^1]: This is a footnote.
