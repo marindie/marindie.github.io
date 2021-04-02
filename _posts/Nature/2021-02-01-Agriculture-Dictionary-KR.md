@@ -306,6 +306,11 @@ perk up : 기운을 되찾다
 ploy : 계책, 술책
 billow : 먼지구름등이 피어오르다
 pot-hole : 도로에 음푹 패인 곳
+cricket : 귀뚜라미
+cicada : 매미
+barley : 보리
+triticale : 라이밀
+
 ```
 
 [^1]: This is a footnote.
