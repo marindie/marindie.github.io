@@ -312,6 +312,11 @@ barley : 보리
 triticale : 라이밀
 cantaloupe : 껍질은 파랗고 속은 오렌지색의 멜론
 squash : 호박
+sorghum sudan : 사탕수수
+millet : 수수
+flax : 아마
+symbiotic : 공생하는
+proliferate : 확산하다 급증하다
 ```
 
 [^1]: This is a footnote.
