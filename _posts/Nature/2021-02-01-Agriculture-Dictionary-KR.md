@@ -310,7 +310,8 @@ cricket : 귀뚜라미
 cicada : 매미
 barley : 보리
 triticale : 라이밀
-
+cantaloupe : 껍질은 파랗고 속은 오렌지색의 멜론
+squash : 호박
 ```
 
 [^1]: This is a footnote.
