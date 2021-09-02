@@ -661,6 +661,16 @@ with heavy metals or excess minerals.
 
 ```
 
+### 플라즈마 토치 {#toc27}
+
+```md
+무엇이든 분자 구조를 바꿔서 가연성 쓰레기를 제거하고
+다시 핵심 물질로 바꿔줌.
+환경에 해로운 효과도 없음
+Pyrogenesis - The destruction of combustible
+waste through use of a plasma torch.
+```
+
 [^1]: This is a footnote.
 
 [kramdown]: https://kramdown.gettalong.org/
