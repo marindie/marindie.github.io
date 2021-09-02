@@ -539,6 +539,10 @@ redirect_from:
   지렁이가 만든 퇴비를 따듯한 물에 풀어서 줄 수도 있다
 * 식물은 지렁이가 만든 퇴비등을 바탕으로 번식
 * 식물을 통과한 물을 다시 물고기 식수로 재사용
+* vetiver grass(비라나) 는 퇴적토를 거르고 토양강도를 향상시키며
+  토양영양물질을 재생성함
+  filter out sediment, improve soil strength
+  recycle soil nutrient
 ```
 
 - 아래의 영상은 퍼머컬처와 아쿠아포닉에 대해 예시를 들어가며 설명하는 유투브 컨텐츠이다
