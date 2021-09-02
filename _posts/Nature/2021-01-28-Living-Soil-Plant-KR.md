@@ -643,6 +643,12 @@ raised beds closed-loop aquaponics
   해당하는 물질을 교환함으로써 곤충공격에 대비하기도 한다는 점
 ```
 
+### bioremediation phytoremediation {#toc26}
+
+```md
+생물적환경정화, 식물환경복원
+```
+
 [^1]: This is a footnote.
 
 [kramdown]: https://kramdown.gettalong.org/
