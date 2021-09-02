@@ -646,7 +646,19 @@ raised beds closed-loop aquaponics
 ### bioremediation phytoremediation {#toc26}
 
 ```md
-생물적환경정화, 식물환경복원
+생물적환경정화 - 자연유기체를 사용해서
+유독 물질을 덜 유독하거나 
+해가없는 물질로 분해, 식물환경복원
+Bioremediation - The use of natural
+organisms to break down hazardous 
+substances into less toxic or non-toxic substances.
+
+식물 환경 복원 - 녹색 식물을 이용해서
+해로운 물질이나 과잉 무기질로 오염된 흙과 물을 해독
+Phytoremediation - The use of green plants
+to detoxify soil and water contaminated
+with heavy metals or excess minerals.
+
 ```
 
 [^1]: This is a footnote.
