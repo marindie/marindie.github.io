@@ -671,14 +671,22 @@ Pyrogenesis - The destruction of combustible
 waste through use of a plasma torch.
 ```
 
-### 맹그로브 해초{#toc28}
+### 맹그로브 해초 켈프 해달 {#toc28}
 ```md
 mangrove 맹그로브는 탄소를 흡수하고 뿌리는
 어린물고기의 보호구역으로 사용된다.
+맹그로브는 허리케인의 피해를 막아주며,
+시시각각 변화하는 천해(shallow sea)의
+염분농도에 대처할 수 있다.
+
 seagrass 해초는 기우변화에 매우 중대한
 역할을 한다.
 해초는 우림지역 보다 같은 면적 대비
 35배의 탄소 흡수를 한다.
+
+켈프(kelp)의 건강에
+해달(sea otter) 은 성게(sea urchine)개체수를 조절한다
+이는 매우 중요한 작용이다.
 ```
 
 [^1]: This is a footnote.
