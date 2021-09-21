@@ -672,6 +672,7 @@ waste through use of a plasma torch.
 ```
 
 ### 맹그로브 해초 켈프 해달 {#toc28}
+
 ```md
 mangrove 맹그로브는 탄소를 흡수하고 뿌리는
 어린물고기의 보호구역으로 사용된다.
