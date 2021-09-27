@@ -698,7 +698,22 @@ pseudomonas bacteria
 plant can not hug for food elsewhere
 or move out harms away
 what a plant can do pis to release
- hormone and other chemicals
+hormones and other chemicals.
+certain soil bacteria senses these
+signals and travel to the plat root.
+they may live on the root
+or may enter and live inside the root
+some of these bacteria feed the plant
+by collecting and digesting mineral 
+nutrients frome the soil.
+Other bacteria defends the plant
+from desease-causing organisms
+and viruses. bacteria has even
+been found to protect the root
+from drought by coating the root
+with sticky goo called bio film.
+
+
 
 ```
 
