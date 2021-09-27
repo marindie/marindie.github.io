@@ -690,6 +690,18 @@ seagrass 해초는 기우변화에 매우 중대한
 이는 매우 중요한 작용이다.
 ```
 
+### protozoa nematodes {toc29}
+
+```md
+micorrhizae fungi
+pseudomonas bacteria
+plant can not hug for food elsewhere
+or move out harms away
+what a plant can do pis to release
+ hormone and other chemicals
+
+```
+
 [^1]: This is a footnote.
 
 [kramdown]: https://kramdown.gettalong.org/
