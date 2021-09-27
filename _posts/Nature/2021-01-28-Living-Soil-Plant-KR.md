@@ -690,7 +690,7 @@ seagrass 해초는 기우변화에 매우 중대한
 이는 매우 중요한 작용이다.
 ```
 
-### protozoa nematodes {toc29}
+### fungi bacteria protozoa helminth nematodes {toc29}
 
 ```md
 micorrhizae fungi
@@ -712,8 +712,6 @@ and viruses. bacteria has even
 been found to protect the root
 from drought by coating the root
 with sticky goo called bio film.
-
-
 
 ```
 
