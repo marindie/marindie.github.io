@@ -693,8 +693,10 @@ seagrass 해초는 기우변화에 매우 중대한
 ### fungi bacteria protozoa helminth nematodes {toc29}
 
 ```md
+유익한 균 밎 박테리아
 micorrhizae fungi
 pseudomonas bacteria
+
 plant can not hug for food elsewhere
 or move out harms away
 what a plant can do pis to release
@@ -712,6 +714,12 @@ and viruses. bacteria has even
 been found to protect the root
 from drought by coating the root
 with sticky goo called bio film.
+
+protozoa is a single cell, called eukaryote
+and they don't have cell walls.
+They can also form double membrane 
+or cysts to become more resistant.
+
 
 ```
 
