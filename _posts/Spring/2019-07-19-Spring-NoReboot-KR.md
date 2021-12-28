@@ -122,7 +122,7 @@ export CATALINA_OPTS="$CATALINA_OPTS -Xmx4096m"
 export CATALINA_OPTS="$CATALINA_OPTS -XX:MaxPermSize=1024m"
 ```
 
-### ibatis mapper 재기동 없이 인식 하는 방법 {#toc5}
+### Mybatis mapper 재기동 없이 인식 하는 방법 {#toc5}
 
 아래 java 소스를 RefreshableSqlSessionFactoryBean.java 로 생성해서 원하는 package 경로에 넣고, 아래의 xml 파일 중, SqlSessionFactoryBean 을 찾아서 아래의 내용으로 교체
 
