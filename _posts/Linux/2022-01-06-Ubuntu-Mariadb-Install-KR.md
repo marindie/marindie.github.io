@@ -1,14 +1,14 @@
 ---
 toc: true
 title: "[Ubuntu] Mariadb 설치 방법 및 관련 이슈 정리"
-description: "Ubuntu 에서 Mariadb 설치 방법 및 10.4 부터 변경된 내용에 대한 이슈랑 기타 내용 기록"
+description: "Ubuntu 20.04 에서 Mariadb 설치 방법 및 10.4 부터 변경된 내용에 대한 이슈랑 기타 내용 기록"
 categories: [Linux]
 tags: [Mariadb]
 redirect_from:
   - /2022/01/06/
 ---
 
-> Ubuntu 에서 Mariadb 설치 방법 및 10.4 부터 변경된 내용에 대한 이슈랑 기타 내용 기록
+> Ubuntu 20.04 에서 Mariadb 설치 방법 및 10.4 부터 변경된 내용에 대한 이슈랑 기타 내용 기록
 
 ### Mariadb 설치 관련 명령어 {#toc1}
 
