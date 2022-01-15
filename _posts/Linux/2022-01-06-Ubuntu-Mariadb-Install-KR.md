@@ -31,40 +31,32 @@ sudo mysql 로 로그인 이유가 궁금하면 https://www.nemonein.xyz/2019/07
 show variables like 'char%';
 
 - 시간 확인
-select @@global.time.zone, @@session.time_zone;
+select @@global.time_zone, @@session.time_zone;
 
 - 클라우드로 환경구축시 아래 명령어 실행
 sudo timedatectl set-timezone 'Asia/Seoul'
 date 로 확인
 sudo systemctl restart mysql
-
 select now(); 로 확인
 
 - 외부에서 접속이 안될때
-cat /etc/mysql/my.cnf
-
 sudo vi /etc/mysql/mariadb.conf.d/50-server.cnf 에서 bind-address 를 0.0.0.0
+
+파일이 없으면 아래의 명령어로 폴더 위치 확인
+cat /etc/mysql/my.cnf
 포트도 필요하면 #port 주석 제거하고 변경
 
-- database 에 접근할 권한이 없을 때
+- mariadb user 생성
+
+- database 선택
 show databases;
 use database_name;
 
-권한 조회
-select host, user from user;
-
-권한 부여
+- 권한 부여
 grant all privileges on *.* to 'gitea'@'%' identified by 'gitea';
-```
 
-### Mariadb mysql 권한 및 정보 확인 관련 쿼리 또는 명령어 정리 {#toc2}
-
-```md
-- database 목록
-show databases;
-
-- database 선택
-use database
+- 권한 조회 (mysql database 혹은 database 접속 안한 상태에서 아래 명령어)
+select host, user from user;
 ```
 
 [^1]: This is a footnote.
