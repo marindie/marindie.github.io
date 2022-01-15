@@ -47,9 +47,11 @@ cat /etc/mysql/my.cnf
 포트도 필요하면 #port 주석 제거하고 변경
 
 - mariadb user 생성
+create user 'gitea'@'%' identified by 'gitea';
 
 - database 선택
 show databases;
+create database gitea;
 use database_name;
 
 - 권한 부여
