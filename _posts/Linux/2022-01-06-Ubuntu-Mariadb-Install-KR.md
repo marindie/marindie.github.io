@@ -13,7 +13,8 @@ redirect_from:
 ### Mariadb 설치 관련 명령어 {#toc1}
 
 ```md
-sudo adduser mariadb sudo
+sudo adduser mariadb
+sudo usermod -a -G sudo mariadb
 sudo apt-get install mariadb-server
 
 - 설치되는 버전을 잘보고 10.1 이후이면 아래의 방식으로 한다
