@@ -2,8 +2,8 @@
 toc: true
 title: "[Ubuntu] Jenkins 설치 방법 온라인 오프라인 둘다"
 description: "Ubuntu 20.04 에서 Jenkins 설치 방법 (오프라인 방법 팁도 설명)"
-categories: [Linux]
-tags: [Jenkins]
+categories: [Jenkins]
+tags: [Ubuntu]
 redirect_from:
   - /2022/01/15/
 ---
