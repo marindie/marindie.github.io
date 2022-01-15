@@ -49,6 +49,9 @@ sudo systemctl disable gitea.service
 - 서비스 중지
 sudo systemctl stop gitea.service
 
+- 서비스 목록
+sudo systemctl list-units --type=service
+
 gitea 실행시키면 기본 포트로 3000 으로 실행됨. 
 음.. 파일에서 포트 변경으로 하는 방법은 잘 모르는 상황이고..
 
