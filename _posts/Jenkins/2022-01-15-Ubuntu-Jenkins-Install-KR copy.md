@@ -23,6 +23,9 @@ sudo systemctl start jenkins
 sudo systemctl stop jenkins
 sudo systemctl status jenkins
 
+== 부팅시 자동 실행
+sudo systemctl enable jenkins
+
 sudo vi /etc/default/jenkins   HTTP_PORT 를 원하는 포트로 변경
 
 == 최초 암호 저장된 위치

@@ -3,7 +3,7 @@ toc: true
 title: "[Ubuntu] Ubuntu 20.04 에서 파일 끝에 ^M 삭제 방법"
 description: "Ubuntu Ubuntu 20.04 에서 파일 끝에 ^M 삭제 방법"
 categories: [Linux]
-tags: [File]
+tags: [Ubuntu]
 redirect_from:
   - /2022/01/15/
 ---
