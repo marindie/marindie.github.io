@@ -40,11 +40,18 @@ User=git => User=root 로 변경 후 저장
 Reload gitea service
 sudo systemctl daemon-reload
 
-아래는 자동으로 서비스 활성화
+- 부팅시 서비스 시작
 sudo systemctl enable --now gitea
+
+- 서비스 비활성화
+sudo systemctl disable gitea.service
+
+- 서비스 중지
+sudo systemctl stop gitea.service
 
 gitea 실행시키면 기본 포트로 3000 으로 실행됨. 
 음.. 파일에서 포트 변경으로 하는 방법은 잘 모르는 상황이고..
+
 gitea web -p 9090 등으로 gitea 실행시 포트를 입력해서 해당 포트로 띄워서 사용중
 ```
 
