@@ -23,16 +23,21 @@ wget https://dl.gitea.io/gitea/1.11.3/gitea-1.11.3-linux-amd64
 mv gitea-1.11.3-linux-amd64 gitea
 chmod u+x gitea
 sudo mv gitea /usr/local/bin
-sudo mkidr -p /var/lib/gitea/{custom,data,indexers,public,log}
+sudo mkdir -p /var/lib/gitea/{custom,data,indexers,public,log}
 sudo chown git: /var/lib/gitea/{data,indexers,log}
 sudo chmod 750 /var/lib/gitea/{data,indexers,log}
 sudo mkdir /etc/gitea
 sudo chown root:git /etc/gitea
 sudo chmod 770 /etc/gitea
 sudo wget https://raw.githubusercontent.com/go-gitea/gitea/master/contrib/systemd/gitea.service -P /etc/systemd/system/
-sudo vi /etc/systemd/system/gitea/service
+sudo vi /etc/systemd/system/gitea.service
 파일 안에서
-User=git => User=root 로 변경
+User=git => User=root 로 변경 후 저장
+
+설정 파일 위치
+/etc/gitea/app.ini
+
+Reload gitea service
 sudo systemctl daemon-reload
 
 아래는 자동으로 서비스 활성화
