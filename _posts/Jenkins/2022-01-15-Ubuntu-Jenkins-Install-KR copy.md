@@ -16,6 +16,7 @@ redirect_from:
 == 파일 다운로드 및 서비스 시작
 wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
 sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys
 sudo apt update
 sudo apt install jenkins
 sudo systemctl start jenkins
