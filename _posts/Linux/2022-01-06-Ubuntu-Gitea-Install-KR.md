@@ -36,6 +36,7 @@ User=git => User=root 로 변경 후 저장
 
 설정 파일 위치
 /etc/gitea/app.ini
+/usr/local/bin/custom/conf/app.ini
 
 Reload gitea service
 sudo systemctl daemon-reload
