@@ -57,6 +57,7 @@ gitea 실행시키면 기본 포트로 3000 으로 실행됨.
 음.. 파일에서 포트 변경으로 하는 방법은 잘 모르는 상황이고..
 
 gitea web -p 9090 등으로 gitea 실행시 포트를 입력해서 해당 포트로 띄워서 사용중
+gitea web --config /usr/local/bin/custom/conf/app.ini
 ```
 
 [^1]: This is a footnote.
