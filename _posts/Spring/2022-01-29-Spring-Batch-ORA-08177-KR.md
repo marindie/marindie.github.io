@@ -3,7 +3,7 @@ toc: true
 title: "Spring Boot Batch ORA-08177 이 트랜잭션에 대한 직렬화 액세스를 할 수 없습니다 처리"
 description: "Spring Boot Batch ORA-08177 이 트랜잭션에 대한 직렬화 액세스를 할 수 없습니다 처리"
 categories: [Spring]
-tags: [Oracle]
+tags: [Spring]
 redirect_from:
   - /2022/01/29/
 ---
