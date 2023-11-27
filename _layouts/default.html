@@ -16,7 +16,9 @@
   </head>
 
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
-
+    <script async src="https://cse.google.com/cse.js?cx=f4ef173fe788bd440"></script>
+    <div class="gcse-search"></div>
+    
     {% include_cached browser-upgrade.html %}
     {% include_cached masthead.html %}
     {% include ad.html %}
