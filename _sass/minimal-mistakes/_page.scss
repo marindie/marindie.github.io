@@ -13,6 +13,10 @@
   max-width: 100%;
   -webkit-animation-delay: 0.15s;
   animation-delay: 0.15s;
+  ::-webkit-scrollbar{
+    width: 10px;
+    background-color: black;
+  }
 
   @include breakpoint($x-large) {
     max-width: $x-large;
