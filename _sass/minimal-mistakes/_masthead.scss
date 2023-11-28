@@ -4,7 +4,8 @@
 
 .masthead {
   position: sticky;
-  top: 0;
+  top: -1rem;
+  padding: 1rem;
   -webkit-animation: $intro-transition;
   animation: $intro-transition;
   -webkit-animation-delay: 0.15s;
