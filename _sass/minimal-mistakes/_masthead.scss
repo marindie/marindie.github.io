@@ -3,8 +3,8 @@
    ========================================================================== */
 
 .masthead {
-  position: relative;
-  border-bottom: 1px solid $border-color;
+  position: sticky;
+  top: 0;
   -webkit-animation: $intro-transition;
   animation: $intro-transition;
   -webkit-animation-delay: 0.15s;
@@ -54,8 +54,6 @@
 }
 
 .masthead__menu {
-  position: sticky;
-  top: 0;
   margin-left: 0;
   margin-right: 0;
   width: 100%;
