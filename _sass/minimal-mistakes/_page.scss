@@ -13,14 +13,22 @@
   max-width: 100%;
   -webkit-animation-delay: 0.15s;
   animation-delay: 0.15s;
-  ::-webkit-scrollbar{
-    width: 10px;
-    background-color: black;
-  }
 
   @include breakpoint($x-large) {
     max-width: $x-large;
   }
+}
+#main::-webkit-scrollbar {
+  width: 10px;
+}
+#main::-webkit-scrollbar-thumb {
+  background-color: #2f3542;
+  border-radius: 10px;
+}
+#main::-webkit-scrollbar-track {
+  background-color: grey;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
 }
 
 .page {
