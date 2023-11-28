@@ -22,8 +22,11 @@
 .page {
   @include breakpoint($large) {
     float: right;
-    width: calc(100% - #{$right-sidebar-width-narrow});
-    padding-right: $right-sidebar-width-narrow;
+    // width: calc(100% - #{$right-sidebar-width-narrow});
+    // padding-right: $right-sidebar-width-narrow;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   @include breakpoint($x-large) {
@@ -34,8 +37,8 @@
   .page__inner-wrap {
     float: left;
     margin-top: 1em;
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
     clear: both;
 

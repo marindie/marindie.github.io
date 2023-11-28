@@ -9,6 +9,9 @@
 .breadcrumbs {
   @include clearfix;
   max-width: 100%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;  
   padding-left: 1em;
   padding-right: 1em;
   font-family: $sans-serif;
