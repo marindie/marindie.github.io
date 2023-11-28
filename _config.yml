@@ -16,16 +16,16 @@ minimal_mistakes_skin    : "air" # "default", "air", "aqua", "contrast", "dark",
 
 # Site Settings
 locale                   : "ko"
-title                    : "Permaculture Life Style"
+title                    : "React-Nexacro-Spring"
 title_separator          : "-"
 name                     : "정승원 (Patrick)"
-description              : "Permaculture, 퍼머컬처, 프로그래밍, Programming"
+description              : "React Nexacro Spring"
 url                      : "https://marindie.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "/" # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : "/assets/images/sunset-3325080_1920.jpg" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/assets/images/sunset-3325080_1920.jpg" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : "Permaculture Life" # overrides the website title displayed in the masthead, use " " for no title
+masthead_title           : "React Nexacro Spring" # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs            : true # true, false (default)
 words_per_minute         : 50
 comments:
