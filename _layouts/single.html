@@ -48,23 +48,27 @@ layout: default
           </aside>
           <!-- S: 구글 컨텐츠 내 자동 삽입 광고 contents 상단 -->
           <!-- 수평형 광고 -->
-          <ins class="adsbygoogle"
-              style="display:block"
-              data-ad-client="ca-pub-5746287019974907"
-              data-ad-slot="8862563347"
-              data-ad-format="auto"
-              data-full-width-responsive="true"></ins>
+          <amp-ad width="100vw" height="320"
+            type="adsense"
+            data-ad-client="ca-pub-5746287019974907"
+            data-ad-slot="8862563347"
+            data-auto-format="rspv"
+            data-full-width="">
+            <div overflow=""></div>
+          </amp-ad>
           <!-- E: 구글 컨텐츠 내 자동 삽입 광고 contents 상단 -->
         {% endif %}
         {{ content }}
         <!-- S: 구글 컨텐츠 내 자동 삽입 광고 contents 하단 -->
         <!-- 수평형 광고 -->
-        <ins class="adsbygoogle"
-            style="display:block"
-            data-ad-client="ca-pub-5746287019974907"
-            data-ad-slot="8862563347"
-            data-ad-format="auto"
-            data-full-width-responsive="true"></ins>
+        <amp-ad width="100vw" height="320"
+          type="adsense"
+          data-ad-client="ca-pub-5746287019974907"
+          data-ad-slot="8862563347"
+          data-auto-format="rspv"
+          data-full-width="">
+          <div overflow=""></div>
+        </amp-ad>
         <!-- E: 구글 컨텐츠 내 자동 삽입 광고 contents 하단 -->
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
