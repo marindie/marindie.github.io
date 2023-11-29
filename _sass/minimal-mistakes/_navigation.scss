@@ -8,7 +8,7 @@
 
 .breadcrumbs {
   @include clearfix;
-  max-width: 100%;
+  max-width: 100% !important;
   width: 100%;
   margin-left: auto;
   margin-right: auto;  
@@ -30,12 +30,14 @@
     font-size: $type-size-5;
 
     @include breakpoint($large) {
-      float: right;
-      width: calc(100% - #{$right-sidebar-width-narrow});
+      // float: right;
+      // width: calc(100% - #{$right-sidebar-width-narrow});
+      text-align: center;
     }
 
     @include breakpoint($x-large) {
-      width: calc(100% - #{$right-sidebar-width});
+      // width: calc(100% - #{$right-sidebar-width});
+      text-align: center;
     }
   }
 
