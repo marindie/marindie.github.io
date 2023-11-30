@@ -16,35 +16,36 @@
   </head>
 
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
+    <div>      
+      {% include_cached browser-upgrade.html %}
+      {% include_cached masthead.html %}
+      {% include ad.html %}
+      <div class="initial-content">
+        {{ content }}
+      </div>
+      
+      {% if site.search == true %}
+        <div class="search-content">
+          {% include_cached search/search_form.html %}
+        </div>
+      {% endif %}
+  
+      <div class="page__footer">
+        <footer>
+          {% include footer/custom-footer.html %}
+          {% include_cached footer.html %}
+        </footer>
+      </div>
+  
+      {% include scripts.html %}
+      <!-- <div id="loading">
+        <img src="/assets/images/Spinner-1s-207px.svg" alt="loading">
+      </div> -->
+      <br>
+    </div>
     <amp-auto-ads type="adsense"
       data-ad-client="ca-pub-5746287019974907">
     </amp-auto-ads>
-    
-    {% include_cached browser-upgrade.html %}
-    {% include_cached masthead.html %}
-    {% include ad.html %}
-    <div class="initial-content">
-      {{ content }}
-    </div>
-
-    {% if site.search == true %}
-      <div class="search-content">
-        {% include_cached search/search_form.html %}
-      </div>
-    {% endif %}
-
-    <div class="page__footer">
-      <footer>
-        {% include footer/custom-footer.html %}
-        {% include_cached footer.html %}
-      </footer>
-    </div>
-
-    {% include scripts.html %}
-    <!-- <div id="loading">
-      <img src="/assets/images/Spinner-1s-207px.svg" alt="loading">
-    </div> -->
-    <br>
   </body>
   <!-- <script>
     $(window).on('load', function() {

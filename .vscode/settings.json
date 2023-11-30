@@ -1,0 +1,8 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": false,
+    "source.addMissingImports": false,
+    "source.fixAll": false
+  },
+  "editor.formatOnSave": false
+}
