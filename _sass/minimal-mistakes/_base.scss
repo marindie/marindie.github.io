@@ -5,7 +5,6 @@
 html {
   /* sticky footer fix */
   position: relative;
-  min-height: 100%;
 }
 
 body {
@@ -14,7 +13,6 @@ body {
   color: $text-color;
   font-family: $global-font-family;
   line-height: 1.5;
-
 }
 
 h1,
@@ -373,4 +371,8 @@ input[type="submit"],
 	top: 45%;
 	left: 45%;
 	z-index: 100;
+}
+
+.main-container {
+  height:auto !important;
 }

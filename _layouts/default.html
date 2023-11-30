@@ -16,7 +16,7 @@
   </head>
 
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
-    <div>      
+    <div class="main-container">      
       {% include_cached browser-upgrade.html %}
       {% include_cached masthead.html %}
       {% include ad.html %}
