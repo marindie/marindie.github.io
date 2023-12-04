@@ -27,10 +27,10 @@
 
 .page {
   @include breakpoint($large) {
-    // width: calc(100% - #{$right-sidebar-width-narrow});
-    // padding-right: $right-sidebar-width-narrow;
-    width: 100%;
-    margin: 0 auto;
+    width: calc(100% - #{$right-sidebar-width-narrow});
+    padding-right: $right-sidebar-width-narrow;
+    // width: 100%;
+    // margin: 0 auto;
   }
 
   .page__inner-wrap {
