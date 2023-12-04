@@ -27,8 +27,13 @@
 
 .page {
   @include breakpoint($large) {
+    //기존
     width: calc(100% - #{$right-sidebar-width-narrow});
     padding-right: $right-sidebar-width-narrow;
+    //테스트
+    max-width: 700px;
+
+    // 테스트 2
     // width: 100%;
     // margin: 0 auto;
   }
