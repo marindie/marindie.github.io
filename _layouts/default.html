@@ -16,10 +16,10 @@
   </head>
 
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
+    {% include ad.html %}
     <div class="main-container">      
       {% include_cached browser-upgrade.html %}
       {% include_cached masthead.html %}
-      {% include ad.html %}
       <div class="initial-content" style="height: auto !important;">
         {{ content }}
       </div>
