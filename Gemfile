@@ -18,17 +18,18 @@ gem "minimal-mistakes-jekyll"
 
 # The following plugins are automatically loaded by the theme-gem:
 
-#    gem "jekyll-paginate-v2"
-#    gem "jekyll-toc"
-#    gem "jekyll-tagging"
-#    gem "jekyll-tagging-related_posts"
+gem "jekyll-paginate-v2"
+gem "jekyll-toc"
+gem "jekyll-tagging"
+gem "jekyll-tagging-related_posts"
 
-#   gem "jekyll-sitemap"
-#   gem "jekyll-gist"
-#   gem "jekyll-feed"
-#   gem "jemoji"
-#   gem "jekyll-data"
-#   gem "jekyll-include-cache"
+gem "jekyll-sitemap"
+gem "jekyll-gist"
+gem "jekyll-feed"
+gem "jemoji"
+gem "jekyll-data"
+gem "jekyll-include-cache"
+gem "jekyll-algolia"
 #
 # If you have any other plugins, put them here!
 group :jekyll_plugins do
