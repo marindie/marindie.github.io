@@ -127,8 +127,13 @@
 }
 
 .list__item {
-  width: 25%;
+  width: 100%;
   padding: 0.5rem;
+  
+  @include breakpoint($small) {
+    width: 25%;
+  }
+
   .page__meta {
     margin: 0 0 4px;
     font-size: 0.6em;
