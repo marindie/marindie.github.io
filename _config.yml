@@ -319,3 +319,7 @@ defaults:
       related: false
       classes: wide
       toc_sticky: true
+
+# Collection
+collections:
+  includes:

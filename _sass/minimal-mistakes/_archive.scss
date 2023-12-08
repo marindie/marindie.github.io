@@ -6,16 +6,16 @@
   margin-top: 1em;
   margin-bottom: 2em;
 
-  @include breakpoint($large) {
-    float: right;
-    width: calc(100% - #{$right-sidebar-width-narrow});
-    padding-right: $right-sidebar-width-narrow;
-  }
+  // @include breakpoint($large) {
+  //   float: right;
+  //   width: calc(100% - #{$right-sidebar-width-narrow});
+  //   padding-right: $right-sidebar-width-narrow;
+  // }
 
-  @include breakpoint($x-large) {
-    width: calc(100% - #{$right-sidebar-width});
-    padding-right: $right-sidebar-width;
-  }
+  // @include breakpoint($x-large) {
+  //   width: calc(100% - #{$right-sidebar-width});
+  //   padding-right: $right-sidebar-width;
+  // }
 }
 
 .archive__item {
@@ -40,6 +40,13 @@
   line-height: initial;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: $type-size-5-5;
+  
+  a {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
 
   a::before {
     content: '';
@@ -114,8 +121,14 @@
 /*
    List view
    ========================================================================== */
+.entries-list {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .list__item {
+  width: 25%;
+  padding: 0.5rem;
   .page__meta {
     margin: 0 0 4px;
     font-size: 0.6em;
