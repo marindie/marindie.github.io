@@ -90,6 +90,9 @@
 
   img {
     width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 20px;
   }
 }
 
@@ -129,7 +132,7 @@
 .list__item {
   width: 100%;
   padding: 0.5rem;
-  
+
   @include breakpoint($small) {
     width: 25%;
   }
