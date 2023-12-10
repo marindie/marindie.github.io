@@ -549,10 +549,9 @@
   @include breakpoint($large) {
     display: block;
     width: 300px;
-    height: auto;
-    position: sticky;
-    top: 300px;
-    padding: 5px;
+    position: fixed;
+    top: 250px;
+    padding: 20px;
   }
 }
 .right_side {
@@ -560,9 +559,9 @@
   @include breakpoint($large) {
     display: block;
     width: 300px;
-    height: auto;
-    position: sticky;
-    top: 300px;
-    padding: 5px;
+    position: fixed;
+    top: 250px;
+    right: 0px;
+    padding: 20px;
   }
 }
