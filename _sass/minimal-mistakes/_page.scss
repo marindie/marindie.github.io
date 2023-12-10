@@ -549,6 +549,7 @@
 .left_side {
   display: none;
   @include breakpoint($large) {
+    display: block;
     width: 300px;
     height: auto;
     position: sticky;
@@ -558,6 +559,7 @@
 .right_side {
   display: none;
   @include breakpoint($large) {
+    display: block;
     width: 300px;
     height: auto;
     position: sticky;
