@@ -10,9 +10,7 @@
     // float: right;
     // width: calc(100% - #{$right-sidebar-width-narrow});
     // padding-right: $right-sidebar-width-narrow;
-    width: calc(100% - #{$right-sidebar-width-large});
-    margin-left: 300px;
-    margin-right: 300px;
+    width: calc(100vw - #{$right-sidebar-width-large});
     padding-left: 1rem;
     padding-right: 1rem;
   }
