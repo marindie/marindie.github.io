@@ -6,11 +6,16 @@
   margin-top: 1em;
   margin-bottom: 2em;
 
-  // @include breakpoint($large) {
-  //   float: right;
-  //   width: calc(100% - #{$right-sidebar-width-narrow});
-  //   padding-right: $right-sidebar-width-narrow;
-  // }
+  @include breakpoint($large) {
+    // float: right;
+    // width: calc(100% - #{$right-sidebar-width-narrow});
+    // padding-right: $right-sidebar-width-narrow;
+    width: calc(100% - #{$right-sidebar-width-large});
+    margin-left: 300px;
+    margin-right: 300px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 
   // @include breakpoint($x-large) {
   //   width: calc(100% - #{$right-sidebar-width});
@@ -90,7 +95,7 @@
 
   img {
     width: 100%;
-    height: 180px;
+    height: 10vw;
     object-fit: cover;
     border-radius: 20px;
   }
