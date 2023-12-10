@@ -30,20 +30,21 @@
 }
 
 .flex-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  @include breakpoint($large) {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .page {
   @include breakpoint($large) {
     //기존
     // width: calc(100% - #{$right-sidebar-width-narrow});
-    padding-right: $right-sidebar-width-narrow;
+    // padding-right: $right-sidebar-width-narrow;
+    width: calc(100% - #{$right-sidebar-width-large});
+    margin-left: 300px;
+    margin-right: 300px;
 
-    // 테스트 2
-    width: 100%;
     // margin: 0 auto;
   }
 
