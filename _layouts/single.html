@@ -17,14 +17,16 @@ layout: default
 <div id="main" role="main">
   {% include sidebar.html %}
   <div class="left_side">
-    <amp-ad
-      layout="fixed"
-      width="300"
-      height="600"
-      type="adsense"
-      data-ad-client="ca-pub-5746287019974907"
-      data-ad-slot="7065839717">
-    </amp-ad>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746287019974907"
+    crossorigin="anonymous"></script>
+<!-- 수직 디스플레이 -->
+<ins class="adsbygoogle"
+    style="display:inline-block;width:300px;height:600px"
+    data-ad-client="ca-pub-5746287019974907"
+    data-ad-slot="7065839717"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
   </div>
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
@@ -104,14 +106,16 @@ layout: default
     {% endif %}
   </article>
   <div class="right_side">
-    <amp-ad
-      layout="fixed"
-      width="300"
-      height="600"
-      type="adsense"
-      data-ad-client="ca-pub-5746287019974907"
-      data-ad-slot="7065839717">
-    </amp-ad>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746287019974907"
+    crossorigin="anonymous"></script>
+<!-- 수직 디스플레이 -->
+<ins class="adsbygoogle"
+    style="display:inline-block;width:300px;height:600px"
+    data-ad-client="ca-pub-5746287019974907"
+    data-ad-slot="7065839717"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
   </div>
 
   {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
