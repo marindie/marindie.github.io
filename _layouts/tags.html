@@ -17,6 +17,7 @@ layout: archive
       {% if tag[1].size == i %}
         <li>
           <a href="#{{ tag[0] | slugify }}">
+            <img src="{{ i | modulo: 32 | prepend: "0" | slice: -2, 2 | prepend: "/assets/images/random/img-random-" | append: ".jpg" }}" />
             <strong>{{ tag[0] }}</strong> <span class="taxonomy__count">{{ i }}</span>
           </a>
         </li>
