@@ -43,6 +43,8 @@
     // width: calc(100% - #{$right-sidebar-width-narrow});
     // padding-right: $right-sidebar-width-narrow;
     width: calc(100vw - #{$right-sidebar-width-large});
+    padding-left: 1rem;
+    padding-right: 1rem !important;
     margin: 0 auto;
   }
 
