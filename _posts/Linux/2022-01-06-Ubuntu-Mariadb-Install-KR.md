@@ -62,16 +62,17 @@ select host, user from user;
 ```
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746287019974907"
-     crossorigin="anonymous"></script>
+crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
+     style="display:block"
      data-ad-client="ca-pub-5746287019974907"
-     data-ad-slot="2220653635"></ins>
+     data-ad-slot="8862563347"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+
 
 [^1]: This is a footnote.
 
