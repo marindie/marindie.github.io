@@ -31,6 +31,7 @@
     width: 100%;
     height: 120px;
     background-color: #9f82ff9e;
+    animation: fade-in 6s;
 
     @include clearfix;
     // margin-left: auto;
