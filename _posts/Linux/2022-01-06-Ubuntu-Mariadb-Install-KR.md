@@ -10,18 +10,6 @@ redirect_from:
 
 > Ubuntu 20.04 에서 Mariadb 설치 방법 및 10.4 부터 변경된 내용에 대한 이슈랑 기타 내용 기록
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746287019974907"
-     crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="fluid"
-     data-ad-layout-key="-gw-3+1f-3d+2z"
-     data-ad-client="ca-pub-5746287019974907"
-     data-ad-slot="5182617875"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
 ### Mariadb 설치 관련 명령어 {#toc1}
 
 ```md
