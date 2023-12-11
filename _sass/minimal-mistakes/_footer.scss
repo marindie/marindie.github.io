@@ -23,10 +23,10 @@
   background-color: $footer-background-color;
 
   footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    // display: block;
+    // align-items: center;
+    // justify-content: center;
+    // flex-direction: column;
     position: fixed;
     bottom: 0px;
     width: 100%;
@@ -66,6 +66,7 @@
 .page__footer-copyright {
   font-family: $global-font-family;
   font-size: $type-size-7;
+  padding-left: 5px
 }
 
 .page__footer-follow {
