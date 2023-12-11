@@ -8,25 +8,21 @@ layout: default
   {% include page__hero_video.html %}
 {% endif %}
 
-{% if page.url != "/" and site.breadcrumbs %}
+<!-- {% if page.url != "/" and site.breadcrumbs %}
   {% unless paginator %}
     {% include breadcrumbs.html %}
   {% endunless %}
-{% endif %}
+{% endif %} -->
 
 <div id="main" role="main">
   {% include sidebar.html %}
   <div class="left_side">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746287019974907"
-    crossorigin="anonymous"></script>
-<!-- 수직 디스플레이 -->
-<ins class="adsbygoogle"
-    style="display:inline-block;width:260px;height:500px"
-    data-ad-client="ca-pub-5746287019974907"
-    data-ad-slot="7065839717"></ins>
-<script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746287019974907" crossorigin="anonymous"></script>
+    <!-- 수직 디스플레이 -->
+    <ins class="adsbygoogle" style="display:inline-block;width:200px;height:500px" data-ad-client="ca-pub-5746287019974907" data-ad-slot="7065839717"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
   </div>
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
@@ -34,6 +30,20 @@ layout: default
     {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">{% endif %}
     {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date: "%B %d, %Y" }}">{% endif %}
 
+    <!-- S 상단 광고 -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746287019974907"
+    crossorigin="anonymous"></script>
+    <!-- 수평형 광고 -->
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-5746287019974907"
+      data-ad-slot="8862563347"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <!-- E 상단 광고 -->
     <div class="page__inner-wrap">
       {% unless page.header.overlay_color or page.header.overlay_image %}
         <header>          
@@ -50,37 +60,15 @@ layout: default
       {% endunless %}
 
       <section class="page__content" itemprop="text">
-        {% if page.toc %}
+        <!-- {% if page.toc %}
           <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label }}</h4></header>
               {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" %}
             </nav>
           </aside>
-          <!-- S: 구글 컨텐츠 내 자동 삽입 광고 contents 상단 -->
-          <!-- 수평형 광고 -->
-          <amp-ad width="100vw" height="320"
-            type="adsense"
-            data-ad-client="ca-pub-5746287019974907"
-            data-ad-slot="8862563347"
-            data-auto-format="rspv"
-            data-full-width="">
-            <div overflow=""></div>
-          </amp-ad>
-          <!-- E: 구글 컨텐츠 내 자동 삽입 광고 contents 상단 -->
-        {% endif %}
+        {% endif %} -->
         {{ content }}
-        <!-- S: 구글 컨텐츠 내 자동 삽입 광고 contents 하단 -->
-        <!-- 수평형 광고 -->
-        <amp-ad width="100vw" height="320"
-          type="adsense"
-          data-ad-client="ca-pub-5746287019974907"
-          data-ad-slot="8862563347"
-          data-auto-format="rspv"
-          data-full-width="">
-          <div overflow=""></div>
-        </amp-ad>
-        <!-- E: 구글 컨텐츠 내 자동 삽입 광고 contents 하단 -->
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
 
@@ -108,14 +96,14 @@ layout: default
   <div class="right_side">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746287019974907"
     crossorigin="anonymous"></script>
-<!-- 수직디스플레이2 -->
-<ins class="adsbygoogle"
-    style="display:inline-block;width:260px;height:500px"
-    data-ad-client="ca-pub-5746287019974907"
-    data-ad-slot="3269181656"></ins>
-<script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+    <!-- 수직디스플레이2 -->
+    <ins class="adsbygoogle"
+      style="display:inline-block;width:200px;height:500px"
+      data-ad-client="ca-pub-5746287019974907"
+      data-ad-slot="3269181656"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>    
   </div>
 
   {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
