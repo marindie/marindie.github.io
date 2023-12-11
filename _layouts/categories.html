@@ -10,22 +10,6 @@ layout: archive
     {% assign categories_max = category[1].size %}
   {% endif %}
 {% endfor %}
-
-<ul class="taxonomy__index">
-  {% for i in (1..categories_max) reversed %}
-    {% for category in site.categories %}
-      {% if category[1].size == i %}
-        <li>
-          <a href="#{{ category[0] | slugify }}">
-            <img src="{{ i | modulo: 32 | prepend: "0" | slice: -2, 2 | prepend: "/assets/images/random/img-random-" | append: ".jpg" }}" />
-            <strong>{{ category[0] }}</strong> <span class="taxonomy__count">{{ i }}</span>
-          </a>
-        </li>
-      {% endif %}
-    {% endfor %}
-  {% endfor %}
-</ul>
-
 <div>
   <!-- S 상단 광고 -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746287019974907"
@@ -42,6 +26,21 @@ layout: archive
   </script>
   <!-- E 상단 광고 -->
 </div>
+
+<ul class="taxonomy__index">
+  {% for i in (1..categories_max) reversed %}
+    {% for category in site.categories %}
+      {% if category[1].size == i %}
+        <li>
+          <a href="#{{ category[0] | slugify }}">
+            <img src="{{ i | modulo: 32 | prepend: "0" | slice: -2, 2 | prepend: "/assets/images/random/img-random-" | append: ".jpg" }}" />
+            <strong>{{ category[0] }}</strong> <span class="taxonomy__count">{{ i }}</span>
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</ul>
 
 {% for i in (1..categories_max) reversed %}
   {% for category in site.categories %}
