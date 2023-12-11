@@ -550,8 +550,11 @@
     display: block;
     width: 300px;
     position: fixed;
-    top: 250px;
+    top: 200px;
     padding: 20px;
+    height: 600px;
+    background-color: #d3ebff;
+    border-radius: 20px;
   }
 }
 .right_side {
@@ -560,8 +563,11 @@
     display: block;
     width: 300px;
     position: fixed;
-    top: 250px;
+    top: 200px;
     right: 0px;
     padding: 20px;
+    height: 600px;
+    background-color: #d3ebff;
+    border-radius: 20px;
   }
 }
