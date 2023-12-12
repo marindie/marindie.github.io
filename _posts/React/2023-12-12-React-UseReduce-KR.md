@@ -8,31 +8,24 @@ redirect_from:
   - /2023/12/12/
 ---
 
-### useReducer 의 이해 {#toc1}
+### useReducer의 이해 {#toc1}
 
-useRecuder의 탄생은, React 의 상태 관리 방식 및 성능 개선을 위한 화면 렌더링 방식으로 인해 발생하게된 문제점을 해결하고자 나오게 되었습니다.
+useRecuder의 탄생은, React 의 상태 관리 방식 및 성능 개선을 위한<br>
+화면 렌더링 방식으로 인해 발생하게된 문제점을 해결하고자 나오게 되었다고 저는 생각합니다.
 
-지금도 React 로 개발을 하면 화면의 값을 변경하는 부분에서 많은 개발자들이 혼란을 겪는게 사실일 것입니다. 저 역시 종종 겪는 부분이구요.
-REACT의 상태 관리 방식에 대한 내용은 아래의 포스트에서 자세히 다루고 있습니다.
-[[REACT의 상태 관리 방식]](https://marindie.github.io/oracle/Oracle-Sort-Table-FK-KR)
+입문자나 REACT로 화면 개발을 손에 익숙할 정도로 연습량이 쌓인 상태가 아닌경우, (거의 모든 개발자에 해당)
+React 로 개발을 하다보면 화면의 상태값을 변경하는 부분에서 많은 혼란을 겪는 것이 일반적일 것입니다.<br>
+저 역시 종종 겪는 부분이구요.<br>
+REACT의 상태 관리 방식에 대한 내용이 궁금하시다면 아래의 포스트를 읽어보시면 도움이 많이 될 것입니다.<br>
+[▶ REACT의 상태 관리 방식 ◀](https://marindie.github.io/oracle/Oracle-Sort-Table-FK-KR)
 
-#### useReducer
+이런 REACT의 상태 관리 방식과 렌더링 이슈는<br>
+웹 개발을 직업으로 삼으려하는 신규 사용자에게<br>
+REACT vs VUE 선택지에서 VUE를 선택하게 하는 이유 중 하나가 되어가는것 같습니다.
 
-제가 Tutorial 을 간단히 따라해 보고 한두번 해본 결과를 바탕으로 적은 내용입니다.
-개발 경험이 부족해 내용이 상당히 미흡 할 수 있습니다.
+#### useReducer는 언제 필요한가
 
-제가 처음 React 를 배웠을 때의 샘플 소스는, Component Level 단의 State Management 였습니다.
-constructor 에 일반적으로 변수를 정의 하고 setState 함수 사용 방식 또는, props 를 사용하여 접근하는 형태의 방식으로 Data를 전달하여 Rendering 에 변경사항이
-발생하게 하였습니다.
-
-Redux 는 React 에서 Application Level (앱 전역) 단에서 data 들을 들고 다니면서 사용하기 위해 만들어진 개념 같습니다.
-개념적인 부분이 강한데, Spring MVC 의 개념을 받아들이고 사용하는 것과 조금 비슷하다고 보입니다. 
-제가 사용한 경험을 바탕으로 썰을 풀자면, 기본적으로 알아야할 Syntax 들이 몇개 있는데, 다음과 같습니다.
-Store, Action, Dispatch, Reducer, Connect, mapStateToProps...
-이런 단어를 사용하면서 개념을 설명하는데, 저는 이해가 되지 않는 부분은 일단 패스 하고, 코딩하면서 느낀 부분만을 글로 간단히 적어 놓고 가끔 들여다 보려합니다.
-
-제가 이해하기 쉬운 방향으로 정의한 순서는 다음과 같습니다.
-Action, Dispatch, Connect 정의 => Reducer 정의 => Store 정의 => mapStateToProps 함수 사용
+REACT비판적인 시각으로 바라보면
 
 ### Action 정의 {#toc2}
 

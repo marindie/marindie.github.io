@@ -72,6 +72,7 @@
 .page__title {
   margin-top: 0;
   line-height: 1.5;
+  word-break: auto-phrase;
 
   & + .page__meta {
     margin-top: -0.5em;
@@ -98,6 +99,7 @@
   /* paragraph indents */
   p {
     margin: 0 0 $indent-var;
+    word-break: auto-phrase;
 
     /* sibling indentation*/
     @if $paragraph-indent == true {
@@ -570,4 +572,7 @@
     height: 600px;
     border-radius: 20px;
   }
+}
+.page__date {
+  font-size: 14px;
 }
