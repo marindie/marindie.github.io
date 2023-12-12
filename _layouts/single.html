@@ -72,21 +72,6 @@ layout: default
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
       
-      <!-- S 하단 광고 -->
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746287019974907"
-      crossorigin="anonymous"></script>
-      <!-- 수평형 광고 -->
-      <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-5746287019974907"
-        data-ad-slot="8862563347"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-      <!-- E 하단 광고 -->
-      
       <!-- <footer class="page__meta">
         {% if site.data.ui-text[site.locale].meta_label %}
           <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
@@ -102,6 +87,22 @@ layout: default
       {% if page.share %}{% include social-share.html %}{% endif %}
 
       {% include post_pagination.html %}
+      <div>
+        <!-- S 하단 광고 -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746287019974907"
+        crossorigin="anonymous"></script>
+        <!-- 수평형 광고 -->
+        <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-5746287019974907"
+          data-ad-slot="8862563347"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <!-- E 하단 광고 -->
+      </div>
     </div>
 
     {% if jekyll.environment == 'production' and site.comments.provider and page.comments %}
