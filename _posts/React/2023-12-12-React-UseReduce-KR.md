@@ -10,7 +10,14 @@ redirect_from:
 
 ### useReducer 의 이해 {#toc1}
 
-#### useReducer 
+useRecuder의 탄생은, React 의 상태 관리 방식 및 성능 개선을 위한 화면 렌더링 방식으로 인해 발생하게된 문제점을 해결하고자 나오게 되었습니다.
+
+지금도 React 로 개발을 하면 화면의 값을 변경하는 부분에서 많은 개발자들이 혼란을 겪는게 사실일 것입니다. 저 역시 종종 겪는 부분이구요.
+REACT의 상태 관리 방식에 대한 내용은 아래의 포스트에서 자세히 다루고 있습니다.
+[[REACT의 상태 관리 방식]](https://marindie.github.io/oracle/Oracle-Sort-Table-FK-KR)
+
+#### useReducer
+
 제가 Tutorial 을 간단히 따라해 보고 한두번 해본 결과를 바탕으로 적은 내용입니다.
 개발 경험이 부족해 내용이 상당히 미흡 할 수 있습니다.
 
