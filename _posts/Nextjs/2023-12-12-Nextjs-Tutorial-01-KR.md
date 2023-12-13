@@ -1,33 +1,26 @@
 ---
 toc: true
-title: "REACT 가 궁금한 사람 - useReducer 의 이해, 사용법, 그리고 샘플 소스"
-description: "이번 글에서는 React Hook 중의 하나인 useReducer의 개념을 그림과 샘플 소스를 활용하여 이해하고, 사용법과 관련된 상황을 소개하며, 저의 주관적인 생각으로 마무리 하겠습니다."
-categories: [React]
-tags: [useReducer]
+title: "nextjs 개발 1편 프로젝트 생성"
+description: "이번 글에서는 nextjs 프로젝트 생성에 대한 내용을 담고있습니다."
+categories: [nextjs]
+tags: [nextjs]
 redirect_from:
   - /2023/12/12/
 ---
 
-### useReducer의 이해 {#toc1}
+### nextjs 프로젝스 생성 {#toc1}
 
-useRecuder의 탄생은, React 의 상태 관리 방식 및 성능 개선을 위한<br>
-화면 렌더링 방식으로 인해 발생하게된 문제점을 해결하고자 나오게 되었다고 저는 생각합니다.
+nextjs 프로젝트 생성 과정
+- Node.js 설치
+- create-next-app 명령어를 사용하여 자동 프로젝트 생성
 
-입문자나 REACT로 화면 개발을 손에 익숙할 정도로 연습량이 쌓인 상태가 아닌경우, (거의 모든 개발자에 해당)
-React 로 개발을 하다보면 화면의 상태값을 변경하는 부분에서 많은 혼란을 겪는 것이 일반적일 것입니다.<br>
-저 역시 종종 겪는 부분이구요.<br>
-REACT의 상태 관리 방식에 대한 내용이 궁금하시다면 아래의 포스트를 읽어보시면 도움이 많이 될 것입니다.<br>
-[▶ REACT의 상태 관리 방식 ◀](https://marindie.github.io/oracle/Oracle-Sort-Table-FK-KR)
+#### Node.js 설치
 
-이런 REACT의 상태 관리 방식과 렌더링 이슈는<br>
-웹 개발을 직업으로 삼으려하는 신규 사용자에게<br>
-REACT vs VUE 선택지에서 VUE를 선택하게 하는 이유 중 하나가 되어가는것 같습니다.
+Node.js 설치를 위해 아래의 이미지를 클릭<br>
+최신 LST (Long Term Service) 버전 다운로드 진행<br>
+[![Node.js 다운로드 사이트](/assets/images/screen/Nodejs.png)](https://nodejs.org/en)
 
-#### useReducer는 언제 필요한가
-
-REACT비판적인 시각으로 바라보면
-
-### Action 정의 {#toc2}
+#### Terminal 에서 npx create-next-app@latest 명령어로 자동 프로젝스 생성 진행
 
 먼저 어떤 행위를 하고 싶은지 정의 하는것이 제일 코딩하기 쉬워보였습니다. 아래는 샘플 소스 postAction.js
 
