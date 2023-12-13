@@ -4,6 +4,13 @@
   {% capture logo_path %}{{ site.logo }}{% endcapture %}
 {% endif %}
 
+{% assign categories_max = 0 %}
+{% for category in site.categories %}
+  {% if category[1].size > categories_max %}
+    {% assign categories_max = category[1].size %}
+  {% endif %}
+{% endfor %}
+
 <div class="masthead">
   <!-- 구글검색 -->
   <!-- <script async src="https://cse.google.com/cse.js?cx=f4ef173fe788bd440"></script>
@@ -23,7 +30,8 @@
               {%- assign url = link.url | relative_url -%}
             {%- endif -%}
             <li class="masthead__menu-item">
-              <a href="{{ url }}" {% if link.description %}title="{{ link.description }}"{% endif %}>{{ link.title }}</a>
+              <!-- <a href="{{ url }}" {% if link.description %}title="{{ link.description }}"{% endif %}>{{ link.title }}</a> -->
+              <a {% if link.description %}title="{{ link.description }}"{% endif %}>{{ link.title }}</a>
             </li>
           {%- endfor -%}
         </ul>
@@ -41,6 +49,25 @@
         </button>
         <ul class="hidden-links hidden"></ul>
       </nav>
+    </div>
+    <div id="menu-content" class="shade-background" style="display: none;">
+      <button id="hide_menu" class="close_btn">
+        <span class="icon-cross"></span>
+      </button>
+      <ul class="taxonomy__index">
+        {% for i in (1..categories_max) reversed %}
+          {% for category in site.categories %}
+            {% if category[1].size == i %}
+              <li>
+                <a href="#{{ category[0] | slugify }}">
+                  <img src="{{ i | modulo: 32 | prepend: "0" | slice: -2, 2 | prepend: "/assets/images/random/img-random-" | append: ".jpg" }}" />
+                  <strong>{{ category[0] }}</strong> <span class="taxonomy__count">{{ i }}</span>
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </ul>
     </div>
   </div>
 </div>

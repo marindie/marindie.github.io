@@ -44,9 +44,24 @@
       <br>
     </div>
   </body>
-  <!-- <script>
-    $(window).on('load', function() {
-        $("#loading").hide();
+  <script>
+    // $(window).on('load', function() {
+    //     $("#loading").hide();
+    // });
+    $(document).ready(function() {
+      $('.masthead__menu-item').on('click', function() {
+        $('#menu-content').css(
+          {
+            'display': 'block',
+            'animation': 'fade-in 2s'
+          });
+      })
+      $('#hide_menu').on('click', function() {
+        $('#menu-content').css('animation','fade-out 2s');
+        setTimeout(function() {
+          $('#menu-content').css('display','none');
+        }, 2000);  
+      });
     });
-  </script> -->
+  </script>
 </html>
