@@ -37,6 +37,11 @@
   }
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+
 .page {
   @include breakpoint($large) {
     //기존

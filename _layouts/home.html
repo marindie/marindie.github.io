@@ -2,12 +2,28 @@
 layout: archive
 ---
 
+<!-- S 상단 광고 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746287019974907"
+crossorigin="anonymous"></script>
+<!-- 수평형 광고 -->
+<ins class="adsbygoogle"
+  style="display:block"
+  data-ad-client="ca-pub-5746287019974907"
+  data-ad-slot="8862563347"
+  data-ad-format="auto"
+  data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- E 상단 광고 -->
 {{ content }}
 
 <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
 
-{% for post in paginator.posts %}
-  {% include archive-single.html %}
-{% endfor %}
+<div class="flex-container flex-wrap">
+  {% for post in paginator.posts %}
+    {% include archive-single.html %}
+  {% endfor %}
+</div>
 
 {% include paginator.html %}
