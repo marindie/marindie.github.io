@@ -49,18 +49,20 @@
     //     $("#loading").hide();
     // });
     $(document).ready(function() {
-      $('#menu-categories').on('click', function() {
+      $('#menu-categories').on('mouseover', function() {
         $('#menu-content').css(
           {
-            'display': 'block',
-            'animation': 'fade-in 2s'
+            // 'display': 'block',
+            // 'animation': 'fade-in 1s'
+            'left': '0'
           });
-      })
+      });
       $('#hide_menu').on('click', function() {
-        $('#menu-content').css('animation','fade-out 2s');
-        setTimeout(function() {
-          $('#menu-content').css('display','none');
-        }, 2000);  
+        // $('#menu-content').css('animation','fade-out 1s');
+        // setTimeout(function() {
+        //   $('#menu-content').css('display','none');
+        // }, 1 * 1000);  
+        $('#menu-content').css('left','-100%');
       });
     });
   </script>
