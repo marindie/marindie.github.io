@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "nextjs 개발 1편 프로젝트 생성 및 로컬 서버 실행"
+title: "nextjs 프로젝트 생성 및 로컬 서버 실행"
 description: "이번 글에서는 nextjs 프로젝트 생성에 대한 내용과 서버 실행 까지 진행하는 내용을 정리하였습니다."
 categories: [nextjs]
 tags: [nextjs]
@@ -54,6 +54,10 @@ Would you like to customize the default import alias (@/ *)? No
 What import alias would you like configured? @/*
 ```
 
+- Ex. Window 명령 Prompt 에서 설치시 아래와 같은 형태로 진행됩니다.
+
+![nextjs 프로젝트 설정](/assets/images/screen/nextjs-create-project.png)
+
 ### 서버 실행 #{toc2}
 
 터미널에 아래의 명령어를 실행하면 서버가 실행 됩니다.
@@ -69,7 +73,7 @@ npm run dev
 
 - 간단한 설치 후 nextjs 프로젝트 생성 및 서버 실행까지 알아보았습니다.
 - 다음은 서버 포트 변경에 대한 내용에 대하여 알아보고자 합니다.
-- :arrow_right: [nextjs 개발 2편 서버 포트 변경](https://marindie.github.io/nextjs/2023-12-12-Nextjs-Tutorial-01-KR)
+- :arrow_right: [nextjs 서버 포트 변경](https://marindie.github.io/nextjs/2023-12-14-Nextjs-Tutorial-02-KR)
 
 [^1]: This is a footnote.
 
