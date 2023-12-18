@@ -10,22 +10,72 @@ redirect_from:
 
 ### nextjs 개발시 매우 도움이 되는 extension 모음 {#toc1}
 
-- Prettier - Code formatter
-- 
-- Prettier ESLint
-- ESLint
-- ES7+ React/Redux/React-Native snippets
-- indent-rainbow
-- Auto Close Tag
-- Auto Rename Tag
-- colorize
-- GitLens
-- Git Graph
-- Git History
+#### Prettier - Code formatter
 
-[Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) 는 HTML, TypeScript, CSS 등과 같은 언어를 사용하여 개발시
+- 코딩한 내용의 구조을 매우 보기 좋게 정렬 해주는 extension 입니다.
 
 [![Prettier - Code formatter](/assets/images/screen/prettier_code_formatter.png)](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+
+#### Prettier ESLint
+
+- [Prettier ESLint](https://marketplace.visualstudio.com/items?itemName=hb432.prettier-eslint-typescript) 는 TypeScript를 먼저 prettier 로 코딩 구조를 재정렬 하고
+- 이후 ESLint 로 한번 더 코딩 구조를 재정렬 해주는 역할을 하는 extension 입니다.
+
+[![Prettier ESLint](/assets/images/screen/prettier_eslint.png)](https://marketplace.visualstudio.com/items?itemName=hb432.prettier-eslint-typescript)
+
+- 아시는 분은 아시는 setting.json (setting.json 에 대한 설명은 이후 아래에 더 부연설명 하였습니다.)에
+- prettier 와 eslint 가 개발자 작성한 코딩 구조를 어떠한 형태로 재정렬 해주면 하는지
+- 커스터마이징이 가능한 옵션에 대한 내용을 아래에 일부 가져와 적어두었습니다.
+- prettier-eslint-typescript. 이후 eslintConfig 는 eslint 설정에 대한 부분을 나타내며
+- prettier-eslint-typescript. 이후 prettierOptions 는 prettier 설정에 대한 부분을 나타냅니다.
+- eslint 설정에 대하여 더 자세한 정보를 얻고 싶으시다면 제가 작성한 아래의 글을 참고하시기 바랍니다.
+- :arrow_right: [vscode eslint 사용법, configure(설정) 방법 안내](https://marindie.github.io/nextjs/2023-12-19-eslint-Tutorial-01-KR)
+- :arrow_right: [vscode prettier 사용법, configure(설정) 방법 안내](https://marindie.github.io/nextjs/2023-12-19-prettier-Tutorial-01-KR)
+
+```json
+{
+   "typescript.tsdk": "node_modules/typescript/lib",
+   "prettier-eslint-typescript.eslintConfig": {
+      "rules": {
+         "curly": "error",
+         "dot-notation": "error",
+         "no-undef-init": "error",
+         "no-useless-rename": "error",
+         "no-useless-return": "error",
+         "no-var": "error",
+         "object-shorthand": "error",
+         "one-var": [ "error", { "initialized": "never", "uninitialized": "always" } ],
+         "prefer-const": "error",
+         "prefer-template": "error",
+         "array-bracket-spacing": [ "error", "always" ],
+         "generator-star-spacing": [ "error", "both" ],
+         "space-before-function-paren": [ "error", "always" ],
+         "yield-star-spacing": [ "error", "both" ]
+      }
+   },
+   "prettier-eslint-typescript.prettierOptions": {
+      "arrowParens": "avoid",
+      "bracketSpacing": true,
+      "printWidth": 120,
+      "quoteProps": "as-needed",
+      "singleQuote": true,
+      "tabWidth": 3,
+      "trailingComma": "none",
+      "useTabs": false
+   }
+}
+```
+
+#### ESLint
+#### ES7+ React/Redux/React-Native snippets
+#### indent-rainbow
+#### Auto Close Tag
+#### Auto Rename Tag
+#### colorize
+#### GitLens
+#### Git Graph
+#### Git History
 
 [![text](https://microsoft.github.io/vscode-remote-release/images/ssh-readme.gif)](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 [![text](/assets/images/screen/aaaaaa.png)](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
