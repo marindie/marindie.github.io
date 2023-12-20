@@ -41,7 +41,7 @@ redirect_from:
 
 - 서버 포트 변경에 대하여 알아보았습니다.
 - 다음은 nextjs 개발시 사용할 IDE 툴 Vscode의 개발 환경 세팅 및 nextjs 개발시 매우 도움이되는 extension 들에 대해 알아봅시다.
-- :arrow_right: [nextjs vscode 개발 환경 세팅 및 개발시 매우 도움이되는 extension](https://marindie.github.io/nextjs/2023-12-14-Nextjs-Tutorial-03-KR)
+- :arrow_right: [nextjs 개발시 매우 도움이 되는 vscode extension 모음](https://marindie.github.io/nextjs/2023-12-14-Nextjs-Tutorial-03-KR)
 
 [^1]: This is a footnote.
 
