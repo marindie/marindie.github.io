@@ -2,8 +2,8 @@
 toc: true
 title: "아이폰 붙여넣기 허용 맥북에서 붙여넣으려고 함 알림 해지 방법"
 description: "아이폰에서 금융 어플 (토스 카카오톡 카카오뱅크 KB스타뱅킹 등) 로그인시 팝업으로 뜨는 '누구의 맥북에서 붙여넣으려고 함' 알림 메세지 해지 하는 방법에 대한 글입니다." 
-categories: [Tip]
-tags: [Tip]
+categories: [Life]
+tags: [Life]
 redirect_from:
   - /2023/12/18/
 ---
