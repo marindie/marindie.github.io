@@ -16,16 +16,16 @@ minimal_mistakes_skin    : "air" # "default", "air", "aqua", "contrast", "dark",
 
 # Site Settings
 locale                   : "ko"
-title                    : "marindie"
+title                    : "어떤사람"
 title_separator          : "-"
 name                     : "어떤사람"
-description              : "marindie"
+description              : "어떤사람"
 url                      : "https://marindie.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "/" # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : "/assets/images/sunset-3325080_1920.jpg" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/assets/images/sunset-3325080_1920.jpg" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : "marindie" # overrides the website title displayed in the masthead, use " " for no title
+masthead_title           : "어떤사람" # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs            : true # true, false (default)
 words_per_minute         : 50
 comments:
@@ -109,7 +109,7 @@ author:
   name             : "어떤사람"
   avatar           : "/assets/images/sunset-3325080_1920.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Contact: marindie@naver.com"
-  location         : "대한민국 Sounth Korea"
+  location         : "대한민국 서울"
   email            : 
   links:
     - label: "Email"
