@@ -25,7 +25,7 @@ npm install eslint-plugin-react-hooks
 npm install eslint-plugin-jsx-a11y
 ```
 
-#### eslint 설정
+#### eslint 설치시작. 설정에 관련된 질문들
 
 ```js
 // 이후 명령 프롬프트에 다음과 같은 명령어를 입력합니다.
@@ -112,7 +112,7 @@ yarn init @eslint/config
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-#### eslint rule 필수 항목 및 rule 사용법 알아보기
+### eslint rule 필수 항목 및 rule 사용법 알아보기
 
 - 위의 eslint 설정을 진행하고나면 현재 nextjs 프로젝트 위치에 .eslintrc.json 파일이 자동으로 생성됩니다.
 
@@ -139,7 +139,82 @@ yarn init @eslint/config
 }
 ```
 
-- 이제 부턴 위의 .eslintrc.json 에 rules 키에 해당하는 value 를 설정하는 방법에 대해 설명드리겠습니다.
+- 이제 부턴 위의 .eslintrc.json 에 rules 에 문법 체크 규칙을 정의 해서 사용하게 될 텐데요.
+- 사용하는 방식은 자유이지만, 처음 사용하게 되면, 조금 당황스러운 문법 규칙들로 인해 적응하기 전에 벌써 괜히 설치했다..
+- 라는 생각이 들 수 있어 몇가지 알아두셔야 할 규칙을 설명 드리겠습니다.
+- 그 이후에는 개발자 입장에서 고려할 만한 규칙들 목록을 적어 두었으니 참고하시기 바랍니다.
+
+#### 'React' must be in scope when using JSX eslint(react/react-in-jsx-scope)
+
+- eslint 를 설치하자마자 마주치게 되는 rule 입니다.
+- 설치 전에는 정상으로 표시되던 소스가 갑자기, 에러로 표시되거든요.
+
+```js
+// 규칙에 어긋나는 소스
+var Hello = <div>Hello {this.props.name}</div>;
+
+// 규칙에 부합하는 소스
+import React from 'react';
+
+var Hello = <div>Hello {this.props.name}</div>;
+
+```
+
+- 'React' must be in scope when using JSX' 규칙은 React 를 import 해서 사용해라 라는 뜻으로 들립니다.
+- 여기서 고민은, nextjs 는 src/app/page.tsx 메인 화면 소스에 해당 소스를 생성하지 않았습니다.
+- eslint 를 설치하지 않고 서버를 기동시키면 모두 정상적으로 나오구요.
+- 결론은 nextjs 개발시 모든 화면에 'import React from 'react';' 라인 추가가 필요하지 않습니다.
+- 해당 규칙을 disable 하여 비활성화 할 수 있습니다. 아래를 보시죠
+
+```json
+// 변경 전
+// 프로젝트폴더위치/.eslintrc.json
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "standard-with-typescript",
+        "plugin:react/recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+    }
+}
+
+// 변경 후
+// rules 에 "react/react-in-jsx-scope": "off", 추가
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "standard-with-typescript",
+        "plugin:react/recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+      "react/react-in-jsx-scope": "off",
+    }
+}
+```
+
+- 해당 라인을 추가하고 저장하면 에러로 표시되던 내용이 모두 사라질 것입니다.
+
 
 
 
