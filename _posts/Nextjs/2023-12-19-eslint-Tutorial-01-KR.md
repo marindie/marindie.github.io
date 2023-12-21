@@ -112,7 +112,7 @@ yarn init @eslint/config
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-### eslint rule 필수 항목 및 rule 사용법 알아보기
+### eslint rule 필수 항목 및 rule 사용법 알아보기 {#toc2}
 
 - 위의 eslint 설정을 진행하고나면 현재 nextjs 프로젝트 위치에 .eslintrc.json 파일이 자동으로 생성됩니다.
 
@@ -215,8 +215,21 @@ var Hello = <div>Hello {this.props.name}</div>;
 
 - 해당 라인을 추가하고 저장하면 에러로 표시되던 내용이 모두 사라질 것입니다.
 
-#### 
+####
 
+#### Prettier 와 ESlint 의 충돌로 인한 고민
+
+- Prettier를 default formatter 로 설정 할 때의 단점과
+- ESLint를 default formatter 로 설정 할 때의 단점이 저에게는 고민스러운 부분이였습니다.
+- 먼저 단점을 보시죠.
+
+```js
+import Image from "next/image";
+import { type ReactNode } from "react";
+
+export default function Home(): ReactNode {
+
+```
 
 - :arrow_right: [nextjs 개발시 매우 도움이 되는 vscode extension 모음](https://marindie.github.io/nextjs/2023-12-14-Nextjs-Tutorial-03-KR)
 
