@@ -215,7 +215,7 @@ var Hello = <div>Hello {this.props.name}</div>;
 
 - 해당 라인을 추가하고 저장하면 에러로 표시되던 내용이 모두 사라질 것입니다.
 
-
+#### 
 
 
 - :arrow_right: [nextjs 개발시 매우 도움이 되는 vscode extension 모음](https://marindie.github.io/nextjs/2023-12-14-Nextjs-Tutorial-03-KR)
