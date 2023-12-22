@@ -1,7 +1,7 @@
 ---
 toc: true
-title: "eslint 사용법, configure(설정) 방법 안내"
-description: "이번 글에서는 eslint 사용법에 대해 다루어 보려 합니다. vscode extension 과 npm(yarn) install 을 통한 패키지 설치에 대한 부분도 언급하여 다루고 있습니다."
+title: "vscode eslint 사용법, configure(설정) 방법 안내"
+description: "이번 글에서는 vscode 에서 eslint 사용법에 대해 다루어 보려 합니다. vscode extension 과 npm(yarn) install 을 통한 패키지 설치에 대한 부분도 언급하여 다루고 있습니다."
 categories: [nextjs]
 tags: [nextjs]
 redirect_from:
@@ -305,7 +305,7 @@ export default function Home (): ReactNode {
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-### Prettier
+### Prettier 에 대한 간략한 언급 {#toc3}
 
 - ESLint 와 함게 Prettier를 주로 사용하고 저도 사용중인데요.
 - vscode 에서 두 가지 모두 사용하고 있고, 파일을 저장 할 때,
@@ -313,13 +313,41 @@ export default function Home (): ReactNode {
 - prettier 설정에 대한 자세한 정보는 제가 작성한 아래의 글을 참고하시기 바랍니다.
 - :arrow_right: [prettier 사용법, configure(설정) 방법 안내](/nextjs/prettier-Tutorial-01-KR)
 
+#### Default Formatter 로 Prettier 선택하기
+
+- Ctrl + , for Window // Command + , for Mac 키를 눌러 settings 창을 열어봅시다.
+- 검색 Input box 에서 default format 을 치면 아래의 스샷처럼 Editor: Default Formatter 를 선택할 수 있게 됩니다.
+- prettier 를 선택하면 됩니다.
+  
+![Default Formatter](/assets/images/screen/default-formatter.png)
+
+- 해당 설정 정보는 Ctrl + Shift + p for Window 키를 누르고
+- Open User settings 를 검색하여 들어가시면 settings.json 파일에 "editor.defaultFormatter": "esbenp.prettier-vscode", 값이 있을 것입니다.
+
 ```json
-//settings.json
 {
-    ...생략
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    ...생략
+  ...생략
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  ...생략
 }
+```
+
+#### 파일 저장시 바로 Prettier Format 적용 방법
+
+- 해당 설정 정보는 Ctrl + Shift + p for Window 키를 누르고
+- Open User settings 를 검색하여 들어가시면 settings.json 파일에
+- 아래와 같은 설정 값을 추가해 줍니다.
+- 또는 Ctrl + , for Window 키를 눌러 settings 창을 연 다음,
+- formatOnSave를 검색하여 설정 할 수도 있습니다.
+
+```json
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit",
+    "source.addMissingImports": "explicit",
+    "source.fixAll": "explicit"
+  },
 ```
 
 - Prettier 를 사용하는 이유는 HTML Format 을 도와주어 저의 시간을 많이 단축시켜주기 때문입니다.
@@ -362,9 +390,14 @@ npx eslint --ext .js,.ts,.tsx --ignore-pattern "postcss.config.js" --ignore-patt
 ...생략
 ```
 
-- 위의 예시를 기준으로 npm run format 을 하였을때, prettier 부분이 어떻게
+- 위의 예시를 기준으로 npm run format 을 하였을때, prettier 부분이 어떻게 동작하는지 추가 설명드리겠습니다.
+  1. npm run prettier:fix => scripts 에서 "prettier:fix" 키에 해당하는 value를 실행
+  2. npm run prettier -- --write => scripts 에서 "prettier" 키에 해당하는 value를 실행
+  3. npx prettier src --check 을 실행 
+  4. -- --write 부분이 남는데, 이부분은 -- 뒤 부터는 --write 와 같은 옵션 명령어들을 글자 붙여주는 동작을 해주라는 의미.
+  5. -- <= 이 표시를 해야 옵션 syntax 들이 정상적으로 들어가서 동작됩니다.
 
-
+- 이번 글은 여기 까지 입니다.
 - 끝까지 읽어주셔서 감사합니다.
 - 아래의 ESLint 공식 문서에서 더 많은 정보를 찾아보실 수 있습니다.
 - :arrow_right: [ESLint 공식 문서 사이트](https://eslint.org/docs/latest/)
