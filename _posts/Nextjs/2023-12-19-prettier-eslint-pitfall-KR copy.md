@@ -10,6 +10,8 @@ redirect_from:
 
 ### Prettier 와 ESLint 의 단점으로 인한 고민 {#toc1}
 
+- 해당 글은 ESLint 와 Prettier 에 대한 약간의 지식을 가지고 있다는 전제 하에 글을 작성하였습니다.
+
 #### Prettier 와 ESlint 의 충돌로 인한 고민
 
 - Prettier를 default formatter 로 설정 할 때의 단점과
@@ -29,6 +31,9 @@ redirect_from:
   },
 ```
 
+- 위의 설정을 적용하면 파일 저장시 prettier를 사용하여 소스 코드를 format 합니다.
+- prettier 문법 규칙에 위배되는 것들을 자동으로 수정해주는 것이죠.
+- 하지만 완벽히 제가 원하는 대로 동작하지 않는 부분이 있습니다.
 - 이제 Prettier 의 단점을 보시죠
 
 ```js
@@ -55,6 +60,9 @@ import { type ReactNode } from 'react';
 export default function Home (): ReactNode {
 ...
 ```
+
+- 하지만 저장을 하면 변경 사항이 없습니다.
+- prettier 문법에는
 
 ```js
 npm run lint -- --fix

@@ -73,7 +73,7 @@ npm run dev
 
 - 간단한 설치 후 nextjs 프로젝트 생성 및 서버 실행까지 알아보았습니다.
 - 다음은 서버 포트 변경에 대한 내용에 대하여 알아보고자 합니다.
-- :arrow_right: [nextjs 서버 포트 변경](https://marindie.github.io/nextjs/2023-12-14-Nextjs-Tutorial-02-KR)
+- :arrow_right: [nextjs 서버 포트 변경](/nextjs/Nextjs-Tutorial-02-KR)
 
 [^1]: This is a footnote.
 

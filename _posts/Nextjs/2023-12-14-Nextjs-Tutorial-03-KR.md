@@ -30,9 +30,9 @@ redirect_from:
 - prettier-eslint-typescript. 이후 eslintConfig 는 eslint 설정에 대한 부분을 나타내며
 - prettier-eslint-typescript. 이후 prettierOptions 는 prettier 설정에 대한 부분을 나타냅니다.
 - eslint 설정에 대하여 더 자세한 정보를 얻고 싶으시다면 제가 작성한 아래의 글을 참고하시기 바랍니다.
-- :arrow_right: [vscode eslint 사용법, configure(설정) 방법 안내](https://marindie.github.io/nextjs/2023-12-19-eslint-Tutorial-01-KR)
+- :arrow_right: [eslint 사용법, configure(설정) 방법 안내](/nextjs/eslint-Tutorial-01-KR)
 - prettier 설정에 대한 자세한 정보는 제가 작성한 아래의 글을 참고하시기 바랍니다.
-- :arrow_right: [vscode prettier 사용법, configure(설정) 방법 안내](https://marindie.github.io/nextjs/2023-12-19-prettier-Tutorial-01-KR)
+- :arrow_right: [prettier 사용법, configure(설정) 방법 안내](/nextjs/prettier-Tutorial-01-KR)
 
 ```json
 {
@@ -164,10 +164,10 @@ redirect_from:
 - indent-rainbow, auto close tag, auto rename tag, colorize extension 들은 별도의 설명이 필요 없습니다.
 - 기능이 매우 직관적이니까요.
 - Prettier 와 Eslint 는 추가 설명이 필요해 보여 별도의 포스팅을 작성하였습니다.
-- :arrow_right: [eslint 사용법, configure(설정) 방법 안내](https://marindie.github.io/nextjs/2023-12-19-eslint-Tutorial-01-KR)
-- :arrow_right: [prettier 사용법, configure(설정) 방법 안내](https://marindie.github.io/nextjs/2023-12-19-prettier-Tutorial-01-KR)
+- :arrow_right: [eslint 사용법, configure(설정) 방법 안내](/nextjs/eslint-Tutorial-01-KR)
+- :arrow_right: [prettier 사용법, configure(설정) 방법 안내](/nextjs/prettier-Tutorial-01-KR)
 - Git 관련 GitLens 와 GitGraph 에 대한 별도 포스팅도 작성하였으니 참고하시면 좋을 것 같습니다.
-- :arrow_right: [vscode GitLens, GitGraph 사용법 안내](https://marindie.github.io/nextjs/2023-12-19-vscode-git-usage-01-KR)
+- :arrow_right: [vscode GitLens, GitGraph 사용법 안내](/nextjs/gitlens-gitgraph-usage-01-KR)
 - 참고로 아래의 extension 은 완전 추천까지는 아닙니다.
 
 #### ES7+ React/Redux/React-Native snippets

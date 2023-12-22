@@ -5,10 +5,22 @@ description: "이번 글에서는 eslint 사용법에 대해 다루어 보려 �
 categories: [nextjs]
 tags: [nextjs]
 redirect_from:
-  - /2023/12/20/
+  - /2023/12/19/
 ---
 
 ### eslint 사용법 {#toc1}
+
+- 혹시라도 ESLint Extension 을 설치 하지 못한 분은 아래의 링크를 통해 설치를 진행해 보시기 바랍니다.
+
+#### ESLint Extension
+
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) 는 TypeScript를 먼저 prettier 로 코딩 구조를 재정렬 하고
+- ESLint를 설치하면 Javascript 나 TypeScript 확장자 파일내에 개발자가 작성한 문법이 ECMA 기준에 부합한지 판단 하고 경고과 에러로 표시가 뜹니다.
+- 여러가지 Rule 이라고 하는 규직을 기본값이 정해진 상태로 사용하게 되며
+- 사용자가 설정 내용을 잘 아는 만큼 비활성화 활성화 선택을 통해 어느정도 커스터마이징 가능합니다.
+- 이후 ESLint 로 한번 더 코딩 구조를 재정렬 해주는 역할을 하는 extension 입니다.
+
+[![ESLint](/assets/images/screen/eslint.png)](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
 #### eslint 설치
 
@@ -144,6 +156,19 @@ yarn init @eslint/config
 - 라는 생각이 들 수 있어 몇가지 알아두셔야 할 규칙을 설명 드리겠습니다.
 - 그 이후에는 개발자 입장에서 고려할 만한 규칙들 목록을 적어 두었으니 참고하시기 바랍니다.
 
+#### Missing return type on function.eslint @typescript-eslint/explicit-function-return-type
+
+- 함수의 리턴 타입을 명시해야 한다는 규칙입니다.
+- 함수의 리턴 타입을 명시하는것은 좋은 습관 같아 사용중입니다.
+
+```js
+// 규칙에 어긋나는 소스
+export default function Home () {
+
+// 규칙에 부합하는 소스
+export default function Home (): ReactNode {
+```
+
 #### 'React' must be in scope when using JSX eslint(react/react-in-jsx-scope)
 
 - eslint 를 설치하자마자 마주치게 되는 rule 입니다.
@@ -215,23 +240,136 @@ var Hello = <div>Hello {this.props.name}</div>;
 
 - 해당 라인을 추가하고 저장하면 에러로 표시되던 내용이 모두 사라질 것입니다.
 
-####
+#### Missing space before function parentheses.eslint (@typescript-eslint/space-before-function-paren)
 
-#### Prettier 와 ESlint 의 충돌로 인한 고민
-
-- Prettier를 default formatter 로 설정 할 때의 단점과
-- ESLint를 default formatter 로 설정 할 때의 단점이 저에게는 고민스러운 부분이였습니다.
-- 먼저 단점을 보시죠.
+- 해당 규칙은 함수명 뒤에 공백을 주라는 규칙입니다.
 
 ```js
-import Image from "next/image";
-import { type ReactNode } from "react";
-
+// 규칙에 어긋나는 소스
 export default function Home(): ReactNode {
 
+// 규칙 부합하는 소스
+export default function Home (): ReactNode {
 ```
 
-- :arrow_right: [nextjs 개발시 매우 도움이 되는 vscode extension 모음](https://marindie.github.io/nextjs/2023-12-14-Nextjs-Tutorial-03-KR)
+- 저는 해당 규칙을 비활성화 하기를 추천드려서 언급하였습니다.
+
+```json
+// 변경 후
+// rules 에 "@typescript-eslint/space-before-function-paren": "off", 추가
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+...생략
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/space-before-function-paren": "off"
+  }
+}
+```
+
+#### All imports in the declaration are only used as types. Use `import type`.eslint @typescript-eslint/consistent-type-imports
+
+- 해당 규칙은 import type 까지 적어서 사용하라는 의미입니다.
+- 저는 해당 규칙을 좋아하지 않아 off 해놓고 사용합니다.
+
+```json
+// 변경 후
+// rules 에 "@typescript-eslint/space-before-function-paren": "off", 추가
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+...생략
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/space-before-function-paren": "off",
+    "@typescript-eslint/consistent-type-imports": "off"
+  }
+}
+```
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5746287019974907"
+     crossorigin="anonymous"></script>
+<!-- 수평형 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5746287019974907"
+     data-ad-slot="8862563347"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+### Prettier
+
+- ESLint 와 함게 Prettier를 주로 사용하고 저도 사용중인데요.
+- vscode 에서 두 가지 모두 사용하고 있고, 파일을 저장 할 때,
+- 기본 Fomatter 로 Prettier를 사용하도록 하여 에러를 자동 수정하도록 사용중입니다.
+- prettier 설정에 대한 자세한 정보는 제가 작성한 아래의 글을 참고하시기 바랍니다.
+- :arrow_right: [prettier 사용법, configure(설정) 방법 안내](/nextjs/prettier-Tutorial-01-KR)
+
+```json
+//settings.json
+{
+    ...생략
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    ...생략
+}
+```
+
+- Prettier 를 사용하는 이유는 HTML Format 을 도와주어 저의 시간을 많이 단축시켜주기 때문입니다.
+- 파일 저장시 기본 Formatter로, ESLint 와 Prettier 둘다 동시에 사용 할 수는 없습니다.
+- 둘 중 하나만 선택해야 합니다.
+- ESLint 를 사용하면 Prettier 의 HTML Format 수정을 지원 못받게 되는데, 이로 인한 시간이 좀 더 들어가는 경향이 있습니다.
+- 그렇다고 해서 Prettier 와 ESLint 규칙을 함께 사용 못 한다는 것은 아닙니다.
+- 명령 프롬프트와 같은 실행 창에서 명령어를 통해 자동 수정을 돌릴 수 있기 때문입니다.
+
+#### 명령 프롬프트 에서 Prettier 와 ESlint 자동 수정 명령어 실행
+
+```js
+// Prettier 문법 에러 수정 명령어
+npx prettier src --check --write
+// ESLint 문법 에러 수정 명령어
+npx eslint --ext .js,.ts,.tsx --ignore-pattern "postcss.config.js" --ignore-pattern "*.ico" --ignore-pattern "*.css" --fix "src/**"
+```
+
+#### package.json 에 Prettier 와 ESLint 자동 수정 명령어 설정하기
+
+- 위의 명령어를 매번 치는것은 다소 번거롭습니다.
+- package.json 의 scripts 안에 설정한 내용은, 명령 프롬프트에서 npm run "scripts 안에 정의해둔 key값" 형태로 호출 가능합니다.
+- Ex. npm run dev, npm run format, 등
+- 명령 프롬프트에 직접 명령어를 칠대는 큰따옴표를 사용해서 구분지어 주어야 하지만,
+- package.json 에서는 추가적인 큰 따옴표 없이 value 의 큰 따옴표 안에 모두 작성하면 알아서 동작합니다.
+
+```json
+//package.json
+...생략
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "npx eslint",
+    "lint:fix": "npm run lint src/** -- --fix --ext .js,.ts,.tsx",
+    "prettier": "npx prettier src --check",
+    "prettier:fix": "npm run prettier -- --write",
+    "format": "npm run prettier:fix && npx eslint --ext .js,.ts,.tsx --ignore-pattern postcss.config.js --ignore-pattern *.ico --ignore-pattern *.css --fix src/**"
+  },
+...생략
+```
+
+- 위의 예시를 기준으로 npm run format 을 하였을때, prettier 부분이 어떻게
+
+
+- 끝까지 읽어주셔서 감사합니다.
+- 아래의 ESLint 공식 문서에서 더 많은 정보를 찾아보실 수 있습니다.
+- :arrow_right: [ESLint 공식 문서 사이트](https://eslint.org/docs/latest/)
+- ESLint 에 이어 Prettier 에 대한 정보를 알고 싶으시다면, 제가 작성한 포스트를 참고하시기 바랍니다.
+- :arrow_right: [prettier 사용법, configure(설정) 방법 안내](/nextjs/prettier-Tutorial-01-KR)
 
 [^1]: This is a footnote.
 
