@@ -10,8 +10,6 @@ redirect_from:
 
 > Oracle 쿼리 모음
 
-매번 검색하기 귀찮아서 검색한 녀석들 이곳에 모으기로 함.
-
 ### Tablespace 관련 {#toc1}
 
 ```sql
@@ -259,7 +257,7 @@ SELECT * FROM
 WHERE RNUM >= 100;
 ```
 
-### Oracle NLS_CHARACTERSET 확인 및 변경{#toc15}
+### Oracle NLS_CHARACTERSET 확인 및 변경 {#toc15}
 
 ```sql
 --확인
