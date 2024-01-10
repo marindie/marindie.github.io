@@ -71,7 +71,7 @@
           {% for category in site.categories %}
             {% if category[1].size == i %}
               <li name="{{ category[0] }}">
-                <a href="#{{ category[0] | slugify }}">
+                <a href="#">
                   <img src="{{ i | modulo: 32 | prepend: "0" | slice: -2, 2 | prepend: "/assets/images/random/img-random-" | append: ".jpg" }}" />
                   <strong>{{ category[0] }}</strong> <span class="taxonomy__count">{{ i }}</span>
                 </a>
@@ -90,7 +90,7 @@
           {% for tag in site.tags %}
             {% if tag[1].size == i %}
               <li name="tag-{{ tag[0] }}">
-                <a href="#{{ tag[0] | slugify }}">
+                <a href="#">
                   <img src="{{ i | modulo: 32 | prepend: "0" | slice: -2, 2 | prepend: "/assets/images/random/img-random-" | append: ".jpg" }}" />
                   <strong>{{ tag[0] }}</strong> <span class="taxonomy__count">{{ i }}</span>
                 </a>
