@@ -45,11 +45,16 @@
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: $type-size-5-5;
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  opacity: 0.6
   
   a {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    color: #fff
   }
 
   a::before {
@@ -142,9 +147,13 @@
   width: 100%;
   padding: 0.5rem;
 
-  @include breakpoint($small) {
-    width: 25%;
+  @include breakpoint($large) {
+    width: 50%;
   }
+
+  @include breakpoint(1400px) {
+    width: 25%;
+  }  
 
   .page__meta {
     margin: 0 0 4px;
