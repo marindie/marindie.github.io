@@ -33,7 +33,7 @@
 .flex-container {
   @include breakpoint($large) {
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
   }
 }
 
