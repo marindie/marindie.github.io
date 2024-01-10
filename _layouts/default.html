@@ -49,6 +49,7 @@
     //     $("#loading").hide();
     // });
     $(document).ready(function() {
+      // 메뉴 show/hide
       $('#menu-categories').on('mouseover click', function() {
         $('#menu-content').css(
           {
@@ -56,28 +57,49 @@
             // 'animation': 'fade-in 1s'
             'left': '0'
           });
+        $('#tag-content').css('left','-100%');
       });
-      $('#hide_menu').on('click', function() {
+      // tag show/hide
+      $('#tag-categories').on('mouseover click', function() {
+        $('#tag-content').css(
+          {
+            'left': '0'
+          });
+        $('#menu-content').css('left','-100%');
+      });
+      $('[name="hide_menu"]').on('click', function() {
         // $('#menu-content').css('animation','fade-out 1s');
         // setTimeout(function() {
         //   $('#menu-content').css('display','none');
         // }, 1 * 1000);  
         $('#menu-content').css('left','-100%');
+        $('#tag-content').css('left','-100%');
       });
+      // 햄버거 클릭시 menu tag hide
       $('.navicon').on('click', function() {
         $('#menu-content').css('left','-100%');
-      })
+        $('#tag-content').css('left','-100%');
+      });
+      // menu, tag 클릭시 관련 포스트만 추출
       $('.taxonomy__index li').on('click', function() {
         $('#temp-category').remove();
         var category = $(this).attr('name').toLowerCase();
+        console.log(category);
         var copyList = $('.flex-container, .flex-wrap').clone();
         copyList.empty().attr('id', 'temp-category');
 
         $('[name="post-list-group"]').each(function() {
           var url = $(this).find('a').attr('href');
-          if(url.indexOf(category) === 1) {
-            copyList.append($(this).clone());
-            console.log(category);
+          if(category.startsWith('tag-')){
+            console.log($(this).find('a').attr('tag'));
+            if($(this).find('a').attr('tag').toLowerCase().indexOf(category.replace(/^tag-/,'').toLowerCase()) === 0) {
+              copyList.append($(this).clone());
+            }
+          } else {
+            if(url.indexOf(category) === 1) {
+              copyList.append($(this).clone());
+              console.log(category);
+            }
           }
         });
 
@@ -85,6 +107,7 @@
         $('.flex-container, .flex-wrap').hide();
         $('#temp-category').show();
         $('#menu-content').css('left','-100%');
+        $('#tag-content').css('left','-100%');
       })
     });
   </script>

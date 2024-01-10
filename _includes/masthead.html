@@ -11,6 +11,13 @@
   {% endif %}
 {% endfor %}
 
+{% assign tags_max = 0 %}
+{% for tag in site.tags %}
+  {% if tag[1].size > tags_max %}
+    {% assign tags_max = tag[1].size %}
+  {% endif %}
+{% endfor %}
+
 <div class="masthead">
   <!-- 구글검색 -->
   <!-- <script async src="https://cse.google.com/cse.js?cx=f4ef173fe788bd440"></script>
@@ -32,6 +39,8 @@
             <li class="masthead__menu-item">
               {% if link.title == 'Categories' %}
                 <a id="menu-categories" {% if link.description %}title="{{ link.description }}"{% endif %}>{{ link.title }}</a>
+              {% elsif link.title == 'Tags' %}
+                <a id="tag-categories" {% if link.description %}title="{{ link.description }}"{% endif %}>{{ link.title }}</a>
               {% else %}
                 <a href="{{ url }}" {% if link.description %}title="{{ link.description }}"{% endif %}>{{ link.title }}</a>
               {% endif %}
@@ -54,7 +63,7 @@
       </nav>
     </div>
     <div id="menu-content" class="shade-background">
-      <button id="hide_menu" class="close_btn">
+      <button name="hide_menu" class="close_btn">
         <span class="icon-cross"></span>
       </button>
       <ul class="taxonomy__index">
@@ -72,5 +81,24 @@
         {% endfor %}
       </ul>
     </div>
+    <div id="tag-content" class="shade-background">
+      <button name="hide_menu" class="close_btn">
+        <span class="icon-cross"></span>
+      </button>
+      <ul class="taxonomy__index">
+        {% for i in (1..tags_max) reversed %}
+          {% for tag in site.tags %}
+            {% if tag[1].size == i %}
+              <li name="tag-{{ tag[0] }}">
+                <a href="#{{ tag[0] | slugify }}">
+                  <img src="{{ i | modulo: 32 | prepend: "0" | slice: -2, 2 | prepend: "/assets/images/random/img-random-" | append: ".jpg" }}" />
+                  <strong>{{ tag[0] }}</strong> <span class="taxonomy__count">{{ i }}</span>
+                </a>
+              </li>            
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </ul>
+    </div>    
   </div>
 </div>
