@@ -10,17 +10,13 @@ redirect_from:
 
 ### eslint 사용법 {#toc1}
 
-- 혹시라도 ESLint Extension 을 설치 하지 못한 분은 아래의 링크를 통해 설치를 진행해 보시기 바랍니다.
-
-#### ESLint Extension
-
-- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) 는 TypeScript를 먼저 prettier 로 코딩 구조를 재정렬 하고
+- ESLint 는 TypeScript를 먼저 prettier 로 코딩 구조를 재정렬 하고
 - ESLint를 설치하면 Javascript 나 TypeScript 확장자 파일내에 개발자가 작성한 문법이 ECMA 기준에 부합한지 판단 하고 경고과 에러로 표시가 뜹니다.
 - 여러가지 Rule 이라고 하는 규직을 기본값이 정해진 상태로 사용하게 되며
 - 사용자가 설정 내용을 잘 아는 만큼 비활성화 활성화 선택을 통해 어느정도 커스터마이징 가능합니다.
 - 이후 ESLint 로 한번 더 코딩 구조를 재정렬 해주는 역할을 하는 extension 입니다.
 
-[![ESLint](/assets/images/screen/eslint.png)](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+![ESLint](/assets/images/screen/eslint.png)
 
 #### eslint 설치
 
@@ -400,7 +396,7 @@ npx eslint --ext .js,.ts,.tsx --ignore-pattern "postcss.config.js" --ignore-patt
 - 이번 글은 여기 까지 입니다.
 - 끝까지 읽어주셔서 감사합니다.
 - 아래의 ESLint 공식 문서에서 더 많은 정보를 찾아보실 수 있습니다.
-- :arrow_right: [ESLint 공식 문서 사이트](https://eslint.org/docs/latest/)
+- ESLint 공식 문서 사이트 =>> https://eslint.org/docs/latest
 - ESLint 에 이어 Prettier 에 대한 정보를 알고 싶으시다면, 제가 작성한 포스트를 참고하시기 바랍니다.
 - :arrow_right: [prettier 사용법, configure(설정) 방법 안내](/nextjs/prettier-Tutorial-01-KR)
 
