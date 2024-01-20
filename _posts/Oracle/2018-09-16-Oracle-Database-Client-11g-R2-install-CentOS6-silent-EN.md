@@ -14,22 +14,8 @@ redirect_from:
 
 1. You have VM
 2. You successfully installed CentOS6.6 on VM somehow (For download CentOS6.6 see below)
-
-### Download CentOS6.5 64bit
-
-- Go to the following URL and Download minimal version of CentOS6.6
-- http://vault.centos.org/6.5/isos/x86_64/
-
-### Download Oracle Databse Client 11g r2 64bit Linux (11.2.0.1)
-
-- ORACLE Databae Client 11.2.0.1 DOWNLOAD
-- http://www.oracle.com/technetwork/database/enterprise-edition/downloads/112010-linx8664soft-100572.html
-- I don't know why but it seems that 11.2.0.4 version is no longer available. So I used 11.2.0.1
-- You may find it, but I guess it would be really really difficult to get one.
-
-### Oracle Documentation URL
-
-- https://docs.oracle.com/cd/E11882_01/install.112/e24325/toc.htm#CIHFICFD
+3. Download CentOS6.5 64bit
+4. Download Oracle Databse Client 11g r2 64bit Linux (11.2.0.1)
 
 ### Ready to install Oracle
 
