@@ -5,12 +5,43 @@ description: "Spring Boot Build 없이 Run. 톰캣 서버 재기동 없이 수�
 categories: [Spring]
 tags: [Spring]
 redirect_from:
-  - /2019/07/19/
+  - /2024/02/11/
 ---
 
-> Spring Boot Build 없이 Run. 톰캣 서버 재기동 없이 수정 반영 class resource jsp 등등
+> Spring Boot 프로젝트 에서 java 파일 mapper 파일을 서버 재기동없이 자동 반영 하는 방법들을 정리해둔 곳입니다.
 
-### Spring Boot Build 없이 Run {#toc1}
+- Spring application.properties 설정 및 XML 설정 방식에 따른 차이점을 둘다 적었습니다.
+
+### Spring Boot application.properties 설정 방식에서 java 파일 Mybatis mapper 파일 수정시 자동으로 재기동 방법 {#toc1}
+
+```js
+Eclipse 에서 사용하는 경우 아래의 dependency 를 추가 하고 
+
+# Maven
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-devtools</artifactId>
+    <optional>true</optional> <!-- Restart를 원하지 않을 경우 false -->
+</dependency>
+
+# Gradle 
+compile "org.springframework.boot:spring-boot-devtools"
+
+application.properties 에 아래의 옵션을 추가 하면 resource 파일 수정시 자동반영 된다. 
+xml mapper 들을 resource 에 두는 방식으로 구성된 프로젝트라면 쿼리 수정내용이
+자동으로 반영될 것이다.
+
+# resource 수정시 재기동 옵션
+spring.devtools.livereload.enabled=true
+# classpath 에 속한 파일 Ex. class 수정시 재기동 옵션
+spring.devtools.restart.enabled = true
+```
+
+- 인텔리제이는 위의 설정에 추가 설정이 필요함
+
+![eclipse톰캣](/assets/images/screen/인텔리제이자동반영옵션.png){: align-center}
+
+### Spring Boot XML 설정에서 java 파일 수정시 재기동 방법 {#toc2}
 
 ```md
 1. boot 서비스 pom.xml 파일에 아래 추가
@@ -28,13 +59,14 @@ boot 서비스 우클릭 → Run As → Run Configurations → Spring Boot App  
 
 3. Mvn update 실시
 
-4.  jar 파일 확인
+4. 설정한 폴더에 jar 파일 확인
 C:\Users\Administrator\.m2\repository\org\springframework\springloaded\1.2.8.RELEASE\ 내에 springloaded-1.2.8.RELEASE.jar 확인
 
-5. Run As → Spring Boot App
+5. 실행 
+Run As → Spring Boot App
 ```
 
-### Tomcat 서버에 설정하는 방법 {#toc2}
+### Linux 에서 Tomcat 서버 설치후 설정하는 방법 {#toc3}
 
 ```bash
 # 1번 내용에서 Maven Repository 로 경로를 잡든
@@ -53,7 +85,7 @@ export CATALINA_OPTS="$CATALINA_OPTS -javaagent:/root/username/tomcat8.5/springl
  fi
 ```
 
-### Eclipse Tomcat 서버 설정 {#toc3}
+### Eclipse Tomcat 서버 설정 {#toc4}
 
 ```md
 * 아래의 스샷들을 참고
@@ -71,60 +103,12 @@ export CATALINA_OPTS="$CATALINA_OPTS -javaagent:/root/username/tomcat8.5/springl
 ![eclipse톰캣](/assets/images/screen/eclipse-tomcat02.png){: align-center}
 Open launch configuration 팝업 argument 세팅
 
-### 하나의 톰캣 서버에 여려개의 Application 을 설정해서 원하는 대로 기동하는 방법 {#toc4}
+### Spring XML 설정 방식에서 Mybatis mapper 자동 리로드 auto reload 방법 {#toc5}
 
-```md
-* 대부분 톰캣 서버 압축푼 폴더 전체를 복사해서 서버 별로 기동하는게 속이 편하긴 하다
-* 하지만 난 궁금해서 한번 한대의 서버에 어떻게 하면 되는지 검색해 봤다
-* 폴더 구조를 대충 그리자면
-tomcat
- - bin (기존 모든 파일 존재)
- - controller (start.sh stop.sh 파일이 존재)
- - lib
-app1
-  - bin (여기 폴더에는 setenv.sh 파일만 존재)
-  - conf
-  - lib
-  - logs
-  - temp
-  - webapps
-  - work
-app2
-  - bin (여기 폴더에는 setenv.sh 파일만 존재)
-  - conf
-  - lib
-  - logs
-  - temp
-  - webapps
-  - work
-
-* 포인트는 app1, app2 의 CATALINA_HOME, CATALINA_BASE 의 경로를 다르게 잡아주기 위해 파라미터를 받아서 
-  app1, app2 경로로 바꿔주고, 기존 톰캣에 들어있던 startup.sh 파일을 호출
-* 각 app1, app2 폴더안의 setenv.sh 파일에 CATALINA_OPTS 를 설정해서 기본적인 추가 옵션 처리
-
-# start.sh stop.sh 파일 내용
-#! /usr/bin/env sh
-
-app_instance=$1;
-
-BASE_TOMCAT=/home/yourBaseDirectory
-
-export CATALINA_HOME=$BASE_TOMCAT/tomcat8.5
-export CATALINA_BASE=$BASE_TOMCAT/$app_instance
-
-$CATALINA_HOME/bin/startup.sh
-# stop.sh 는 startup.sh 를 shutdown.sh 로 변경 하면 나머진 동일
-$CATALINA_HOME/bin/shutdown.sh
-
-# setenv.sh 파일 내용
-export CATALINA_OPTS="$CATALINA_OPTS -Xms1024m"
-export CATALINA_OPTS="$CATALINA_OPTS -Xmx4096m"
-export CATALINA_OPTS="$CATALINA_OPTS -XX:MaxPermSize=1024m"
-```
-
-### Mybatis mapper 재기동 없이 인식 하는 방법 {#toc5}
-
-아래 java 소스를 RefreshableSqlSessionFactoryBean.java 로 생성해서 원하는 package 경로에 넣고, 아래의 xml 파일 중, SqlSessionFactoryBean 을 찾아서 아래의 내용으로 교체
+- 옜날 방식인 XML 방식의 설정은 
+- 아래의 파일을 작성하여 설정에 물려주면 동작한다.
+- 아래 java 소스를 RefreshableSqlSessionFactoryBean.java 로 생성해서 원하는 package 경로에 넣고
+- 아래의 xml 파일 중, SqlSessionFactoryBean 을 찾아서 아래의 내용으로 교체
 
 ```xml
 <!-- <bean id="sqlSession" class="org.mybatis.spring.SqlSessionFactoryBean"> -->
@@ -300,6 +284,57 @@ public class RefreshableSqlSessionFactoryBean extends SqlSessionFactoryBean impl
   timer.cancel();
  }
 }
+```
+
+### 하나의 톰캣 서버에 여려개의 Application 을 설정해서 원하는 대로 기동하는 방법 {#toc6}
+
+```md
+* 대부분 톰캣 서버 압축푼 폴더 전체를 복사해서 서버 별로 기동하는게 속이 편하긴 하다
+* 하지만 난 궁금해서 한번 한대의 서버에 어떻게 하면 되는지 검색해 봤다
+* 폴더 구조를 대충 그리자면
+tomcat
+ - bin (기존 모든 파일 존재)
+ - controller (start.sh stop.sh 파일이 존재)
+ - lib
+app1
+  - bin (여기 폴더에는 setenv.sh 파일만 존재)
+  - conf
+  - lib
+  - logs
+  - temp
+  - webapps
+  - work
+app2
+  - bin (여기 폴더에는 setenv.sh 파일만 존재)
+  - conf
+  - lib
+  - logs
+  - temp
+  - webapps
+  - work
+
+* 포인트는 app1, app2 의 CATALINA_HOME, CATALINA_BASE 의 경로를 다르게 잡아주기 위해 파라미터를 받아서 
+  app1, app2 경로로 바꿔주고, 기존 톰캣에 들어있던 startup.sh 파일을 호출
+* 각 app1, app2 폴더안의 setenv.sh 파일에 CATALINA_OPTS 를 설정해서 기본적인 추가 옵션 처리
+
+# start.sh stop.sh 파일 내용
+#! /usr/bin/env sh
+
+app_instance=$1;
+
+BASE_TOMCAT=/home/yourBaseDirectory
+
+export CATALINA_HOME=$BASE_TOMCAT/tomcat8.5
+export CATALINA_BASE=$BASE_TOMCAT/$app_instance
+
+$CATALINA_HOME/bin/startup.sh
+# stop.sh 는 startup.sh 를 shutdown.sh 로 변경 하면 나머진 동일
+$CATALINA_HOME/bin/shutdown.sh
+
+# setenv.sh 파일 내용
+export CATALINA_OPTS="$CATALINA_OPTS -Xms1024m"
+export CATALINA_OPTS="$CATALINA_OPTS -Xmx4096m"
+export CATALINA_OPTS="$CATALINA_OPTS -XX:MaxPermSize=1024m"
 ```
 
 [^1]: This is a footnote.
