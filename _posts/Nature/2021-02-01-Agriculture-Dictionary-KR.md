@@ -318,8 +318,3 @@ flax : 아마
 symbiotic : 공생하는
 proliferate : 확산하다 급증하다
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

@@ -93,7 +93,4 @@ systemctl stop firewalld.service && systemctl disable firewalld.service
 
 ssh 툴로 원격 접속 시도
 
-[^1]: This is a footnote.
 
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

@@ -22,8 +22,3 @@ crontab -e
 # 매일 0 am 1 min 실행
 1 0 * * * /home/runScript.sh
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

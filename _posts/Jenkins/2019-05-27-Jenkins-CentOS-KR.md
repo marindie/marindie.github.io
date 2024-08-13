@@ -69,8 +69,3 @@ iptables-save > /etc/sysconfig/iptables
 cat /var/lib/jenkins/secrets/initialAdminPassword
 # 이후에는 계정 생성하게 되고, 본인 선택에 따라 plugin 을 설치할 수도 아니면 일단 그냥 시작할 수도 있음.
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

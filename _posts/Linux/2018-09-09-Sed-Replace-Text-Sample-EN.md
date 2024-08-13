@@ -82,8 +82,3 @@ sed -i'' -e "s/foo/bar/g" your_file.txt
 - For those who are interested in append text before/after. Click below link
 
 [link](https://marindie.github.io/blog/linux/Sed-Append-Before-After-Sample-EN)
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

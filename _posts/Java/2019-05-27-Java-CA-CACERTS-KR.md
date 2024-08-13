@@ -63,8 +63,3 @@ insomnia 에서 https 연동 테스트시에도 ssl disable 을 설정 화면에
 잘 되던것으로 기억한다.
 
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

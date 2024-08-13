@@ -85,8 +85,3 @@ pom.xml
 클릭 => [sed 사용법](https://marindie.github.io/linux/Sed-Replace-Text-Sample-EN/)
 
 감사합니다.
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

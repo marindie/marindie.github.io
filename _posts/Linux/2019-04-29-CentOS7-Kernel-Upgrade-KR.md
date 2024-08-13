@@ -36,8 +36,3 @@ sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 yum install yum-utils
 package-cleanup --oldkernels
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

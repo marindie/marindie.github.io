@@ -156,7 +156,4 @@ done
 
 도움이 되었으면 좋겠네요. 감사합니다.
 
-[^1]: This is a footnote.
 
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

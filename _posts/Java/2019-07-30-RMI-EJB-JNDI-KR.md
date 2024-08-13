@@ -359,8 +359,3 @@ jmxri.jar
 ```md
 마지막으로 JBoss 의 기본 REMOTE PORT 는 4447, Weblogic 은 9403 인듯하다.
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

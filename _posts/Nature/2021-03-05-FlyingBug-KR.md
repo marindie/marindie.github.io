@@ -48,8 +48,3 @@ redirect_from:
 까지는 괜찮다고 생각 되지만, 그 외에 화학적 성분이 변형된 폐기물을
 먹이로 하는 동애등에를 식용으로 사용하는 점에 대해서는 걱정스럽다
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

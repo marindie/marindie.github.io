@@ -123,8 +123,3 @@ gsed -n -r -e "s/SEGMENT CREATE IMMEDIATE|SEGMENT CREATE DEFERRERD//gp" *.SQL
 # Then Run to remove the syntax
 gsed -i'' -r -e "s/SEGMENT CREATE IMMEDIATE|SEGMENT CREATE DEFERRERD//g" *.SQL
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

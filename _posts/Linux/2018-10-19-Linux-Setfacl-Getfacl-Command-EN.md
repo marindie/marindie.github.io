@@ -35,8 +35,3 @@ setfacl -x u:user1 /etc/sysconfig/iptables
 ```md
 getfacl /DATA/work/CP_transaction
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

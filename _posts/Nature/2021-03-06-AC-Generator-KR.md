@@ -121,8 +121,3 @@ P = Volts의 제곱 / Ohms
 매우 자연스럽게 회전이 이루어 지게 되고  
 전기자의 코일을 여러번 감아서 사용하면 더 강한 힘으로 돌게 된다.
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

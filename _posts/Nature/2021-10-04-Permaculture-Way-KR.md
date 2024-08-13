@@ -12,11 +12,4 @@ redirect_from:
 
 ### note {#toc1}
 
-```md
-nothing
-```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io
+진행중

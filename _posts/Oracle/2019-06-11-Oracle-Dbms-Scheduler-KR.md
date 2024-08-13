@@ -106,7 +106,4 @@ exec sys.dbms_scheduler.drop_schedule(schedule_name => '"SCOTT"."TEST_SH_JOB_SCH
 exec sys.dbms_scheduler.drop_program(program_name => '"SCOTT"."TEST_SH_JOB"',force => false) ;
 ```
 
-[^1]: This is a footnote.
 
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

@@ -128,8 +128,3 @@ redirect_from:
 * 꽃이 마르게 되면 꽃봉우리 안에 씨앗을 품고 있다
 * 꽃차는 꽃을 따서 소금물에 살짝 데친 후 잘 말리면 됨
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

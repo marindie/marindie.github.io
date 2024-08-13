@@ -98,8 +98,3 @@ olddir /contents/logs/baby/tomcat/daily # rotate 한 파일을 보관할 폴더 
 # 해당 폴더의 결과 확인 
 cd /contents/logs/baby/tomcat/daily
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

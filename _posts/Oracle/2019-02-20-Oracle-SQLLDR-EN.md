@@ -165,7 +165,4 @@ For those who need to create CSV format file like the above example, [Click Here
 
 Hope it was useful. Thanks
 
-[^1]: This is a footnote.
 
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

@@ -93,7 +93,4 @@ securerandom.source=file:/tmp/big.random.file
 재기동 하니까 그나마 좀 빨리 기동됨
 ```
 
-[^1]: This is a footnote.
 
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

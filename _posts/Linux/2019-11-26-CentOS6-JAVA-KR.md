@@ -44,8 +44,3 @@ JRE_HOME=/usr/java/jdk1.8.0_131/jre
 PATH=$PATH:JAVA_HOME/bin:JRE_HOME/bin
 export JAVA_HOME JRE_HOME PATH
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

@@ -116,8 +116,3 @@ redirect_from:
 * 열매의 절반은 검고 절반은 흰빛일때 베어 거꾸로 세워두면 모두 검게 된다
 * 열매가 완전히 건조되면 도리깨나 탈곡기를 이용하여 타작
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

@@ -183,7 +183,4 @@ path 에 /springTest 라고 적혀있는데 이것이 뜻하는 바는, localhos
 test.jsp 내용이 나오게 됩니다.
 ```
 
-[^1]: This is a footnote.
 
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

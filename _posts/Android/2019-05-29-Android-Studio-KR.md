@@ -132,8 +132,3 @@ AndroidManifest.xml 파일에 action 부분을 intent-filter 로 감싸줘야 �
 Android Studio 우측 하단의 Encoding List 에서 UTF-8 선택
 Convert 버튼 클릭하여 UTF-8 변환
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

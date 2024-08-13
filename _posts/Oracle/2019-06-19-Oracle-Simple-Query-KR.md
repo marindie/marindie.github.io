@@ -422,7 +422,4 @@ SELECT * FROM USER_SCHEDULER_JOB_LOG ORDER BY LOG_DATE DESC;
 
 ```
 
-[^1]: This is a footnote.
 
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

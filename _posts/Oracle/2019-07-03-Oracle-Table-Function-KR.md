@@ -28,7 +28,4 @@ A table function can take a collection of rows as input. An input collection par
 
 ```
 
-[^1]: This is a footnote.
 
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

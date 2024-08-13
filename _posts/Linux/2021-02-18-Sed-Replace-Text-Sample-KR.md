@@ -74,8 +74,3 @@ sed -i'' -e "s/foo/bar/g" your_file.txt
 ```
 
 - Sed 를 사용하여 텍스트를 검색 매칭되는 라인 위 또는 아래에 추가하고 싶으면 클릭 [Sed 텍스트 위 아래 추가](https://marindie.github.io/linux/Sed-Append-KR/)
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

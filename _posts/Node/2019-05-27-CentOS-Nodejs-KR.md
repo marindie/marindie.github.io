@@ -35,8 +35,3 @@ sudo yum install -y nodejs
 node -v
 npm -v
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

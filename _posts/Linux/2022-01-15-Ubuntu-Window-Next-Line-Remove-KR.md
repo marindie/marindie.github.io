@@ -21,8 +21,3 @@ vi 에서
 :wq
 
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

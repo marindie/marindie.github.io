@@ -125,7 +125,4 @@ CREATE OR REPLACE and RESOLVE JAVA SOURCE NAMED "HelloWorld" AS /*파일명*/
 
 ```
 
-[^1]: This is a footnote.
 
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

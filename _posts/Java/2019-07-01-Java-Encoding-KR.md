@@ -67,8 +67,3 @@ public class EncodingTest {
 }
 
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

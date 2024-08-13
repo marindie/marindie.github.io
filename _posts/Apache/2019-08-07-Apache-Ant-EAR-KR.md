@@ -273,8 +273,3 @@ javac 할때 JDK 홈 경로 변경 가능한 부분 소스가 있습니다. 인�
 ```
 
 Hope it was useful to someone else. Cheers
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

@@ -63,8 +63,3 @@ ssh-keygen -t rsa
 # Remote Server에 public 키 복사
 cat ~/.ssh/id_rsa.pub | ssh -p portnum username@ipOrDomain "cat >> ~/.ssh/authorized_keys"
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

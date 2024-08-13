@@ -47,7 +47,4 @@ Spring Boot 기동시에 JAVA OPTION 으로 TIMEZONE 을 세팅해줘야 연결�
 java -Duser.timezone=GMT -jar app-0.0.1-SNAPSHOT.jar
 ```
 
-[^1]: This is a footnote.
 
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

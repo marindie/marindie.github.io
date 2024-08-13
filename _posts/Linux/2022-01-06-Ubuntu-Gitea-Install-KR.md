@@ -59,8 +59,3 @@ gitea 실행시키면 기본 포트로 3000 으로 실행됨.
 gitea web -p 9090 등으로 gitea 실행시 포트를 입력해서 해당 포트로 띄워서 사용중
 gitea web --config /usr/local/bin/custom/conf/app.ini
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

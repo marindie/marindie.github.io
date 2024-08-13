@@ -30,8 +30,3 @@ After
 
 재부팅 후 다른 사용자 선택해서 root 로 로그인 하면 됨
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

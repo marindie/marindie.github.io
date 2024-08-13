@@ -41,8 +41,3 @@ keytool -import -file "C:\USER.cer" -keystore "C:\Program Files\Java\jdk1.8.0_72
 실제 반영이 안된다. 그래서 해당 폴더까지 가서 명령어를 날린다.
 
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

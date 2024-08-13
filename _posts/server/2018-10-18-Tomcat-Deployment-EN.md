@@ -32,7 +32,4 @@ If you look inside of conf/server.xml webapps attributes, you can see that tomca
 Inside of conf/Catalina/localhost folder, create context.xml file and configue your app deployment.
 ```
 
-[^1]: This is a footnote.
 
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

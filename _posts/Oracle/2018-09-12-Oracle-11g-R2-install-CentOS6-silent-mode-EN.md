@@ -326,8 +326,3 @@ sqlplus / as sysdba
 ```
 
 Cheers. Thanks for reading. If there is some syntax errors or questions, please leave a comment.
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

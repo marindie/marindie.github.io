@@ -337,7 +337,4 @@ export CATALINA_OPTS="$CATALINA_OPTS -Xmx4096m"
 export CATALINA_OPTS="$CATALINA_OPTS -XX:MaxPermSize=1024m"
 ```
 
-[^1]: This is a footnote.
 
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

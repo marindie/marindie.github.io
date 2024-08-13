@@ -197,8 +197,3 @@ sudo concourse worker \
   --tsa-public-key /opt/concourse/tsa_host_key.pub \
   --tsa-worker-private-key /opt/concourse/worker_key
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

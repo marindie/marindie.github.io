@@ -85,8 +85,3 @@ find /home -type f -name *.log -exec zip -m -v /logs/202010/zipFileName.zip {} \
 ```bash
 find /home -type f -name *.log -exec dirname {} \;
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

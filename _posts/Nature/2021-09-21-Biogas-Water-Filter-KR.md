@@ -144,8 +144,3 @@ PH 6.8~7.5 사이에서 잘 번식하고
 영양분이 이동하는 체관
 산화와 환원은 동시에 일어난다
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

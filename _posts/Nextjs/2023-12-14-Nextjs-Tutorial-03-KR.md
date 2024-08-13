@@ -189,8 +189,3 @@ redirect_from:
 끝까지 읽어주셔서 감사합니다.
 해당 내용이 도움이 되었으면 좋겠네요.
 ``````
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

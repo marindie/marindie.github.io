@@ -94,7 +94,4 @@ java -jar xxxxx.jar 를 실행시키면 tomcat 내장되어 있어서 해당 loc
 
 이해에 도움이 되었으면 합니다. 감사합니다.
 
-[^1]: This is a footnote.
 
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

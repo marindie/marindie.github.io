@@ -193,7 +193,4 @@ CSV 파일 형태로 쿼리 조회 결과를 출력해주는 프로그램 정보
 
 [클릭](https://marindie.github.io/databases/Oracle-CSV-SQLPLUS-KR/)
 
-[^1]: This is a footnote.
 
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

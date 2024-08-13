@@ -17,8 +17,3 @@ redirect_from:
 # 경고여서 설치가 안되는건 아니였다.
 rpm --import /etc/pki/rpm-gpg/RPM*
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

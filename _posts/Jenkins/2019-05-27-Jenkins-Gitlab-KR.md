@@ -81,8 +81,3 @@ Jenkin Build 가 실행되었는지 확인
 잘 안되었으면 Jenkin Build 만 실행해서 Console 로그 확인
 Jenkin 가 Git Clone 을 잘 했으면 Gitlab 에서 WebHook Test 로그 확인해서 처리
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

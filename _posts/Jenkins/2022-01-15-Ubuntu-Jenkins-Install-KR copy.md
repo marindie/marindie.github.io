@@ -75,8 +75,3 @@ sudo dpkg -i 패키지파일명 으로 package 를 manual install 을 진행하�
 
 
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

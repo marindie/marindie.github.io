@@ -399,8 +399,3 @@ npx eslint --ext .js,.ts,.tsx --ignore-pattern "postcss.config.js" --ignore-patt
 - ESLint 공식 문서 사이트 =>> https://eslint.org/docs/latest
 - ESLint 에 이어 Prettier 에 대한 정보를 알고 싶으시다면, 제가 작성한 포스트를 참고하시기 바랍니다.
 - :arrow_right: [prettier 사용법, configure(설정) 방법 안내](/nextjs/prettier-Tutorial-01-KR)
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

@@ -117,8 +117,3 @@ fi
 $(seq -w 1 12)
 Ex) for day in $(seq -w 1 31); do
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

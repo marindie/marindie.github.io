@@ -43,7 +43,4 @@ impdp USER/pwd@TEST directory=data_pump job_name=TEST_DUMP_01_IMP dumpfile=expdp
 import 할때 TRANSFORM=SEGMENT_ATTRIBUTES:N 옵션으로 우회 가능하기에 그렇게 사용중. 필요에 따라 추가적으로 LOGGING, NOLOGING 확인하고 변경을 해야할 수도
 ```
 
-[^1]: This is a footnote.
 
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

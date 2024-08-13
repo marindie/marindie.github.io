@@ -39,8 +39,3 @@ cd ../basic-pipeline
 fly -t tutorial set-pipeline -c pipeline.yml -p hello-world
 
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

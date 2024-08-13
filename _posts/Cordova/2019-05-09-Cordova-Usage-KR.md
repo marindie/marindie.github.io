@@ -225,8 +225,3 @@ Cordova Android 를 바로 사용하고자 할때, 해줘야 하는 부분이다
 6. cordova build
 7. release 를 하기 위해서 keystore 폴더 및 build.json 파일이 있을 수 있다. 해당 폴더 및 파일이 있는 경우 내려 받은 프로젝트의 구조와 동일 시켜주면 됨.
 ```
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

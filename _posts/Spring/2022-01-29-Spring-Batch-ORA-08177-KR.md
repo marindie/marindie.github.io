@@ -24,7 +24,4 @@ ISOLATION_DEFAULT 로 해봤는데 여전히 에러났었음.
 구글 다른 검색 결과는 19c에 해당 없는 듯
 ```
 
-[^1]: This is a footnote.
 
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io

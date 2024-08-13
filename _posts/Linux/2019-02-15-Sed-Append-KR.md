@@ -31,8 +31,3 @@ sed -i'' -r -e "/Please Put it here/a\Some More Text is appended/" your_file.txt
 ### 추가적으로 기본적인 sed 명령어 관련 POST 링크 {#toc4}
 
 [sed 사용법](/linux/Sed-Replace-Text-Sample-KR/)
-
-[^1]: This is a footnote.
-
-[kramdown]: https://kramdown.gettalong.org/
-[My Blog]: https://marindie.github.io
